@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		6F28FBA5FB39873CD08AA695 /* Pods_BIT_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1CD5190B349858D99F73037 /* Pods_BIT_Reminder.framework */; };
-		8D6B80B62AA856FF009DF810 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B80B52AA856FF009DF810 /* Localizable.strings */; };
-		8D6B80B92AA85762009DF810 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B80B82AA85762009DF810 /* Strings.swift */; };
+		8D6B80BF2AA8617D009DF810 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B80BD2AA8617D009DF810 /* Localizable.strings */; };
+		8D6B80C52AA861A5009DF810 /* StoryboardScenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B80C02AA861A5009DF810 /* StoryboardScenes.swift */; };
+		8D6B80C62AA861A5009DF810 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B80C12AA861A5009DF810 /* Assets.swift */; };
+		8D6B80C72AA861A5009DF810 /* StoryboardSegues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B80C22AA861A5009DF810 /* StoryboardSegues.swift */; };
+		8D6B80C82AA861A5009DF810 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B80C32AA861A5009DF810 /* Strings.swift */; };
+		8D6B80C92AA861A5009DF810 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B80C42AA861A5009DF810 /* Fonts.swift */; };
 		8D6F5CEB2AA3EABF006184CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F5CEA2AA3EABF006184CC /* AppDelegate.swift */; };
 		8D6F5CED2AA3EABF006184CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F5CEC2AA3EABF006184CC /* SceneDelegate.swift */; };
 		8D6F5CEF2AA3EABF006184CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F5CEE2AA3EABF006184CC /* ViewController.swift */; };
@@ -21,8 +25,12 @@
 /* Begin PBXFileReference section */
 		6F4ED9D45104BC656CBEF8E6 /* Pods-BIT Reminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIT Reminder.release.xcconfig"; path = "Target Support Files/Pods-BIT Reminder/Pods-BIT Reminder.release.xcconfig"; sourceTree = "<group>"; };
 		7B43CDD8A64CF72BA1F51449 /* Pods-BIT Reminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIT Reminder.debug.xcconfig"; path = "Target Support Files/Pods-BIT Reminder/Pods-BIT Reminder.debug.xcconfig"; sourceTree = "<group>"; };
-		8D6B80B52AA856FF009DF810 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		8D6B80B82AA85762009DF810 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		8D6B80BE2AA8617D009DF810 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		8D6B80C02AA861A5009DF810 /* StoryboardScenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardScenes.swift; sourceTree = "<group>"; };
+		8D6B80C12AA861A5009DF810 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		8D6B80C22AA861A5009DF810 /* StoryboardSegues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardSegues.swift; sourceTree = "<group>"; };
+		8D6B80C32AA861A5009DF810 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		8D6B80C42AA861A5009DF810 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		8D6F5CE72AA3EABF006184CC /* BIT Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BIT Reminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D6F5CEA2AA3EABF006184CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D6F5CEC2AA3EABF006184CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,9 +73,9 @@
 		8D6B80A82AA78A63009DF810 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				8D6B80BC2AA86163009DF810 /* en.lproj */,
 				8D6B80B72AA8571D009DF810 /* Fonts */,
 				8D6F5CF32AA3EAC0006184CC /* Assets.xcassets */,
-				8D6B80B52AA856FF009DF810 /* Localizable.strings */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -83,7 +91,11 @@
 		8D6B80AA2AA78A9B009DF810 /* SwiftGen */ = {
 			isa = PBXGroup;
 			children = (
-				8D6B80B82AA85762009DF810 /* Strings.swift */,
+				8D6B80C12AA861A5009DF810 /* Assets.swift */,
+				8D6B80C42AA861A5009DF810 /* Fonts.swift */,
+				8D6B80C02AA861A5009DF810 /* StoryboardScenes.swift */,
+				8D6B80C22AA861A5009DF810 /* StoryboardSegues.swift */,
+				8D6B80C32AA861A5009DF810 /* Strings.swift */,
 			);
 			path = SwiftGen;
 			sourceTree = "<group>";
@@ -161,6 +173,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		8D6B80BC2AA86163009DF810 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				8D6B80BD2AA8617D009DF810 /* Localizable.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
 		8D6F5CDE2AA3EABF006184CC = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +246,7 @@
 			buildPhases = (
 				CA53AFEF6077121E7ED8794F /* [CP] Check Pods Manifest.lock */,
 				8D6B80B42AA85654009DF810 /* SwiftGen */,
+				8D6B80BA2AA85BAB009DF810 /* SwiftLint */,
 				8D6F5CE32AA3EABF006184CC /* Sources */,
 				8D6F5CE42AA3EABF006184CC /* Frameworks */,
 				8D6F5CE52AA3EABF006184CC /* Resources */,
@@ -277,8 +298,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D6B80BF2AA8617D009DF810 /* Localizable.strings in Resources */,
 				8D6F5CF72AA3EAC0006184CC /* LaunchScreen.storyboard in Resources */,
-				8D6B80B62AA856FF009DF810 /* Localizable.strings in Resources */,
 				8D6F5CF42AA3EAC0006184CC /* Assets.xcassets in Resources */,
 				8D6F5CF22AA3EABF006184CC /* Main.storyboard in Resources */,
 			);
@@ -304,7 +325,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which $PODS_ROOT/SwiftGen/bin/swiftgen >/dev/null; then\n$PODS_ROOT/SwiftGen/bin/swiftgen config run\nelse\necho \"warning: SwiftGen not installed, download it from https://github.com/AliSoftware/SwiftGen\"\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#if which $PODS_ROOT/SwiftGen/bin/swiftgen >/dev/null; then\n#$PODS_ROOT/SwiftGen/bin/swiftgen config run\n#else\n#echo \"warning: SwiftGen not installed, download it from https://github.com/AliSoftware/SwiftGen\"\n#fi\nif [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
+		8D6B80BA2AA85BAB009DF810 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		CA53AFEF6077121E7ED8794F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -335,16 +374,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D6B80C92AA861A5009DF810 /* Fonts.swift in Sources */,
+				8D6B80C72AA861A5009DF810 /* StoryboardSegues.swift in Sources */,
 				8D6F5CEF2AA3EABF006184CC /* ViewController.swift in Sources */,
 				8D6F5CEB2AA3EABF006184CC /* AppDelegate.swift in Sources */,
-				8D6B80B92AA85762009DF810 /* Strings.swift in Sources */,
 				8D6F5CED2AA3EABF006184CC /* SceneDelegate.swift in Sources */,
+				8D6B80C62AA861A5009DF810 /* Assets.swift in Sources */,
+				8D6B80C52AA861A5009DF810 /* StoryboardScenes.swift in Sources */,
+				8D6B80C82AA861A5009DF810 /* Strings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		8D6B80BD2AA8617D009DF810 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D6B80BE2AA8617D009DF810 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		8D6F5CF02AA3EABF006184CC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
