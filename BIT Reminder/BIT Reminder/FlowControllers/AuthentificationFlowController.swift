@@ -31,7 +31,11 @@ class AuthentificationFlowController: FlowController {
         currentViewController.navigationController?.pushViewController(homeVC, animated: true)
     }
 
-    func goToRegistration() { }
+    func goToRegistration() {
+        let regVC = StoryboardScene.Authentification.registrationViewController.instantiate()
+        regVC.presenter = RegistrationPresenter()
+        currentViewController.navigationController?.pushViewController(regVC, animated: true)
+    }
 
     func goToForgotPassword() { }
 }

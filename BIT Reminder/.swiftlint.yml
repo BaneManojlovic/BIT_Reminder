@@ -9,9 +9,9 @@ variable_name: #exclude variables from naming rules
     - ID
     - example
 
-line_length: 120 # set maximum line length
-type_body_length: 680 # set maximum type body length
-file_length: 680 # set maximum file line length
+line_length: 140 # set maximum line length
+type_body_length: 700 # set maximum type body length
+file_length: 700 # set maximum file line length
 function_parameter_count: 10 # set maximum function parameter count
 cyclomatic_complexity: 15 # set maximum cyclomatic complexity
 

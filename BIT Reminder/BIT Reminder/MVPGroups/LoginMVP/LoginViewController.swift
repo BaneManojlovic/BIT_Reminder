@@ -8,13 +8,14 @@
 import UIKit
 
 class LoginViewController: BaseViewController {
-    
+
     // MARK: - Properties
 
     var presenter = LoginViewPresenter()
 
     // MARK: - Private Properties
 
+    lazy private var authFlowController = AuthentificationFlowController(currentViewController: self)
     private var loginView: LoginView! {
         loadViewIfNeeded()
         return view as? LoginView
@@ -27,6 +28,7 @@ class LoginViewController: BaseViewController {
 
         self.setupUI()
         self.setupDelegates()
+        self.setupTargets()
     }
 
     // MARK: - Private Setup Methods
@@ -40,8 +42,26 @@ class LoginViewController: BaseViewController {
         self.presenter.attachView(view: self)
     }
 
+    private func setupTargets() {
+        self.loginView.loginButton.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
+    }
+
+    @objc func loginButtonAction() {
+        debugPrint("Login tapped ...")
+        self.presenter.loginUser()
+    }
 }
 
 // MARK: - Conforming to LoginViewController
 
-extension LoginViewController: LoginViewPresenterDelegate { }
+extension LoginViewController: LoginViewPresenterDelegate {
+
+    func loginActionSuccess() {
+        debugPrint("Login ... SUCCESS")
+        self.authFlowController.goToHome()
+    }
+
+    func loginActionFailed() {
+        debugPrint("Login ... Failed")
+    }
+}

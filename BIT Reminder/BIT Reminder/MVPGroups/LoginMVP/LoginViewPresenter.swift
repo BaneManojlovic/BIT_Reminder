@@ -8,11 +8,12 @@
 import UIKit
 
 protocol LoginViewPresenterDelegate: AnyObject {
-    
+    func loginActionSuccess()
+    func loginActionFailed()
 }
 
 class LoginViewPresenter {
-    
+
     weak var delegate: LoginViewPresenterDelegate?
 
     // MARK: - Initialization
@@ -29,4 +30,8 @@ class LoginViewPresenter {
         self.delegate = nil
     }
     
+    func loginUser() {
+        // TODO: - Implement call to API
+        self.delegate?.loginActionSuccess()
+    }
 }
