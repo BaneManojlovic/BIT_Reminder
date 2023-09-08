@@ -13,15 +13,16 @@ import UIKit
 // swiftlint:disable explicit_type_interface identifier_name line_length prefer_self_in_static_references
 // swiftlint:disable type_body_length type_name
 internal enum StoryboardScene {
-  internal enum LaunchScreen: StoryboardType {
-    internal static let storyboardName = "LaunchScreen"
+  internal enum Authentification: StoryboardType {
+    internal static let storyboardName = "Authentification"
 
-    internal static let initialScene = InitialSceneType<UIKit.UIViewController>(storyboard: LaunchScreen.self)
-  }
-  internal enum Main: StoryboardType {
-    internal static let storyboardName = "Main"
+    internal static let initialScene = InitialSceneType<UIKit.UINavigationController>(storyboard: Authentification.self)
 
-    internal static let initialScene = InitialSceneType<ViewController>(storyboard: Main.self)
+    internal static let homeViewController = SceneType<HomeViewController>(storyboard: Authentification.self, identifier: "HomeViewController")
+
+    internal static let loginViewController = SceneType<LoginViewController>(storyboard: Authentification.self, identifier: "LoginViewController")
+
+    internal static let splashScreenViewController = SceneType<SplashScreenViewController>(storyboard: Authentification.self, identifier: "SplashScreenViewController")
   }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length prefer_self_in_static_references
