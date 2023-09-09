@@ -12,6 +12,7 @@ class HomeViewController: BaseViewController {
     // MARK: - Properties
 
     var presenter = HomeViewPresenter()
+    lazy private var authFlowController = AuthentificationFlowController(currentViewController: self)
 
     // MARK: - Private Properties
 
@@ -27,6 +28,7 @@ class HomeViewController: BaseViewController {
 
         self.setupUI()
         self.setupDelegates()
+        self.setupTargets()
     }
 
     // MARK: - Private Setup Methods
@@ -39,8 +41,24 @@ class HomeViewController: BaseViewController {
     private func setupDelegates() {
         self.presenter.attachView(view: self)
     }
+
+    private func setupTargets() {
+        self.homeView.logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
+    }
+
+    @objc func logout() {
+        self.presenter.logoutUser()
+    }
 }
 
 // MARK: - Conforming to HomeViewPresenterDelegate
 
-extension HomeViewController: HomeViewPresenterDelegate { }
+extension HomeViewController: HomeViewPresenterDelegate {
+    func userLogoutSuccess() {
+        // TODO: - Create OK Alert pop up for user logout success
+        debugPrint("logout success ...")
+        DispatchQueue.main.async {
+            self.authFlowController.goToSplashScreen()
+        }
+    }
+}

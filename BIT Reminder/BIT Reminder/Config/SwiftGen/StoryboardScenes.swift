@@ -16,7 +16,7 @@ internal enum StoryboardScene {
   internal enum Authentification: StoryboardType {
     internal static let storyboardName = "Authentification"
 
-    internal static let initialScene = InitialSceneType<UIKit.UINavigationController>(storyboard: Authentification.self)
+    internal static let initialScene = InitialSceneType<SplashScreenViewController>(storyboard: Authentification.self)
 
     internal static let homeViewController = SceneType<HomeViewController>(storyboard: Authentification.self, identifier: "HomeViewController")
 

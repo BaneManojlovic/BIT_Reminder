@@ -48,7 +48,7 @@ class LoginViewController: BaseViewController {
 
     @objc func loginButtonAction() {
         debugPrint("Login tapped ...")
-        self.presenter.loginUser()
+        self.presenter.loginWithEmail(email: "branislav.manojlovic@vegait.rs", password: "BakiMaki106")
     }
 }
 
@@ -57,8 +57,10 @@ class LoginViewController: BaseViewController {
 extension LoginViewController: LoginViewPresenterDelegate {
 
     func loginActionSuccess() {
-        debugPrint("Login ... SUCCESS")
-        self.authFlowController.goToHome()
+        debugPrint("Login ... SUCCESS ...")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.authFlowController.goToHome()
+        }
     }
 
     func loginActionFailed() {

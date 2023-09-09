@@ -10,25 +10,33 @@ import UIKit
 class AuthentificationFlowController: FlowController {
 
     func goToSplashScreen() {
+        guard let app = UIApplication.shared.delegate as? AppDelegate,
+        let window = app.window else { return }
+
         // TODO: - Add here emptying of user defaults
         let splashVC = StoryboardScene.Authentification.splashScreenViewController.instantiate()
-        splashVC.presenter = SplashScreenPresenter()
-        if let app = UIApplication.shared.delegate as? AppDelegate,
-           let window = app.window {
-            window.switchRootViewController(splashVC)
-        }
+
+        window.switchRootViewController(splashVC)
     }
 
     func goToLogin() {
+        guard let app = UIApplication.shared.delegate as? AppDelegate,
+        let window = app.window else { return }
+
         let loginVC = StoryboardScene.Authentification.loginViewController.instantiate()
         loginVC.presenter = LoginViewPresenter()
-        currentViewController.navigationController?.pushViewController(loginVC, animated: true)
+
+        window.switchRootViewController(loginVC)
     }
 
     func goToHome() {
+        guard let app = UIApplication.shared.delegate as? AppDelegate,
+        let window = app.window else { return }
+
         let homeVC = StoryboardScene.Authentification.homeViewController.instantiate()
         homeVC.presenter = HomeViewPresenter()
-        currentViewController.navigationController?.pushViewController(homeVC, animated: true)
+
+        window.switchRootViewController(UINavigationController(rootViewController: homeVC))
     }
 
     func goToRegistration() {

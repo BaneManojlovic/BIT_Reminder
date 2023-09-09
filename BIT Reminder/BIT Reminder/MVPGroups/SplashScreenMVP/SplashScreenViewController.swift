@@ -14,7 +14,6 @@ class SplashScreenViewController: BaseViewController {
     var presenter = SplashScreenPresenter()
 
     lazy private var authFlowController = AuthentificationFlowController(currentViewController: self)
-//    lazy private var homeFlowController = HomeFlowController(currentViewController: self)
 
     // MARK: - Private Properties
 
@@ -49,10 +48,14 @@ class SplashScreenViewController: BaseViewController {
 extension SplashScreenViewController: SplashScreenPresenterDelegate {
 
     func goToLogin() {
-        self.authFlowController.goToLogin()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.authFlowController.goToLogin()
+        }
     }
 
     func goToHome() {
-        self.authFlowController.goToHome()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.authFlowController.goToHome()
+        }
     }
 }

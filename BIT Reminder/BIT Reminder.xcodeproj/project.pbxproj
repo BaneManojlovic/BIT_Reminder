@@ -35,6 +35,8 @@
 		8D95137B2AAB090500A30E9B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D95137A2AAB090500A30E9B /* RegistrationViewController.swift */; };
 		8D95137D2AAB091400A30E9B /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D95137C2AAB091400A30E9B /* RegistrationView.swift */; };
 		8D95137F2AAB092100A30E9B /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D95137E2AAB092100A30E9B /* RegistrationPresenter.swift */; };
+		8D9513812AAB309A00A30E9B /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9513802AAB309A00A30E9B /* BaseAPI.swift */; };
+		8D9513842AAB327A00A30E9B /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8D9513832AAB327A00A30E9B /* Supabase */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +71,7 @@
 		8D95137A2AAB090500A30E9B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		8D95137C2AAB091400A30E9B /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		8D95137E2AAB092100A30E9B /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		8D9513802AAB309A00A30E9B /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		D1CD5190B349858D99F73037 /* Pods_BIT_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BIT_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -77,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D9513842AAB327A00A30E9B /* Supabase in Frameworks */,
 				6F28FBA5FB39873CD08AA695 /* Pods_BIT_Reminder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +91,7 @@
 		8D6B80A62AA78A43009DF810 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				8D9513802AAB309A00A30E9B /* BaseAPI.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -341,6 +346,9 @@
 			dependencies = (
 			);
 			name = "BIT Reminder";
+			packageProductDependencies = (
+				8D9513832AAB327A00A30E9B /* Supabase */,
+			);
 			productName = "BIT Reminder";
 			productReference = 8D6F5CE72AA3EABF006184CC /* BIT Reminder.app */;
 			productType = "com.apple.product-type.application";
@@ -369,6 +377,9 @@
 				Base,
 			);
 			mainGroup = 8D6F5CDE2AA3EABF006184CC;
+			packageReferences = (
+				8D9513822AAB327A00A30E9B /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			productRefGroup = 8D6F5CE82AA3EABF006184CC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -477,6 +488,7 @@
 				8D6B80D72AA885A5009DF810 /* FlowController.swift in Sources */,
 				8D6B80C62AA861A5009DF810 /* Assets.swift in Sources */,
 				8D95136E2AAA184E00A30E9B /* HomeViewController.swift in Sources */,
+				8D9513812AAB309A00A30E9B /* BaseAPI.swift in Sources */,
 				8D6B80DB2AA887C1009DF810 /* UIWindow+RootTransitionExtension.swift in Sources */,
 				8D6B80D02AA88201009DF810 /* SplashScreenView.swift in Sources */,
 				8D6B80C52AA861A5009DF810 /* StoryboardScenes.swift in Sources */,
@@ -693,6 +705,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8D9513822AAB327A00A30E9B /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8D9513832AAB327A00A30E9B /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D9513822AAB327A00A30E9B /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8D6F5CDF2AA3EABF006184CC /* Project object */;
 }

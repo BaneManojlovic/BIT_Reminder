@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rMM-2I-aHR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="applelogo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QBF-7v-k2Z">
-                                <rect key="frame" x="107" y="337" width="179" height="177.33333333333337"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QBF-7v-k2Z">
+                                <rect key="frame" x="107" y="337.66666666666669" width="179" height="177.66666666666657"/>
                                 <color key="backgroundColor" name="background_blue_color"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <constraints>
@@ -50,18 +50,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wL-W5-0Xg">
-                                <rect key="frame" x="83.333333333333329" y="402" width="226.33333333333343" height="48"/>
+                                <rect key="frame" x="83.333333333333329" y="402" width="226.33333333333337" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhe-yi-IaV">
+                                <rect key="frame" x="16" y="718" width="361" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Eh9-uw-IWT"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ac8-dn-MLZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8wL-W5-0Xg" firstAttribute="centerX" secondItem="4oJ-DN-VDv" secondAttribute="centerX" id="408-if-TWs"/>
+                            <constraint firstItem="ac8-dn-MLZ" firstAttribute="bottom" secondItem="vhe-yi-IaV" secondAttribute="bottom" constant="50" id="iIB-A6-QnS"/>
                             <constraint firstItem="8wL-W5-0Xg" firstAttribute="centerY" secondItem="4oJ-DN-VDv" secondAttribute="centerY" id="mQu-df-q3i"/>
+                            <constraint firstItem="vhe-yi-IaV" firstAttribute="leading" secondItem="ac8-dn-MLZ" secondAttribute="leading" constant="16" id="onf-3N-rpM"/>
+                            <constraint firstItem="ac8-dn-MLZ" firstAttribute="trailing" secondItem="vhe-yi-IaV" secondAttribute="trailing" constant="16" id="pYM-JT-s2z"/>
                         </constraints>
+                        <connections>
+                            <outlet property="logoutButton" destination="vhe-yi-IaV" id="c2O-MM-cqi"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pRu-me-zHK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -111,16 +125,27 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHP-g4-tgf">
+                                <rect key="frame" x="8" y="506" width="377" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Nwv-ax-Km8"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PHN-xz-zjg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ogo-xE-6Yw" firstAttribute="centerX" secondItem="308-hX-6SD" secondAttribute="centerX" id="4Wh-Zq-LqO"/>
+                            <constraint firstItem="PHN-xz-zjg" firstAttribute="trailing" secondItem="vHP-g4-tgf" secondAttribute="trailing" constant="8" id="BGp-fg-7MC"/>
+                            <constraint firstItem="vHP-g4-tgf" firstAttribute="leading" secondItem="PHN-xz-zjg" secondAttribute="leading" constant="8" id="C10-vy-gP9"/>
                             <constraint firstAttribute="trailing" secondItem="sn1-Bu-rEE" secondAttribute="trailing" constant="16" id="G6d-RR-r4h"/>
                             <constraint firstItem="Ogo-xE-6Yw" firstAttribute="top" secondItem="nxC-n9-rBV" secondAttribute="bottom" constant="40" id="Hbu-Px-8A2"/>
                             <constraint firstItem="PHN-xz-zjg" firstAttribute="bottom" secondItem="sn1-Bu-rEE" secondAttribute="bottom" constant="50" id="Hig-sE-LTy"/>
                             <constraint firstItem="Ogo-xE-6Yw" firstAttribute="leading" secondItem="308-hX-6SD" secondAttribute="leadingMargin" constant="8" id="T79-MP-m4m"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ogo-xE-6Yw" secondAttribute="trailing" constant="8" id="YWH-rc-IeF"/>
+                            <constraint firstItem="vHP-g4-tgf" firstAttribute="top" secondItem="Ogo-xE-6Yw" secondAttribute="bottom" constant="20" id="cAK-2I-enV"/>
                             <constraint firstItem="PHN-xz-zjg" firstAttribute="trailing" secondItem="nxC-n9-rBV" secondAttribute="trailing" constant="8" id="ebg-Ti-dF9"/>
                             <constraint firstItem="nxC-n9-rBV" firstAttribute="leading" secondItem="PHN-xz-zjg" secondAttribute="leading" constant="8" id="lD2-1O-Cpp"/>
                             <constraint firstItem="sn1-Bu-rEE" firstAttribute="leading" secondItem="308-hX-6SD" secondAttribute="leading" constant="16" id="pLU-E1-Ipt"/>
@@ -130,6 +155,7 @@
                             <outlet property="emailTextField" destination="Myx-8H-sq8" id="fld-f9-5bg"/>
                             <outlet property="loginButton" destination="sn1-Bu-rEE" id="kVS-fz-0hs"/>
                             <outlet property="passwordTextField" destination="8Ec-FW-I1d" id="rcH-4E-Bqb"/>
+                            <outlet property="registerNewUserButton" destination="vHP-g4-tgf" id="PdL-QW-TWO"/>
                             <outlet property="screenTitleLabel" destination="nxC-n9-rBV" id="eXf-fc-hbb"/>
                         </connections>
                     </view>
@@ -165,29 +191,11 @@
             </objects>
             <point key="canvasLocation" x="2714" y="-35"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="afG-Jc-VJp">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rMM-2I-aHR" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XVX-wv-w4m">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="EzR-l0-KKp"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gyU-Js-ICJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="101.5267175572519" y="-34.507042253521128"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="applelogo" catalog="system" width="105" height="128"/>
+        <image name="clock.fill" catalog="system" width="128" height="123"/>
         <namedColor name="background_blue_color">
-            <color red="0.0" green="0.074509803921568626" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.0" green="0.075000002980232239" blue="0.21199999749660492" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

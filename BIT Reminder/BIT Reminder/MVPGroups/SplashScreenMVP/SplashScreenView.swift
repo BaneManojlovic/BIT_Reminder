@@ -14,7 +14,7 @@ class SplashScreenView: UIView {
     // MARK: - Setup Methods
 
     func setupUI() {
-        self.backgroundColor = .red
+        self.backgroundColor = Asset.backgroundBlueColor.color
     }
 
 }
