@@ -26,7 +26,8 @@ class AuthentificationFlowController: FlowController {
         let loginVC = StoryboardScene.Authentification.loginViewController.instantiate()
         loginVC.presenter = LoginViewPresenter()
 
-        window.switchRootViewController(loginVC)
+        // Nest in UINavigationViewContrller because fo goinig in depth for Register new user screen
+        window.switchRootViewController(UINavigationController(rootViewController: loginVC))
     }
 
     func goToHome() {

@@ -37,6 +37,7 @@
 		8D95137F2AAB092100A30E9B /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D95137E2AAB092100A30E9B /* RegistrationPresenter.swift */; };
 		8D9513812AAB309A00A30E9B /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9513802AAB309A00A30E9B /* BaseAPI.swift */; };
 		8D9513842AAB327A00A30E9B /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8D9513832AAB327A00A30E9B /* Supabase */; };
+		8DBAA5522AAEF2AB0054A5FF /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5512AAEF2AB0054A5FF /* BaseNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		8D95137C2AAB091400A30E9B /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		8D95137E2AAB092100A30E9B /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		8D9513802AAB309A00A30E9B /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		8DBAA5512AAEF2AB0054A5FF /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		D1CD5190B349858D99F73037 /* Pods_BIT_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BIT_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -237,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				8D6B80D42AA88451009DF810 /* BaseViewController.swift */,
+				8DBAA5512AAEF2AB0054A5FF /* BaseNavigationController.swift */,
 			);
 			path = BaseMVP;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DBAA5522AAEF2AB0054A5FF /* BaseNavigationController.swift in Sources */,
 				8D6B80C92AA861A5009DF810 /* Fonts.swift in Sources */,
 				8D95137B2AAB090500A30E9B /* RegistrationViewController.swift in Sources */,
 				8D6B80D22AA88213009DF810 /* SplashScreenPresenter.swift in Sources */,

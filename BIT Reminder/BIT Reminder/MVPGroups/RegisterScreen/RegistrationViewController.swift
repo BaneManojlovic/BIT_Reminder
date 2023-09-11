@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegistrationViewController: BaseViewController {
+class RegistrationViewController: BaseNavigationController {
 
     // MARK: - Properties
 
@@ -27,17 +27,30 @@ class RegistrationViewController: BaseViewController {
 
         self.setupUI()
         self.setupDelegates()
+        self.setupTargets()
     }
 
     // MARK: - Private Setup Methods
 
     private func setupUI() {
-        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = false
+        // set back button
+        self.haveBackButton = true
         self.registrationView.setupUI()
+    }
+
+    private func setupTargets() {
+        self.registrationView.registerButton.addTarget(self, action: #selector(registerButtonAction), for: .touchUpInside)
     }
 
     private func setupDelegates() {
         self.presenter.attachView(view: self)
+    }
+
+    // MARK: - Action Methods
+
+    @objc func registerButtonAction() {
+        debugPrint("Register tapped ...")
     }
 }
 
