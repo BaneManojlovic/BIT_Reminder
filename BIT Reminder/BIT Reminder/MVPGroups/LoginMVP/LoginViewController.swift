@@ -44,11 +44,15 @@ class LoginViewController: BaseViewController {
 
     private func setupTargets() {
         self.loginView.loginButton.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
+        self.loginView.registerNewUserButton.addTarget(self, action: #selector(registerUserButtonAction), for: .touchUpInside)
     }
 
     @objc func loginButtonAction() {
-        debugPrint("Login tapped ...")
-        self.presenter.loginWithEmail(email: "branislav.manojlovic@vegait.rs", password: "BakiMaki106")
+        self.presenter.loginWithEmail(email: "branislav.manojlovic@vegait.rs", password: "MarkoMarkovic123")
+    }
+
+    @objc func registerUserButtonAction() {
+        self.authFlowController.goToRegistration()
     }
 }
 
@@ -57,13 +61,14 @@ class LoginViewController: BaseViewController {
 extension LoginViewController: LoginViewPresenterDelegate {
 
     func loginActionSuccess() {
-        debugPrint("Login ... SUCCESS ...")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.authFlowController.goToHome()
         }
     }
 
-    func loginActionFailed() {
-        debugPrint("Login ... Failed")
+    func loginActionFailed(error: String) {
+        DispatchQueue.main.async {
+            self.showOkAlert(message: error)
+        }
     }
 }

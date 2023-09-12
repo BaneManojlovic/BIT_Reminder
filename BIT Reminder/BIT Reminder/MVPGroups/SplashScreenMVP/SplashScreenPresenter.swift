@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import GoTrue
 
 protocol SplashScreenPresenterDelegate: AnyObject {
     func goToLogin()
     func goToHome()
+    func errorAuthentificationForRetrivedUser(error: Error)
 }
 
 class SplashScreenPresenter {
@@ -17,7 +19,8 @@ class SplashScreenPresenter {
     // MARK: - Properties
 
     weak var delegate: SplashScreenPresenterDelegate?
-    let userDefaults = UserDefaults.standard
+    let userDefaults = UserDefaultsHelper()
+    var authManager = AuthManager()
     private var loggedIn: Bool = false
 
     // MARK: - Initialization
@@ -35,26 +38,42 @@ class SplashScreenPresenter {
     }
 
     func checkAuthorizationStatus() {
-        // TODO: - Remove countdown timer this is just for test
-        var countdown = 100000
-        while countdown > 0 {
-            debugPrint("\(countdown)…")
-            countdown -= 1
-        }
-        debugPrint("Open next screen!!!")
-        // TODO: - Implement logic for deciding where app flow will go
-        // based on user logged in status
-        // Use User Defaults Helper for this
-        if let userEmail = userDefaults.string(forKey: "userEmail"),
-            let userPassword = userDefaults.string(forKey: "userPassword"), userEmail != "", userPassword != "" {
+        if let user = self.userDefaults.getUser() {
             self.loggedIn = true
-        } else {
-            self.loggedIn = false
-        }
-
-        if self.loggedIn {
             self.delegate?.goToHome()
         } else {
+            self.loggedIn = false
+            self.delegate?.goToLogin()
+        }
+    }
+
+    func checkForRetrievedUser() {
+        Task {
+            do {
+                try await self.authManager.retrieveUser { error, response in
+                    if let error = error {
+                        self.delegate?.errorAuthentificationForRetrivedUser(error: error)
+                    } else if let responseData = response {
+                        if let userData = responseData as? GoTrue.User {
+                            let user = User(uid: userData.id.uuidString, email: userData.email)
+                            self.checkAuthorizationStatus(userData: user)
+                        } else {
+                            debugPrint("error")
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    func checkAuthorizationStatus(userData: User) {
+        if let user = self.userDefaults.getUser() {
+            if user.uid == userData.uid {
+                self.loggedIn = true
+                self.delegate?.goToHome()
+            }
+        } else {
+            self.loggedIn = false
             self.delegate?.goToLogin()
         }
     }

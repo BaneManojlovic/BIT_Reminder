@@ -8,7 +8,7 @@
 import Foundation
 import Supabase
 
-struct User {
+struct User: Codable {
     let uid: String
     let email: String?
 }
@@ -27,13 +27,43 @@ class AuthManager {
     init() {}
 
     /// API method for SingIn using email & password
-    func signInWithEmailAndPassword(email: String, password: String, completion: @escaping (Error?) -> Void) async {
+    func signInWithEmailAndPassword(email: String, password: String, completion: @escaping (Error?, Session?) -> Void) async {
         do {
-            _ = try await client.auth.signIn( email: email, password: password )
-            completion(nil)
+            let data = try await client.auth.signIn(email: email, password: password )
+            if ((data as? Session) != nil) {
+                debugPrint("Session je = \(data)")
+                completion(nil, data)
+            }
         } catch {
             debugPrint("error")
-            completion(error)
+            completion(error, nil)
+        }
+    }
+
+    /// API method for Register new user using email & password
+    func registerNewUserWithEmailAndPassword(email: String, password: String, completion: @escaping (Error?, Session?) -> Void) async {
+        do {
+            let data = try await client.auth.signUp(email: email, password: password)
+            if let session = data.session {
+                debugPrint("Session je = \(session)")
+                debugPrint("User je = \(session.user)")
+                completion(nil, session)
+            } else {
+                debugPrint("error - session = nil")
+            }
+        } catch {
+            debugPrint("error")
+            completion(error, nil)
+        }
+    }
+
+    /// API method for check is current User in database
+    func retrieveUser(completion: @escaping (Error?, Any?) -> Void) async {
+        do {
+            let data = try await client.auth.session.user
+            completion(nil, data)
+        } catch {
+            completion(error, nil)
         }
     }
 

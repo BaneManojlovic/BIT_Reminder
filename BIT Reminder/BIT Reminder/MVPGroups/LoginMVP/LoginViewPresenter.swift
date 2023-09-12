@@ -10,14 +10,15 @@ import Supabase
 
 protocol LoginViewPresenterDelegate: AnyObject {
     func loginActionSuccess()
-    func loginActionFailed()
+    func loginActionFailed(error: String)
 }
 
 class LoginViewPresenter {
 
     weak var delegate: LoginViewPresenterDelegate?
     var authManager = AuthManager()
-    let userDefaults = UserDefaults.standard
+//    let userDefaults = UserDefaults.standard
+    private var userDefaultsHelper = UserDefaultsHelper()
 
     // MARK: - Initialization
 
@@ -36,15 +37,15 @@ class LoginViewPresenter {
     func loginWithEmail(email: String, password: String) {
         Task {
             do {
-                try await self.authManager.signInWithEmailAndPassword(email: email, password: password) { error in
+                try await self.authManager.signInWithEmailAndPassword(email: email, password: password) { error, response  in
                     if let error = error {
                         debugPrint(error)
-                    } else {
+                        self.delegate?.loginActionFailed(error: error.localizedDescription)
+                    } else if let session = response {
                         debugPrint("Success")
-                        DispatchQueue.main.async {
-                            self.userDefaults.set(email, forKey: "userEmail")
-                            self.userDefaults.set(password, forKey: "userPassword")
-                        }
+                        let user = User(uid: session.user.id.uuidString,
+                                        email: session.user.email)
+                        self.userDefaultsHelper.setUser(user: user)
                         self.delegate?.loginActionSuccess()
                     }
                 }

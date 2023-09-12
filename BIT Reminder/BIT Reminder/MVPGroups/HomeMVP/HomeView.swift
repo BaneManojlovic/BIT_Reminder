@@ -9,6 +9,7 @@ import UIKit
 
 class HomeView: UIView {
 
+    @IBOutlet weak var homeMessageLabel: UILabel!
     @IBOutlet weak var logoutButton: UIButton!
 
     func setupUI() {

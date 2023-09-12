@@ -10,13 +10,15 @@ import Supabase
 
 protocol HomeViewPresenterDelegate: AnyObject {
     func userLogoutSuccess()
+    func userLogoutFailure(message: String)
 }
 
 class HomeViewPresenter {
 
     weak var delegate: HomeViewPresenterDelegate?
     var authManager = AuthManager()
-    let userDefaults = UserDefaults.standard
+    let userDefaults = UserDefaultsHelper()
+    var userEmail: String?
 
     // MARK: - Initialization
 
@@ -32,18 +34,16 @@ class HomeViewPresenter {
         self.delegate = nil
     }
 
-    // TODO: - This method should be implemented on Setting screen.
+    // TODO: - This method should be implemented on Settings screen.
     // This is here just for test. Will be removed
     func logoutUser() {
         Task {
             do {
                 try await self.authManager.userLogout() { error in
                     if let error = error {
-                        debugPrint(error)
+                        self.delegate?.userLogoutFailure(message: error.localizedDescription)
                     } else {
-                        debugPrint("Success")
-                        self.userDefaults.removeObject(forKey: "userEmail")
-                        self.userDefaults.removeObject(forKey: "userPassword")
+                        self.userDefaults.removeUser()
                         self.delegate?.userLogoutSuccess()
                     }
                 }
