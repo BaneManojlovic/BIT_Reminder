@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoTrue
 
 class SplashScreenViewController: BaseViewController {
 
@@ -29,7 +30,7 @@ class SplashScreenViewController: BaseViewController {
 
         self.setupUI()
         self.setupDelegates()
-        self.presenter.checkAuthorizationStatus()
+        self.presenter.checkForRetrievedUser()
     }
 
     // MARK: - Private Setup Methods
@@ -46,6 +47,27 @@ class SplashScreenViewController: BaseViewController {
 // MARK: - Conforming to SplashScreenPresenterDelegate
 
 extension SplashScreenViewController: SplashScreenPresenterDelegate {
+
+    func errorAuthentificationForRetrivedUser(error: Error) {
+        if let err = error as? GoTrue.GoTrueError {
+            switch err {
+            case .missingExpClaim:
+                break
+            case .malformedJWT:
+                break
+            case .sessionNotFound:
+                self.goToLogin()
+            case .api(let aPIError):
+                break
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.showOkAlert(message: error.localizedDescription, completion:  {
+                    self.goToLogin()
+                })
+            }
+        }
+    }
 
     func goToLogin() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {

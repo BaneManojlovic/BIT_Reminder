@@ -74,6 +74,7 @@
                             <constraint firstItem="ac8-dn-MLZ" firstAttribute="trailing" secondItem="vhe-yi-IaV" secondAttribute="trailing" constant="16" id="pYM-JT-s2z"/>
                         </constraints>
                         <connections>
+                            <outlet property="homeMessageLabel" destination="8wL-W5-0Xg" id="iD7-G2-HMx"/>
                             <outlet property="logoutButton" destination="vhe-yi-IaV" id="c2O-MM-cqi"/>
                         </connections>
                     </view>

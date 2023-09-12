@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoTrue
 
 class RegistrationViewController: BaseNavigationController {
 
@@ -15,6 +16,7 @@ class RegistrationViewController: BaseNavigationController {
 
     // MARK: - Private Properties
 
+    lazy private var authFlowController = AuthentificationFlowController(currentViewController: self)
     private var registrationView: RegistrationView! {
         loadViewIfNeeded()
         return view as? RegistrationView
@@ -50,10 +52,39 @@ class RegistrationViewController: BaseNavigationController {
     // MARK: - Action Methods
 
     @objc func registerButtonAction() {
-        debugPrint("Register tapped ...")
+        // TODO: - First here make data validation check
+        self.presenter.registerNewUserWithEmail(email: "janjanov@gmail.com",
+                                                password: "MarkoMarkovic123")
     }
 }
 
 // MARK: - Conforming to RegistrationPresenterDelegate
 
-extension RegistrationViewController: RegistrationPresenterDelegate { }
+extension RegistrationViewController: RegistrationPresenterDelegate {
+
+    func registarNewUserActionFailure(error: Error) {
+        if let err = error as? GoTrue.GoTrueError {
+            switch err {
+            case .missingExpClaim:
+                break
+            case .malformedJWT:
+                break
+            case .sessionNotFound:
+                DispatchQueue.main.async {
+                    self.showOkAlert(message: error.localizedDescription)
+                }
+            case .api(let aPIError):
+                DispatchQueue.main.async {
+                    self.showOkAlert(message: aPIError.msg ?? "")
+                }
+            }
+        }
+    }
+
+    func registarNewUserActionSuccess() {
+        debugPrint("Success")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.authFlowController.goToHome()
+        }
+    }
+}

@@ -47,16 +47,22 @@ class HomeViewController: BaseViewController {
     }
 
     @objc func logout() {
-        self.presenter.logoutUser()
+        self.showCancelOrYesAlert(message: "Are you sure you want to logout?",
+                                  yesHandler: {
+            self.presenter.logoutUser()
+        })
     }
 }
 
 // MARK: - Conforming to HomeViewPresenterDelegate
 
 extension HomeViewController: HomeViewPresenterDelegate {
+
+    func userLogoutFailure(message: String) {
+        self.showOkAlert(message: message)
+    }
+
     func userLogoutSuccess() {
-        // TODO: - Create OK Alert pop up for user logout success
-        debugPrint("logout success ...")
         DispatchQueue.main.async {
             self.authFlowController.goToSplashScreen()
         }
