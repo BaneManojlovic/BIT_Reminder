@@ -13,7 +13,6 @@ class AuthentificationFlowController: FlowController {
         guard let app = UIApplication.shared.delegate as? AppDelegate,
         let window = app.window else { return }
 
-        // TODO: - Add here emptying of user defaults
         let splashVC = StoryboardScene.Authentification.splashScreenViewController.instantiate()
 
         window.switchRootViewController(splashVC)
@@ -34,16 +33,6 @@ class AuthentificationFlowController: FlowController {
         guard let app = UIApplication.shared.delegate as? AppDelegate,
         let window = app.window else { return }
 
-        let homeVC = StoryboardScene.Authentification.homeViewController.instantiate()
-        homeVC.presenter = HomeViewPresenter()
-
-        window.switchRootViewController(UINavigationController(rootViewController: homeVC))
-    }
-    
-    func goToMainScreen() {
-        guard let app = UIApplication.shared.delegate as? AppDelegate,
-        let window = app.window else { return }
-        
         let tabBar = TabBarController()
         window.switchRootViewController(tabBar)
         tabBar.selectedIndex = 0

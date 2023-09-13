@@ -68,7 +68,11 @@ class BaseNavigationController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.backgroundColor = Asset.backgroundBlueColor.color
+        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+        UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
     }
 
     // MARK: - Private Setup Methods

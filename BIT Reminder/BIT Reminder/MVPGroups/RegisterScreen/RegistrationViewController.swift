@@ -84,7 +84,7 @@ extension RegistrationViewController: RegistrationPresenterDelegate {
     func registarNewUserActionSuccess() {
         debugPrint("Success")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            self.authFlowController.goToMainScreen()
+            self.authFlowController.goToHome()
         }
     }
 }
