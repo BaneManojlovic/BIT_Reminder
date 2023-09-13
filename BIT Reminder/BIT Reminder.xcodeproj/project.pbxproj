@@ -41,6 +41,7 @@
 		8DBAA5542AB03BA40054A5FF /* UIVewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5532AB03BA40054A5FF /* UIVewController+Alerts.swift */; };
 		8DBAA5562AB0407C0054A5FF /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5552AB0407C0054A5FF /* UserDefaultsHelper.swift */; };
 		8DBAA5592AB19EEC0054A5FF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5582AB19EEC0054A5FF /* TabBarController.swift */; };
+		8DBAA55B2AB1AB690054A5FF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA55A2AB1AB690054A5FF /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		8DBAA5532AB03BA40054A5FF /* UIVewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVewController+Alerts.swift"; sourceTree = "<group>"; };
 		8DBAA5552AB0407C0054A5FF /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		8DBAA5582AB19EEC0054A5FF /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		8DBAA55A2AB1AB690054A5FF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D1CD5190B349858D99F73037 /* Pods_BIT_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BIT_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				8D6B80AA2AA78A9B009DF810 /* SwiftGen */,
+				8DBAA55A2AB1AB690054A5FF /* Constants.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				8D6F5CE32AA3EABF006184CC /* Sources */,
 				8D6F5CE42AA3EABF006184CC /* Frameworks */,
 				8D6F5CE52AA3EABF006184CC /* Resources */,
+				457EC066B4E9001CEB5C2CC1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -398,7 +402,7 @@
 			);
 			mainGroup = 8D6F5CDE2AA3EABF006184CC;
 			packageReferences = (
-				8D9513822AAB327A00A30E9B /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				8D9513822AAB327A00A30E9B /* XCRemoteSwiftPackageReference "supabase-swift.git" */,
 			);
 			productRefGroup = 8D6F5CE82AA3EABF006184CC /* Products */;
 			projectDirPath = "";
@@ -423,6 +427,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		457EC066B4E9001CEB5C2CC1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BIT Reminder/Pods-BIT Reminder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BIT Reminder/Pods-BIT Reminder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BIT Reminder/Pods-BIT Reminder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8D6B80B42AA85654009DF810 /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -494,6 +515,7 @@
 				8D6B80C92AA861A5009DF810 /* Fonts.swift in Sources */,
 				8D95137B2AAB090500A30E9B /* RegistrationViewController.swift in Sources */,
 				8D6B80D22AA88213009DF810 /* SplashScreenPresenter.swift in Sources */,
+				8DBAA55B2AB1AB690054A5FF /* Constants.swift in Sources */,
 				8D6B80D92AA885E0009DF810 /* AuthentificationFlowController.swift in Sources */,
 				8D6B80C72AA861A5009DF810 /* StoryboardSegues.swift in Sources */,
 				8D9513742AAAFDA700A30E9B /* LoginViewController.swift in Sources */,
@@ -731,7 +753,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		8D9513822AAB327A00A30E9B /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+		8D9513822AAB327A00A30E9B /* XCRemoteSwiftPackageReference "supabase-swift.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/supabase/supabase-swift.git";
 			requirement = {
@@ -744,7 +766,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		8D9513832AAB327A00A30E9B /* Supabase */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8D9513822AAB327A00A30E9B /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			package = 8D9513822AAB327A00A30E9B /* XCRemoteSwiftPackageReference "supabase-swift.git" */;
 			productName = Supabase;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import IQKeyboardManager
 
-class RegistrationView: UIView {
+class RegistrationView: IQPreviousNextView {
 
     // MARK: - Outlets
 

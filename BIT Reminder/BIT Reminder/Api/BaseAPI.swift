@@ -18,9 +18,9 @@ class AuthManager {
     static let shared = AuthManager()
 
     /// unique projecturl from supabase
-    static let projectUrl = URL(string: "https://oyiekaudpdofwfnabsqa.supabase.co")!
+    static let projectUrl = URL(string: Constants.baseURL)!
     /// unique api key from supabase
-    static let apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im95aWVrYXVkcGRvZndmbmFic3FhIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTQxNjY3NDksImV4cCI6MjAwOTc0Mjc0OX0.LsiROrdeoROe5m9Gaz6TD8fO0cYSRyXONYYTAhgfQhg"
+    static let apiKey = Constants.baseApiKey
 
     let client = SupabaseClient(supabaseURL: projectUrl, supabaseKey: apiKey)
 

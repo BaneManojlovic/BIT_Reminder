@@ -13,7 +13,7 @@ class HomeView: UIView {
     @IBOutlet weak var logoutButton: UIButton!
 
     func setupUI() {
-        self.backgroundColor = .yellow
+        self.backgroundColor = Asset.backgroundBlueColor.color
         self.setupButtons()
     }
 

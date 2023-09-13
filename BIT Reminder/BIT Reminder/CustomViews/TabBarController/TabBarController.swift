@@ -53,7 +53,7 @@ class TabBarController: UITabBarController {
         let homeVC = StoryboardScene.Authentification.homeViewController.instantiate()
         homeVC.presenter = HomeViewPresenter()
         homeVC.presenter.screenName = "Home"
-        homeVC.tabBarItem = UITabBarItem.init(title: "",
+        homeVC.tabBarItem = UITabBarItem.init(title: "Home",
                                               image: UIImage(systemName: "house"),
                                               selectedImage: UIImage(systemName: "house.fill"))
         return homeVC
@@ -63,7 +63,7 @@ class TabBarController: UITabBarController {
         let homeVC = StoryboardScene.Authentification.homeViewController.instantiate()
         homeVC.presenter = HomeViewPresenter()
         homeVC.presenter.screenName = "Map"
-        homeVC.tabBarItem = UITabBarItem.init(title: "",
+        homeVC.tabBarItem = UITabBarItem.init(title: "Map",
                                               image: UIImage(systemName: "map"),
                                               selectedImage: UIImage(systemName: "map.fill"))
         return homeVC
@@ -73,7 +73,7 @@ class TabBarController: UITabBarController {
         let homeVC = StoryboardScene.Authentification.homeViewController.instantiate()
         homeVC.presenter = HomeViewPresenter()
         homeVC.presenter.screenName = "Album"
-        homeVC.tabBarItem = UITabBarItem.init(title: "",
+        homeVC.tabBarItem = UITabBarItem.init(title: "Album",
                                               image: UIImage(systemName: "photo.on.rectangle"),
                                               selectedImage: UIImage(systemName: "photo.fill.on.rectangle.fill"))
         return homeVC
@@ -83,7 +83,7 @@ class TabBarController: UITabBarController {
         let homeVC = StoryboardScene.Authentification.homeViewController.instantiate()
         homeVC.presenter = HomeViewPresenter()
         homeVC.presenter.screenName = "Settings"
-        homeVC.tabBarItem = UITabBarItem.init(title: "",
+        homeVC.tabBarItem = UITabBarItem.init(title: "Settings",
                                               image: UIImage(systemName: "gearshape"),
                                               selectedImage: UIImage(systemName: "gearshape.fill"))
         return homeVC

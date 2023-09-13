@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import IQKeyboardManager
 
-class LoginView: UIView {
+class LoginView: IQPreviousNextView {
 
     // MARK: - Outlets
 
