@@ -52,9 +52,19 @@ class RegistrationViewController: BaseNavigationController {
     // MARK: - Action Methods
 
     @objc func registerButtonAction() {
-        // TODO: - First here make data validation check
-        self.presenter.registerNewUserWithEmail(email: "bobbobovic@gmail.com",
-                                                password: "MarkoMarkovic123")
+
+        if let name = self.registrationView.userNameTextField.text,
+           let email = self.registrationView.emailTextField.text,
+           let password = self.registrationView.passwordTextField.text,
+           let repeatedPassword = self.registrationView.repeatPasswordTextField.text {
+            self.presenter.registerNewUserWithEmail(user: UserModel(uid: "",
+                                                                    name: name,
+                                                                    email: email,
+                                                                    password: password,
+                                                                    repeatedPassword: repeatedPassword))
+        } else {
+            self.showOkAlert(message: "Error while Register new user")
+        }
     }
 }
 
@@ -85,6 +95,35 @@ extension RegistrationViewController: RegistrationPresenterDelegate {
         debugPrint("Success")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.authFlowController.goToHome()
+        }
+    }
+
+    func handleValidationError(error: UserModel.ValidationError) {
+        switch error {
+        case .nameEmpty:
+            self.showValidationError(message: "nameEmpty")
+        case .nameInvalid:
+            self.showValidationError(message: "nameInvalid")
+        case .emailEmpty:
+            self.showValidationError(message: "emailEmpty")
+        case .emailInvalid:
+            self.showValidationError(message: "emailInvalid")
+        case .passwordEmpty:
+            self.showValidationError(message: "passwordEmpty")
+        case .passwordInvalid:
+            self.showValidationError(message: "passwordInvalid")
+        case .repeatPasswordEmpty:
+            self.showValidationError(message: "repeatPasswordEmpty")
+        case .repeatPasswordInvalid:
+            self.showValidationError(message: "repeatPasswordInvalid")
+        case .passwordsDontMatch:
+            self.showValidationError(message: "passwordsDontMatch")
+        }
+    }
+
+    func showValidationError(message: String) {
+        DispatchQueue.main.async {
+            self.showOkAlert(message: message)
         }
     }
 }

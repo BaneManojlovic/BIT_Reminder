@@ -42,6 +42,8 @@
 		8DBAA5562AB0407C0054A5FF /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5552AB0407C0054A5FF /* UserDefaultsHelper.swift */; };
 		8DBAA5592AB19EEC0054A5FF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5582AB19EEC0054A5FF /* TabBarController.swift */; };
 		8DBAA55B2AB1AB690054A5FF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA55A2AB1AB690054A5FF /* Constants.swift */; };
+		8DBAA55D2AB1DDA70054A5FF /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA55C2AB1DDA70054A5FF /* UserModel.swift */; };
+		8DBAA55F2AB1DDEB0054A5FF /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA55E2AB1DDEB0054A5FF /* StringHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		8DBAA5552AB0407C0054A5FF /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		8DBAA5582AB19EEC0054A5FF /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8DBAA55A2AB1AB690054A5FF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8DBAA55C2AB1DDA70054A5FF /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		8DBAA55E2AB1DDEB0054A5FF /* StringHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
 		D1CD5190B349858D99F73037 /* Pods_BIT_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BIT_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -168,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				8DBAA5552AB0407C0054A5FF /* UserDefaultsHelper.swift */,
+				8DBAA55E2AB1DDEB0054A5FF /* StringHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 		8D6B80B02AA78AEF009DF810 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8DBAA55C2AB1DDA70054A5FF /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -402,7 +408,7 @@
 			);
 			mainGroup = 8D6F5CDE2AA3EABF006184CC;
 			packageReferences = (
-				8D9513822AAB327A00A30E9B /* XCRemoteSwiftPackageReference "supabase-swift.git" */,
+				8D9513822AAB327A00A30E9B /* XCRemoteSwiftPackageReference "supabase-swift" */,
 			);
 			productRefGroup = 8D6F5CE82AA3EABF006184CC /* Products */;
 			projectDirPath = "";
@@ -514,6 +520,7 @@
 				8DBAA5522AAEF2AB0054A5FF /* BaseNavigationController.swift in Sources */,
 				8D6B80C92AA861A5009DF810 /* Fonts.swift in Sources */,
 				8D95137B2AAB090500A30E9B /* RegistrationViewController.swift in Sources */,
+				8DBAA55F2AB1DDEB0054A5FF /* StringHelper.swift in Sources */,
 				8D6B80D22AA88213009DF810 /* SplashScreenPresenter.swift in Sources */,
 				8DBAA55B2AB1AB690054A5FF /* Constants.swift in Sources */,
 				8D6B80D92AA885E0009DF810 /* AuthentificationFlowController.swift in Sources */,
@@ -530,6 +537,7 @@
 				8D6B80D52AA88451009DF810 /* BaseViewController.swift in Sources */,
 				8D6F5CEB2AA3EABF006184CC /* AppDelegate.swift in Sources */,
 				8D6F5CED2AA3EABF006184CC /* SceneDelegate.swift in Sources */,
+				8DBAA55D2AB1DDA70054A5FF /* UserModel.swift in Sources */,
 				8D6B80D72AA885A5009DF810 /* FlowController.swift in Sources */,
 				8D6B80C62AA861A5009DF810 /* Assets.swift in Sources */,
 				8D95136E2AAA184E00A30E9B /* HomeViewController.swift in Sources */,
@@ -753,7 +761,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		8D9513822AAB327A00A30E9B /* XCRemoteSwiftPackageReference "supabase-swift.git" */ = {
+		8D9513822AAB327A00A30E9B /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/supabase/supabase-swift.git";
 			requirement = {
@@ -766,7 +774,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		8D9513832AAB327A00A30E9B /* Supabase */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8D9513822AAB327A00A30E9B /* XCRemoteSwiftPackageReference "supabase-swift.git" */;
+			package = 8D9513822AAB327A00A30E9B /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Supabase;
 		};
 /* End XCSwiftPackageProductDependency section */

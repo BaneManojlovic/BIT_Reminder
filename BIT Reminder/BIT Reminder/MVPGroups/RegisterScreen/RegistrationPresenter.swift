@@ -10,6 +10,7 @@ import UIKit
 protocol RegistrationPresenterDelegate: AnyObject {
     func registarNewUserActionSuccess()
     func registarNewUserActionFailure(error: Error)
+    func handleValidationError(error: UserModel.ValidationError)
 }
 
 class RegistrationPresenter {
@@ -32,10 +33,11 @@ class RegistrationPresenter {
         self.delegate = nil
     }
 
-    func registerNewUserWithEmail(email: String, password: String) {
+    func registerNewUserWithEmail(user: UserModel) {
         Task {
             do {
-                try await self.authManager.registerNewUserWithEmailAndPassword(email: email, password: password) { error, response  in
+                try user.validateRegistration()
+                try await self.authManager.registerNewUserWithEmailAndPassword(email: user.email, password: user.password) { error, response  in
                     if let error = error {
                         debugPrint(error.localizedDescription)
                         self.delegate?.registarNewUserActionFailure(error: error)
@@ -46,6 +48,8 @@ class RegistrationPresenter {
                         self.delegate?.registarNewUserActionSuccess()
                     }
                 }
+            } catch let error as UserModel.ValidationError {
+                self.delegate?.handleValidationError(error: error)
             }
         }
     }
