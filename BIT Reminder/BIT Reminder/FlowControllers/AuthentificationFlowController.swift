@@ -39,6 +39,15 @@ class AuthentificationFlowController: FlowController {
 
         window.switchRootViewController(UINavigationController(rootViewController: homeVC))
     }
+    
+    func goToMainScreen() {
+        guard let app = UIApplication.shared.delegate as? AppDelegate,
+        let window = app.window else { return }
+        
+        let tabBar = TabBarController()
+        window.switchRootViewController(tabBar)
+        tabBar.selectedIndex = 0
+    }
 
     func goToRegistration() {
         let regVC = StoryboardScene.Authentification.registrationViewController.instantiate()

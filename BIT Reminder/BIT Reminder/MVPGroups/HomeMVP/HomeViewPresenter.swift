@@ -19,6 +19,7 @@ class HomeViewPresenter {
     var authManager = AuthManager()
     let userDefaults = UserDefaultsHelper()
     var userEmail: String?
+    var screenName: String?
 
     // MARK: - Initialization
 

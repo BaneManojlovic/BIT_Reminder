@@ -40,6 +40,7 @@
 		8DBAA5522AAEF2AB0054A5FF /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5512AAEF2AB0054A5FF /* BaseNavigationController.swift */; };
 		8DBAA5542AB03BA40054A5FF /* UIVewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5532AB03BA40054A5FF /* UIVewController+Alerts.swift */; };
 		8DBAA5562AB0407C0054A5FF /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5552AB0407C0054A5FF /* UserDefaultsHelper.swift */; };
+		8DBAA5592AB19EEC0054A5FF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5582AB19EEC0054A5FF /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		8DBAA5512AAEF2AB0054A5FF /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		8DBAA5532AB03BA40054A5FF /* UIVewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVewController+Alerts.swift"; sourceTree = "<group>"; };
 		8DBAA5552AB0407C0054A5FF /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		8DBAA5582AB19EEC0054A5FF /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		D1CD5190B349858D99F73037 /* Pods_BIT_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BIT_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -199,6 +201,7 @@
 		8D6B80B22AA78B08009DF810 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				8DBAA5572AB19ED50054A5FF /* TabBarController */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -317,6 +320,14 @@
 				8D95137E2AAB092100A30E9B /* RegistrationPresenter.swift */,
 			);
 			path = RegisterScreen;
+			sourceTree = "<group>";
+		};
+		8DBAA5572AB19ED50054A5FF /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				8DBAA5582AB19EEC0054A5FF /* TabBarController.swift */,
+			);
+			path = TabBarController;
 			sourceTree = "<group>";
 		};
 		8F2EAC3CDAB279FE1F3F0FC0 /* Pods */ = {
@@ -501,6 +512,7 @@
 				8D6B80C62AA861A5009DF810 /* Assets.swift in Sources */,
 				8D95136E2AAA184E00A30E9B /* HomeViewController.swift in Sources */,
 				8D9513812AAB309A00A30E9B /* BaseAPI.swift in Sources */,
+				8DBAA5592AB19EEC0054A5FF /* TabBarController.swift in Sources */,
 				8D6B80DB2AA887C1009DF810 /* UIWindow+RootTransitionExtension.swift in Sources */,
 				8D6B80D02AA88201009DF810 /* SplashScreenView.swift in Sources */,
 				8D6B80C52AA861A5009DF810 /* StoryboardScenes.swift in Sources */,

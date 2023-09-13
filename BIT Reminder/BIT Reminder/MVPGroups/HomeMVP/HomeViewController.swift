@@ -35,6 +35,9 @@ class HomeViewController: BaseViewController {
 
     private func setupUI() {
         self.navigationController?.isNavigationBarHidden = true
+        if let name = self.presenter.screenName {
+            self.homeView.setupScreenName(name: name)
+        }
         self.homeView.setupUI()
     }
 

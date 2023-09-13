@@ -23,4 +23,8 @@ class HomeView: UIView {
         self.logoutButton.tintColor = .white
         self.logoutButton.layer.cornerRadius = 10
     }
+
+    func setupScreenName(name: String) {
+        self.homeMessageLabel.text = name
+    }
 }

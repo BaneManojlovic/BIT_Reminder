@@ -53,7 +53,7 @@ class RegistrationViewController: BaseNavigationController {
 
     @objc func registerButtonAction() {
         // TODO: - First here make data validation check
-        self.presenter.registerNewUserWithEmail(email: "janjanov@gmail.com",
+        self.presenter.registerNewUserWithEmail(email: "bobbobovic@gmail.com",
                                                 password: "MarkoMarkovic123")
     }
 }
@@ -84,7 +84,7 @@ extension RegistrationViewController: RegistrationPresenterDelegate {
     func registarNewUserActionSuccess() {
         debugPrint("Success")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            self.authFlowController.goToHome()
+            self.authFlowController.goToMainScreen()
         }
     }
 }

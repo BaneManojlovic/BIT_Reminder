@@ -62,7 +62,7 @@ extension LoginViewController: LoginViewPresenterDelegate {
 
     func loginActionSuccess() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            self.authFlowController.goToHome()
+            self.authFlowController.goToMainScreen()
         }
     }
 
