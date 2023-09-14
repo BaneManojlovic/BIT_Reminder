@@ -44,5 +44,11 @@ class AuthentificationFlowController: FlowController {
         currentViewController.navigationController?.pushViewController(regVC, animated: true)
     }
 
+    func goToAddNewReminder() {
+        let anrVC = StoryboardScene.Authentification.addNewReminderViewController.instantiate()
+        anrVC.presenter = AddNewReminderViewPresenter()
+        currentViewController.navigationController?.pushViewController(anrVC, animated: true)
+    }
+
     func goToForgotPassword() { }
 }

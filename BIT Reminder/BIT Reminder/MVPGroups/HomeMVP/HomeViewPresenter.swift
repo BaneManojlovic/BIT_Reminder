@@ -62,4 +62,9 @@ class HomeViewPresenter {
             }
         }
     }
+
+    func deleteReminder() {
+        // TODO: - to be implemented
+        debugPrint("delete delete ...")
+    }
 }

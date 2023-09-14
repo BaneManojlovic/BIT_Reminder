@@ -17,6 +17,7 @@ class SettingsViewPresenter {
     weak var delegate: SettingsViewPresenterDelegate?
     var authManager = AuthManager()
     let userDefaults = UserDefaultsHelper()
+    var settingsModel: [SettingsModel] = []
 
     // MARK: - Initialization
 
@@ -30,6 +31,14 @@ class SettingsViewPresenter {
 
     func detachView() {
         self.delegate = nil
+    }
+    
+    func setupSettingsList() {
+        self.settingsModel = []
+        self.settingsModel.append(SettingsModel(title: "Profile"))
+        self.settingsModel.append(SettingsModel(title: "Tutorial"))
+        self.settingsModel.append(SettingsModel(title: "Terms & Conditions"))
+        self.settingsModel.append(SettingsModel(title: "Logout"))
     }
 
     func logoutUser() {

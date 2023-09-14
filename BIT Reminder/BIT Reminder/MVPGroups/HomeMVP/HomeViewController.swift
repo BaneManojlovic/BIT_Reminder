@@ -58,8 +58,7 @@ class HomeViewController: BaseNavigationController {
 
     override func addButtonAction() {
         super.addButtonAction()
-        // TODO: - Open add new reminder screen
-        debugPrint("overriden ... do something")
+        self.authFlowController.goToAddNewReminder()
     }
 }
 
@@ -78,7 +77,7 @@ extension HomeViewController: HomeViewPresenterDelegate {
     }
 }
 
-// MARK: - Conforming to UITableViewDelegate
+// MARK: - Conforming to UITableViewDelegate, UITableViewDataSource
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
@@ -105,6 +104,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if editingStyle == .delete {
             self.presenter.reminders.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            self.presenter.deleteReminder()
         }
     }
 }

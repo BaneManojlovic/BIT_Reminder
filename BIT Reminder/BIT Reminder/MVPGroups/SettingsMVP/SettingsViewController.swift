@@ -23,6 +23,7 @@ class SettingsViewController: BaseNavigationController {
         self.setupUI()
         self.setupDelegates()
         self.setupTargets()
+        self.presenter.setupSettingsList()
     }
 
     private func setupUI() {
@@ -36,11 +37,11 @@ class SettingsViewController: BaseNavigationController {
 
     private func setupDelegates() {
         self.presenter.attachView(view: self)
+        self.settingsView.tableView.delegate = self
+        self.settingsView.tableView.dataSource = self
     }
 
-    private func setupTargets() {
-        self.settingsView.logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
-    }
+    private func setupTargets() { }
 
     @objc func logout() {
         self.showCancelOrYesAlert(message: "Are you sure you want to logout?",
@@ -61,6 +62,49 @@ extension SettingsViewController: SettingsViewPresenterDelegate {
     func userLogoutSuccess() {
         DispatchQueue.main.async {
             self.authFlowController.goToSplashScreen()
+        }
+    }
+}
+
+// MARK: - Conforming to UITableViewDelegate, UITableViewDataSource
+
+extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.presenter.settingsModel.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.reuseIdentifier,
+        for: indexPath) as? SettingsTableViewCell else { return UITableViewCell() }
+        /// create model to fill in data for cell
+        let model = self.presenter.settingsModel[indexPath.row]
+        /// fill cell with model data
+        cell.fillCellData(text: model.title)
+        /// return cell
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            debugPrint("0")
+            self.showOkAlert(message: "Not yet implemented!")
+        case 1:
+            debugPrint("1")
+            self.showOkAlert(message: "Not yet implemented!")
+        case 2:
+            debugPrint("2")
+            self.showOkAlert(message: "Not yet implemented!")
+        case 3:
+            debugPrint("3")
+            self.logout()
+        default:
+            break
         }
     }
 }

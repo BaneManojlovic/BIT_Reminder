@@ -50,6 +50,12 @@
 		8DBAA5682AB1FD640054A5FF /* SettingsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5672AB1FD640054A5FF /* SettingsViewPresenter.swift */; };
 		8DBAA56C2AB204FF0054A5FF /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA56A2AB204FF0054A5FF /* ReminderTableViewCell.swift */; };
 		8DBAA56D2AB204FF0054A5FF /* ReminderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBAA56B2AB204FF0054A5FF /* ReminderTableViewCell.xib */; };
+		8DBAA5722AB2A80A0054A5FF /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5702AB2A80A0054A5FF /* SettingsTableViewCell.swift */; };
+		8DBAA5732AB2A80A0054A5FF /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBAA5712AB2A80A0054A5FF /* SettingsTableViewCell.xib */; };
+		8DBAA5752AB2AA720054A5FF /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5742AB2AA720054A5FF /* SettingsModel.swift */; };
+		8DBAA5782AB2AF360054A5FF /* AddNewReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5772AB2AF360054A5FF /* AddNewReminderViewController.swift */; };
+		8DBAA57A2AB2AF860054A5FF /* AddNewReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5792AB2AF860054A5FF /* AddNewReminderView.swift */; };
+		8DBAA57C2AB2AF950054A5FF /* AddNewReminderViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA57B2AB2AF950054A5FF /* AddNewReminderViewPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +104,12 @@
 		8DBAA5672AB1FD640054A5FF /* SettingsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewPresenter.swift; sourceTree = "<group>"; };
 		8DBAA56A2AB204FF0054A5FF /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
 		8DBAA56B2AB204FF0054A5FF /* ReminderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderTableViewCell.xib; sourceTree = "<group>"; };
+		8DBAA5702AB2A80A0054A5FF /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		8DBAA5712AB2A80A0054A5FF /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		8DBAA5742AB2AA720054A5FF /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		8DBAA5772AB2AF360054A5FF /* AddNewReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewReminderViewController.swift; sourceTree = "<group>"; };
+		8DBAA5792AB2AF860054A5FF /* AddNewReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewReminderView.swift; sourceTree = "<group>"; };
+		8DBAA57B2AB2AF950054A5FF /* AddNewReminderViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewReminderViewPresenter.swift; sourceTree = "<group>"; };
 		D1CD5190B349858D99F73037 /* Pods_BIT_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BIT_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -208,6 +220,7 @@
 			children = (
 				8DBAA55C2AB1DDA70054A5FF /* UserModel.swift */,
 				8DBAA5602AB1F5AA0054A5FF /* Reminder.swift */,
+				8DBAA5742AB2AA720054A5FF /* SettingsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -232,6 +245,7 @@
 		8D6B80B32AA78B17009DF810 /* MVPGroups */ = {
 			isa = PBXGroup;
 			children = (
+				8DBAA5762AB2AF170054A5FF /* AddNewReminderMVP */,
 				8DBAA5622AB1FD220054A5FF /* SettingsMVP */,
 				8D9513792AAB08E800A30E9B /* RegisterScreen */,
 				8D95136C2AAA167F00A30E9B /* LoginMVP */,
@@ -367,10 +381,38 @@
 		8DBAA5692AB204DF0054A5FF /* CutomTableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				8DBAA56A2AB204FF0054A5FF /* ReminderTableViewCell.swift */,
-				8DBAA56B2AB204FF0054A5FF /* ReminderTableViewCell.xib */,
+				8DBAA56F2AB2A7EE0054A5FF /* SettingsTableViewCell */,
+				8DBAA56E2AB2A7D80054A5FF /* ReminderTableViewCell */,
 			);
 			path = CutomTableViewCells;
+			sourceTree = "<group>";
+		};
+		8DBAA56E2AB2A7D80054A5FF /* ReminderTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8DBAA56B2AB204FF0054A5FF /* ReminderTableViewCell.xib */,
+				8DBAA56A2AB204FF0054A5FF /* ReminderTableViewCell.swift */,
+			);
+			path = ReminderTableViewCell;
+			sourceTree = "<group>";
+		};
+		8DBAA56F2AB2A7EE0054A5FF /* SettingsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8DBAA5702AB2A80A0054A5FF /* SettingsTableViewCell.swift */,
+				8DBAA5712AB2A80A0054A5FF /* SettingsTableViewCell.xib */,
+			);
+			path = SettingsTableViewCell;
+			sourceTree = "<group>";
+		};
+		8DBAA5762AB2AF170054A5FF /* AddNewReminderMVP */ = {
+			isa = PBXGroup;
+			children = (
+				8DBAA5772AB2AF360054A5FF /* AddNewReminderViewController.swift */,
+				8DBAA5792AB2AF860054A5FF /* AddNewReminderView.swift */,
+				8DBAA57B2AB2AF950054A5FF /* AddNewReminderViewPresenter.swift */,
+			);
+			path = AddNewReminderMVP;
 			sourceTree = "<group>";
 		};
 		8F2EAC3CDAB279FE1F3F0FC0 /* Pods */ = {
@@ -461,6 +503,7 @@
 				8D6B80BF2AA8617D009DF810 /* Localizable.strings in Resources */,
 				8D6B80CB2AA881BF009DF810 /* Authentification.storyboard in Resources */,
 				8D6F5CF42AA3EAC0006184CC /* Assets.xcassets in Resources */,
+				8DBAA5732AB2A80A0054A5FF /* SettingsTableViewCell.xib in Resources */,
 				8DBAA56D2AB204FF0054A5FF /* ReminderTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,6 +606,7 @@
 				8DBAA56C2AB204FF0054A5FF /* ReminderTableViewCell.swift in Sources */,
 				8D6B80C72AA861A5009DF810 /* StoryboardSegues.swift in Sources */,
 				8D9513742AAAFDA700A30E9B /* LoginViewController.swift in Sources */,
+				8DBAA5752AB2AA720054A5FF /* SettingsModel.swift in Sources */,
 				8D9513722AAA186800A30E9B /* HomeViewPresenter.swift in Sources */,
 				8D95137F2AAB092100A30E9B /* RegistrationPresenter.swift in Sources */,
 				8D6B80CE2AA881EC009DF810 /* SplashScreenViewController.swift in Sources */,
@@ -575,15 +619,19 @@
 				8D6B80D52AA88451009DF810 /* BaseViewController.swift in Sources */,
 				8D6F5CEB2AA3EABF006184CC /* AppDelegate.swift in Sources */,
 				8D6F5CED2AA3EABF006184CC /* SceneDelegate.swift in Sources */,
+				8DBAA5782AB2AF360054A5FF /* AddNewReminderViewController.swift in Sources */,
+				8DBAA5722AB2A80A0054A5FF /* SettingsTableViewCell.swift in Sources */,
 				8DBAA55D2AB1DDA70054A5FF /* UserModel.swift in Sources */,
 				8D6B80D72AA885A5009DF810 /* FlowController.swift in Sources */,
 				8D6B80C62AA861A5009DF810 /* Assets.swift in Sources */,
+				8DBAA57C2AB2AF950054A5FF /* AddNewReminderViewPresenter.swift in Sources */,
 				8DBAA5612AB1F5AA0054A5FF /* Reminder.swift in Sources */,
 				8D95136E2AAA184E00A30E9B /* HomeViewController.swift in Sources */,
 				8D9513812AAB309A00A30E9B /* BaseAPI.swift in Sources */,
 				8DBAA5592AB19EEC0054A5FF /* TabBarController.swift in Sources */,
 				8D6B80DB2AA887C1009DF810 /* UIWindow+RootTransitionExtension.swift in Sources */,
 				8DBAA5642AB1FD400054A5FF /* SettingsViewController.swift in Sources */,
+				8DBAA57A2AB2AF860054A5FF /* AddNewReminderView.swift in Sources */,
 				8D6B80D02AA88201009DF810 /* SplashScreenView.swift in Sources */,
 				8D6B80C52AA861A5009DF810 /* StoryboardScenes.swift in Sources */,
 				8D9513762AAAFDB500A30E9B /* LoginView.swift in Sources */,

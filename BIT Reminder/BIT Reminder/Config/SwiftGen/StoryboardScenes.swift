@@ -18,6 +18,8 @@ internal enum StoryboardScene {
 
     internal static let initialScene = InitialSceneType<SplashScreenViewController>(storyboard: Authentification.self)
 
+    internal static let addNewReminderViewController = SceneType<AddNewReminderViewController>(storyboard: Authentification.self, identifier: "AddNewReminderViewController")
+
     internal static let homeViewController = SceneType<HomeViewController>(storyboard: Authentification.self, identifier: "HomeViewController")
 
     internal static let loginViewController = SceneType<LoginViewController>(storyboard: Authentification.self, identifier: "LoginViewController")

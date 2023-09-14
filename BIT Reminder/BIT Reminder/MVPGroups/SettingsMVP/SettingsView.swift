@@ -8,18 +8,13 @@
 import UIKit
 
 class SettingsView: UIView {
-    
-    @IBOutlet weak var logoutButton: UIButton!
+
+    @IBOutlet weak var tableView: UITableView!
 
     func setupUI() {
         self.backgroundColor = Asset.backgroundBlueColor.color
-        self.setupButtons()
-    }
-
-    private func setupButtons() {
-        self.logoutButton.backgroundColor = Asset.buttonBlueColor.color
-        self.logoutButton.setTitle("Logout", for: .normal)
-        self.logoutButton.tintColor = .white
-        self.logoutButton.layer.cornerRadius = 10
+        self.tableView.backgroundColor = Asset.backgroundBlueColor.color
+        self.tableView.register(UINib(nibName: SettingsTableViewCell.reuseIdentifier, bundle: nil),
+                                forCellReuseIdentifier: SettingsTableViewCell.reuseIdentifier)
     }
 }
