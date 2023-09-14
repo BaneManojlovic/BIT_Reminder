@@ -66,8 +66,22 @@ class HomeViewController: BaseNavigationController {
 
 extension HomeViewController: HomeViewPresenterDelegate {
 
+    func deleteReminderFailure(message: String) {
+        DispatchQueue.main.async {
+            self.showOkAlert(message: message)
+        }
+    }
+
+    func deleteReminderSuccess() {
+        DispatchQueue.main.async {
+            self.homeView.tableView.reloadData()
+        }
+    }
+
     func getRemindersFailure(error: String) {
-        self.showOkAlert(message: error)
+        DispatchQueue.main.async {
+            self.showOkAlert(message: error)
+        }
     }
 
     func getRemindersSuccess(response: [Reminder]) {
@@ -102,9 +116,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let model = self.presenter.reminders[indexPath.row]
+            self.presenter.deleteReminder(model: model)
             self.presenter.reminders.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            self.presenter.deleteReminder()
+            
         }
     }
 }

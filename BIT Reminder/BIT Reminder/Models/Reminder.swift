@@ -9,14 +9,10 @@ import Foundation
 
 struct Reminder: Codable {
 
-    var id: Int
-    //var createdAt: String
+    var id: Int?
     var title: String
     var description: String
     var important: Bool
-    var date: String
+    var date: String?
 
-//    private enum CodingKeys: String, CodingKey {
-//        case id, createdAt = "created_at", title, description, date, important
-//    }
 }

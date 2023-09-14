@@ -6,14 +6,17 @@
 //
 
 import Foundation
+import KRProgressHUD
 
 protocol AddNewReminderViewPresenterDelegate: AnyObject {
-
+    func addNewReminderFailure(message: String)
+    func addNewReminderSuccess()
 }
 
 class AddNewReminderViewPresenter {
 
     weak var delegate: AddNewReminderViewPresenterDelegate?
+    var authManager = AuthManager()
 
     // MARK: - Initialization
 
@@ -29,7 +32,26 @@ class AddNewReminderViewPresenter {
         self.delegate = nil
     }
 
-    func addNewReminder() {
+    func addNewReminder(model: Reminder) {
         debugPrint("Add ...")
+        KRProgressHUD.show()
+        Task {
+            do {
+                try await self.authManager.addNewReminder(model: model) { error, response in
+                    if let error = error {
+                        debugPrint(error)
+                        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                           KRProgressHUD.dismiss()
+                        }
+                        self.delegate?.addNewReminderFailure(message: error.localizedDescription)
+                    } else if let resp = response {
+                        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                           KRProgressHUD.dismiss()
+                        }
+                        self.delegate?.addNewReminderSuccess()
+                    }
+                }
+            }
+        }
     }
 }

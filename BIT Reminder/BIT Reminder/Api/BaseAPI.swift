@@ -89,4 +89,26 @@ class AuthManager {
             completion(error, nil)
         }
     }
+
+    func addNewReminder(model: Reminder, completion: @escaping (Error?, PostgrestResponse<Void>?) -> Void) async {
+        do {
+            let response = try await client.database.from("reminders").insert(values: model).execute()
+            completion(nil, response)
+        } catch {
+            debugPrint("error")
+            completion(error, nil)
+        }
+    }
+
+    func deleteReminder(tableName: String, model: Reminder, completion: @escaping (Error?) -> Void) async {
+        if let modelId = model.id {
+            do {
+                let response = try await client.database.from("reminders").delete().eq(column: "id", value: modelId).execute()
+                completion(nil)
+            } catch {
+                debugPrint("error")
+                completion(error)
+            }
+        }
+    }
 }

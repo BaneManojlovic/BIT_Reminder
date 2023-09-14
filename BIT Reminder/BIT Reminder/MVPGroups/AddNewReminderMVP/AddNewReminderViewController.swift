@@ -39,10 +39,29 @@ class AddNewReminderViewController: BaseNavigationController {
     }
 
     @objc func addNewTapped() {
-        self.presenter.addNewReminder()
+        let model = Reminder(title: "Test dodavanja remindera 3",
+                             description: "testing testing...",
+                             important: true,
+                             date: nil)
+        self.presenter.addNewReminder(model: model)
     }
 }
 
 // MARK: - Conforming to AddNewReminderViewPresenterDelegate
 
-extension AddNewReminderViewController: AddNewReminderViewPresenterDelegate { }
+extension AddNewReminderViewController: AddNewReminderViewPresenterDelegate {
+
+    func addNewReminderFailure(message: String) {
+        DispatchQueue.main.async {
+            self.showOkAlert(message: message)
+        }
+    }
+
+    func addNewReminderSuccess() {
+        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+            self.showOkAlert(message: "New Reminder successfully added!", confirmation: {
+                self.navigationController?.popViewController(animated: true)
+            }, completion: nil)
+        }
+    }
+}

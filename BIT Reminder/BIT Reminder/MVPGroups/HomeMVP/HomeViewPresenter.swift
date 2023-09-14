@@ -12,6 +12,8 @@ import KRProgressHUD
 protocol HomeViewPresenterDelegate: AnyObject {
     func getRemindersFailure(error: String)
     func getRemindersSuccess(response: [Reminder])
+    func deleteReminderFailure(message: String)
+    func deleteReminderSuccess()
 }
 
 class HomeViewPresenter {
@@ -63,8 +65,28 @@ class HomeViewPresenter {
         }
     }
 
-    func deleteReminder() {
+    func deleteReminder(model: Reminder) {
         // TODO: - to be implemented
         debugPrint("delete delete ...")
+        let table = "reminders"
+        KRProgressHUD.show()
+        Task {
+            do {
+                try await self.authManager.deleteReminder(tableName: table, model: model) { error in
+                    if let error = error {
+                        debugPrint(error)
+                        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                           KRProgressHUD.dismiss()
+                        }
+                        self.delegate?.deleteReminderFailure(message: error.localizedDescription)
+                    } else {
+                        debugPrint("")
+                        KRProgressHUD.dismiss()
+                        self.delegate?.deleteReminderSuccess()
+                    }
+                    
+                }
+            }
+        }
     }
 }

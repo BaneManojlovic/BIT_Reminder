@@ -49,6 +49,7 @@ class ReminderTableViewCell: UITableViewCell {
         } else {
             self.importanceImage.isHidden = true
         }
+        debugPrint("Bane --- \(model)")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
