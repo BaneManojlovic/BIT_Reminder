@@ -44,7 +44,7 @@ class HomeViewController: BaseNavigationController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.title = "Reminders"
+        self.navigationItem.title = "Reminders"
         self.homeView.setupUI()
     }
 
@@ -120,7 +120,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             self.presenter.deleteReminder(model: model)
             self.presenter.reminders.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            
+
         }
     }
 }

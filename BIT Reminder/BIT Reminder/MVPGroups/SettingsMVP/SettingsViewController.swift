@@ -31,7 +31,7 @@ class SettingsViewController: BaseNavigationController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.title = "Settings"
+        self.navigationItem.title = "Settings"
         self.settingsView.setupUI()
     }
 

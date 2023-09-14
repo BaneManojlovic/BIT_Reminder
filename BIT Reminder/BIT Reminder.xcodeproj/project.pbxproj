@@ -56,6 +56,12 @@
 		8DBAA5782AB2AF360054A5FF /* AddNewReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5772AB2AF360054A5FF /* AddNewReminderViewController.swift */; };
 		8DBAA57A2AB2AF860054A5FF /* AddNewReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5792AB2AF860054A5FF /* AddNewReminderView.swift */; };
 		8DBAA57C2AB2AF950054A5FF /* AddNewReminderViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA57B2AB2AF950054A5FF /* AddNewReminderViewPresenter.swift */; };
+		8DBAA5802AB30D6E0054A5FF /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA57F2AB30D6E0054A5FF /* AlbumsViewController.swift */; };
+		8DBAA5822AB30D7D0054A5FF /* AlbumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5812AB30D7D0054A5FF /* AlbumsView.swift */; };
+		8DBAA5842AB30D920054A5FF /* AlbumsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5832AB30D920054A5FF /* AlbumsViewPresenter.swift */; };
+		8DBAA5862AB30F580054A5FF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5852AB30F580054A5FF /* MapViewController.swift */; };
+		8DBAA5882AB30F650054A5FF /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5872AB30F650054A5FF /* MapView.swift */; };
+		8DBAA58A2AB30F790054A5FF /* MapViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5892AB30F790054A5FF /* MapViewPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +116,12 @@
 		8DBAA5772AB2AF360054A5FF /* AddNewReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewReminderViewController.swift; sourceTree = "<group>"; };
 		8DBAA5792AB2AF860054A5FF /* AddNewReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewReminderView.swift; sourceTree = "<group>"; };
 		8DBAA57B2AB2AF950054A5FF /* AddNewReminderViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewReminderViewPresenter.swift; sourceTree = "<group>"; };
+		8DBAA57F2AB30D6E0054A5FF /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
+		8DBAA5812AB30D7D0054A5FF /* AlbumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsView.swift; sourceTree = "<group>"; };
+		8DBAA5832AB30D920054A5FF /* AlbumsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewPresenter.swift; sourceTree = "<group>"; };
+		8DBAA5852AB30F580054A5FF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		8DBAA5872AB30F650054A5FF /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		8DBAA5892AB30F790054A5FF /* MapViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewPresenter.swift; sourceTree = "<group>"; };
 		D1CD5190B349858D99F73037 /* Pods_BIT_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BIT_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -245,6 +257,8 @@
 		8D6B80B32AA78B17009DF810 /* MVPGroups */ = {
 			isa = PBXGroup;
 			children = (
+				8DBAA57E2AB30D540054A5FF /* MapMVP */,
+				8DBAA57D2AB305D70054A5FF /* AlbumsMVP */,
 				8DBAA5762AB2AF170054A5FF /* AddNewReminderMVP */,
 				8DBAA5622AB1FD220054A5FF /* SettingsMVP */,
 				8D9513792AAB08E800A30E9B /* RegisterScreen */,
@@ -413,6 +427,26 @@
 				8DBAA57B2AB2AF950054A5FF /* AddNewReminderViewPresenter.swift */,
 			);
 			path = AddNewReminderMVP;
+			sourceTree = "<group>";
+		};
+		8DBAA57D2AB305D70054A5FF /* AlbumsMVP */ = {
+			isa = PBXGroup;
+			children = (
+				8DBAA57F2AB30D6E0054A5FF /* AlbumsViewController.swift */,
+				8DBAA5812AB30D7D0054A5FF /* AlbumsView.swift */,
+				8DBAA5832AB30D920054A5FF /* AlbumsViewPresenter.swift */,
+			);
+			path = AlbumsMVP;
+			sourceTree = "<group>";
+		};
+		8DBAA57E2AB30D540054A5FF /* MapMVP */ = {
+			isa = PBXGroup;
+			children = (
+				8DBAA5852AB30F580054A5FF /* MapViewController.swift */,
+				8DBAA5872AB30F650054A5FF /* MapView.swift */,
+				8DBAA5892AB30F790054A5FF /* MapViewPresenter.swift */,
+			);
+			path = MapMVP;
 			sourceTree = "<group>";
 		};
 		8F2EAC3CDAB279FE1F3F0FC0 /* Pods */ = {
@@ -597,17 +631,22 @@
 				8DBAA5662AB1FD510054A5FF /* SettingsView.swift in Sources */,
 				8DBAA5542AB03BA40054A5FF /* UIVewController+Alerts.swift in Sources */,
 				8DBAA5522AAEF2AB0054A5FF /* BaseNavigationController.swift in Sources */,
+				8DBAA5802AB30D6E0054A5FF /* AlbumsViewController.swift in Sources */,
 				8D6B80C92AA861A5009DF810 /* Fonts.swift in Sources */,
 				8D95137B2AAB090500A30E9B /* RegistrationViewController.swift in Sources */,
 				8DBAA55F2AB1DDEB0054A5FF /* StringHelper.swift in Sources */,
 				8D6B80D22AA88213009DF810 /* SplashScreenPresenter.swift in Sources */,
 				8DBAA55B2AB1AB690054A5FF /* Constants.swift in Sources */,
+				8DBAA5862AB30F580054A5FF /* MapViewController.swift in Sources */,
+				8DBAA5842AB30D920054A5FF /* AlbumsViewPresenter.swift in Sources */,
 				8D6B80D92AA885E0009DF810 /* AuthentificationFlowController.swift in Sources */,
+				8DBAA5822AB30D7D0054A5FF /* AlbumsView.swift in Sources */,
 				8DBAA56C2AB204FF0054A5FF /* ReminderTableViewCell.swift in Sources */,
 				8D6B80C72AA861A5009DF810 /* StoryboardSegues.swift in Sources */,
 				8D9513742AAAFDA700A30E9B /* LoginViewController.swift in Sources */,
 				8DBAA5752AB2AA720054A5FF /* SettingsModel.swift in Sources */,
 				8D9513722AAA186800A30E9B /* HomeViewPresenter.swift in Sources */,
+				8DBAA58A2AB30F790054A5FF /* MapViewPresenter.swift in Sources */,
 				8D95137F2AAB092100A30E9B /* RegistrationPresenter.swift in Sources */,
 				8D6B80CE2AA881EC009DF810 /* SplashScreenViewController.swift in Sources */,
 				8DBAA5682AB1FD640054A5FF /* SettingsViewPresenter.swift in Sources */,
@@ -629,6 +668,7 @@
 				8D95136E2AAA184E00A30E9B /* HomeViewController.swift in Sources */,
 				8D9513812AAB309A00A30E9B /* BaseAPI.swift in Sources */,
 				8DBAA5592AB19EEC0054A5FF /* TabBarController.swift in Sources */,
+				8DBAA5882AB30F650054A5FF /* MapView.swift in Sources */,
 				8D6B80DB2AA887C1009DF810 /* UIWindow+RootTransitionExtension.swift in Sources */,
 				8DBAA5642AB1FD400054A5FF /* SettingsViewController.swift in Sources */,
 				8DBAA57A2AB2AF860054A5FF /* AddNewReminderView.swift in Sources */,

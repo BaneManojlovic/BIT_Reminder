@@ -50,33 +50,31 @@ class TabBarController: UITabBarController {
 
     // TODO: - Rename this VC maybe?!
     private func setHomeTabBarController() -> HomeViewController {
-        let homeVC = StoryboardScene.Authentification.homeViewController.instantiate()
-        homeVC.presenter = HomeViewPresenter()
-        homeVC.presenter.screenName = "Home"
-        homeVC.tabBarItem = UITabBarItem.init(title: "Home",
+        let viewController = StoryboardScene.Authentification.homeViewController.instantiate()
+        viewController.presenter = HomeViewPresenter()
+        viewController.presenter.screenName = "Home"
+        viewController.tabBarItem = UITabBarItem.init(title: "Home",
                                               image: UIImage(systemName: "house"),
                                               selectedImage: UIImage(systemName: "house.fill"))
-        return homeVC
+        return viewController
     }
 
-    private func setMapTabBarController() -> HomeViewController {
-        let homeVC = StoryboardScene.Authentification.homeViewController.instantiate()
-        homeVC.presenter = HomeViewPresenter()
-        homeVC.presenter.screenName = "Map"
-        homeVC.tabBarItem = UITabBarItem.init(title: "Map",
+    private func setMapTabBarController() -> MapViewController {
+        let viewController = StoryboardScene.Authentification.mapViewController.instantiate()
+        viewController.presenter = MapViewPresenter()
+        viewController.tabBarItem = UITabBarItem.init(title: "Map",
                                               image: UIImage(systemName: "map"),
                                               selectedImage: UIImage(systemName: "map.fill"))
-        return homeVC
+        return viewController
     }
 
-    private func setAlbumTabBarController() -> HomeViewController {
-        let homeVC = StoryboardScene.Authentification.homeViewController.instantiate()
-        homeVC.presenter = HomeViewPresenter()
-        homeVC.presenter.screenName = "Album"
-        homeVC.tabBarItem = UITabBarItem.init(title: "Album",
-                                              image: UIImage(systemName: "photo.on.rectangle"),
-                                              selectedImage: UIImage(systemName: "photo.fill.on.rectangle.fill"))
-        return homeVC
+    private func setAlbumTabBarController() -> AlbumsViewController {
+        let viewController = StoryboardScene.Authentification.albumsViewController.instantiate()
+        viewController.presenter = AlbumsViewPresenter()
+        viewController.tabBarItem = UITabBarItem.init(title: "Album",
+                                                      image: UIImage(systemName: "photo.on.rectangle"),
+                                                      selectedImage: UIImage(systemName: "photo.fill.on.rectangle.fill"))
+        return viewController
     }
 
     private func setSettingsTabBarController() -> SettingsViewController {
