@@ -70,9 +70,13 @@ class BaseNavigationController: BaseViewController {
         super.viewDidLoad()
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.backgroundColor = Asset.backgroundBlueColor.color
+        navigationBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         UINavigationBar.appearance().standardAppearance = navigationBarAppearance
         UINavigationBar.appearance().compactAppearance = navigationBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     }
 
     // MARK: - Private Setup Methods

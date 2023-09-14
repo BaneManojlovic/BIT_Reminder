@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController {
+class HomeViewController: BaseNavigationController {
 
     // MARK: - Properties
 
@@ -27,33 +27,39 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
 
         self.setupUI()
+        self.haveAddButton = true
         self.setupDelegates()
         self.setupTargets()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.presenter.getReminders()
     }
 
     // MARK: - Private Setup Methods
 
     private func setupUI() {
-        self.navigationController?.isNavigationBarHidden = true
-        if let name = self.presenter.screenName {
-            self.homeView.setupScreenName(name: name)
-        }
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.title = "Reminders"
         self.homeView.setupUI()
     }
 
     private func setupDelegates() {
         self.presenter.attachView(view: self)
+        self.homeView.tableView.delegate = self
+        self.homeView.tableView.dataSource = self
     }
 
-    private func setupTargets() {
-        self.homeView.logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
-    }
+    private func setupTargets() { }
 
-    @objc func logout() {
-        self.showCancelOrYesAlert(message: "Are you sure you want to logout?",
-                                  yesHandler: {
-            self.presenter.logoutUser()
-        })
+    override func addButtonAction() {
+        super.addButtonAction()
+        // TODO: - Open add new reminder screen
+        debugPrint("overriden ... do something")
     }
 }
 
@@ -61,13 +67,44 @@ class HomeViewController: BaseViewController {
 
 extension HomeViewController: HomeViewPresenterDelegate {
 
-    func userLogoutFailure(message: String) {
-        self.showOkAlert(message: message)
+    func getRemindersFailure(error: String) {
+        self.showOkAlert(message: error)
     }
 
-    func userLogoutSuccess() {
+    func getRemindersSuccess(response: [Reminder]) {
         DispatchQueue.main.async {
-            self.authFlowController.goToSplashScreen()
+            self.homeView.tableView.reloadData()
+        }
+    }
+}
+
+// MARK: - Conforming to UITableViewDelegate
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.presenter.reminders.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ReminderTableViewCell.reuseIdentifier,
+        for: indexPath) as? ReminderTableViewCell else { return UITableViewCell() }
+        /// create model to fill in data for cell
+        let model = self.presenter.reminders[indexPath.row]
+        /// fill cell with model data
+        cell.fillCellWithData(model: model)
+        /// return cell
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.presenter.reminders.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
 }

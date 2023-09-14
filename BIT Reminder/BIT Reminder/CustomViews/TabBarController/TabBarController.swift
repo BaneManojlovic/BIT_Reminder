@@ -79,13 +79,12 @@ class TabBarController: UITabBarController {
         return homeVC
     }
 
-    private func setSettingsTabBarController() -> HomeViewController {
-        let homeVC = StoryboardScene.Authentification.homeViewController.instantiate()
-        homeVC.presenter = HomeViewPresenter()
-        homeVC.presenter.screenName = "Settings"
-        homeVC.tabBarItem = UITabBarItem.init(title: "Settings",
-                                              image: UIImage(systemName: "gearshape"),
-                                              selectedImage: UIImage(systemName: "gearshape.fill"))
-        return homeVC
+    private func setSettingsTabBarController() -> SettingsViewController {
+        let viewController = StoryboardScene.Authentification.settingsViewController.instantiate()
+        viewController.presenter = SettingsViewPresenter()
+        viewController.tabBarItem = UITabBarItem.init(title: "Settings",
+                                                      image: UIImage(systemName: "gearshape"),
+                                                      selectedImage: UIImage(systemName: "gearshape.fill"))
+        return viewController
     }
 }

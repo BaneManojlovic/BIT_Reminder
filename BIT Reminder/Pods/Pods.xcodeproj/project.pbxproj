@@ -28,136 +28,187 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		06FFE460D79ABD60F42C0332EB3BEE4D /* IQTitleBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 32233C47667D6788C25390CC88F2AFAF /* IQTitleBarButtonItem.m */; };
-		0A48DAEFF3B2B76B6D59ECEACCF349DB /* IQKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 191BA94923353696787DEE6B88436634 /* IQKeyboardManager.m */; };
-		10BBF53FAF4C4845C71FF1D16A1F2185 /* IQPreviousNextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1177B38ACB492B3CAB65C51EA8F4029 /* IQPreviousNextView.m */; };
-		14F350D1AE912096B4B04F9A0C6BAABE /* IQToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EEE3138F6DAFFB49FADFFF421C0F84D /* IQToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0231BF88DE78D1AF701640162F641EF1 /* KRActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E435DF62839032C29CC5E69F6378AB /* KRActivityIndicatorView.swift */; };
+		06FFE460D79ABD60F42C0332EB3BEE4D /* IQTitleBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EA31ED0C5AC34044BFAA079E04EE7AC /* IQTitleBarButtonItem.m */; };
+		0A48DAEFF3B2B76B6D59ECEACCF349DB /* IQKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F386197DA74E60CDD4A221BD30E4059 /* IQKeyboardManager.m */; };
+		10BBF53FAF4C4845C71FF1D16A1F2185 /* IQPreviousNextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0A9B19E6B5ABABB477BAA9A95951AA /* IQPreviousNextView.m */; };
+		14F350D1AE912096B4B04F9A0C6BAABE /* IQToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 170B6D30D068EB4E73759482653E5967 /* IQToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		227F575C7A4BA4B60D7CED084C9B4A3C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
 		2457FC29D9DFC58923D6750CF1096A07 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840FA0B75AF62912A30DDC66B647ED98 /* CoreGraphics.framework */; };
 		245C3EFCCB26556535EC3F082169D7F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
-		24FBF53F99C95B7C5C6BC6BF6D981484 /* Pods-BIT Reminder-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8167F891F082BE1074384F673298C167 /* Pods-BIT Reminder-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		293A4E38AD5968B32012FDCC10D5E3AC /* IQKeyboardManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 789C4C3703C29BE113A9ED8AE64C2AD2 /* IQKeyboardManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2F822E3E2AEAA87BAD9A511F5487BA4B /* IQBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD7138F567584FD204B531F91DEB943 /* IQBarButtonItem.m */; };
-		376283CB1C2F4FBFDEB918476761CBF2 /* IQKeyboardManagerConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B3CADCEB92BF9DC933DAE35AD1FE452 /* IQKeyboardManagerConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A5E751E5D684DE8F34433773EF9F259 /* IQTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = FCE9C7973D69AC2F1404BB0210DA3DA0 /* IQTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3C63DF222FD6B77E855A172B1CB46771 /* IQTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6197D1D5ED1CD47E8CF2410DBC0102C /* IQTextView.m */; };
-		43B3A6E418AF6D457318D5DFD64B22B7 /* IQPreviousNextView.h in Headers */ = {isa = PBXBuildFile; fileRef = FB2F37BC99824E0D518047FA748BF50E /* IQPreviousNextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		47E70B39D50CD49CB93F05C8A29A71FE /* IQUIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = F313A66190919B6C6A97BD6747EC4630 /* IQUIViewController+Additions.m */; };
-		4D44DCC513AD5E580D92EDDF2D6A45A0 /* IQUITextFieldView+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 895FFD883E7FA4A22126ABA03E67F323 /* IQUITextFieldView+Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		293A4E38AD5968B32012FDCC10D5E3AC /* IQKeyboardManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 86A7C7A96B5FA71C172573C536EC1274 /* IQKeyboardManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F822E3E2AEAA87BAD9A511F5487BA4B /* IQBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B8669E16B40A3C050CF4DBBB3247C4 /* IQBarButtonItem.m */; };
+		32DAFD5267320A0E445C44D5B0A8A3E6 /* KRActivityIndicatorView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 738DD84D6DE00CD2290C84AEB8C6B4C8 /* KRActivityIndicatorView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		376283CB1C2F4FBFDEB918476761CBF2 /* IQKeyboardManagerConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D73334FD80B324E47B90F7683293471 /* IQKeyboardManagerConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A5E751E5D684DE8F34433773EF9F259 /* IQTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3098AF68FFABC7A3F8C7EE08379E6690 /* IQTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3C63DF222FD6B77E855A172B1CB46771 /* IQTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B659EEE4776E29C2921AF2EB8A3EF8BD /* IQTextView.m */; };
+		43B3A6E418AF6D457318D5DFD64B22B7 /* IQPreviousNextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 40FABB22576858BC2E1E8F61B74B9E78 /* IQPreviousNextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		47E70B39D50CD49CB93F05C8A29A71FE /* IQUIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = AF5F84B96C2E3C5A5A765F551853AA80 /* IQUIViewController+Additions.m */; };
+		4D44DCC513AD5E580D92EDDF2D6A45A0 /* IQUITextFieldView+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F8B6532E03200FB75E37C78A24ADBD9 /* IQUITextFieldView+Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		55388BCDFCE307B35DFA920FA6632E17 /* Pods-BIT Reminder-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8167F891F082BE1074384F673298C167 /* Pods-BIT Reminder-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56F69E27093A6FF4B13AACEA76827231 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A42DBD2F42D55606EEBA514009498B87 /* QuartzCore.framework */; };
-		571898C9118E0B2E87F77CD223979CC4 /* IQKeyboardReturnKeyHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 83D025416BC66EE0DD9A402D19759718 /* IQKeyboardReturnKeyHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6C8D636FC19EF52AC1C6C137034BD842 /* IQUIScrollView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AB4615D9C5BDB8FC15F25949887828 /* IQUIScrollView+Additions.m */; };
-		768C7D8165465E63F576F9135C572829 /* IQKeyboardManagerConstantsInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 629E1C0A753672BFC50E7F72B1177B8F /* IQKeyboardManagerConstantsInternal.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		77F56E4B8630FEEF0B934FC9F86852AE /* IQUIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6BD35ADC0DE70BFC69BD93A53C2936 /* IQUIView+Hierarchy.m */; };
-		8B566763930AD11F2945B71E4B2754A2 /* IQKeyboardManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6118BF4363D42E7DC390C81D2F3BF0 /* IQKeyboardManager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8CDFDE9DE288B523D2A11413EA981BAB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
-		92A2BA5CE2E0F13CF32B96118A54B298 /* IQNSArray+Sort.h in Headers */ = {isa = PBXBuildFile; fileRef = E4535F145BFF5E37A65ACF78D30404E7 /* IQNSArray+Sort.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9869BE90A4E205295E92E1930E059FC0 /* IQUIView+Hierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = 982549526C41BD1AD88E7D243A5ED6A1 /* IQUIView+Hierarchy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9EE42EA1D5742891C0A2718A3BFE0F4A /* IQBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = DA77AC46205579EFDF391F950FF9734D /* IQBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A0AF68FE7C423F0A669441A25935D049 /* IQNSArray+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E6A304649FBAEA1E3EC90F84C52B7A /* IQNSArray+Sort.m */; };
-		A0C2891A8EE757E199310C3601A66130 /* IQUIScrollView+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = B31CD442FFD55A37CE489D490CA66F78 /* IQUIScrollView+Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A25CA3F2540143EFA8C6D6C45845B79A /* IQKeyboardReturnKeyHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7331E7289A365EC2F44C105E88428F60 /* IQKeyboardReturnKeyHandler.m */; };
-		B34EE15CECE3B3F06DC0C1BB1FFA61C1 /* IQUIView+IQKeyboardToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = E1572C3D3DF86331537A7D2EAD10D693 /* IQUIView+IQKeyboardToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C2E3562A9EDADE0BCFD5D54324629F46 /* IQUIViewController+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A4D5737CE4A60AD97869A3AC6D1DB2B /* IQUIViewController+Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CCECE87431A451056454222F247B89D5 /* IQUITextFieldView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6104C58626A84D6A9AF2D131A545D720 /* IQUITextFieldView+Additions.m */; };
-		CD251C65121F24F2FB438C5CA5930D22 /* Pods-BIT Reminder-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B7AA0AE401B0E6EC8EC3482C67E02328 /* Pods-BIT Reminder-dummy.m */; };
-		DDEBC6CD2F36B3D7445C6C419FC34102 /* IQUIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D70698F26D66DD4E5DD9D8F074C91B /* IQUIView+IQKeyboardToolbar.m */; };
-		E3226C305B708F68460A437B3A73C0DE /* IQToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84242BDB538EEA0202C84BB95473070D /* IQToolbar.m */; };
-		F4F723087ED20D05F02C8FF1562305CA /* IQKeyboardManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9F09DFF0F1F4B4AD609E9D5F5D7F1A /* IQKeyboardManager-dummy.m */; };
+		571898C9118E0B2E87F77CD223979CC4 /* IQKeyboardReturnKeyHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFC2C8CC6A9D560B26D12D80F72A940 /* IQKeyboardReturnKeyHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5BF5CE60210BA63B24F47DA85DB6D541 /* KRProgressHUDIconType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7E866EAAB97559B0D605B13FA19E51 /* KRProgressHUDIconType.swift */; };
+		5EDD32C82B9EE160E6615CEAEFCA1A15 /* KRProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D4648981E11BCF68A3EAA9DB2A1197 /* KRProgressHUD.swift */; };
+		664296435583DFE0E7F51D03A05D5E46 /* KRActivityIndicatorView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5DB6484341FF3ADE5025FC0FB7B248 /* KRActivityIndicatorView-dummy.m */; };
+		6C8D636FC19EF52AC1C6C137034BD842 /* IQUIScrollView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D77BE6B3D53C85348ECB25ACD7CDAF /* IQUIScrollView+Additions.m */; };
+		768C7D8165465E63F576F9135C572829 /* IQKeyboardManagerConstantsInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = A8389EA436DE11BB4F35CC3312D8497C /* IQKeyboardManagerConstantsInternal.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		77F56E4B8630FEEF0B934FC9F86852AE /* IQUIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 97CA02130E74B7555AE0C87F4B2A28D5 /* IQUIView+Hierarchy.m */; };
+		8B566763930AD11F2945B71E4B2754A2 /* IQKeyboardManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FD4C1A14A881B0BF2D43CDBA61F59C9 /* IQKeyboardManager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		92A2BA5CE2E0F13CF32B96118A54B298 /* IQNSArray+Sort.h in Headers */ = {isa = PBXBuildFile; fileRef = F936B6FE361445B01559EFBEE1FDEFEB /* IQNSArray+Sort.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		97BB11647788F09440C3BAB31CC87883 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
+		9869BE90A4E205295E92E1930E059FC0 /* IQUIView+Hierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = 7962E6225D0E6742BBA06F0B8925AAAA /* IQUIView+Hierarchy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B527DB69280CF80AABF664A88202E84 /* KRProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 738D866B7100F94F0B1DC49164E93C88 /* KRProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9EE42EA1D5742891C0A2718A3BFE0F4A /* IQBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = F09E14E136136AD105788E9983C06457 /* IQBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0AF68FE7C423F0A669441A25935D049 /* IQNSArray+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = 35656BB698E7372C190EFE164F779C15 /* IQNSArray+Sort.m */; };
+		A0C2891A8EE757E199310C3601A66130 /* IQUIScrollView+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = AB0AC7C3A83A0AF760C3E6A7072C20BB /* IQUIScrollView+Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A25CA3F2540143EFA8C6D6C45845B79A /* IQKeyboardReturnKeyHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 348951908E3047712D661D7AF5C24765 /* IQKeyboardReturnKeyHandler.m */; };
+		A59645A7884F87BA5BF6AB93E688901B /* InnerKRProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F5316B198247BF62ABC9B6B4871152 /* InnerKRProgressHUD.swift */; };
+		B0412830E523B39EF325F5B2C58415CF /* Pods-BIT Reminder-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B7AA0AE401B0E6EC8EC3482C67E02328 /* Pods-BIT Reminder-dummy.m */; };
+		B34EE15CECE3B3F06DC0C1BB1FFA61C1 /* IQUIView+IQKeyboardToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 78994E87B1545B473E1FCA6A36E603EB /* IQUIView+IQKeyboardToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C21ED0B4C9C617089241298BB41D2BF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
+		C2E3562A9EDADE0BCFD5D54324629F46 /* IQUIViewController+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = DDBC04612E34EC94D423162F5C1A6EE5 /* IQUIViewController+Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CCECE87431A451056454222F247B89D5 /* IQUITextFieldView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 094C599D1B0C7D0AFA4CE0BC71D9B135 /* IQUITextFieldView+Additions.m */; };
+		DDEBC6CD2F36B3D7445C6C419FC34102 /* IQUIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = D06870BA106E2E35BD2DDF90D011E78C /* IQUIView+IQKeyboardToolbar.m */; };
+		DFB95248137010B96366E1E49B8221CE /* KRActivityIndicatorViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3728F1B95110042FA692361ADB6D07 /* KRActivityIndicatorViewStyle.swift */; };
+		E3226C305B708F68460A437B3A73C0DE /* IQToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DB7882BB78C8DD2FA5A545A01A72DA /* IQToolbar.m */; };
+		E5734FE2E4663F4C9E7ED8CECC38D2F2 /* KRProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF29794289E5AAD73E63DF79EC5E27 /* KRProgressHUD-dummy.m */; };
+		EA9307BFC6EC7DB48CC7944D87102096 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EA15CA4C7462287010FABEBD3EFF0B /* Extensions.swift */; };
+		EE468DF777E82A8AB41ED7D7289B9B9C /* KRProgressHUDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A0D61FEAB1021182B78CBFC2839192 /* KRProgressHUDViewController.swift */; };
+		F4F723087ED20D05F02C8FF1562305CA /* IQKeyboardManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D270A5A06764BE62C334FC56554140 /* IQKeyboardManager-dummy.m */; };
+		F5C7CECF1E3E73AFEC9547F5AAA24730 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E35DB293C649635DC0D9E6DED86C6 /* Extensions.swift */; };
 		F677A7103D7C898C2FF7998DACFAF54B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D60AC13D33197690A05C641925DDDA /* UIKit.framework */; };
-		F73C6B8F53A58263A375518A8BFF974F /* IQTitleBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = F7F6258A58BF12563F20A09A6C4893A6 /* IQTitleBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F73C6B8F53A58263A375518A8BFF974F /* IQTitleBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 20E1B9DF092A7AF048F799D632EC4B9B /* IQTitleBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1E8C5F4F6D151F7F427E9191C2E93E81 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
-			remoteInfo = SwiftLint;
-		};
-		8F0BE1D770E75D225E6682456C5AF0AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FBA456CB50E371584C11231929A0971E;
-			remoteInfo = IQKeyboardManager;
-		};
-		F4380F42A1AECB569A2B4DB5B605683F /* PBXContainerItemProxy */ = {
+		07B11203DC724DDD7ACDA29E1C9DE048 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1E798429DCFA7906F6625CCFC1088744;
 			remoteInfo = SwiftGen;
 		};
+		650BBC2F3FFC210C2FD27A5422684C37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F7A1E5A05AF87570E2873C5F725E2CB;
+			remoteInfo = KRActivityIndicatorView;
+		};
+		66751A5B85AC3713184FDDFB45BFE9F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBA456CB50E371584C11231929A0971E;
+			remoteInfo = IQKeyboardManager;
+		};
+		713D4580FD00846D9973EC7560CD8FDC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F7A1E5A05AF87570E2873C5F725E2CB;
+			remoteInfo = KRActivityIndicatorView;
+		};
+		DA40F530BD69F7D5E22A52F80C7F7F82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
+			remoteInfo = SwiftLint;
+		};
+		EAB637AB835E5C5D608870E538D1BC18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA4681533D6AA601F9C9E2A116B7472C;
+			remoteInfo = KRProgressHUD;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		04D60AC13D33197690A05C641925DDDA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		06C09499EEDF9250A11B677442C5128C /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
+		094C599D1B0C7D0AFA4CE0BC71D9B135 /* IQUITextFieldView+Additions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUITextFieldView+Additions.m"; path = "IQKeyboardManager/Categories/IQUITextFieldView+Additions.m"; sourceTree = "<group>"; };
+		0C7E866EAAB97559B0D605B13FA19E51 /* KRProgressHUDIconType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KRProgressHUDIconType.swift; path = KRProgressHUD/Classes/KRProgressHUDIconType.swift; sourceTree = "<group>"; };
 		0F32208DF8A15E65B24251CB775E5F73 /* Pods-BIT Reminder-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BIT Reminder-frameworks.sh"; sourceTree = "<group>"; };
-		11E6A304649FBAEA1E3EC90F84C52B7A /* IQNSArray+Sort.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQNSArray+Sort.m"; path = "IQKeyboardManager/Categories/IQNSArray+Sort.m"; sourceTree = "<group>"; };
-		191BA94923353696787DEE6B88436634 /* IQKeyboardManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQKeyboardManager.m; path = IQKeyboardManager/IQKeyboardManager.m; sourceTree = "<group>"; };
-		1A5C4ED199200216D10B7F6F09833025 /* SwiftGen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftGen.debug.xcconfig; sourceTree = "<group>"; };
+		170B6D30D068EB4E73759482653E5967 /* IQToolbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQToolbar.h; path = IQKeyboardManager/IQToolbar/IQToolbar.h; sourceTree = "<group>"; };
+		1C33CB84138510317C9CFF8E19C47C23 /* KRProgressHUD */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KRProgressHUD; path = KRProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		20E1B9DF092A7AF048F799D632EC4B9B /* IQTitleBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQTitleBarButtonItem.h; path = IQKeyboardManager/IQToolbar/IQTitleBarButtonItem.h; sourceTree = "<group>"; };
+		22DB7882BB78C8DD2FA5A545A01A72DA /* IQToolbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQToolbar.m; path = IQKeyboardManager/IQToolbar/IQToolbar.m; sourceTree = "<group>"; };
 		286EA7A1AC04160FB4F0F710ECCCFAB6 /* Pods-BIT Reminder-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BIT Reminder-acknowledgements.plist"; sourceTree = "<group>"; };
-		2C6BD35ADC0DE70BFC69BD93A53C2936 /* IQUIView+Hierarchy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUIView+Hierarchy.m"; path = "IQKeyboardManager/Categories/IQUIView+Hierarchy.m"; sourceTree = "<group>"; };
-		32233C47667D6788C25390CC88F2AFAF /* IQTitleBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQTitleBarButtonItem.m; path = IQKeyboardManager/IQToolbar/IQTitleBarButtonItem.m; sourceTree = "<group>"; };
-		44D70698F26D66DD4E5DD9D8F074C91B /* IQUIView+IQKeyboardToolbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUIView+IQKeyboardToolbar.m"; path = "IQKeyboardManager/IQToolbar/IQUIView+IQKeyboardToolbar.m"; sourceTree = "<group>"; };
-		4EEE3138F6DAFFB49FADFFF421C0F84D /* IQToolbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQToolbar.h; path = IQKeyboardManager/IQToolbar/IQToolbar.h; sourceTree = "<group>"; };
-		548E5BA8FBB659470F95782A033E159F /* IQKeyboardManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManager-prefix.pch"; sourceTree = "<group>"; };
-		5B1100905A7C858E0BF726F9AFF36C2E /* IQKeyboardManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManager.debug.xcconfig; sourceTree = "<group>"; };
-		600967574DE0AA3CAB0640287A564EAB /* IQKeyboardManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = IQKeyboardManager.modulemap; sourceTree = "<group>"; };
-		604B0C18DDF709BC66C3EBAB0468432E /* IQKeyboardManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManager.release.xcconfig; sourceTree = "<group>"; };
-		6104C58626A84D6A9AF2D131A545D720 /* IQUITextFieldView+Additions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUITextFieldView+Additions.m"; path = "IQKeyboardManager/Categories/IQUITextFieldView+Additions.m"; sourceTree = "<group>"; };
-		629E1C0A753672BFC50E7F72B1177B8F /* IQKeyboardManagerConstantsInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardManagerConstantsInternal.h; path = IQKeyboardManager/Constants/IQKeyboardManagerConstantsInternal.h; sourceTree = "<group>"; };
-		7331E7289A365EC2F44C105E88428F60 /* IQKeyboardReturnKeyHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQKeyboardReturnKeyHandler.m; path = IQKeyboardManager/IQKeyboardReturnKeyHandler.m; sourceTree = "<group>"; };
-		789C4C3703C29BE113A9ED8AE64C2AD2 /* IQKeyboardManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardManager.h; path = IQKeyboardManager/IQKeyboardManager.h; sourceTree = "<group>"; };
+		29A0E74E58B1B3FBB31B6A46876B4309 /* KRProgressHUD-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KRProgressHUD-Info.plist"; sourceTree = "<group>"; };
+		29EA15CA4C7462287010FABEBD3EFF0B /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = KRActivityIndicatorView/Classes/Extensions.swift; sourceTree = "<group>"; };
+		2F3728F1B95110042FA692361ADB6D07 /* KRActivityIndicatorViewStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KRActivityIndicatorViewStyle.swift; path = KRActivityIndicatorView/Classes/KRActivityIndicatorViewStyle.swift; sourceTree = "<group>"; };
+		3098AF68FFABC7A3F8C7EE08379E6690 /* IQTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQTextView.h; path = IQKeyboardManager/IQTextView/IQTextView.h; sourceTree = "<group>"; };
+		31D270A5A06764BE62C334FC56554140 /* IQKeyboardManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IQKeyboardManager-dummy.m"; sourceTree = "<group>"; };
+		348951908E3047712D661D7AF5C24765 /* IQKeyboardReturnKeyHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQKeyboardReturnKeyHandler.m; path = IQKeyboardManager/IQKeyboardReturnKeyHandler.m; sourceTree = "<group>"; };
+		35081396BBB59213A2AB6E8E5909A76E /* SwiftGen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftGen.release.xcconfig; sourceTree = "<group>"; };
+		35656BB698E7372C190EFE164F779C15 /* IQNSArray+Sort.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQNSArray+Sort.m"; path = "IQKeyboardManager/Categories/IQNSArray+Sort.m"; sourceTree = "<group>"; };
+		3C5DB6484341FF3ADE5025FC0FB7B248 /* KRActivityIndicatorView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KRActivityIndicatorView-dummy.m"; sourceTree = "<group>"; };
+		3D94F5BB6FE5F8C6C708438B10317AF1 /* KRActivityIndicatorView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KRActivityIndicatorView.release.xcconfig; sourceTree = "<group>"; };
+		3E11E7759B0460848F9DBA87E50F1EC6 /* KRActivityIndicatorView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KRActivityIndicatorView-prefix.pch"; sourceTree = "<group>"; };
+		3F8B6532E03200FB75E37C78A24ADBD9 /* IQUITextFieldView+Additions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUITextFieldView+Additions.h"; path = "IQKeyboardManager/Categories/IQUITextFieldView+Additions.h"; sourceTree = "<group>"; };
+		40FABB22576858BC2E1E8F61B74B9E78 /* IQPreviousNextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQPreviousNextView.h; path = IQKeyboardManager/IQToolbar/IQPreviousNextView.h; sourceTree = "<group>"; };
+		4D0A9B19E6B5ABABB477BAA9A95951AA /* IQPreviousNextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQPreviousNextView.m; path = IQKeyboardManager/IQToolbar/IQPreviousNextView.m; sourceTree = "<group>"; };
+		51C0493BDA4AF18518F17F22A23BD119 /* IQKeyboardManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManager.release.xcconfig; sourceTree = "<group>"; };
+		58D4599B0D1CFE2A7DF516564380FDD9 /* KRProgressHUD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KRProgressHUD.release.xcconfig; sourceTree = "<group>"; };
+		5D73334FD80B324E47B90F7683293471 /* IQKeyboardManagerConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardManagerConstants.h; path = IQKeyboardManager/Constants/IQKeyboardManagerConstants.h; sourceTree = "<group>"; };
+		5F386197DA74E60CDD4A221BD30E4059 /* IQKeyboardManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQKeyboardManager.m; path = IQKeyboardManager/IQKeyboardManager.m; sourceTree = "<group>"; };
+		68864DB4B46FCE7BA9BF888028E54144 /* SwiftGen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftGen.debug.xcconfig; sourceTree = "<group>"; };
+		6E2BB2ACFE109A2ECB5498A3F1D03CB1 /* KRProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KRProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		738D866B7100F94F0B1DC49164E93C88 /* KRProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KRProgressHUD-umbrella.h"; sourceTree = "<group>"; };
+		738DD84D6DE00CD2290C84AEB8C6B4C8 /* KRActivityIndicatorView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KRActivityIndicatorView-umbrella.h"; sourceTree = "<group>"; };
+		78994E87B1545B473E1FCA6A36E603EB /* IQUIView+IQKeyboardToolbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIView+IQKeyboardToolbar.h"; path = "IQKeyboardManager/IQToolbar/IQUIView+IQKeyboardToolbar.h"; sourceTree = "<group>"; };
+		7962E6225D0E6742BBA06F0B8925AAAA /* IQUIView+Hierarchy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIView+Hierarchy.h"; path = "IQKeyboardManager/Categories/IQUIView+Hierarchy.h"; sourceTree = "<group>"; };
 		79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7B3CADCEB92BF9DC933DAE35AD1FE452 /* IQKeyboardManagerConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardManagerConstants.h; path = IQKeyboardManager/Constants/IQKeyboardManagerConstants.h; sourceTree = "<group>"; };
-		7FE54A26790BE7B2FD77AE9B10A2CC1A /* IQKeyboardManager-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "IQKeyboardManager-Info.plist"; sourceTree = "<group>"; };
+		7DAF29794289E5AAD73E63DF79EC5E27 /* KRProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KRProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		7FD4C1A14A881B0BF2D43CDBA61F59C9 /* IQKeyboardManager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManager-umbrella.h"; sourceTree = "<group>"; };
 		8167F891F082BE1074384F673298C167 /* Pods-BIT Reminder-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BIT Reminder-umbrella.h"; sourceTree = "<group>"; };
-		83D025416BC66EE0DD9A402D19759718 /* IQKeyboardReturnKeyHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardReturnKeyHandler.h; path = IQKeyboardManager/IQKeyboardReturnKeyHandler.h; sourceTree = "<group>"; };
+		81E435DF62839032C29CC5E69F6378AB /* KRActivityIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KRActivityIndicatorView.swift; path = KRActivityIndicatorView/Classes/KRActivityIndicatorView.swift; sourceTree = "<group>"; };
 		840FA0B75AF62912A30DDC66B647ED98 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		84242BDB538EEA0202C84BB95473070D /* IQToolbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQToolbar.m; path = IQKeyboardManager/IQToolbar/IQToolbar.m; sourceTree = "<group>"; };
-		84AB4615D9C5BDB8FC15F25949887828 /* IQUIScrollView+Additions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUIScrollView+Additions.m"; path = "IQKeyboardManager/Categories/IQUIScrollView+Additions.m"; sourceTree = "<group>"; };
-		895FFD883E7FA4A22126ABA03E67F323 /* IQUITextFieldView+Additions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUITextFieldView+Additions.h"; path = "IQKeyboardManager/Categories/IQUITextFieldView+Additions.h"; sourceTree = "<group>"; };
-		9370D490C84BFDA08B84E0ECC4062C87 /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
-		982549526C41BD1AD88E7D243A5ED6A1 /* IQUIView+Hierarchy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIView+Hierarchy.h"; path = "IQKeyboardManager/Categories/IQUIView+Hierarchy.h"; sourceTree = "<group>"; };
+		86A7C7A96B5FA71C172573C536EC1274 /* IQKeyboardManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardManager.h; path = IQKeyboardManager/IQKeyboardManager.h; sourceTree = "<group>"; };
+		89A0D61FEAB1021182B78CBFC2839192 /* KRProgressHUDViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KRProgressHUDViewController.swift; path = KRProgressHUD/Classes/KRProgressHUDViewController.swift; sourceTree = "<group>"; };
+		8A26BD6CEE3E33F55FBED13CA350E4AB /* IQKeyboardManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = IQKeyboardManager.modulemap; sourceTree = "<group>"; };
+		8EA31ED0C5AC34044BFAA079E04EE7AC /* IQTitleBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQTitleBarButtonItem.m; path = IQKeyboardManager/IQToolbar/IQTitleBarButtonItem.m; sourceTree = "<group>"; };
+		9258ECC23A4C8B0274C7A6DF69DDFE95 /* KRActivityIndicatorView */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KRActivityIndicatorView; path = KRActivityIndicatorView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97CA02130E74B7555AE0C87F4B2A28D5 /* IQUIView+Hierarchy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUIView+Hierarchy.m"; path = "IQKeyboardManager/Categories/IQUIView+Hierarchy.m"; sourceTree = "<group>"; };
 		98527D7196957AAB07B79E2E2AFDE23E /* IQKeyboardManager */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = IQKeyboardManager; path = IQKeyboardManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99885AF5C603DD5633B1C9720C98E5D4 /* Pods-BIT Reminder */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-BIT Reminder"; path = Pods_BIT_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A4D5737CE4A60AD97869A3AC6D1DB2B /* IQUIViewController+Additions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIViewController+Additions.h"; path = "IQKeyboardManager/Categories/IQUIViewController+Additions.h"; sourceTree = "<group>"; };
-		9A6118BF4363D42E7DC390C81D2F3BF0 /* IQKeyboardManager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManager-umbrella.h"; sourceTree = "<group>"; };
-		9B9F09DFF0F1F4B4AD609E9D5F5D7F1A /* IQKeyboardManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IQKeyboardManager-dummy.m"; sourceTree = "<group>"; };
+		9B6E35DB293C649635DC0D9E6DED86C6 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = KRProgressHUD/Classes/Extensions.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A1177B38ACB492B3CAB65C51EA8F4029 /* IQPreviousNextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQPreviousNextView.m; path = IQKeyboardManager/IQToolbar/IQPreviousNextView.m; sourceTree = "<group>"; };
+		A108108DF43D2CB75C4C14DF5E7D1BE8 /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
+		A2D4648981E11BCF68A3EAA9DB2A1197 /* KRProgressHUD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KRProgressHUD.swift; path = KRProgressHUD/Classes/KRProgressHUD.swift; sourceTree = "<group>"; };
 		A42DBD2F42D55606EEBA514009498B87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		A8389EA436DE11BB4F35CC3312D8497C /* IQKeyboardManagerConstantsInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardManagerConstantsInternal.h; path = IQKeyboardManager/Constants/IQKeyboardManagerConstantsInternal.h; sourceTree = "<group>"; };
 		A98CC257E4FCA71D69BCEA43850082E0 /* Pods-BIT Reminder-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BIT Reminder-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B31CD442FFD55A37CE489D490CA66F78 /* IQUIScrollView+Additions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIScrollView+Additions.h"; path = "IQKeyboardManager/Categories/IQUIScrollView+Additions.h"; sourceTree = "<group>"; };
+		AB0AC7C3A83A0AF760C3E6A7072C20BB /* IQUIScrollView+Additions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIScrollView+Additions.h"; path = "IQKeyboardManager/Categories/IQUIScrollView+Additions.h"; sourceTree = "<group>"; };
+		AF5F84B96C2E3C5A5A765F551853AA80 /* IQUIViewController+Additions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUIViewController+Additions.m"; path = "IQKeyboardManager/Categories/IQUIViewController+Additions.m"; sourceTree = "<group>"; };
+		B24742AB97757B9834C34F11DE98E8A1 /* KRActivityIndicatorView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KRActivityIndicatorView.modulemap; sourceTree = "<group>"; };
+		B5D77BE6B3D53C85348ECB25ACD7CDAF /* IQUIScrollView+Additions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUIScrollView+Additions.m"; path = "IQKeyboardManager/Categories/IQUIScrollView+Additions.m"; sourceTree = "<group>"; };
+		B659EEE4776E29C2921AF2EB8A3EF8BD /* IQTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQTextView.m; path = IQKeyboardManager/IQTextView/IQTextView.m; sourceTree = "<group>"; };
 		B7AA0AE401B0E6EC8EC3482C67E02328 /* Pods-BIT Reminder-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BIT Reminder-dummy.m"; sourceTree = "<group>"; };
-		C109405D9F1EF82F20253986BEF535A7 /* SwiftGen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftGen.release.xcconfig; sourceTree = "<group>"; };
+		B94052F92153B24ED9CBF7E7B4A34CF6 /* KRActivityIndicatorView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KRActivityIndicatorView-Info.plist"; sourceTree = "<group>"; };
+		BDFC2C8CC6A9D560B26D12D80F72A940 /* IQKeyboardReturnKeyHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardReturnKeyHandler.h; path = IQKeyboardManager/IQKeyboardReturnKeyHandler.h; sourceTree = "<group>"; };
+		CFEE78AD8A1409047AC4664A3D530C3F /* KRProgressHUD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KRProgressHUD.debug.xcconfig; sourceTree = "<group>"; };
+		D06870BA106E2E35BD2DDF90D011E78C /* IQUIView+IQKeyboardToolbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUIView+IQKeyboardToolbar.m"; path = "IQKeyboardManager/IQToolbar/IQUIView+IQKeyboardToolbar.m"; sourceTree = "<group>"; };
+		D0B8669E16B40A3C050CF4DBBB3247C4 /* IQBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQBarButtonItem.m; path = IQKeyboardManager/IQToolbar/IQBarButtonItem.m; sourceTree = "<group>"; };
+		D2AC8DC672F053B7EE0392A6CB6764A9 /* KRActivityIndicatorView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KRActivityIndicatorView.debug.xcconfig; sourceTree = "<group>"; };
 		DA3A3E151A1D4A9A51E8D5BF5736A7D0 /* Pods-BIT Reminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BIT Reminder.debug.xcconfig"; sourceTree = "<group>"; };
-		DA77AC46205579EFDF391F950FF9734D /* IQBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQBarButtonItem.h; path = IQKeyboardManager/IQToolbar/IQBarButtonItem.h; sourceTree = "<group>"; };
-		E1572C3D3DF86331537A7D2EAD10D693 /* IQUIView+IQKeyboardToolbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIView+IQKeyboardToolbar.h"; path = "IQKeyboardManager/IQToolbar/IQUIView+IQKeyboardToolbar.h"; sourceTree = "<group>"; };
+		DABD5EE4A3E68949DEEEED1076FDB902 /* IQKeyboardManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManager-prefix.pch"; sourceTree = "<group>"; };
+		DDBC04612E34EC94D423162F5C1A6EE5 /* IQUIViewController+Additions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIViewController+Additions.h"; path = "IQKeyboardManager/Categories/IQUIViewController+Additions.h"; sourceTree = "<group>"; };
 		E18084531FDBE19881B0834BED4F7D4B /* Pods-BIT Reminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BIT Reminder.release.xcconfig"; sourceTree = "<group>"; };
-		E4535F145BFF5E37A65ACF78D30404E7 /* IQNSArray+Sort.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQNSArray+Sort.h"; path = "IQKeyboardManager/Categories/IQNSArray+Sort.h"; sourceTree = "<group>"; };
+		E4F5316B198247BF62ABC9B6B4871152 /* InnerKRProgressHUD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InnerKRProgressHUD.swift; path = KRProgressHUD/Classes/InnerKRProgressHUD.swift; sourceTree = "<group>"; };
+		EB3129588F296DEA4F17FC58339AE9CC /* IQKeyboardManager-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "IQKeyboardManager-Info.plist"; sourceTree = "<group>"; };
 		ECAFFD745C00F7C40307D77183191BFA /* Pods-BIT Reminder.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BIT Reminder.modulemap"; sourceTree = "<group>"; };
-		F313A66190919B6C6A97BD6747EC4630 /* IQUIViewController+Additions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUIViewController+Additions.m"; path = "IQKeyboardManager/Categories/IQUIViewController+Additions.m"; sourceTree = "<group>"; };
+		F09E14E136136AD105788E9983C06457 /* IQBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQBarButtonItem.h; path = IQKeyboardManager/IQToolbar/IQBarButtonItem.h; sourceTree = "<group>"; };
 		F5B3BE0E9C6CFBC11531E134F45F2FF2 /* Pods-BIT Reminder-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BIT Reminder-Info.plist"; sourceTree = "<group>"; };
-		F6197D1D5ED1CD47E8CF2410DBC0102C /* IQTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQTextView.m; path = IQKeyboardManager/IQTextView/IQTextView.m; sourceTree = "<group>"; };
-		F7F6258A58BF12563F20A09A6C4893A6 /* IQTitleBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQTitleBarButtonItem.h; path = IQKeyboardManager/IQToolbar/IQTitleBarButtonItem.h; sourceTree = "<group>"; };
-		FAD7138F567584FD204B531F91DEB943 /* IQBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQBarButtonItem.m; path = IQKeyboardManager/IQToolbar/IQBarButtonItem.m; sourceTree = "<group>"; };
-		FB2F37BC99824E0D518047FA748BF50E /* IQPreviousNextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQPreviousNextView.h; path = IQKeyboardManager/IQToolbar/IQPreviousNextView.h; sourceTree = "<group>"; };
-		FCE9C7973D69AC2F1404BB0210DA3DA0 /* IQTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQTextView.h; path = IQKeyboardManager/IQTextView/IQTextView.h; sourceTree = "<group>"; };
+		F8E6C786F70CDFC07D2F4A29F71B1605 /* KRProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KRProgressHUD.modulemap; sourceTree = "<group>"; };
+		F936B6FE361445B01559EFBEE1FDEFEB /* IQNSArray+Sort.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQNSArray+Sort.h"; path = "IQKeyboardManager/Categories/IQNSArray+Sort.h"; sourceTree = "<group>"; };
+		FBBD391D90D26BECEA4CA520A08A4529 /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
+		FC155B8146B4DED7C1CEC0530E962635 /* IQKeyboardManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManager.debug.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4963AF6B57E893A40D45B86D312EDB2D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8CDFDE9DE288B523D2A11413EA981BAB /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7D33780B948A3E4364412C5BC201A0CD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -169,9 +220,77 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8AB39F144A72F040D2C21D2F2A3CA138 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				227F575C7A4BA4B60D7CED084C9B4A3C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92819F04635A1A6DA8EEDCFD437C3F92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97BB11647788F09440C3BAB31CC87883 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD586B9E4D7076544C646EC8482E6164 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C21ED0B4C9C617089241298BB41D2BF0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01F2B3FECF9FE07ED9508A35C06D193D /* KRActivityIndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				29EA15CA4C7462287010FABEBD3EFF0B /* Extensions.swift */,
+				81E435DF62839032C29CC5E69F6378AB /* KRActivityIndicatorView.swift */,
+				2F3728F1B95110042FA692361ADB6D07 /* KRActivityIndicatorViewStyle.swift */,
+				F1669804F8E5B1328EB019FE39E53B74 /* Support Files */,
+			);
+			name = KRActivityIndicatorView;
+			path = KRActivityIndicatorView;
+			sourceTree = "<group>";
+		};
+		15566A4B3F7F561498DCD1A59EBC2988 /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+				4350D1AB6C3EDD55E7CEEFF255E5D6B6 /* Support Files */,
+			);
+			name = SwiftGen;
+			path = SwiftGen;
+			sourceTree = "<group>";
+		};
+		1CD2BD381BE3F99B8E66AC8ABD17AF48 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4D677DC11977074D78CF7652EB122305 /* IQKeyboardManager */,
+				01F2B3FECF9FE07ED9508A35C06D193D /* KRActivityIndicatorView */,
+				F3D6DFD7D959729043B329799527A947 /* KRProgressHUD */,
+				15566A4B3F7F561498DCD1A59EBC2988 /* SwiftGen */,
+				9431CCB20503BD5B70E20A10671C1DC2 /* SwiftLint */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		213B1A0E5C444BF1FA8606E20F2470DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				98527D7196957AAB07B79E2E2AFDE23E /* IQKeyboardManager */,
+				9258ECC23A4C8B0274C7A6DF69DDFE95 /* KRActivityIndicatorView */,
+				1C33CB84138510317C9CFF8E19C47C23 /* KRProgressHUD */,
+				99885AF5C603DD5633B1C9720C98E5D4 /* Pods-BIT Reminder */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		21F85164F019788438DCF648D6950DDC /* Pods-BIT Reminder */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,48 +308,100 @@
 			path = "Target Support Files/Pods-BIT Reminder";
 			sourceTree = "<group>";
 		};
-		477C89CB3E3ACF4AFF8D1FE5B0B084C8 /* Support Files */ = {
+		39F7702781989B80D5CE6A7DC184C8EA /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				1A5C4ED199200216D10B7F6F09833025 /* SwiftGen.debug.xcconfig */,
-				C109405D9F1EF82F20253986BEF535A7 /* SwiftGen.release.xcconfig */,
+				A108108DF43D2CB75C4C14DF5E7D1BE8 /* SwiftLint.debug.xcconfig */,
+				FBBD391D90D26BECEA4CA520A08A4529 /* SwiftLint.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftLint";
+			sourceTree = "<group>";
+		};
+		4350D1AB6C3EDD55E7CEEFF255E5D6B6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				68864DB4B46FCE7BA9BF888028E54144 /* SwiftGen.debug.xcconfig */,
+				35081396BBB59213A2AB6E8E5909A76E /* SwiftGen.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SwiftGen";
 			sourceTree = "<group>";
 		};
-		67A1E6BE45744A099AED89070E1BD385 /* Pods */ = {
+		4D677DC11977074D78CF7652EB122305 /* IQKeyboardManager */ = {
 			isa = PBXGroup;
 			children = (
-				E90B5D25E40B5E71A0AE296C5DB41DD9 /* IQKeyboardManager */,
-				E21B0301E27496EFE80F61F360D21924 /* SwiftGen */,
-				CEE7DF9FC3F42A5CB886934CB3E9D569 /* SwiftLint */,
+				F09E14E136136AD105788E9983C06457 /* IQBarButtonItem.h */,
+				D0B8669E16B40A3C050CF4DBBB3247C4 /* IQBarButtonItem.m */,
+				86A7C7A96B5FA71C172573C536EC1274 /* IQKeyboardManager.h */,
+				5F386197DA74E60CDD4A221BD30E4059 /* IQKeyboardManager.m */,
+				5D73334FD80B324E47B90F7683293471 /* IQKeyboardManagerConstants.h */,
+				A8389EA436DE11BB4F35CC3312D8497C /* IQKeyboardManagerConstantsInternal.h */,
+				BDFC2C8CC6A9D560B26D12D80F72A940 /* IQKeyboardReturnKeyHandler.h */,
+				348951908E3047712D661D7AF5C24765 /* IQKeyboardReturnKeyHandler.m */,
+				F936B6FE361445B01559EFBEE1FDEFEB /* IQNSArray+Sort.h */,
+				35656BB698E7372C190EFE164F779C15 /* IQNSArray+Sort.m */,
+				40FABB22576858BC2E1E8F61B74B9E78 /* IQPreviousNextView.h */,
+				4D0A9B19E6B5ABABB477BAA9A95951AA /* IQPreviousNextView.m */,
+				3098AF68FFABC7A3F8C7EE08379E6690 /* IQTextView.h */,
+				B659EEE4776E29C2921AF2EB8A3EF8BD /* IQTextView.m */,
+				20E1B9DF092A7AF048F799D632EC4B9B /* IQTitleBarButtonItem.h */,
+				8EA31ED0C5AC34044BFAA079E04EE7AC /* IQTitleBarButtonItem.m */,
+				170B6D30D068EB4E73759482653E5967 /* IQToolbar.h */,
+				22DB7882BB78C8DD2FA5A545A01A72DA /* IQToolbar.m */,
+				AB0AC7C3A83A0AF760C3E6A7072C20BB /* IQUIScrollView+Additions.h */,
+				B5D77BE6B3D53C85348ECB25ACD7CDAF /* IQUIScrollView+Additions.m */,
+				3F8B6532E03200FB75E37C78A24ADBD9 /* IQUITextFieldView+Additions.h */,
+				094C599D1B0C7D0AFA4CE0BC71D9B135 /* IQUITextFieldView+Additions.m */,
+				7962E6225D0E6742BBA06F0B8925AAAA /* IQUIView+Hierarchy.h */,
+				97CA02130E74B7555AE0C87F4B2A28D5 /* IQUIView+Hierarchy.m */,
+				78994E87B1545B473E1FCA6A36E603EB /* IQUIView+IQKeyboardToolbar.h */,
+				D06870BA106E2E35BD2DDF90D011E78C /* IQUIView+IQKeyboardToolbar.m */,
+				DDBC04612E34EC94D423162F5C1A6EE5 /* IQUIViewController+Additions.h */,
+				AF5F84B96C2E3C5A5A765F551853AA80 /* IQUIViewController+Additions.m */,
+				7BED1347766CA6B816D239FF98444330 /* Support Files */,
 			);
-			name = Pods;
+			name = IQKeyboardManager;
+			path = IQKeyboardManager;
 			sourceTree = "<group>";
 		};
-		913F0158FEF2DF497BBB01C7932D9BF9 /* Support Files */ = {
+		5A6A0034BA6A1AE85071FF864A040454 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				600967574DE0AA3CAB0640287A564EAB /* IQKeyboardManager.modulemap */,
-				9B9F09DFF0F1F4B4AD609E9D5F5D7F1A /* IQKeyboardManager-dummy.m */,
-				7FE54A26790BE7B2FD77AE9B10A2CC1A /* IQKeyboardManager-Info.plist */,
-				548E5BA8FBB659470F95782A033E159F /* IQKeyboardManager-prefix.pch */,
-				9A6118BF4363D42E7DC390C81D2F3BF0 /* IQKeyboardManager-umbrella.h */,
-				5B1100905A7C858E0BF726F9AFF36C2E /* IQKeyboardManager.debug.xcconfig */,
-				604B0C18DDF709BC66C3EBAB0468432E /* IQKeyboardManager.release.xcconfig */,
+				F8E6C786F70CDFC07D2F4A29F71B1605 /* KRProgressHUD.modulemap */,
+				7DAF29794289E5AAD73E63DF79EC5E27 /* KRProgressHUD-dummy.m */,
+				29A0E74E58B1B3FBB31B6A46876B4309 /* KRProgressHUD-Info.plist */,
+				6E2BB2ACFE109A2ECB5498A3F1D03CB1 /* KRProgressHUD-prefix.pch */,
+				738D866B7100F94F0B1DC49164E93C88 /* KRProgressHUD-umbrella.h */,
+				CFEE78AD8A1409047AC4664A3D530C3F /* KRProgressHUD.debug.xcconfig */,
+				58D4599B0D1CFE2A7DF516564380FDD9 /* KRProgressHUD.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/KRProgressHUD";
+			sourceTree = "<group>";
+		};
+		7BED1347766CA6B816D239FF98444330 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A26BD6CEE3E33F55FBED13CA350E4AB /* IQKeyboardManager.modulemap */,
+				31D270A5A06764BE62C334FC56554140 /* IQKeyboardManager-dummy.m */,
+				EB3129588F296DEA4F17FC58339AE9CC /* IQKeyboardManager-Info.plist */,
+				DABD5EE4A3E68949DEEEED1076FDB902 /* IQKeyboardManager-prefix.pch */,
+				7FD4C1A14A881B0BF2D43CDBA61F59C9 /* IQKeyboardManager-umbrella.h */,
+				FC155B8146B4DED7C1CEC0530E962635 /* IQKeyboardManager.debug.xcconfig */,
+				51C0493BDA4AF18518F17F22A23BD119 /* IQKeyboardManager.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/IQKeyboardManager";
 			sourceTree = "<group>";
 		};
-		B651985DDA9F9ABBF977B6690D8F16C9 /* Products */ = {
+		9431CCB20503BD5B70E20A10671C1DC2 /* SwiftLint */ = {
 			isa = PBXGroup;
 			children = (
-				98527D7196957AAB07B79E2E2AFDE23E /* IQKeyboardManager */,
-				99885AF5C603DD5633B1C9720C98E5D4 /* Pods-BIT Reminder */,
+				39F7702781989B80D5CE6A7DC184C8EA /* Support Files */,
 			);
-			name = Products;
+			name = SwiftLint;
+			path = SwiftLint;
 			sourceTree = "<group>";
 		};
 		BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */ = {
@@ -241,32 +412,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BFAB0209116EA9A4C5755181458DF3CC /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				9370D490C84BFDA08B84E0ECC4062C87 /* SwiftLint.debug.xcconfig */,
-				06C09499EEDF9250A11B677442C5128C /* SwiftLint.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftLint";
-			sourceTree = "<group>";
-		};
-		CEE7DF9FC3F42A5CB886934CB3E9D569 /* SwiftLint */ = {
-			isa = PBXGroup;
-			children = (
-				BFAB0209116EA9A4C5755181458DF3CC /* Support Files */,
-			);
-			name = SwiftLint;
-			path = SwiftLint;
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */,
-				67A1E6BE45744A099AED89070E1BD385 /* Pods */,
-				B651985DDA9F9ABBF977B6690D8F16C9 /* Products */,
+				1CD2BD381BE3F99B8E66AC8ABD17AF48 /* Pods */,
+				213B1A0E5C444BF1FA8606E20F2470DF /* Products */,
 				D4A2D1D55A2E382F0536AB24C14D6755 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -279,50 +431,33 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		E21B0301E27496EFE80F61F360D21924 /* SwiftGen */ = {
+		F1669804F8E5B1328EB019FE39E53B74 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				477C89CB3E3ACF4AFF8D1FE5B0B084C8 /* Support Files */,
+				B24742AB97757B9834C34F11DE98E8A1 /* KRActivityIndicatorView.modulemap */,
+				3C5DB6484341FF3ADE5025FC0FB7B248 /* KRActivityIndicatorView-dummy.m */,
+				B94052F92153B24ED9CBF7E7B4A34CF6 /* KRActivityIndicatorView-Info.plist */,
+				3E11E7759B0460848F9DBA87E50F1EC6 /* KRActivityIndicatorView-prefix.pch */,
+				738DD84D6DE00CD2290C84AEB8C6B4C8 /* KRActivityIndicatorView-umbrella.h */,
+				D2AC8DC672F053B7EE0392A6CB6764A9 /* KRActivityIndicatorView.debug.xcconfig */,
+				3D94F5BB6FE5F8C6C708438B10317AF1 /* KRActivityIndicatorView.release.xcconfig */,
 			);
-			name = SwiftGen;
-			path = SwiftGen;
+			name = "Support Files";
+			path = "../Target Support Files/KRActivityIndicatorView";
 			sourceTree = "<group>";
 		};
-		E90B5D25E40B5E71A0AE296C5DB41DD9 /* IQKeyboardManager */ = {
+		F3D6DFD7D959729043B329799527A947 /* KRProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				DA77AC46205579EFDF391F950FF9734D /* IQBarButtonItem.h */,
-				FAD7138F567584FD204B531F91DEB943 /* IQBarButtonItem.m */,
-				789C4C3703C29BE113A9ED8AE64C2AD2 /* IQKeyboardManager.h */,
-				191BA94923353696787DEE6B88436634 /* IQKeyboardManager.m */,
-				7B3CADCEB92BF9DC933DAE35AD1FE452 /* IQKeyboardManagerConstants.h */,
-				629E1C0A753672BFC50E7F72B1177B8F /* IQKeyboardManagerConstantsInternal.h */,
-				83D025416BC66EE0DD9A402D19759718 /* IQKeyboardReturnKeyHandler.h */,
-				7331E7289A365EC2F44C105E88428F60 /* IQKeyboardReturnKeyHandler.m */,
-				E4535F145BFF5E37A65ACF78D30404E7 /* IQNSArray+Sort.h */,
-				11E6A304649FBAEA1E3EC90F84C52B7A /* IQNSArray+Sort.m */,
-				FB2F37BC99824E0D518047FA748BF50E /* IQPreviousNextView.h */,
-				A1177B38ACB492B3CAB65C51EA8F4029 /* IQPreviousNextView.m */,
-				FCE9C7973D69AC2F1404BB0210DA3DA0 /* IQTextView.h */,
-				F6197D1D5ED1CD47E8CF2410DBC0102C /* IQTextView.m */,
-				F7F6258A58BF12563F20A09A6C4893A6 /* IQTitleBarButtonItem.h */,
-				32233C47667D6788C25390CC88F2AFAF /* IQTitleBarButtonItem.m */,
-				4EEE3138F6DAFFB49FADFFF421C0F84D /* IQToolbar.h */,
-				84242BDB538EEA0202C84BB95473070D /* IQToolbar.m */,
-				B31CD442FFD55A37CE489D490CA66F78 /* IQUIScrollView+Additions.h */,
-				84AB4615D9C5BDB8FC15F25949887828 /* IQUIScrollView+Additions.m */,
-				895FFD883E7FA4A22126ABA03E67F323 /* IQUITextFieldView+Additions.h */,
-				6104C58626A84D6A9AF2D131A545D720 /* IQUITextFieldView+Additions.m */,
-				982549526C41BD1AD88E7D243A5ED6A1 /* IQUIView+Hierarchy.h */,
-				2C6BD35ADC0DE70BFC69BD93A53C2936 /* IQUIView+Hierarchy.m */,
-				E1572C3D3DF86331537A7D2EAD10D693 /* IQUIView+IQKeyboardToolbar.h */,
-				44D70698F26D66DD4E5DD9D8F074C91B /* IQUIView+IQKeyboardToolbar.m */,
-				9A4D5737CE4A60AD97869A3AC6D1DB2B /* IQUIViewController+Additions.h */,
-				F313A66190919B6C6A97BD6747EC4630 /* IQUIViewController+Additions.m */,
-				913F0158FEF2DF497BBB01C7932D9BF9 /* Support Files */,
+				9B6E35DB293C649635DC0D9E6DED86C6 /* Extensions.swift */,
+				E4F5316B198247BF62ABC9B6B4871152 /* InnerKRProgressHUD.swift */,
+				A2D4648981E11BCF68A3EAA9DB2A1197 /* KRProgressHUD.swift */,
+				0C7E866EAAB97559B0D605B13FA19E51 /* KRProgressHUDIconType.swift */,
+				89A0D61FEAB1021182B78CBFC2839192 /* KRProgressHUDViewController.swift */,
+				5A6A0034BA6A1AE85071FF864A040454 /* Support Files */,
 			);
-			name = IQKeyboardManager;
-			path = IQKeyboardManager;
+			name = KRProgressHUD;
+			path = KRProgressHUD;
 			sourceTree = "<group>";
 		};
 		F9D206BABE81E6BF0B9B23880B238CC7 /* iOS */ = {
@@ -339,6 +474,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		0E829EA627107E8158CAFCF16958835A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32DAFD5267320A0E445C44D5B0A8A3E6 /* KRActivityIndicatorView-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		409211D0743ADB9E12858F097AB900B3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -362,36 +505,83 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4D2D5F9141BE3F901BFBB9E9A3584D70 /* Headers */ = {
+		62A7E555243D6CB7C3282E29E7001949 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24FBF53F99C95B7C5C6BC6BF6D981484 /* Pods-BIT Reminder-umbrella.h in Headers */,
+				55388BCDFCE307B35DFA920FA6632E17 /* Pods-BIT Reminder-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB22DB93A9DCF37D720EEBA863F2A1BA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B527DB69280CF80AABF664A88202E84 /* KRProgressHUD-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		688475E1CB14262615BD14FBE15AF08F /* Pods-BIT Reminder */ = {
+		4F7A1E5A05AF87570E2873C5F725E2CB /* KRActivityIndicatorView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 36F87F7A6D8CE7DFD37F811209818F29 /* Build configuration list for PBXNativeTarget "Pods-BIT Reminder" */;
+			buildConfigurationList = ED1F62E459590C11B6D6F75CE6FC6295 /* Build configuration list for PBXNativeTarget "KRActivityIndicatorView" */;
 			buildPhases = (
-				4D2D5F9141BE3F901BFBB9E9A3584D70 /* Headers */,
-				57A45B8CAAA6B08578392259D4514716 /* Sources */,
-				4963AF6B57E893A40D45B86D312EDB2D /* Frameworks */,
-				631011198DF1ACCB1A679B29A992D056 /* Resources */,
+				0E829EA627107E8158CAFCF16958835A /* Headers */,
+				042D193EACCED2D20ED31518986F6AC8 /* Sources */,
+				8AB39F144A72F040D2C21D2F2A3CA138 /* Frameworks */,
+				90842901C6BA0BA008A60BD1AA069A01 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AEC6E749FF80AA53C0865914B9655C35 /* PBXTargetDependency */,
-				6E24E935634BA77A0A6C867EE51AC3E2 /* PBXTargetDependency */,
-				1DEA221EC768F7C99C5158FCAA461F48 /* PBXTargetDependency */,
+			);
+			name = KRActivityIndicatorView;
+			productName = KRActivityIndicatorView;
+			productReference = 9258ECC23A4C8B0274C7A6DF69DDFE95 /* KRActivityIndicatorView */;
+			productType = "com.apple.product-type.framework";
+		};
+		688475E1CB14262615BD14FBE15AF08F /* Pods-BIT Reminder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17ADE2687A709A7D28D7FD3634B6347C /* Build configuration list for PBXNativeTarget "Pods-BIT Reminder" */;
+			buildPhases = (
+				62A7E555243D6CB7C3282E29E7001949 /* Headers */,
+				D323C3DE23E94934D81C665A9779FF1C /* Sources */,
+				92819F04635A1A6DA8EEDCFD437C3F92 /* Frameworks */,
+				C8421E50370D94F49C0274569D16A6E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D2026E3AA78C1240B12C3C480963E90 /* PBXTargetDependency */,
+				959FB699E48283415F7815D40A6F4AED /* PBXTargetDependency */,
+				C961ECC04F583B86F65FA5E4E5578EB2 /* PBXTargetDependency */,
+				EF0D1276F4474F67036BCC31ACE6F869 /* PBXTargetDependency */,
+				2B047033566396A4D9010C85941036E6 /* PBXTargetDependency */,
 			);
 			name = "Pods-BIT Reminder";
 			productName = Pods_BIT_Reminder;
 			productReference = 99885AF5C603DD5633B1C9720C98E5D4 /* Pods-BIT Reminder */;
+			productType = "com.apple.product-type.framework";
+		};
+		BA4681533D6AA601F9C9E2A116B7472C /* KRProgressHUD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE46D50F7142469FB4F76946987DE8F0 /* Build configuration list for PBXNativeTarget "KRProgressHUD" */;
+			buildPhases = (
+				BB22DB93A9DCF37D720EEBA863F2A1BA /* Headers */,
+				E9542941DD8395F63154CCF9F551D523 /* Sources */,
+				BD586B9E4D7076544C646EC8482E6164 /* Frameworks */,
+				58ADCC2540CD6448AF052A92ABF41638 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				082A34BBA32CCF89C8ED4FE00A2426BE /* PBXTargetDependency */,
+			);
+			name = KRProgressHUD;
+			productName = KRProgressHUD;
+			productReference = 1C33CB84138510317C9CFF8E19C47C23 /* KRProgressHUD */;
 			productType = "com.apple.product-type.framework";
 		};
 		FBA456CB50E371584C11231929A0971E /* IQKeyboardManager */ = {
@@ -430,11 +620,13 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = B651985DDA9F9ABBF977B6690D8F16C9 /* Products */;
+			productRefGroup = 213B1A0E5C444BF1FA8606E20F2470DF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				FBA456CB50E371584C11231929A0971E /* IQKeyboardManager */,
+				4F7A1E5A05AF87570E2873C5F725E2CB /* KRActivityIndicatorView */,
+				BA4681533D6AA601F9C9E2A116B7472C /* KRProgressHUD */,
 				688475E1CB14262615BD14FBE15AF08F /* Pods-BIT Reminder */,
 				1E798429DCFA7906F6625CCFC1088744 /* SwiftGen */,
 				52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */,
@@ -443,7 +635,21 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		631011198DF1ACCB1A679B29A992D056 /* Resources */ = {
+		58ADCC2540CD6448AF052A92ABF41638 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90842901C6BA0BA008A60BD1AA069A01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8421E50370D94F49C0274569D16A6E5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -460,11 +666,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		57A45B8CAAA6B08578392259D4514716 /* Sources */ = {
+		042D193EACCED2D20ED31518986F6AC8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD251C65121F24F2FB438C5CA5930D22 /* Pods-BIT Reminder-dummy.m in Sources */,
+				EA9307BFC6EC7DB48CC7944D87102096 /* Extensions.swift in Sources */,
+				0231BF88DE78D1AF701640162F641EF1 /* KRActivityIndicatorView.swift in Sources */,
+				664296435583DFE0E7F51D03A05D5E46 /* KRActivityIndicatorView-dummy.m in Sources */,
+				DFB95248137010B96366E1E49B8221CE /* KRActivityIndicatorViewStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,33 +698,211 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D323C3DE23E94934D81C665A9779FF1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0412830E523B39EF325F5B2C58415CF /* Pods-BIT Reminder-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9542941DD8395F63154CCF9F551D523 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5C7CECF1E3E73AFEC9547F5AAA24730 /* Extensions.swift in Sources */,
+				A59645A7884F87BA5BF6AB93E688901B /* InnerKRProgressHUD.swift in Sources */,
+				5EDD32C82B9EE160E6615CEAEFCA1A15 /* KRProgressHUD.swift in Sources */,
+				E5734FE2E4663F4C9E7ED8CECC38D2F2 /* KRProgressHUD-dummy.m in Sources */,
+				5BF5CE60210BA63B24F47DA85DB6D541 /* KRProgressHUDIconType.swift in Sources */,
+				EE468DF777E82A8AB41ED7D7289B9B9C /* KRProgressHUDViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1DEA221EC768F7C99C5158FCAA461F48 /* PBXTargetDependency */ = {
+		082A34BBA32CCF89C8ED4FE00A2426BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KRActivityIndicatorView;
+			target = 4F7A1E5A05AF87570E2873C5F725E2CB /* KRActivityIndicatorView */;
+			targetProxy = 650BBC2F3FFC210C2FD27A5422684C37 /* PBXContainerItemProxy */;
+		};
+		2B047033566396A4D9010C85941036E6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftLint;
 			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
-			targetProxy = 1E8C5F4F6D151F7F427E9191C2E93E81 /* PBXContainerItemProxy */;
+			targetProxy = DA40F530BD69F7D5E22A52F80C7F7F82 /* PBXContainerItemProxy */;
 		};
-		6E24E935634BA77A0A6C867EE51AC3E2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftGen;
-			target = 1E798429DCFA7906F6625CCFC1088744 /* SwiftGen */;
-			targetProxy = F4380F42A1AECB569A2B4DB5B605683F /* PBXContainerItemProxy */;
-		};
-		AEC6E749FF80AA53C0865914B9655C35 /* PBXTargetDependency */ = {
+		7D2026E3AA78C1240B12C3C480963E90 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = IQKeyboardManager;
 			target = FBA456CB50E371584C11231929A0971E /* IQKeyboardManager */;
-			targetProxy = 8F0BE1D770E75D225E6682456C5AF0AE /* PBXContainerItemProxy */;
+			targetProxy = 66751A5B85AC3713184FDDFB45BFE9F4 /* PBXContainerItemProxy */;
+		};
+		959FB699E48283415F7815D40A6F4AED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KRActivityIndicatorView;
+			target = 4F7A1E5A05AF87570E2873C5F725E2CB /* KRActivityIndicatorView */;
+			targetProxy = 713D4580FD00846D9973EC7560CD8FDC /* PBXContainerItemProxy */;
+		};
+		C961ECC04F583B86F65FA5E4E5578EB2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KRProgressHUD;
+			target = BA4681533D6AA601F9C9E2A116B7472C /* KRProgressHUD */;
+			targetProxy = EAB637AB835E5C5D608870E538D1BC18 /* PBXContainerItemProxy */;
+		};
+		EF0D1276F4474F67036BCC31ACE6F869 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftGen;
+			target = 1E798429DCFA7906F6625CCFC1088744 /* SwiftGen */;
+			targetProxy = 07B11203DC724DDD7ACDA29E1C9DE048 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		01F9DF15C17752EA961049E439E535E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA3A3E151A1D4A9A51E8D5BF5736A7D0 /* Pods-BIT Reminder.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BIT Reminder/Pods-BIT Reminder-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BIT Reminder/Pods-BIT Reminder.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		081F36D1698C149250AC3A5C3370CBF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E18084531FDBE19881B0834BED4F7D4B /* Pods-BIT Reminder.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BIT Reminder/Pods-BIT Reminder-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BIT Reminder/Pods-BIT Reminder.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		08D3CFCD697E35B31C18946FE494E1B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2AC8DC672F053B7EE0392A6CB6764A9 /* KRActivityIndicatorView.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KRActivityIndicatorView/KRActivityIndicatorView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KRActivityIndicatorView/KRActivityIndicatorView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/KRActivityIndicatorView/KRActivityIndicatorView.modulemap";
+				PRODUCT_MODULE_NAME = KRActivityIndicatorView;
+				PRODUCT_NAME = KRActivityIndicatorView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		14394C310CB55A4531D35D3A9B3D7DC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFEE78AD8A1409047AC4664A3D530C3F /* KRProgressHUD.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KRProgressHUD/KRProgressHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KRProgressHUD/KRProgressHUD-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/KRProgressHUD/KRProgressHUD.modulemap";
+				PRODUCT_MODULE_NAME = KRProgressHUD;
+				PRODUCT_NAME = KRProgressHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		2202230BF25CAB2FDC609A71D79055BB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A5C4ED199200216D10B7F6F09833025 /* SwiftGen.debug.xcconfig */;
+			baseConfigurationReference = 68864DB4B46FCE7BA9BF888028E54144 /* SwiftGen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -530,7 +917,7 @@
 		};
 		26EA5A9600226D2B7D8D25152A304F3B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06C09499EEDF9250A11B677442C5128C /* SwiftLint.release.xcconfig */;
+			baseConfigurationReference = FBBD391D90D26BECEA4CA520A08A4529 /* SwiftLint.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -611,9 +998,43 @@
 			};
 			name = Debug;
 		};
+		2F55D1E7E4C9E701F0522643A3A6296D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D94F5BB6FE5F8C6C708438B10317AF1 /* KRActivityIndicatorView.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KRActivityIndicatorView/KRActivityIndicatorView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KRActivityIndicatorView/KRActivityIndicatorView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/KRActivityIndicatorView/KRActivityIndicatorView.modulemap";
+				PRODUCT_MODULE_NAME = KRActivityIndicatorView;
+				PRODUCT_NAME = KRActivityIndicatorView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		313B5A983A701FEB3AFBCF7A9D926D05 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B1100905A7C858E0BF726F9AFF36C2E /* IQKeyboardManager.debug.xcconfig */;
+			baseConfigurationReference = FC155B8146B4DED7C1CEC0530E962635 /* IQKeyboardManager.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -645,12 +1066,10 @@
 			};
 			name = Debug;
 		};
-		5FBE591B4CFCF4F1223494CCDC773CEE /* Release */ = {
+		596739A7B2B05C885EBCC4008D91750A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E18084531FDBE19881B0834BED4F7D4B /* Pods-BIT Reminder.release.xcconfig */;
+			baseConfigurationReference = 58D4599B0D1CFE2A7DF516564380FDD9 /* KRProgressHUD.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -659,22 +1078,21 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-BIT Reminder/Pods-BIT Reminder-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/KRProgressHUD/KRProgressHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KRProgressHUD/KRProgressHUD-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BIT Reminder/Pods-BIT Reminder.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/KRProgressHUD/KRProgressHUD.modulemap";
+				PRODUCT_MODULE_NAME = KRProgressHUD;
+				PRODUCT_NAME = KRProgressHUD;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -746,7 +1164,7 @@
 		};
 		996E7F30EAFDE73F45294AD914E804B2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 604B0C18DDF709BC66C3EBAB0468432E /* IQKeyboardManager.release.xcconfig */;
+			baseConfigurationReference = 51C0493BDA4AF18518F17F22A23BD119 /* IQKeyboardManager.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -779,45 +1197,9 @@
 			};
 			name = Release;
 		};
-		AC08E3DD0869660FF37FF71252D85262 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA3A3E151A1D4A9A51E8D5BF5736A7D0 /* Pods-BIT Reminder.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-BIT Reminder/Pods-BIT Reminder-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BIT Reminder/Pods-BIT Reminder.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		CF3B4AB84D0F77E437676BAFB9C2086C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C109405D9F1EF82F20253986BEF535A7 /* SwiftGen.release.xcconfig */;
+			baseConfigurationReference = 35081396BBB59213A2AB6E8E5909A76E /* SwiftGen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -833,7 +1215,7 @@
 		};
 		E9E1A48A750B946DE9877594C6E735E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9370D490C84BFDA08B84E0ECC4062C87 /* SwiftLint.debug.xcconfig */;
+			baseConfigurationReference = A108108DF43D2CB75C4C14DF5E7D1BE8 /* SwiftLint.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -850,11 +1232,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		36F87F7A6D8CE7DFD37F811209818F29 /* Build configuration list for PBXNativeTarget "Pods-BIT Reminder" */ = {
+		17ADE2687A709A7D28D7FD3634B6347C /* Build configuration list for PBXNativeTarget "Pods-BIT Reminder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AC08E3DD0869660FF37FF71252D85262 /* Debug */,
-				5FBE591B4CFCF4F1223494CCDC773CEE /* Release */,
+				01F9DF15C17752EA961049E439E535E5 /* Debug */,
+				081F36D1698C149250AC3A5C3370CBF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -882,6 +1264,24 @@
 			buildConfigurations = (
 				E9E1A48A750B946DE9877594C6E735E4 /* Debug */,
 				26EA5A9600226D2B7D8D25152A304F3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE46D50F7142469FB4F76946987DE8F0 /* Build configuration list for PBXNativeTarget "KRProgressHUD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14394C310CB55A4531D35D3A9B3D7DC3 /* Debug */,
+				596739A7B2B05C885EBCC4008D91750A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED1F62E459590C11B6D6F75CE6FC6295 /* Build configuration list for PBXNativeTarget "KRActivityIndicatorView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08D3CFCD697E35B31C18946FE494E1B1 /* Debug */,
+				2F55D1E7E4C9E701F0522643A3A6296D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

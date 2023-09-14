@@ -24,6 +24,8 @@ internal enum StoryboardScene {
 
     internal static let registrationViewController = SceneType<RegistrationViewController>(storyboard: Authentification.self, identifier: "RegistrationViewController")
 
+    internal static let settingsViewController = SceneType<SettingsViewController>(storyboard: Authentification.self, identifier: "SettingsViewController")
+
     internal static let splashScreenViewController = SceneType<SplashScreenViewController>(storyboard: Authentification.self, identifier: "SplashScreenViewController")
   }
 }

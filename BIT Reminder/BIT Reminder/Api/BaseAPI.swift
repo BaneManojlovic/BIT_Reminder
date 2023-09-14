@@ -77,4 +77,16 @@ class AuthManager {
             completion(error)
         }
     }
+
+    // MARK: - API Data Methods
+
+    func getReminders(completion: @escaping (Error?, [Reminder]?) -> Void) async {
+        do {
+            let reminders: [Reminder] = try await client.database.from("reminders").execute().value
+            completion(nil, reminders)
+        } catch {
+            debugPrint("error")
+            completion(error, nil)
+        }
+    }
 }
