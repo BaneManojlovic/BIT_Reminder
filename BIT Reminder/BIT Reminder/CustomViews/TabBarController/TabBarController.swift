@@ -68,9 +68,9 @@ class TabBarController: UITabBarController {
         return viewController
     }
 
-    private func setAlbumTabBarController() -> MapViewController {
-        let viewController = StoryboardScene.Authentification.mapViewController.instantiate()
-        viewController.presenter = MapViewPresenter()
+    private func setAlbumTabBarController() -> AlbumsViewController {
+        let viewController = StoryboardScene.Authentification.albumsViewController.instantiate()
+        viewController.presenter = AlbumsViewPresenter()
         viewController.tabBarItem = UITabBarItem.init(title: "Album",
                                                       image: UIImage(systemName: "photo.on.rectangle"),
                                                       selectedImage: UIImage(systemName: "photo.fill.on.rectangle.fill"))

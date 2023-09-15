@@ -32,12 +32,12 @@ class AlbumsViewPresenter {
     }
     
     func getAlbums() {
-//        KRProgressHUD.show()
-//        self.albums.append(Album(title: "Barselona", count: 99))
-//        self.albums.append(Album(title: "Hungaro ring", count: 73))
-//        self.albums.append(Album(title: "Work", count: 41))
-//        self.albums.append(Album(title: "Birthday", count: 23))
-//        self.albums.append(Album(title: "Casual walk", count: 12))
-//        KRProgressHUD.dismiss()
+        KRProgressHUD.show()
+        self.albums.append(Album(title: "Barselona", count: 99))
+        self.albums.append(Album(title: "Hungaro ring", count: 73))
+        self.albums.append(Album(title: "Work", count: 41))
+        self.albums.append(Album(title: "Birthday", count: 23))
+        self.albums.append(Album(title: "Casual walk", count: 12))
+        KRProgressHUD.dismiss()
     }
 }
