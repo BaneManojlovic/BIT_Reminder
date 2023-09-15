@@ -46,8 +46,8 @@ class AlbumsTableViewCell: UITableViewCell {
     }
 
     func setupCellData(model: Album) {
-        self.titleLabel.text = model.title
-        self.imageCountLabel.text = "\(model.count)" + " " + "images"
+        self.titleLabel.text = model.albumName
+//        self.imageCountLabel.text = "\(model.count)" + " " + "images"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

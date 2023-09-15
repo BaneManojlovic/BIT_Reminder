@@ -78,7 +78,7 @@ class AuthManager {
         }
     }
 
-    // MARK: - API Data Methods
+    // MARK: - Reminder API Data Methods
 
     func getReminders(completion: @escaping (Error?, [Reminder]?) -> Void) async {
         do {
@@ -109,6 +109,18 @@ class AuthManager {
                 debugPrint("error")
                 completion(error)
             }
+        }
+    }
+
+    // MARK: - Albums API Data Methods
+
+    func getAlbums(completion: @escaping (Error?, [Album]?) -> Void) async {
+        do {
+            let albums: [Album] = try await client.database.from("albums").execute().value
+            completion(nil, albums)
+        } catch {
+            debugPrint("error")
+            completion(error, nil)
         }
     }
 }

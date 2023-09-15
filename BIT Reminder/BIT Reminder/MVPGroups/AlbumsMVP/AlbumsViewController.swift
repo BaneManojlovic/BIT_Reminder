@@ -23,6 +23,10 @@ class AlbumsViewController: BaseNavigationController {
         self.haveAddButton = true
         self.setupDelegates()
         self.setupTargets()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.presenter.getAlbums()
     }
 
@@ -41,13 +45,22 @@ class AlbumsViewController: BaseNavigationController {
         self.albumsView.tableView.dataSource = self
     }
 
-    private func setupTargets() {
-    
-    }
+    private func setupTargets() { }
 }
 
 extension AlbumsViewController: AlbumsViewPresenterDelegate {
 
+    func getAlbumsFailure(error: String) {
+        DispatchQueue.main.async {
+            self.showOkAlert(message: error)
+        }
+    }
+
+    func getAlbumsSuccess(response: [Album]) {
+        DispatchQueue.main.async {
+            self.albumsView.tableView.reloadData()
+        }
+    }
 }
 
 // MARK: - Conforming to UITableViewDelegate, UITableViewDataSource

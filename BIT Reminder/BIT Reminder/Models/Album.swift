@@ -7,11 +7,8 @@
 
 import Foundation
 
-struct Album {
-
+struct Album: Codable {
     var id: Int?
-    var title: String
-    var count: Int
-    var images: [String]?
+    var albumName: String
 }
 
