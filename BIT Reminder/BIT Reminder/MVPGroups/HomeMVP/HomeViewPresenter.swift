@@ -7,10 +7,13 @@
 
 import Foundation
 import Supabase
+import KRProgressHUD
 
 protocol HomeViewPresenterDelegate: AnyObject {
-    func userLogoutSuccess()
-    func userLogoutFailure(message: String)
+    func getRemindersFailure(error: String)
+    func getRemindersSuccess(response: [Reminder])
+    func deleteReminderFailure(message: String)
+    func deleteReminderSuccess()
 }
 
 class HomeViewPresenter {
@@ -19,6 +22,8 @@ class HomeViewPresenter {
     var authManager = AuthManager()
     let userDefaults = UserDefaultsHelper()
     var userEmail: String?
+    var screenName: String?
+    var reminders: [Reminder] = []
 
     // MARK: - Initialization
 
@@ -34,18 +39,52 @@ class HomeViewPresenter {
         self.delegate = nil
     }
 
-    // TODO: - This method should be implemented on Settings screen.
-    // This is here just for test. Will be removed
-    func logoutUser() {
+    func getReminders() {
+        self.reminders = []
+        KRProgressHUD.show()
         Task {
             do {
-                try await self.authManager.userLogout() { error in
+                try await self.authManager.getReminders { error, response  in
                     if let error = error {
-                        self.delegate?.userLogoutFailure(message: error.localizedDescription)
+                        debugPrint(error)
+                        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                           KRProgressHUD.dismiss()
+                        }
+                        self.delegate?.getRemindersFailure(error: error.localizedDescription)
                     } else {
-                        self.userDefaults.removeUser()
-                        self.delegate?.userLogoutSuccess()
+                        debugPrint("")
+                        KRProgressHUD.dismiss()
+                        if let resp = response {
+                            debugPrint(resp)
+                            self.reminders = resp
+                            self.delegate?.getRemindersSuccess(response: resp)
+                        }
                     }
+                }
+            }
+        }
+    }
+
+    func deleteReminder(model: Reminder) {
+        // TODO: - to be implemented
+        debugPrint("delete delete ...")
+        let table = "reminders"
+        KRProgressHUD.show()
+        Task {
+            do {
+                try await self.authManager.deleteReminder(tableName: table, model: model) { error in
+                    if let error = error {
+                        debugPrint(error)
+                        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                           KRProgressHUD.dismiss()
+                        }
+                        self.delegate?.deleteReminderFailure(message: error.localizedDescription)
+                    } else {
+                        debugPrint("")
+                        KRProgressHUD.dismiss()
+                        self.delegate?.deleteReminderSuccess()
+                    }
+                    
                 }
             }
         }

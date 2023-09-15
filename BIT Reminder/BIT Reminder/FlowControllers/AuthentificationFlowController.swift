@@ -13,7 +13,6 @@ class AuthentificationFlowController: FlowController {
         guard let app = UIApplication.shared.delegate as? AppDelegate,
         let window = app.window else { return }
 
-        // TODO: - Add here emptying of user defaults
         let splashVC = StoryboardScene.Authentification.splashScreenViewController.instantiate()
 
         window.switchRootViewController(splashVC)
@@ -34,16 +33,21 @@ class AuthentificationFlowController: FlowController {
         guard let app = UIApplication.shared.delegate as? AppDelegate,
         let window = app.window else { return }
 
-        let homeVC = StoryboardScene.Authentification.homeViewController.instantiate()
-        homeVC.presenter = HomeViewPresenter()
-
-        window.switchRootViewController(UINavigationController(rootViewController: homeVC))
+        let tabBar = TabBarController()
+        window.switchRootViewController(tabBar)
+        tabBar.selectedIndex = 0
     }
 
     func goToRegistration() {
         let regVC = StoryboardScene.Authentification.registrationViewController.instantiate()
         regVC.presenter = RegistrationPresenter()
         currentViewController.navigationController?.pushViewController(regVC, animated: true)
+    }
+
+    func goToAddNewReminder() {
+        let anrVC = StoryboardScene.Authentification.addNewReminderViewController.instantiate()
+        anrVC.presenter = AddNewReminderViewPresenter()
+        currentViewController.navigationController?.pushViewController(anrVC, animated: true)
     }
 
     func goToForgotPassword() { }

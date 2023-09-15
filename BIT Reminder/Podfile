@@ -8,6 +8,8 @@ target 'BIT Reminder' do
   # Pods for BIT Reminder
   pod 'SwiftGen'
   pod 'SwiftLint'
+  pod 'IQKeyboardManager'
+  pod 'KRProgressHUD'
 
 end
 
