@@ -41,7 +41,7 @@ class AlbumsTableViewCell: UITableViewCell {
         self.imageCountLabel.textColor = .white
         self.imageCountLabel.textAlignment = .left
         /// setup accessory image
-        self.accessoryImage.image = UIImage(systemName: "arrow.right")
+        self.accessoryImage.image = UIImage(systemName: "chevron.right")
         self.accessoryImage.tintColor = .white
     }
 
@@ -55,5 +55,4 @@ class AlbumsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }

@@ -29,7 +29,7 @@ class SettingsTableViewCell: UITableViewCell {
         self.titleLabel.textAlignment = .left
         self.titleLabel.textColor = .white
         /// setup image
-        self.accessoryImage.image = UIImage(systemName: "arrow.right")?.withTintColor(.white)
+        self.accessoryImage.image = UIImage(systemName: "chevron.right")?.withTintColor(.white)
     }
 
     func fillCellData(text: String) {
@@ -41,5 +41,4 @@ class SettingsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }
