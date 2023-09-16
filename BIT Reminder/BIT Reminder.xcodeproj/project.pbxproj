@@ -28,6 +28,12 @@
 		8D6F5CED2AA3EABF006184CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F5CEC2AA3EABF006184CC /* SceneDelegate.swift */; };
 		8D6F5CEF2AA3EABF006184CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F5CEE2AA3EABF006184CC /* ViewController.swift */; };
 		8D6F5CF42AA3EAC0006184CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D6F5CF32AA3EAC0006184CC /* Assets.xcassets */; };
+		8D8DE36E2AB46A580063E62C /* AddNewAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DE36D2AB46A580063E62C /* AddNewAlbumViewController.swift */; };
+		8D8DE3702AB46A670063E62C /* AddNewAlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DE36F2AB46A670063E62C /* AddNewAlbumView.swift */; };
+		8D8DE3722AB46A740063E62C /* AddNewAlbumViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DE3712AB46A740063E62C /* AddNewAlbumViewPresenter.swift */; };
+		8D8DE3752AB487D30063E62C /* AlbumDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DE3742AB487D30063E62C /* AlbumDetailsViewController.swift */; };
+		8D8DE3772AB487E50063E62C /* AlbumDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DE3762AB487E50063E62C /* AlbumDetailsView.swift */; };
+		8D8DE3792AB487F20063E62C /* AlbumDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DE3782AB487F20063E62C /* AlbumDetailsPresenter.swift */; };
 		8D95136E2AAA184E00A30E9B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D95136D2AAA184E00A30E9B /* HomeViewController.swift */; };
 		8D9513702AAA185D00A30E9B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D95136F2AAA185D00A30E9B /* HomeView.swift */; };
 		8D9513722AAA186800A30E9B /* HomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9513712AAA186800A30E9B /* HomeViewPresenter.swift */; };
@@ -93,6 +99,12 @@
 		8D6F5CEE2AA3EABF006184CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8D6F5CF32AA3EAC0006184CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D6F5CF82AA3EAC0006184CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D8DE36D2AB46A580063E62C /* AddNewAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewAlbumViewController.swift; sourceTree = "<group>"; };
+		8D8DE36F2AB46A670063E62C /* AddNewAlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewAlbumView.swift; sourceTree = "<group>"; };
+		8D8DE3712AB46A740063E62C /* AddNewAlbumViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewAlbumViewPresenter.swift; sourceTree = "<group>"; };
+		8D8DE3742AB487D30063E62C /* AlbumDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewController.swift; sourceTree = "<group>"; };
+		8D8DE3762AB487E50063E62C /* AlbumDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsView.swift; sourceTree = "<group>"; };
+		8D8DE3782AB487F20063E62C /* AlbumDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsPresenter.swift; sourceTree = "<group>"; };
 		8D95136D2AAA184E00A30E9B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8D95136F2AAA185D00A30E9B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8D9513712AAA186800A30E9B /* HomeViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewPresenter.swift; sourceTree = "<group>"; };
@@ -273,6 +285,8 @@
 		8D6B80B32AA78B17009DF810 /* MVPGroups */ = {
 			isa = PBXGroup;
 			children = (
+				8D8DE3732AB46A8B0063E62C /* AlbumDetailsMVP */,
+				8D8DE36C2AB46A250063E62C /* AddNewAlbumMVP */,
 				8DBAA57E2AB30D540054A5FF /* MapMVP */,
 				8DBAA57D2AB305D70054A5FF /* AlbumsMVP */,
 				8DBAA5762AB2AF170054A5FF /* AddNewReminderMVP */,
@@ -358,6 +372,26 @@
 				8D6B80B32AA78B17009DF810 /* MVPGroups */,
 			);
 			path = "BIT Reminder";
+			sourceTree = "<group>";
+		};
+		8D8DE36C2AB46A250063E62C /* AddNewAlbumMVP */ = {
+			isa = PBXGroup;
+			children = (
+				8D8DE36D2AB46A580063E62C /* AddNewAlbumViewController.swift */,
+				8D8DE36F2AB46A670063E62C /* AddNewAlbumView.swift */,
+				8D8DE3712AB46A740063E62C /* AddNewAlbumViewPresenter.swift */,
+			);
+			path = AddNewAlbumMVP;
+			sourceTree = "<group>";
+		};
+		8D8DE3732AB46A8B0063E62C /* AlbumDetailsMVP */ = {
+			isa = PBXGroup;
+			children = (
+				8D8DE3742AB487D30063E62C /* AlbumDetailsViewController.swift */,
+				8D8DE3762AB487E50063E62C /* AlbumDetailsView.swift */,
+				8D8DE3782AB487F20063E62C /* AlbumDetailsPresenter.swift */,
+			);
+			path = AlbumDetailsMVP;
 			sourceTree = "<group>";
 		};
 		8D95136B2AAA167600A30E9B /* HomeMVP */ = {
@@ -652,9 +686,11 @@
 				8DBAA5802AB30D6E0054A5FF /* AlbumsViewController.swift in Sources */,
 				8D6B80C92AA861A5009DF810 /* Fonts.swift in Sources */,
 				8D95137B2AAB090500A30E9B /* RegistrationViewController.swift in Sources */,
+				8D8DE3772AB487E50063E62C /* AlbumDetailsView.swift in Sources */,
 				8DBAA55F2AB1DDEB0054A5FF /* StringHelper.swift in Sources */,
 				8D6B80D22AA88213009DF810 /* SplashScreenPresenter.swift in Sources */,
 				8DBAA55B2AB1AB690054A5FF /* Constants.swift in Sources */,
+				8D8DE36E2AB46A580063E62C /* AddNewAlbumViewController.swift in Sources */,
 				8D32EA9C2AB4252F0080CB5E /* Album.swift in Sources */,
 				8DBAA5862AB30F580054A5FF /* MapViewController.swift in Sources */,
 				8DBAA5842AB30D920054A5FF /* AlbumsViewPresenter.swift in Sources */,
@@ -679,7 +715,10 @@
 				8D6F5CEB2AA3EABF006184CC /* AppDelegate.swift in Sources */,
 				8D6F5CED2AA3EABF006184CC /* SceneDelegate.swift in Sources */,
 				8DBAA5782AB2AF360054A5FF /* AddNewReminderViewController.swift in Sources */,
+				8D8DE3752AB487D30063E62C /* AlbumDetailsViewController.swift in Sources */,
 				8DBAA5722AB2A80A0054A5FF /* SettingsTableViewCell.swift in Sources */,
+				8D8DE3722AB46A740063E62C /* AddNewAlbumViewPresenter.swift in Sources */,
+				8D8DE3702AB46A670063E62C /* AddNewAlbumView.swift in Sources */,
 				8DBAA55D2AB1DDA70054A5FF /* UserModel.swift in Sources */,
 				8D6B80D72AA885A5009DF810 /* FlowController.swift in Sources */,
 				8D6B80C62AA861A5009DF810 /* Assets.swift in Sources */,
@@ -694,6 +733,7 @@
 				8DBAA57A2AB2AF860054A5FF /* AddNewReminderView.swift in Sources */,
 				8D6B80D02AA88201009DF810 /* SplashScreenView.swift in Sources */,
 				8D6B80C52AA861A5009DF810 /* StoryboardScenes.swift in Sources */,
+				8D8DE3792AB487F20063E62C /* AlbumDetailsPresenter.swift in Sources */,
 				8D9513762AAAFDB500A30E9B /* LoginView.swift in Sources */,
 				8D6B80C82AA861A5009DF810 /* Strings.swift in Sources */,
 			);
@@ -841,6 +881,8 @@
 				DEVELOPMENT_TEAM = 5M4MZAC8G6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BIT Reminder/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow BIT Reminder to access your camera in order to take new photo.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow BIT Reminder to access your phot library in order to choose photo.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = Authentification;
 				INFOPLIST_KEY_UIMainStoryboardFile = Authentification;
@@ -871,6 +913,8 @@
 				DEVELOPMENT_TEAM = 5M4MZAC8G6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BIT Reminder/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow BIT Reminder to access your camera in order to take new photo.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow BIT Reminder to access your phot library in order to choose photo.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = Authentification;
 				INFOPLIST_KEY_UIMainStoryboardFile = Authentification;

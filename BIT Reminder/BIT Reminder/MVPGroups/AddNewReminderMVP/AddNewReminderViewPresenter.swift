@@ -17,10 +17,14 @@ class AddNewReminderViewPresenter {
 
     weak var delegate: AddNewReminderViewPresenterDelegate?
     var authManager = AuthManager()
+    var userDefaultsHelper = UserDefaultsHelper()
+    var user: UserModel?
 
     // MARK: - Initialization
 
-    init() { }
+    init() {
+        self.user = self.userDefaultsHelper.getUser()
+    }
 
     // MARK: - Delegate Methods
 
@@ -33,7 +37,6 @@ class AddNewReminderViewPresenter {
     }
 
     func addNewReminder(model: Reminder) {
-        debugPrint("Add ...")
         KRProgressHUD.show()
         Task {
             do {

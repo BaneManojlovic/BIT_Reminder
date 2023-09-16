@@ -47,28 +47,30 @@ class SplashScreenPresenter {
         }
     }
 
-    func checkForRetrievedUser() {
-        Task {
-            do {
-                try await self.authManager.retrieveUser { error, response in
-                    if let error = error {
-                        self.delegate?.errorAuthentificationForRetrivedUser(error: error)
-                    } else if let responseData = response {
-                        if let userData = responseData as? GoTrue.User {
-                            let user = User(uid: userData.id.uuidString, email: userData.email)
-                            self.checkAuthorizationStatus(userData: user)
-                        } else {
-                            debugPrint("error")
-                        }
-                    }
-                }
-            }
-        }
-    }
+    /// This mehod is for checking is user logged in to Supabase
+//    func checkForRetrievedUser() {
+//        Task {
+//            do {
+//                try await self.authManager.retrieveUser { error, response in
+//                    if let error = error {
+//                        self.delegate?.errorAuthentificationForRetrivedUser(error: error)
+//                    } else if let responseData = response {
+//                        if let userData = responseData as? GoTrue.User {
+//                            let user = UserModel(profileId: userData.id.uuidString,
+//                                                 userEmail: userData.email ?? "")
+//                            self.checkAuthorizationStatus(userData: user)
+//                        } else {
+//                            debugPrint("error")
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
 
-    func checkAuthorizationStatus(userData: User) {
+    func checkAuthorizationStatus(userData: UserModel) {
         if let user = self.userDefaults.getUser() {
-            if user.uid == userData.uid {
+            if user.profileId == userData.profileId {
                 self.loggedIn = true
                 self.delegate?.goToHome()
             }

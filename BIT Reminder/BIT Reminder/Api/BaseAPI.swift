@@ -7,15 +7,12 @@
 
 import Foundation
 import Supabase
-
-struct User: Codable {
-    let uid: String
-    let email: String?
-}
+import SupabaseStorage
 
 class AuthManager {
 
     static let shared = AuthManager()
+    let userDefaults = UserDefaultsHelper()
 
     /// unique projecturl from supabase
     static let projectUrl = URL(string: Constants.baseURL)!
@@ -45,12 +42,31 @@ class AuthManager {
         do {
             let data = try await client.auth.signUp(email: email, password: password)
             if let session = data.session {
-                debugPrint("Session je = \(session)")
-                debugPrint("User je = \(session.user)")
                 completion(nil, session)
             } else {
                 debugPrint("error - session = nil")
             }
+        } catch {
+            debugPrint("error")
+            completion(error, nil)
+        }
+    }
+
+    /// API method for saving user to users table in database
+    func saveUser(user: UserModel, completion: @escaping (Error?) -> Void) async {
+        do {
+            try await client.database.from("users").insert(values: user).execute()
+            completion(nil)
+        } catch {
+            completion(error)
+        }
+    }
+
+    func getUserData(completion: @escaping (Error?, [UserModel]?) -> Void) async {
+        guard let user = self.userDefaults.getUser() else { return }
+        do {
+            let response: [UserModel] = try await client.database.from("users").select().eq(column: "profileId", value: user.profileId).execute().value
+            completion(nil, response)
         } catch {
             debugPrint("error")
             completion(error, nil)
@@ -81,8 +97,9 @@ class AuthManager {
     // MARK: - Reminder API Data Methods
 
     func getReminders(completion: @escaping (Error?, [Reminder]?) -> Void) async {
+        guard let user = self.userDefaults.getUser() else { return }
         do {
-            let reminders: [Reminder] = try await client.database.from("reminders").execute().value
+            let reminders: [Reminder] = try await client.database.from("reminders").select().eq(column: "profileId", value: user.profileId).execute().value
             completion(nil, reminders)
         } catch {
             debugPrint("error")
@@ -115,9 +132,42 @@ class AuthManager {
     // MARK: - Albums API Data Methods
 
     func getAlbums(completion: @escaping (Error?, [Album]?) -> Void) async {
+        guard let user = self.userDefaults.getUser() else { return }
         do {
-            let albums: [Album] = try await client.database.from("albums").execute().value
+            let albums: [Album] = try await client.database.from("albums").select().eq(column: "profileId", value: user.profileId).execute().value
             completion(nil, albums)
+        } catch {
+            debugPrint("error")
+            completion(error, nil)
+        }
+    }
+
+    func createNewAlbum(album: Album, completion: @escaping (Error?) -> Void) async {
+        do {
+            try await client.database.from("albums").insert(values: album).execute()
+            completion(nil)
+        } catch {
+            completion(error)
+        }
+    }
+
+    func getPhotos(albumId: Int, completion: @escaping (Error?, [Photo]?) -> Void) async {
+        do {
+            let photos: [Photo] = try await client.database.from("photos").select().eq(column: "albumId", value: "\(albumId)").execute().value
+            completion(nil, photos)
+        } catch {
+            debugPrint("error")
+            completion(error, nil)
+        }
+    }
+    // TODO: - finish this...
+    func uploadPhoto(imageData: Data, completion: @escaping (Error?, URL?) -> Void) async {
+        // TODO: - Add random number generator to add unique name to images
+        let file = File(name: "picture", data: imageData, fileName: "picture.jpeg", contentType: "image/jpeg")
+        do {
+            try await client.storage.from(id: "photos").upload(path: "picture.jpeg", file: file, fileOptions: FileOptions(cacheControl: "3600"))
+            let imageURL = try client.storage.from(id: "photos").getPublicURL(path: "picture.jpeg")
+            completion(nil, imageURL)
         } catch {
             debugPrint("error")
             completion(error, nil)

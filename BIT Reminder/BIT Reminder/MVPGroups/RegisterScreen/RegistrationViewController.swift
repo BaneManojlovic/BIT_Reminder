@@ -57,9 +57,9 @@ class RegistrationViewController: BaseNavigationController {
            let email = self.registrationView.emailTextField.text,
            let password = self.registrationView.passwordTextField.text,
            let repeatedPassword = self.registrationView.repeatPasswordTextField.text {
-            self.presenter.registerNewUserWithEmail(user: UserModel(uid: "",
-                                                                    name: name,
-                                                                    email: email,
+            self.presenter.registerNewUserWithEmail(user: UserModel(profileId: "",
+                                                                    userName: name,
+                                                                    userEmail: email,
                                                                     password: password,
                                                                     repeatedPassword: repeatedPassword))
         } else {

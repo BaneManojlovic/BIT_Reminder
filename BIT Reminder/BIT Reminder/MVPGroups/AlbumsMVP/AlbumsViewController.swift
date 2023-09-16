@@ -10,6 +10,7 @@ import UIKit
 class AlbumsViewController: BaseNavigationController {
 
     var presenter = AlbumsViewPresenter()
+    lazy private var authFlowController = AuthentificationFlowController(currentViewController: self)
 
     private var albumsView: AlbumsView! {
         loadViewIfNeeded()
@@ -20,11 +21,11 @@ class AlbumsViewController: BaseNavigationController {
         super.viewDidLoad()
 
         self.setupUI()
-        self.haveAddButton = true
+        self.haveCreateFolderButton = true
         self.setupDelegates()
         self.setupTargets()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.presenter.getAlbums()
@@ -46,13 +47,50 @@ class AlbumsViewController: BaseNavigationController {
     }
 
     private func setupTargets() { }
+
+    override func createFolderButtonAction() {
+        super.createFolderButtonAction()
+
+        if let user = self.presenter.user {
+            /// Create the alert controller.
+            let alert = UIAlertController(title: "Create new album", message: "Enter album title:", preferredStyle: .alert)
+            /// Add the text field. You can configure it however you need.
+            alert.addTextField { (textField) in
+                textField.text = ""
+            }
+            /// Grab the value from the text field, and print it when the user clicks OK.
+            alert.addAction(UIAlertAction(title: "Create", style: .default, handler: { [weak alert] (_) in
+                if let textField = alert?.textFields?[0] as? UITextField {
+                    if let text = textField.text {
+                        let album = Album(albumName: text,
+                                          profileId: user.profileId)
+                        self.presenter.createNewAlbum(album: album)
+                    }
+                }
+            }))
+            /// Present the alert.
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
 }
 
 extension AlbumsViewController: AlbumsViewPresenterDelegate {
 
-    func getAlbumsFailure(error: String) {
+    func createNewAlbumFailure(message: String) {
         DispatchQueue.main.async {
-            self.showOkAlert(message: error)
+            self.showOkAlert(message: message)
+        }
+    }
+
+    func createNewAlbumSuccess() {
+        self.showOkAlert(message: "New album created!", confirmation: {
+                self.presenter.getAlbums()
+            })
+    }
+
+    func getAlbumsFailure(message: String) {
+        DispatchQueue.main.async {
+            self.showOkAlert(message: message)
         }
     }
 
@@ -81,5 +119,12 @@ extension AlbumsViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = self.presenter.albums[indexPath.row]
+        if let modelId = model.id {
+            self.authFlowController.goToAlbumDetails(albumId: modelId)
+        }
     }
 }

@@ -39,11 +39,19 @@ class AddNewReminderViewController: BaseNavigationController {
     }
 
     @objc func addNewTapped() {
-        let model = Reminder(title: "Test dodavanja remindera 3",
-                             description: "testing testing...",
-                             important: true,
-                             date: nil)
-        self.presenter.addNewReminder(model: model)
+        guard let user = self.presenter.user else { return }
+
+        if let title = self.addNewReminderView.titleTextField.text,
+           let description = self.addNewReminderView.descriptionTextView.text {
+            let isImportant = self.addNewReminderView.setImportanceSwitch.isOn
+
+            let model = Reminder(profileId: user.profileId,
+                                 title: title,
+                                 description: description,
+                                 important: isImportant,
+                                 date: nil)
+            self.presenter.addNewReminder(model: model)
+        }
     }
 }
 

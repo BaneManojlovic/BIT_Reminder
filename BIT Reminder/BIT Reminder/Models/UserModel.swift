@@ -9,68 +9,87 @@ import Foundation
 
 struct UserModel: Codable {
 
-    var uid: String
-    var name: String
-    var email: String
-    var password: String
-    var repeatedPassword: String
+    var profileId: String // profileId
+    var userName: String? // userName
+    var userEmail: String // userEmail
+    var password: String?
+    var repeatedPassword: String?
 
     func validateLogin() throws {
         /// validate email textField entry
-        if email.isEmpty {
+        if userEmail.isEmpty {
             throw ValidationError.emailEmpty
         } else {
-            if !StringHelper.isEmailValid(email) {
+            if !StringHelper.isEmailValid(userEmail) {
                 throw ValidationError.emailEmpty
             }
         }
         /// validate password textField entry
-        if password.isEmpty {
-            throw ValidationError.passwordEmpty
-        } else {
-            if !StringHelper.isPasswordValid(password) {
-                throw ValidationError.passwordInvalid
+        if let pass = password {
+            if pass.isEmpty {
+                throw ValidationError.passwordEmpty
+            } else {
+                if !StringHelper.isPasswordValid(pass) {
+                    throw ValidationError.passwordInvalid
+                }
             }
+        } else {
+            throw ValidationError.passwordEmpty
         }
     }
 
     func validateRegistration() throws {
         /// validate name textField entry
-        if name.isEmpty {
-            throw ValidationError.nameEmpty
-        } else {
-            if !StringHelper.isFullNameValid(name) {
-                throw ValidationError.nameInvalid
+        if let name = userName {
+            if name.isEmpty {
+                throw ValidationError.nameEmpty
+            } else {
+                if !StringHelper.isFullNameValid(name) {
+                    throw ValidationError.nameInvalid
+                }
             }
+        } else {
+            throw ValidationError.nameEmpty
         }
         /// validate email textField entry
-        if email.isEmpty {
+        if userEmail.isEmpty {
             throw ValidationError.emailEmpty
         } else {
-            if !StringHelper.isEmailValid(email) {
+            if !StringHelper.isEmailValid(userEmail) {
                 throw ValidationError.emailEmpty
             }
         }
         /// validate password textField entry
-        if password.isEmpty {
+        if let pass = password {
+            if pass.isEmpty {
+                throw ValidationError.passwordEmpty
+            } else {
+                if !StringHelper.isPasswordValid(pass) {
+                    throw ValidationError.passwordInvalid
+                }
+            }
+        } else {
             throw ValidationError.passwordEmpty
-        } else {
-            if !StringHelper.isPasswordValid(password) {
-                throw ValidationError.passwordInvalid
-            }
         }
+
         /// validate repeatedPassword textField entry
-        if repeatedPassword.isEmpty {
-            throw ValidationError.repeatPasswordEmpty
-        } else {
-            if !StringHelper.isPasswordValid(repeatedPassword) {
-                throw ValidationError.repeatPasswordInvalid
+        if let repeatedPass = repeatedPassword {
+            if repeatedPass.isEmpty {
+                throw ValidationError.repeatPasswordEmpty
+            } else {
+                if !StringHelper.isPasswordValid(repeatedPass) {
+                    throw ValidationError.repeatPasswordInvalid
+                }
             }
+        } else {
+            throw ValidationError.repeatPasswordEmpty
         }
-        /// validate does password & repeatedPassword match
-        if !password.isEmpty && !repeatedPassword.isEmpty {
-            if !StringHelper.repeatPasswordValidation(password, repeatedPassword) {
-                throw ValidationError.passwordsDontMatch
+            /// validate does password & repeatedPassword match
+        if let pass = password, let repeatedPass = repeatedPassword {
+            if !pass.isEmpty && !repeatedPass.isEmpty {
+                if !StringHelper.repeatPasswordValidation(pass, repeatedPass) {
+                    throw ValidationError.passwordsDontMatch
+                }
             }
         }
     }

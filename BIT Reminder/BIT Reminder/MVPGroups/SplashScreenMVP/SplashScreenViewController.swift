@@ -30,7 +30,9 @@ class SplashScreenViewController: BaseViewController {
 
         self.setupUI()
         self.setupDelegates()
-        self.presenter.checkForRetrievedUser()
+        // TODO: - Research bug with: Invalid Refresh Token: Refresh Token Not Found #436
+//        self.presenter.checkForRetrievedUser()
+        self.presenter.checkAuthorizationStatus()
     }
 
     // MARK: - Private Setup Methods
@@ -62,7 +64,7 @@ extension SplashScreenViewController: SplashScreenPresenterDelegate {
             }
         } else {
             DispatchQueue.main.async {
-                self.showOkAlert(message: error.localizedDescription, completion:  {
+                self.showOkAlert(message: error.localizedDescription, completion: {
                     self.goToLogin()
                 })
             }

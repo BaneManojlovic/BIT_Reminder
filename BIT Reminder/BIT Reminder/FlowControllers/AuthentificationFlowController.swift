@@ -50,5 +50,17 @@ class AuthentificationFlowController: FlowController {
         currentViewController.navigationController?.pushViewController(anrVC, animated: true)
     }
 
+    func goToAddNewAlbum() {
+        let anaVC = StoryboardScene.Authentification.addNewAlbumViewController.instantiate()
+        anaVC.presenter = AddNewAlbumViewPresenter()
+        currentViewController.navigationController?.pushViewController(anaVC, animated: true)
+    }
+
+    func goToAlbumDetails(albumId: Int) {
+        let andVC = StoryboardScene.Authentification.albumDetailsViewController.instantiate()
+        andVC.presenter = AlbumDetailsPresenter(albumId: albumId)
+        currentViewController.navigationController?.pushViewController(andVC, animated: true)
+    }
+
     func goToForgotPassword() { }
 }

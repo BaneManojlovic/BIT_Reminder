@@ -9,8 +9,10 @@ import Foundation
 import KRProgressHUD
 
 protocol AlbumsViewPresenterDelegate: AnyObject {
-    func getAlbumsFailure(error: String)
+    func getAlbumsFailure(message: String)
     func getAlbumsSuccess(response: [Album])
+    func createNewAlbumFailure(message: String)
+    func createNewAlbumSuccess()
 }
 
 class AlbumsViewPresenter {
@@ -18,9 +20,14 @@ class AlbumsViewPresenter {
     weak var delegate: AlbumsViewPresenterDelegate?
     var albums: [Album] = []
     var authManager = AuthManager()
+    var userDefaultHelper = UserDefaultsHelper()
+    var user: UserModel?
+
     // MARK: - Initialization
 
-    init() { }
+    init() {
+        self.user = self.userDefaultHelper.getUser()
+    }
 
     // MARK: - Delegate Methods
 
@@ -33,13 +40,6 @@ class AlbumsViewPresenter {
     }
 
     func getAlbums() {
-//        KRProgressHUD.show()
-//        self.albums.append(Album(title: "Barselona", count: 99))
-//        self.albums.append(Album(title: "Hungaro ring", count: 73))
-//        self.albums.append(Album(title: "Work", count: 41))
-//        self.albums.append(Album(title: "Birthday", count: 23))
-//        self.albums.append(Album(title: "Casual walk", count: 12))
-//        KRProgressHUD.dismiss()
         self.albums = []
         KRProgressHUD.show()
         Task {
@@ -50,9 +50,8 @@ class AlbumsViewPresenter {
                         DispatchQueue.main.asyncAfter(deadline: .now()+1) {
                            KRProgressHUD.dismiss()
                         }
-                        self.delegate?.getAlbumsFailure(error: error.localizedDescription)
+                        self.delegate?.getAlbumsFailure(message: error.localizedDescription)
                     } else {
-                        debugPrint("")
                         KRProgressHUD.dismiss()
                         if let resp = response {
                             debugPrint(resp)
@@ -64,33 +63,26 @@ class AlbumsViewPresenter {
             }
         }
     }
+
+    func createNewAlbum(album: Album) {
+        KRProgressHUD.show()
+        Task {
+            do {
+                try await self.authManager.createNewAlbum(album: album) { error in
+                    if let error = error {
+                        debugPrint(error.localizedDescription)
+                        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                           KRProgressHUD.dismiss()
+                        }
+                        self.delegate?.createNewAlbumFailure(message: error.localizedDescription)
+                    } else {
+                        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                            KRProgressHUD.dismiss()
+                            self.delegate?.createNewAlbumSuccess()
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
-
-/*
- func getReminders() {
-     self.reminders = []
-     KRProgressHUD.show()
-     Task {
-         do {
-             try await self.authManager.getReminders { error, response  in
-                 if let error = error {
-                     debugPrint(error)
-                     DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-                        KRProgressHUD.dismiss()
-                     }
-                     self.delegate?.getRemindersFailure(error: error.localizedDescription)
-                 } else {
-                     debugPrint("")
-                     KRProgressHUD.dismiss()
-                     if let resp = response {
-                         debugPrint(resp)
-                         self.reminders = resp
-                         self.delegate?.getRemindersSuccess(response: resp)
-                     }
-                 }
-             }
-         }
-     }
- }
-
- */

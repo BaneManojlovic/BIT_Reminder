@@ -43,13 +43,13 @@ class ReminderTableViewCell: UITableViewCell {
         self.titleLabel.text = model.title
         self.dateLabel.text = model.date
         self.importanceImage.tintColor = .yellow
-        if model.important {
+        if let important = model.important, important {
             self.importanceImage.isHidden = false
             self.importanceImage.image = UIImage(systemName: "star.fill")?.withTintColor(.yellow)
         } else {
             self.importanceImage.isHidden = true
         }
-        debugPrint("Bane --- \(model)")
+        debugPrint("--- \(model)")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

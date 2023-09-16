@@ -51,11 +51,11 @@ class LoginViewController: BaseViewController {
         if let email = self.loginView.emailTextField.text,
             let password = self.loginView.passwordTextField.text {
 
-            self.presenter.loginWithEmail(user: UserModel(uid: "",
-                                                          name: "",
-                                                          email: email,
+            self.presenter.loginWithEmail(user: UserModel(profileId: "", // API does not ask for it
+                                                          userName: "", // API does not as for it
+                                                          userEmail: email,
                                                           password: password,
-                                                          repeatedPassword: ""))
+                                                          repeatedPassword: password))
         } else {
             self.showOkAlert(message: "Error while Login")
         }
@@ -69,7 +69,7 @@ class LoginViewController: BaseViewController {
 // MARK: - Conforming to LoginViewController
 
 extension LoginViewController: LoginViewPresenterDelegate {
-   
+
     func loginActionSuccess() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.authFlowController.goToHome()
@@ -111,4 +111,3 @@ extension LoginViewController: LoginViewPresenterDelegate {
         }
     }
 }
-

@@ -55,6 +55,20 @@ class SettingsViewController: BaseNavigationController {
 
 extension SettingsViewController: SettingsViewPresenterDelegate {
 
+    func getUserDataSuccess(user: [UserModel]) {
+        DispatchQueue.main.async {
+            if let userData = user.first {
+                self.presenter.userDefaults.setUser(user: userData)
+            }
+        }
+    }
+
+    func getUserDataFailure(message: String) {
+        DispatchQueue.main.async {
+            self.showOkAlert(message: message)
+        }
+    }
+
     func userLogoutFailure(message: String) {
         self.showOkAlert(message: message)
     }
@@ -93,7 +107,10 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case 0:
             debugPrint("0")
-            self.showOkAlert(message: "Not yet implemented!")
+            guard let user = self.presenter.userDefaults.getUser() else { return }
+            if let name = user.userName {
+                self.showOkAlert(title: name, message: user.userEmail)
+            }
         case 1:
             debugPrint("1")
             self.showOkAlert(message: "Not yet implemented!")
