@@ -85,6 +85,20 @@ class AlbumDetailsViewController: BaseNavigationController, UINavigationControll
 
 extension AlbumDetailsViewController: AlbumDetailsPresenterDelegate {
 
+    func uploadPhotoSuccess() {
+        // TODO: - Reload Recycle view
+        DispatchQueue.main.async {
+            debugPrint("Success ... reload Collection View ...")
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+
+    func uploadPhotoFailure(message: String) {
+        DispatchQueue.main.async {
+            self.showOkAlert(message: message)
+        }
+    }
+
     func deleteAlbumSuccess() {
         DispatchQueue.main.async {
             self.showOkAlert(message: "Album successfully deleted!", confirmation: {

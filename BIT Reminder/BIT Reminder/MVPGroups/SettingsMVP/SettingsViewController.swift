@@ -116,9 +116,6 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             self.showOkAlert(message: "Not yet implemented!")
         case 2:
             debugPrint("2")
-            self.showOkAlert(message: "Not yet implemented!")
-        case 3:
-            debugPrint("3")
             self.logout()
         default:
             break

@@ -173,14 +173,34 @@ class AuthManager {
     // TODO: - finish this...
     func uploadPhoto(imageData: Data, completion: @escaping (Error?, URL?) -> Void) async {
         // TODO: - Add random number generator to add unique name to images
+        var uniqueNumber = Int.random(in: 1...99999)
         let file = File(name: "picture", data: imageData, fileName: "picture.jpeg", contentType: "image/jpeg")
         do {
-            try await client.storage.from(id: "photos").upload(path: "picture.jpeg", file: file, fileOptions: FileOptions(cacheControl: "3600"))
-            let imageURL = try client.storage.from(id: "photos").getPublicURL(path: "picture.jpeg")
+            try await client.storage.from(id: "photos").upload(path: "picture\(uniqueNumber).jpeg", file: file, fileOptions: FileOptions(cacheControl: "3600"))
+            let imageURL = try client.storage.from(id: "photos").getPublicURL(path: "picture\(uniqueNumber).jpeg")
             completion(nil, imageURL)
         } catch {
             debugPrint("error")
             completion(error, nil)
         }
     }
+    
+    func savePhotoToDatabase(model: Photo, completion: @escaping (Error?) -> Void) async {
+        do {
+            try await client.database.from("photos").insert(values: model).execute()
+            completion(nil)
+        } catch {
+            completion(error)
+        }
+    }
 }
+/*
+ func saveUser(user: UserModel, completion: @escaping (Error?) -> Void) async {
+     do {
+         try await client.database.from("users").insert(values: user).execute()
+         completion(nil)
+     } catch {
+         completion(error)
+     }
+ }
+ */

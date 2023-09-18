@@ -38,8 +38,7 @@ class SettingsViewPresenter {
     func setupSettingsList() {
         self.settingsModel = []
         self.settingsModel.append(SettingsModel(title: "Profile"))
-        self.settingsModel.append(SettingsModel(title: "Tutorial"))
-        self.settingsModel.append(SettingsModel(title: "Terms & Conditions"))
+        self.settingsModel.append(SettingsModel(title: "Privacy Policy"))
         self.settingsModel.append(SettingsModel(title: "Logout"))
         self.getUserData()
     }
