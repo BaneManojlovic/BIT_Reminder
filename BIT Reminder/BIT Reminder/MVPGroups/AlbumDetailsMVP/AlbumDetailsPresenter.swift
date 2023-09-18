@@ -24,13 +24,15 @@ class AlbumDetailsPresenter {
     weak var delegate: AlbumDetailsPresenterDelegate?
     var authManager = AuthManager()
     var albumId: Int
+    var albumName: String
     var album: Album?
     var photos: [Photo] = []
 
     // MARK: - Initialization
 
-    init(albumId: Int) {
+    init(albumId: Int, albumName: String) {
         self.albumId = albumId
+        self.albumName = albumName
     }
 
     // MARK: - Delegate Methods
@@ -50,6 +52,7 @@ class AlbumDetailsPresenter {
     // MARK: - API Methods
 
     func getAlbumDetails(albumId: Int) {
+        self.photos = []
         KRProgressHUD.show()
         Task {
             do {
@@ -65,6 +68,7 @@ class AlbumDetailsPresenter {
                         KRProgressHUD.dismiss()
                         if let resp = response {
                             debugPrint(resp)
+                            self.photos = resp
                             self.delegate?.getPhotosSuccess(photos: resp)
                         }
                     }

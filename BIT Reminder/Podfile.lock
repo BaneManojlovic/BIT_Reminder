@@ -5,12 +5,14 @@ PODS:
     - KRActivityIndicatorView (= 3.0.7)
   - SwiftGen (6.6.2)
   - SwiftLint (0.52.4)
+  - SwiftPhotoGallery (3.4.1)
 
 DEPENDENCIES:
   - IQKeyboardManager
   - KRProgressHUD
   - SwiftGen
   - SwiftLint
+  - SwiftPhotoGallery
 
 SPEC REPOS:
   trunk:
@@ -19,6 +21,7 @@ SPEC REPOS:
     - KRProgressHUD
     - SwiftGen
     - SwiftLint
+    - SwiftPhotoGallery
 
 SPEC CHECKSUMS:
   IQKeyboardManager: b1fd66ccf7a79095bdcc4a2735231586f744216e
@@ -26,7 +29,8 @@ SPEC CHECKSUMS:
   KRProgressHUD: a248f0bc6c9c2aed40a37b76e03ffecc7f85c887
   SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
   SwiftLint: 1cc5cd61ba9bacb2194e340aeb47a2a37fda00b3
+  SwiftPhotoGallery: 795b79e2596beb160fb978e232603da0811006ce
 
-PODFILE CHECKSUM: 524e06c2f049b7ff13da09860c223afe1579e7fa
+PODFILE CHECKSUM: 34ede9482cb77559c1a4cecd463a8bc7685e4681
 
 COCOAPODS: 1.12.1

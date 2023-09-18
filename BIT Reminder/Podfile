@@ -10,6 +10,7 @@ target 'BIT Reminder' do
   pod 'SwiftLint'
   pod 'IQKeyboardManager'
   pod 'KRProgressHUD'
+  pod 'SwiftPhotoGallery'
 
 end
 

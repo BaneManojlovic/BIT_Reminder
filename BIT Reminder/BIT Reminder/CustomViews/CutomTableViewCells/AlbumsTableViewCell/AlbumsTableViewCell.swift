@@ -50,6 +50,7 @@ class AlbumsTableViewCell: UITableViewCell {
         // TODO: - Implement this later
 //        self.imageCountLabel.text = "\(model.count)" + " " + "images"
         self.imageCountLabel.text = "0" + " " + "images"
+        self.imageCountLabel.isHidden = true
 
     }
 

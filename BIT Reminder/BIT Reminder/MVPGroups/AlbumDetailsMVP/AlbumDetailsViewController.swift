@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import SwiftPhotoGallery
 
 class AlbumDetailsViewController: BaseNavigationController, UINavigationControllerDelegate {
 
     var presenter: AlbumDetailsPresenter?
     let imagePickerController = UIImagePickerController()
+    lazy private var authFlowController = AuthentificationFlowController(currentViewController: self)
 
     private var albumDetailsView: AlbumDetailsView! {
         loadViewIfNeeded()
@@ -25,22 +27,41 @@ class AlbumDetailsViewController: BaseNavigationController, UINavigationControll
         self.haveDeleteAndUploadButtons = true
         self.setupDelegates()
         self.setupTargets()
+        self.setupObservers()
         self.presenter?.getAlbumDetails(albumId: self.presenter?.albumId ?? 0)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        debugPrint("viewWillAppear...")
     }
 
     private func setupUI() {
         self.navigationController?.navigationBar.isHidden = false
-        self.title = "Album Details"
         self.albumDetailsView.setupUI()
+        self.title = self.presenter?.albumName
     }
 
     private func setupDelegates() {
         self.presenter?.attachView(view: self)
         self.imagePickerController.delegate = self
         self.imagePickerController.allowsEditing = true
+        self.albumDetailsView.collectionView.delegate = self
+        self.albumDetailsView.collectionView.dataSource = self
     }
 
     private func setupTargets() { }
+
+    private func setupObservers() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(getAlbumPhotos),
+                                               name: Notification.Name.reloadAlbumDetailsView,
+                                               object: nil)
+    }
+
+    @objc func getAlbumPhotos() {
+        self.presenter?.getAlbumDetails(albumId: self.presenter?.albumId ?? 0)
+    }
 
     // MARK: - Overriden Action Methods
 
@@ -86,10 +107,8 @@ class AlbumDetailsViewController: BaseNavigationController, UINavigationControll
 extension AlbumDetailsViewController: AlbumDetailsPresenterDelegate {
 
     func uploadPhotoSuccess() {
-        // TODO: - Reload Recycle view
         DispatchQueue.main.async {
-            debugPrint("Success ... reload Collection View ...")
-            self.navigationController?.popViewController(animated: true)
+            self.presenter?.getAlbumDetails(albumId: self.presenter?.albumId ?? 0)
         }
     }
 
@@ -115,7 +134,14 @@ extension AlbumDetailsViewController: AlbumDetailsPresenterDelegate {
 
     func getPhotosSuccess(photos: [Photo]) {
         DispatchQueue.main.async {
-            self.albumDetailsView.textLabel.text = "\(photos)"
+            if let photos = self.presenter?.photos, !photos.isEmpty {
+                self.albumDetailsView.collectionView.isHidden = false
+                self.albumDetailsView.textLabel.isHidden = true
+                self.albumDetailsView.collectionView.reloadData()
+            } else {
+                self.albumDetailsView.collectionView.isHidden = true
+                self.albumDetailsView.textLabel.isHidden = false
+            }
         }
     }
 
@@ -130,7 +156,8 @@ extension AlbumDetailsViewController: AlbumDetailsPresenterDelegate {
 
 extension AlbumDetailsViewController: UIImagePickerControllerDelegate {
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 
         var image: UIImage?
 
@@ -150,5 +177,35 @@ extension AlbumDetailsViewController: UIImagePickerControllerDelegate {
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: - Conforming to UICollectionViewDelegate, UICollectionViewDataSource
+
+extension AlbumDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.presenter?.photos.count ?? 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumPhotoCollectionViewCell.cellIdentifier,
+                                                            for: indexPath) as? AlbumPhotoCollectionViewCell else { return UICollectionViewCell() }
+        if let model = self.presenter?.photos[indexPath.row] {
+            cell.fillCellData(model: model)
+        }
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = UIScreen.main.bounds.width-20
+        return CGSize(width: width/3, height: width/3)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let model = self.presenter?.photos[indexPath.row] {
+            self.authFlowController.goToImageDetails(model: model)
+        }
     }
 }

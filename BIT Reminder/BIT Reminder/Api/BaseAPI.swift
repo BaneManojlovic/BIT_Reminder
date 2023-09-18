@@ -170,10 +170,10 @@ class AuthManager {
             completion(error, nil)
         }
     }
-    // TODO: - finish this...
+
     func uploadPhoto(imageData: Data, completion: @escaping (Error?, URL?) -> Void) async {
-        // TODO: - Add random number generator to add unique name to images
-        var uniqueNumber = Int.random(in: 1...99999)
+        /// add unique timestamp as part of the picture name
+        var uniqueNumber = Date.now.timeIntervalSince1970
         let file = File(name: "picture", data: imageData, fileName: "picture.jpeg", contentType: "image/jpeg")
         do {
             try await client.storage.from(id: "photos").upload(path: "picture\(uniqueNumber).jpeg", file: file, fileOptions: FileOptions(cacheControl: "3600"))
@@ -184,7 +184,7 @@ class AuthManager {
             completion(error, nil)
         }
     }
-    
+
     func savePhotoToDatabase(model: Photo, completion: @escaping (Error?) -> Void) async {
         do {
             try await client.database.from("photos").insert(values: model).execute()
@@ -193,14 +193,14 @@ class AuthManager {
             completion(error)
         }
     }
+
+    func deletePhotoFromAlbum(modelID: Int, completion: @escaping (Error?) -> Void) async {
+        do {
+            try await client.database.from("photos").delete().eq(column: "id", value: modelID).execute()
+            completion(nil)
+        } catch {
+            debugPrint("error")
+            completion(error)
+        }
+    }
 }
-/*
- func saveUser(user: UserModel, completion: @escaping (Error?) -> Void) async {
-     do {
-         try await client.database.from("users").insert(values: user).execute()
-         completion(nil)
-     } catch {
-         completion(error)
-     }
- }
- */

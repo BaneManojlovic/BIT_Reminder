@@ -151,7 +151,7 @@ extension AlbumsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = self.presenter.albums[indexPath.row]
         if let modelId = model.id {
-            self.authFlowController.goToAlbumDetails(albumId: modelId)
+            self.authFlowController.goToAlbumDetails(albumId: modelId, albumName: model.albumName)
         }
     }
 }
