@@ -22,7 +22,7 @@ class AlbumDetailsViewController: BaseNavigationController, UINavigationControll
 
         self.setupUI()
         self.haveBackButton = true
-        self.haveUploadButton = true
+        self.haveDeleteAndUploadButtons = true
         self.setupDelegates()
         self.setupTargets()
         self.presenter?.getAlbumDetails(albumId: self.presenter?.albumId ?? 0)
@@ -41,6 +41,18 @@ class AlbumDetailsViewController: BaseNavigationController, UINavigationControll
     }
 
     private func setupTargets() { }
+
+    // MARK: - Overriden Action Methods
+
+    override func deleteAction() {
+        super.deleteAction()
+        self.showCancelOrYesAlert(message: "Are you sure that you want to delete this Album?",
+                                  yesHandler: {
+            if let modelId = self.presenter?.albumId {
+                self.presenter?.deleteAlbum(modelID: modelId)
+            }
+        })
+    }
 
     override func uploadButtonAction() {
         let actionSheet = UIAlertController(title: "", message: "Upload new photo:", preferredStyle: .actionSheet)
@@ -69,7 +81,23 @@ class AlbumDetailsViewController: BaseNavigationController, UINavigationControll
     }
 }
 
+// MARK: - Conforming to AlbumDetailsPresenterDelegate
+
 extension AlbumDetailsViewController: AlbumDetailsPresenterDelegate {
+
+    func deleteAlbumSuccess() {
+        DispatchQueue.main.async {
+            self.showOkAlert(message: "Album successfully deleted!", confirmation: {
+                self.navigationController?.popViewController(animated: true)
+            })
+        }
+    }
+
+    func deleteAlbumFailure(message: String) {
+        DispatchQueue.main.async {
+            self.showOkAlert(message: message)
+        }
+    }
 
     func getPhotosSuccess(photos: [Photo]) {
         DispatchQueue.main.async {

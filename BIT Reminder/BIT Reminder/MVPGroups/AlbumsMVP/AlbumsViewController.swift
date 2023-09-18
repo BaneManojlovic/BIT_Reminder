@@ -58,13 +58,21 @@ class AlbumsViewController: BaseNavigationController {
             alert.addTextField { (textField) in
                 textField.text = ""
             }
+            /// Cancel action for create new Album feature
+            alert.addAction(UIAlertAction(title: "Cancel",
+                                          style: .cancel,
+                                          handler: { _ in
+                self.dismiss(animated: true)
+            }))
             /// Grab the value from the text field, and print it when the user clicks OK.
             alert.addAction(UIAlertAction(title: "Create", style: .default, handler: { [weak alert] (_) in
                 if let textField = alert?.textFields?[0] as? UITextField {
-                    if let text = textField.text {
+                    if let text = textField.text, text != "" {
                         let album = Album(albumName: text,
                                           profileId: user.profileId)
                         self.presenter.createNewAlbum(album: album)
+                    } else {
+                        self.presenter.delegate?.createNewAlbumFailure(message: "Title is mandatory!")
                     }
                 }
             }))
@@ -76,6 +84,18 @@ class AlbumsViewController: BaseNavigationController {
 
 extension AlbumsViewController: AlbumsViewPresenterDelegate {
 
+    func deleteAlbumSuccess() {
+        DispatchQueue.main.async {
+            self.albumsView.tableView.reloadData()
+        }
+    }
+
+    func deleteAlbumFailure(message: String) {
+        DispatchQueue.main.async {
+            self.showOkAlert(message: message)
+        }
+    }
+
     func createNewAlbumFailure(message: String) {
         DispatchQueue.main.async {
             self.showOkAlert(message: message)
@@ -83,9 +103,7 @@ extension AlbumsViewController: AlbumsViewPresenterDelegate {
     }
 
     func createNewAlbumSuccess() {
-        self.showOkAlert(message: "New album created!", confirmation: {
-                self.presenter.getAlbums()
-            })
+        self.presenter.getAlbums()
     }
 
     func getAlbumsFailure(message: String) {
@@ -119,6 +137,15 @@ extension AlbumsViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let model = self.presenter.albums[indexPath.row]
+            self.presenter.deleteAlbum(model: model)
+            self.presenter.albums.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

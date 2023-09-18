@@ -11,6 +11,8 @@ import KRProgressHUD
 protocol AlbumDetailsPresenterDelegate: AnyObject {
     func getPhotosSuccess(photos: [Photo])
     func getPhotosFailure(message: String)
+    func deleteAlbumSuccess()
+    func deleteAlbumFailure(message: String)
 }
 
 class AlbumDetailsPresenter {
@@ -20,6 +22,8 @@ class AlbumDetailsPresenter {
     weak var delegate: AlbumDetailsPresenterDelegate?
     var authManager = AuthManager()
     var albumId: Int
+    var album: Album?
+    var photos: [Photo] = []
 
     // MARK: - Initialization
 
@@ -37,7 +41,11 @@ class AlbumDetailsPresenter {
         self.delegate = nil
     }
 
-    // MARK: - Request API Methods
+    func getAlbumByID(albumId: Int) -> Photo? {
+        return self.photos.first(where: { $0.albumId == self.albumId})
+    }
+
+    // MARK: - API Methods
 
     func getAlbumDetails(albumId: Int) {
         KRProgressHUD.show()
@@ -57,6 +65,27 @@ class AlbumDetailsPresenter {
                             debugPrint(resp)
                             self.delegate?.getPhotosSuccess(photos: resp)
                         }
+                    }
+                }
+            }
+        }
+    }
+
+    func deleteAlbum(modelID: Int) {
+        KRProgressHUD.show()
+        Task {
+            do {
+                try await self.authManager.deleteAlbum(modelID: modelID) { error in
+                    if let error = error {
+                        debugPrint(error)
+                        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                           KRProgressHUD.dismiss()
+                        }
+                        self.delegate?.deleteAlbumFailure(message: error.localizedDescription)
+                    } else {
+                        debugPrint("")
+                        KRProgressHUD.dismiss()
+                        self.delegate?.deleteAlbumSuccess()
                     }
                 }
             }

@@ -66,8 +66,6 @@ class HomeViewPresenter {
     }
 
     func deleteReminder(model: Reminder) {
-        // TODO: - to be implemented
-        debugPrint("delete delete ...")
         let table = "reminders"
         KRProgressHUD.show()
         Task {

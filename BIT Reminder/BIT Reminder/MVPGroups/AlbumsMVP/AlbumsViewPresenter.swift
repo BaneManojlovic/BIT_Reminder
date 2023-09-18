@@ -13,6 +13,8 @@ protocol AlbumsViewPresenterDelegate: AnyObject {
     func getAlbumsSuccess(response: [Album])
     func createNewAlbumFailure(message: String)
     func createNewAlbumSuccess()
+    func deleteAlbumSuccess()
+    func deleteAlbumFailure(message: String)
 }
 
 class AlbumsViewPresenter {
@@ -80,6 +82,28 @@ class AlbumsViewPresenter {
                             KRProgressHUD.dismiss()
                             self.delegate?.createNewAlbumSuccess()
                         }
+                    }
+                }
+            }
+        }
+    }
+
+    func deleteAlbum(model: Album) {
+        guard let modelID = model.id else { return }
+        KRProgressHUD.show()
+        Task {
+            do {
+                try await self.authManager.deleteAlbum(modelID: modelID) { error in
+                    if let error = error {
+                        debugPrint(error)
+                        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                           KRProgressHUD.dismiss()
+                        }
+                        self.delegate?.deleteAlbumFailure(message: error.localizedDescription)
+                    } else {
+                        debugPrint("")
+                        KRProgressHUD.dismiss()
+                        self.delegate?.deleteAlbumSuccess()
                     }
                 }
             }

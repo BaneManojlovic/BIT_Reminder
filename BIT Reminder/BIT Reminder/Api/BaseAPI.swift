@@ -151,6 +151,16 @@ class AuthManager {
         }
     }
 
+    func deleteAlbum(modelID: Int, completion: @escaping (Error?) -> Void) async {
+        do {
+            let response = try await client.database.from("albums").delete().eq(column: "id", value: modelID).execute()
+            completion(nil)
+        } catch {
+            debugPrint("error")
+            completion(error)
+        }
+    }
+
     func getPhotos(albumId: Int, completion: @escaping (Error?, [Photo]?) -> Void) async {
         do {
             let photos: [Photo] = try await client.database.from("photos").select().eq(column: "albumId", value: "\(albumId)").execute().value

@@ -85,6 +85,16 @@ class BaseNavigationController: BaseViewController {
             }
         }
     }
+    
+    var haveDeleteAndUploadButtons: Bool = false {
+        didSet {
+            if haveDeleteAndUploadButtons {
+                self.setDeleteAndUploadButtons()
+            } else {
+                self.hideDeleteAndUploadButtons()
+            }
+        }
+    }
 
     lazy var customNavBarImage: UIImageView = {
        var image = UIImageView()
@@ -191,6 +201,25 @@ class BaseNavigationController: BaseViewController {
     }
 
     private func hideDeleteButton() {
+        navigationItem.rightBarButtonItem = nil
+    }
+
+    /// setup for setDeleteButton if needed
+    private func setDeleteAndUploadButtons() {
+        let deleteButton = UIBarButtonItem(image: UIImage(systemName: "trash.fill"),
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(deleteAction))
+        deleteButton.tintColor = .white
+        let uploadButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"),
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(uploadButtonAction))
+        uploadButton.tintColor = .white
+        navigationItem.rightBarButtonItems = [deleteButton, uploadButton]
+    }
+
+    private func hideDeleteAndUploadButtons() {
         navigationItem.rightBarButtonItem = nil
     }
 
