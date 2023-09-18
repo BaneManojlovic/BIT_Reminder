@@ -39,7 +39,8 @@ class LoginViewPresenter {
         Task {
             do {
                 try user.validateLogin()
-                try await self.authManager.signInWithEmailAndPassword(email: user.userEmail, password: user.password ?? "") { error, response  in
+                try await self.authManager.signInWithEmailAndPassword(email: user.userEmail,
+                                                                      password: user.password ?? "") { error, response  in
                     if let error = error {
                         debugPrint(error)
                         self.delegate?.loginActionFailed(error: error.localizedDescription)

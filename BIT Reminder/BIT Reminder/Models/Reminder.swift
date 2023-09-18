@@ -15,7 +15,15 @@ struct Reminder: Codable {
     var description: String?
     var important: Bool?
     var date: String?
-    
-    // TODO: - Create validation for Add Reminder Scrren & Reminder model
-    // title is mandatory, all the others are not
+
+    func validation() throws {
+        /// validate title etxtField
+        if title.isEmpty {
+            throw ValidationError.titleEmpty
+        }
+    }
+
+    enum ValidationError: Error {
+        case titleEmpty
+    }
 }

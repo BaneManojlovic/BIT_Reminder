@@ -44,9 +44,9 @@ class AuthentificationFlowController: FlowController {
         currentViewController.navigationController?.pushViewController(regVC, animated: true)
     }
 
-    func goToAddNewReminder() {
+    func goToAddNewReminder(screenType: ReminderScreenType, model: Reminder?) {
         let anrVC = StoryboardScene.Authentification.addNewReminderViewController.instantiate()
-        anrVC.presenter = AddNewReminderViewPresenter()
+        anrVC.presenter = AddNewReminderViewPresenter(screenType: screenType, model: model)
         currentViewController.navigationController?.pushViewController(anrVC, animated: true)
     }
 

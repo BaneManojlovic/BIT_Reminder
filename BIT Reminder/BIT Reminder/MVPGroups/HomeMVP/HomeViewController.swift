@@ -58,7 +58,7 @@ class HomeViewController: BaseNavigationController {
 
     override func addButtonAction() {
         super.addButtonAction()
-        self.authFlowController.goToAddNewReminder()
+        self.authFlowController.goToAddNewReminder(screenType: .addNewReminderScreen, model: nil)
     }
 }
 
@@ -121,6 +121,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             self.presenter.reminders.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
 
+        }
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = self.presenter.reminders[indexPath.row]
+        if let modelId = model.id {
+            self.authFlowController.goToAddNewReminder(screenType: .reminderDetailsScreen, model: model)
         }
     }
 }

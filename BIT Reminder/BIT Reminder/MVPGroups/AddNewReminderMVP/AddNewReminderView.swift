@@ -49,21 +49,31 @@ class AddNewReminderView: UIView {
         self.titleTextField.attributedPlaceholder = NSAttributedString(
                                                        string: "title",
                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        
+
         self.descriptionTextView.backgroundColor = Asset.textfieldBlueColor.color
         self.descriptionTextView.layer.cornerRadius = 10
         self.descriptionTextView.textColor = .white
     }
-    
+
     private func setSwitch() {
         self.setImportanceSwitch.isOn = false
     }
-    
+
     private func setButtons() {
         /// setup for login button
         self.addButton.backgroundColor = Asset.buttonBlueColor.color
         self.addButton.setTitle("Add", for: .normal)
         self.addButton.tintColor = .white
         self.addButton.layer.cornerRadius = 10
+    }
+    
+    func setReminderData(model: Reminder) {
+        self.titleTextField.text = model.title
+        if let description = model.description,
+           let isImportant = model.important {
+            self.descriptionTextView.text = description
+            self.setImportanceSwitch.isOn = isImportant
+        }
+        self.addButton.isEnabled = false
     }
 }

@@ -9,7 +9,7 @@ import UIKit
 
 class AddNewReminderViewController: BaseNavigationController {
 
-    var presenter = AddNewReminderViewPresenter()
+    var presenter: AddNewReminderViewPresenter?
 
     private var addNewReminderView: AddNewReminderView! {
         loadViewIfNeeded()
@@ -20,18 +20,29 @@ class AddNewReminderViewController: BaseNavigationController {
         super.viewDidLoad()
 
         self.setupUI()
-        self.haveBackButton = true
+
         self.setupDelegates()
         self.setupTargets()
     }
 
     private func setupUI() {
         self.addNewReminderView.setupUI()
-        self.title = "Add New Reminder"
+
+        self.haveBackButton = true
+        if let screenType = self.presenter?.screenType,
+           let model = self.presenter?.model,
+            screenType == .reminderDetailsScreen {
+            self.haveDeleteButton = true
+            self.title = "Reminder Details"
+            self.addNewReminderView.setReminderData(model: model)
+        } else {
+            self.haveDeleteButton = false
+            self.title = "Add New Reminder"
+        }
     }
 
     private func setupDelegates() {
-        self.presenter.attachView(view: self)
+        self.presenter?.attachView(view: self)
     }
 
     private func setupTargets() {
@@ -39,7 +50,7 @@ class AddNewReminderViewController: BaseNavigationController {
     }
 
     @objc func addNewTapped() {
-        guard let user = self.presenter.user else { return }
+        guard let user = self.presenter?.user else { return }
 
         if let title = self.addNewReminderView.titleTextField.text,
            let description = self.addNewReminderView.descriptionTextView.text {
@@ -50,14 +61,49 @@ class AddNewReminderViewController: BaseNavigationController {
                                  description: description,
                                  important: isImportant,
                                  date: nil)
-            self.presenter.addNewReminder(model: model)
+            self.presenter?.addNewReminder(model: model)
         }
+    }
+
+    override func deleteAction() {
+        super.deleteAction()
+        self.showCancelOrYesAlert(message: "Are you sure that you want to delete this Reminder?",
+                                  yesHandler: {
+            if let model = self.presenter?.model {
+                self.presenter?.deleteReminder(model: model)
+            }
+        })
     }
 }
 
 // MARK: - Conforming to AddNewReminderViewPresenterDelegate
 
 extension AddNewReminderViewController: AddNewReminderViewPresenterDelegate {
+
+    func deleteReminderFailure(message: String) {
+        DispatchQueue.main.async {
+            self.showOkAlert(message: message)
+        }
+    }
+
+    func deleteReminderSuccess() {
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+
+    func handleValidationError(error: Reminder.ValidationError) {
+        switch error {
+        case .titleEmpty:
+            self.showValidationError(message: "titleEmpty")
+        }
+    }
+
+    func showValidationError(message: String) {
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+            self.showOkAlert(message: message)
+        }
+    }
 
     func addNewReminderFailure(message: String) {
         DispatchQueue.main.async {

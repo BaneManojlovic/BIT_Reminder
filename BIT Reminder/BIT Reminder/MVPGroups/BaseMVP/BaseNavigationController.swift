@@ -76,6 +76,16 @@ class BaseNavigationController: BaseViewController {
         }
     }
 
+    var haveDeleteButton: Bool = false {
+        didSet {
+            if haveDeleteButton {
+                self.setDeleteButton()
+            } else {
+                self.hideDeleteButton()
+            }
+        }
+    }
+
     lazy var customNavBarImage: UIImageView = {
        var image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -156,6 +166,7 @@ class BaseNavigationController: BaseViewController {
         navigationItem.rightBarButtonItem = nil
     }
 
+    /// setup for setCreateFolderButton if needed
     private func setCreateFolderButton() {
         let addButton = UIBarButtonItem(image: UIImage(systemName: "folder.fill.badge.plus"),
                                          style: .plain,
@@ -166,6 +177,20 @@ class BaseNavigationController: BaseViewController {
     }
 
     private func hideUCreateFolderButton() {
+        navigationItem.rightBarButtonItem = nil
+    }
+
+    /// setup for setDeleteButton if needed
+    private func setDeleteButton() {
+        let addButton = UIBarButtonItem(image: UIImage(systemName: "trash.fill"),
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(deleteAction))
+        addButton.tintColor = .white
+        navigationItem.rightBarButtonItem = addButton
+    }
+
+    private func hideDeleteButton() {
         navigationItem.rightBarButtonItem = nil
     }
 
@@ -228,6 +253,18 @@ class BaseNavigationController: BaseViewController {
     }
 
     @objc func createFolderButtonAction() {
+        // Override in ViewController that inherits BaseNavigationControllert if needed
+        /*
+         Example:
+         
+         override func uploadButtonAction() {
+         super.uploadButtonAction()
+         debugPrint("overriden ... do something")
+         }
+         */
+    }
+    
+    @objc func deleteAction() {
         // Override in ViewController that inherits BaseNavigationControllert if needed
         /*
          Example:
