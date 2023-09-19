@@ -27,3 +27,23 @@ struct Reminder: Codable {
         case titleEmpty
     }
 }
+
+struct ReminderRequestModel: Codable {
+    var id: Int?
+    var profileId: String
+    var title: String
+    var description: String?
+    var important: Bool?
+    var date: String?
+
+    func validation() throws {
+        /// validate title etxtField
+        if title.isEmpty {
+            throw ValidationError.titleEmpty
+        }
+    }
+
+    enum ValidationError: Error {
+        case titleEmpty
+    }
+}

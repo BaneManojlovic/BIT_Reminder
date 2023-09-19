@@ -41,7 +41,7 @@ class ReminderTableViewCell: UITableViewCell {
 
     func fillCellWithData(model: Reminder) {
         self.titleLabel.text = model.title
-        self.dateLabel.text = model.date
+        self.dateLabel.text = formatDateToShow(date: model.date ?? "")
         self.importanceImage.tintColor = .yellow
         if let important = model.important, important {
             self.importanceImage.isHidden = false
@@ -52,7 +52,24 @@ class ReminderTableViewCell: UITableViewCell {
         debugPrint("--- \(model)")
     }
 
+    func formatDateToShow(date: String) -> String {
+        let formatter = DateFormatter()
+        /// format String to date
+        formatter.dateFormat = "yyyy-MM-dd"
+        guard let firstDate = formatter.date(from: date) else { return "" }
+        /// reformat date to String
+        formatter.dateFormat = "dd.MM.yyyy"
+        return formatter.string(from: firstDate)
+    }
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+
+    func formatDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.mm.yyyy"
+        return formatter.string(from: date)
+    }
+
 }

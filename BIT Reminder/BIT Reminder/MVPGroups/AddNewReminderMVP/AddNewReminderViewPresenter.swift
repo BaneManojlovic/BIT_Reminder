@@ -48,7 +48,7 @@ class AddNewReminderViewPresenter {
         self.delegate = nil
     }
 
-    func addNewReminder(model: Reminder) {
+    func addNewReminder(model: ReminderRequestModel) {
         KRProgressHUD.show()
         Task {
             do {

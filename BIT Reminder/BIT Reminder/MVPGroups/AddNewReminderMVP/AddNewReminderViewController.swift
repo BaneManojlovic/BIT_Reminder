@@ -10,6 +10,8 @@ import UIKit
 class AddNewReminderViewController: BaseNavigationController {
 
     var presenter: AddNewReminderViewPresenter?
+    let datePicker = UIDatePicker()
+    var choosenDate: Date?
 
     private var addNewReminderView: AddNewReminderView! {
         loadViewIfNeeded()
@@ -20,14 +22,13 @@ class AddNewReminderViewController: BaseNavigationController {
         super.viewDidLoad()
 
         self.setupUI()
-
         self.setupDelegates()
         self.setupTargets()
+        self.setupDatePicker()
     }
 
     private func setupUI() {
         self.addNewReminderView.setupUI()
-
         self.haveBackButton = true
         if let screenType = self.presenter?.screenType,
            let model = self.presenter?.model,
@@ -49,18 +50,36 @@ class AddNewReminderViewController: BaseNavigationController {
         self.addNewReminderView.addButton.addTarget(self, action: #selector(addNewTapped), for: .touchUpInside)
     }
 
+    func setupDatePicker() {
+        datePicker.datePickerMode = .date
+        datePicker.addTarget(self, action: #selector(dateChanged(datePicker:)), for: UIControl.Event.valueChanged)
+        datePicker.frame.size = CGSize(width: 0, height: 300)
+        datePicker.preferredDatePickerStyle = .wheels
+        self.addNewReminderView.datePickerTextField.inputView = datePicker
+    }
+
+    @objc func dateChanged(datePicker: UIDatePicker) {
+        self.addNewReminderView.datePickerTextField.text = formatDate(date: datePicker.date)
+        self.choosenDate = datePicker.date
+    }
+
+    func formatDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.string(from: date)
+    }
+
     @objc func addNewTapped() {
         guard let user = self.presenter?.user else { return }
 
         if let title = self.addNewReminderView.titleTextField.text,
            let description = self.addNewReminderView.descriptionTextView.text {
             let isImportant = self.addNewReminderView.setImportanceSwitch.isOn
-
-            let model = Reminder(profileId: user.profileId,
-                                 title: title,
-                                 description: description,
-                                 important: isImportant,
-                                 date: nil)
+            let model = ReminderRequestModel(profileId: user.profileId,
+                                             title: title,
+                                             description: description,
+                                             important: isImportant,
+                                             date: self.choosenDate?.ISO8601Format())
             self.presenter?.addNewReminder(model: model)
         }
     }

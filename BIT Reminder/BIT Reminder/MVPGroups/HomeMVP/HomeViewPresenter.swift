@@ -18,6 +18,8 @@ protocol HomeViewPresenterDelegate: AnyObject {
 
 class HomeViewPresenter {
 
+    // MARK: - Properties
+
     weak var delegate: HomeViewPresenterDelegate?
     var authManager = AuthManager()
     let userDefaults = UserDefaultsHelper()
@@ -82,7 +84,6 @@ class HomeViewPresenter {
                         KRProgressHUD.dismiss()
                         self.delegate?.deleteReminderSuccess()
                     }
-                    
                 }
             }
         }

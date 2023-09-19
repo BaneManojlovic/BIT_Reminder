@@ -107,7 +107,7 @@ class AuthManager {
         }
     }
 
-    func addNewReminder(model: Reminder, completion: @escaping (Error?, PostgrestResponse<Void>?) -> Void) async {
+    func addNewReminder(model: ReminderRequestModel, completion: @escaping (Error?, PostgrestResponse<Void>?) -> Void) async {
         do {
             let response = try await client.database.from("reminders").insert(values: model).execute()
             completion(nil, response)

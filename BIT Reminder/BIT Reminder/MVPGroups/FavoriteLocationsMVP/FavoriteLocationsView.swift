@@ -9,11 +9,19 @@ import UIKit
 
 class FavoriteLocationsView: UIView {
 
+    // MARK: - Outlets
+
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var closeButton: UIButton!
 
+    // MARK: - Setup Methods
+
     func setupUI() {
         self.backgroundColor = Asset.backgroundBlueColor.color
+        self.titleLabel.textColor = .white
+        self.titleLabel.text = "Favorite locations"
+        self.titleLabel.textAlignment = .center
         self.tableView.backgroundColor = Asset.backgroundBlueColor.color
         self.tableView.register(UINib(nibName: FavoriteLocationsTableViewCell.reuseIdentifier, bundle: nil),
                                 forCellReuseIdentifier: FavoriteLocationsTableViewCell.reuseIdentifier)

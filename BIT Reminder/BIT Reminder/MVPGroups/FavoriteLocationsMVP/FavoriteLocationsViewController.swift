@@ -75,7 +75,7 @@ extension FavoriteLocationsViewController: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = self.presenter.locationList[indexPath.row]
         debugPrint(model)
-        let userInfo = ["location":model]
+        let userInfo = ["location": model]
         DispatchQueue.main.async {
             NotificationCenter.default.post(name: Notification.Name.showMapPins, object: nil, userInfo: userInfo)
             self.showOkAlert(message: "Odabrali ste \(model)", confirmation: {

@@ -13,9 +13,6 @@ class HomeViewController: BaseNavigationController {
 
     var presenter = HomeViewPresenter()
     lazy private var authFlowController = AuthentificationFlowController(currentViewController: self)
-
-    // MARK: - Private Properties
-
     private var homeView: HomeView! {
         loadViewIfNeeded()
         return view as? HomeView
@@ -56,6 +53,8 @@ class HomeViewController: BaseNavigationController {
 
     private func setupTargets() { }
 
+    // MARK: - Overriden Methods
+
     override func addButtonAction() {
         super.addButtonAction()
         self.authFlowController.goToAddNewReminder(screenType: .addNewReminderScreen, model: nil)
@@ -86,7 +85,14 @@ extension HomeViewController: HomeViewPresenterDelegate {
 
     func getRemindersSuccess(response: [Reminder]) {
         DispatchQueue.main.async {
-            self.homeView.tableView.reloadData()
+            if !response.isEmpty {
+                self.homeView.homeMessageLabel.isHidden = true
+                self.homeView.tableView.isHidden = false
+                self.homeView.tableView.reloadData()
+            } else {
+                self.homeView.homeMessageLabel.isHidden = false
+                self.homeView.tableView.isHidden = true
+            }
         }
     }
 }
