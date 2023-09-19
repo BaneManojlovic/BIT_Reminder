@@ -61,6 +61,12 @@ class AuthentificationFlowController: FlowController {
         andVC.presenter = ImageDetailsPresenter(photo: model)
         currentViewController.navigationController?.present(andVC, animated: true)
     }
+    
+    func goToLocationList() {
+        let andVC = StoryboardScene.Authentification.favoriteLocationsViewController.instantiate()
+        andVC.presenter = FavoriteLocationsPresenter()
+        currentViewController.present(andVC, animated: true)
+    }
 
     func goToForgotPassword() { }
 }

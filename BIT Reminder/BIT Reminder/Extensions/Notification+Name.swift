@@ -10,4 +10,5 @@ import Foundation
 extension Notification.Name {
 
     static let reloadAlbumDetailsView = Notification.Name("reloadAlbumDetailsView")
+    static let showMapPins = Notification.Name("showMapPins")
 }

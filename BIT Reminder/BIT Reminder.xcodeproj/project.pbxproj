@@ -38,6 +38,11 @@
 		8D8DE3862AB87B250063E62C /* ImageDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DE3852AB87B250063E62C /* ImageDetailsView.swift */; };
 		8D8DE3882AB87B330063E62C /* ImageDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DE3872AB87B330063E62C /* ImageDetailsPresenter.swift */; };
 		8D8DE38A2AB892DB0063E62C /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DE3892AB892DB0063E62C /* Notification+Name.swift */; };
+		8D8DE38D2AB949B00063E62C /* FavoriteLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DE38C2AB949B00063E62C /* FavoriteLocationsViewController.swift */; };
+		8D8DE38F2AB949BD0063E62C /* FavoriteLocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DE38E2AB949BD0063E62C /* FavoriteLocationsView.swift */; };
+		8D8DE3912AB949CC0063E62C /* FavoriteLocationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DE3902AB949CC0063E62C /* FavoriteLocationsPresenter.swift */; };
+		8D8DE3952AB94DAA0063E62C /* FavoriteLocationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DE3932AB94DAA0063E62C /* FavoriteLocationsTableViewCell.swift */; };
+		8D8DE3962AB94DAA0063E62C /* FavoriteLocationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D8DE3942AB94DAA0063E62C /* FavoriteLocationsTableViewCell.xib */; };
 		8D95136E2AAA184E00A30E9B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D95136D2AAA184E00A30E9B /* HomeViewController.swift */; };
 		8D9513702AAA185D00A30E9B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D95136F2AAA185D00A30E9B /* HomeView.swift */; };
 		8D9513722AAA186800A30E9B /* HomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9513712AAA186800A30E9B /* HomeViewPresenter.swift */; };
@@ -113,6 +118,11 @@
 		8D8DE3852AB87B250063E62C /* ImageDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsView.swift; sourceTree = "<group>"; };
 		8D8DE3872AB87B330063E62C /* ImageDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsPresenter.swift; sourceTree = "<group>"; };
 		8D8DE3892AB892DB0063E62C /* Notification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Name.swift"; sourceTree = "<group>"; };
+		8D8DE38C2AB949B00063E62C /* FavoriteLocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteLocationsViewController.swift; sourceTree = "<group>"; };
+		8D8DE38E2AB949BD0063E62C /* FavoriteLocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteLocationsView.swift; sourceTree = "<group>"; };
+		8D8DE3902AB949CC0063E62C /* FavoriteLocationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteLocationsPresenter.swift; sourceTree = "<group>"; };
+		8D8DE3932AB94DAA0063E62C /* FavoriteLocationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteLocationsTableViewCell.swift; sourceTree = "<group>"; };
+		8D8DE3942AB94DAA0063E62C /* FavoriteLocationsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteLocationsTableViewCell.xib; sourceTree = "<group>"; };
 		8D95136D2AAA184E00A30E9B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8D95136F2AAA185D00A30E9B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8D9513712AAA186800A30E9B /* HomeViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewPresenter.swift; sourceTree = "<group>"; };
@@ -296,6 +306,7 @@
 		8D6B80B32AA78B17009DF810 /* MVPGroups */ = {
 			isa = PBXGroup;
 			children = (
+				8D8DE38B2AB949880063E62C /* FavoriteLocationsMVP */,
 				8D8DE3822AB87AD70063E62C /* ImageDetailsMVP */,
 				8D8DE3732AB46A8B0063E62C /* AlbumDetailsMVP */,
 				8DBAA57E2AB30D540054A5FF /* MapMVP */,
@@ -414,6 +425,25 @@
 			path = ImageDetailsMVP;
 			sourceTree = "<group>";
 		};
+		8D8DE38B2AB949880063E62C /* FavoriteLocationsMVP */ = {
+			isa = PBXGroup;
+			children = (
+				8D8DE38C2AB949B00063E62C /* FavoriteLocationsViewController.swift */,
+				8D8DE38E2AB949BD0063E62C /* FavoriteLocationsView.swift */,
+				8D8DE3902AB949CC0063E62C /* FavoriteLocationsPresenter.swift */,
+			);
+			path = FavoriteLocationsMVP;
+			sourceTree = "<group>";
+		};
+		8D8DE3922AB94D850063E62C /* FavoriteLocationsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8D8DE3932AB94DAA0063E62C /* FavoriteLocationsTableViewCell.swift */,
+				8D8DE3942AB94DAA0063E62C /* FavoriteLocationsTableViewCell.xib */,
+			);
+			path = FavoriteLocationsTableViewCell;
+			sourceTree = "<group>";
+		};
 		8D95136B2AAA167600A30E9B /* HomeMVP */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,6 +495,7 @@
 		8DBAA5692AB204DF0054A5FF /* CutomTableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				8D8DE3922AB94D850063E62C /* FavoriteLocationsTableViewCell */,
 				8D32EA972AB424BA0080CB5E /* AlbumsTableViewCell */,
 				8DBAA56F2AB2A7EE0054A5FF /* SettingsTableViewCell */,
 				8DBAA56E2AB2A7D80054A5FF /* ReminderTableViewCell */,
@@ -607,6 +638,7 @@
 			files = (
 				8D8DE37E2AB841E10063E62C /* AlbumPhotoCollectionViewCell.xib in Resources */,
 				8D6B80BF2AA8617D009DF810 /* Localizable.strings in Resources */,
+				8D8DE3962AB94DAA0063E62C /* FavoriteLocationsTableViewCell.xib in Resources */,
 				8DB8580D2AB44120009DE52F /* AlbumsTableViewCell.xib in Resources */,
 				8D6B80CB2AA881BF009DF810 /* Authentification.storyboard in Resources */,
 				8D6F5CF42AA3EAC0006184CC /* Assets.xcassets in Resources */,
@@ -711,6 +743,7 @@
 				8D8DE3772AB487E50063E62C /* AlbumDetailsView.swift in Sources */,
 				8DBAA55F2AB1DDEB0054A5FF /* StringHelper.swift in Sources */,
 				8D6B80D22AA88213009DF810 /* SplashScreenPresenter.swift in Sources */,
+				8D8DE3912AB949CC0063E62C /* FavoriteLocationsPresenter.swift in Sources */,
 				8DBAA55B2AB1AB690054A5FF /* Constants.swift in Sources */,
 				8D32EA9C2AB4252F0080CB5E /* Album.swift in Sources */,
 				8DBAA5862AB30F580054A5FF /* MapViewController.swift in Sources */,
@@ -719,9 +752,12 @@
 				8DBAA5822AB30D7D0054A5FF /* AlbumsView.swift in Sources */,
 				8DBAA56C2AB204FF0054A5FF /* ReminderTableViewCell.swift in Sources */,
 				8D6B80C72AA861A5009DF810 /* StoryboardSegues.swift in Sources */,
+				8D8DE38F2AB949BD0063E62C /* FavoriteLocationsView.swift in Sources */,
 				8D8DE37D2AB841E10063E62C /* AlbumPhotoCollectionViewCell.swift in Sources */,
+				8D8DE38D2AB949B00063E62C /* FavoriteLocationsViewController.swift in Sources */,
 				8D8DE3882AB87B330063E62C /* ImageDetailsPresenter.swift in Sources */,
 				8D9513742AAAFDA700A30E9B /* LoginViewController.swift in Sources */,
+				8D8DE3952AB94DAA0063E62C /* FavoriteLocationsTableViewCell.swift in Sources */,
 				8DBAA5752AB2AA720054A5FF /* SettingsModel.swift in Sources */,
 				8D9513722AAA186800A30E9B /* HomeViewPresenter.swift in Sources */,
 				8D8DE3862AB87B250063E62C /* ImageDetailsView.swift in Sources */,

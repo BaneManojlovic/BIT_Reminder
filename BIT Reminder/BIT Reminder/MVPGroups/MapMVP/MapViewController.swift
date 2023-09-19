@@ -15,6 +15,7 @@ class MapViewController: UIViewController {
     var presenter = MapViewPresenter()
     let locationManager = CLLocationManager()
     var myLocation: CLLocation?
+    lazy private var authFlowController = AuthentificationFlowController(currentViewController: self)
 
     private var mapView: MapView! {
         loadViewIfNeeded()
@@ -29,6 +30,20 @@ class MapViewController: UIViewController {
         self.setupUI()
         self.setupDelegates()
         self.setupTargets()
+        self.setupObservers()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let location = myLocation {
+            self.setupUserCurrentLocation(location)
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.removePins()
     }
 
     // MARK: - Setup Methods
@@ -40,6 +55,17 @@ class MapViewController: UIViewController {
         self.checkIsLocationManageEnabled()
     }
 
+    private func setupObservers() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(showPins(_:)),
+                                               name: Notification.Name.showMapPins,
+                                               object: nil)
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     func checkIsLocationManageEnabled() {
         let locationServicesEnabled = CLLocationManager.locationServicesEnabled()
         if locationServicesEnabled {
@@ -47,6 +73,12 @@ class MapViewController: UIViewController {
         } else {
             debugPrint("Servis je disabled")
             locationManager.requestWhenInUseAuthorization()
+        }
+    }
+
+    @objc func showPins(_ notification: NSNotification) {
+        if let notif = notification.userInfo?["location"] as? String {
+            self.showChoosenDestinations(query: notif)
         }
     }
 
@@ -70,29 +102,25 @@ class MapViewController: UIViewController {
     }
 
     @objc func openLocationListButtonAction() {
-        debugPrint("location list...")
-        let searchRequest = MKLocalSearch.Request()
-//        searchRequest.pointOfInterestFilter = MKPointOfInterestFilter(including: [.bank, .gasStation]) // or you can use excluding
-        searchRequest.region = self.mapView.mapView.region
-        searchRequest.naturalLanguageQuery = "banka"
-        searchRequest.resultTypes = [.pointOfInterest, .address]
+        self.removePins()
+        self.authFlowController.goToLocationList()
+    }
 
-        var search = MKLocalSearch(request: searchRequest)
-        search.start { response, error in
-            guard let response = response else {
-                debugPrint("Error: \(error?.localizedDescription ?? "No error specified").")
-                return
+    func removePins() {
+        let annotations = self.mapView.mapView.annotations
+        for item in annotations {
+            if let annotation = item as? MKAnnotation {
+                self.mapView.mapView.removeAnnotation(annotation)
             }
-            // Create annotation for every map item
-            for mapItem in response.mapItems {
-                let annotation = MKPointAnnotation()
-                annotation.coordinate = mapItem.placemark.coordinate
-                annotation.title = mapItem.name
-                annotation.subtitle = mapItem.phoneNumber
-                self.mapView.mapView.addAnnotation(annotation)
-            }
-            self.mapView.mapView.setRegion(response.boundingRegion, animated: true)
         }
+        /*
+         Or try this:
+         func removeAllAnnotations() {
+             for annotation in self.mapView.annotations {
+                 self.mapView.removeAnnotation(annotation)
+             }
+         }
+         */
     }
 
     private func setupUserCurrentLocation(_ location: CLLocation) {
@@ -112,6 +140,30 @@ class MapViewController: UIViewController {
         pin.title = "My current location"
         self.mapView.mapView.showsUserLocation = true
         self.mapView.mapView.addAnnotation(pin)
+    }
+
+    func showChoosenDestinations(query: String) {
+        let searchRequest = MKLocalSearch.Request()
+        searchRequest.region = self.mapView.mapView.region
+        searchRequest.naturalLanguageQuery = query
+        searchRequest.resultTypes = [.pointOfInterest, .address]
+        
+        var search = MKLocalSearch(request: searchRequest)
+        search.start { response, error in
+            guard let response = response else {
+                debugPrint("Error: \(error?.localizedDescription ?? "No error specified").")
+                return
+            }
+            // Create annotation for every map item
+            for mapItem in response.mapItems {
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = mapItem.placemark.coordinate
+                annotation.title = mapItem.name
+                annotation.subtitle = mapItem.phoneNumber
+                self.mapView.mapView.addAnnotation(annotation)
+            }
+            self.mapView.mapView.setRegion(response.boundingRegion, animated: true)
+        }
     }
 }
 

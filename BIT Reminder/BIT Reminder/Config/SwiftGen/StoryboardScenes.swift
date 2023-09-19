@@ -24,6 +24,8 @@ internal enum StoryboardScene {
 
     internal static let albumsViewController = SceneType<AlbumsViewController>(storyboard: Authentification.self, identifier: "AlbumsViewController")
 
+    internal static let favoriteLocationsViewController = SceneType<FavoriteLocationsViewController>(storyboard: Authentification.self, identifier: "FavoriteLocationsViewController")
+
     internal static let homeViewController = SceneType<HomeViewController>(storyboard: Authentification.self, identifier: "HomeViewController")
 
     internal static let imageDetailsViewController = SceneType<ImageDetailsViewController>(storyboard: Authentification.self, identifier: "ImageDetailsViewController")

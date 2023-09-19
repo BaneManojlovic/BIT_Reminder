@@ -9,6 +9,8 @@ import UIKit
 
 class AlbumsTableViewCell: UITableViewCell {
 
+    // MARK: - Outlets
+
     @IBOutlet weak var roundedBackgroundView: UIView!
     @IBOutlet weak var folderImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -16,13 +18,18 @@ class AlbumsTableViewCell: UITableViewCell {
     @IBOutlet weak var accessoryImage: UIImageView!
 
     // MARK: - Properties
+
     static let reuseIdentifier = "AlbumsTableViewCell"
+
+    // MARK: - Initialization
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.setupUI()
     }
+    
+    // MARK: - Setup Methods
 
     private func setupUI() {
         self.clipsToBounds = true
@@ -47,11 +54,7 @@ class AlbumsTableViewCell: UITableViewCell {
 
     func setupCellData(model: Album) {
         self.titleLabel.text = model.albumName
-        // TODO: - Implement this later
-//        self.imageCountLabel.text = "\(model.count)" + " " + "images"
-        self.imageCountLabel.text = "0" + " " + "images"
         self.imageCountLabel.isHidden = true
-
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -326,6 +326,48 @@
             </objects>
             <point key="canvasLocation" x="1861.8320610687022" y="1387.323943661972"/>
         </scene>
+        <!--Favorite Locations View Controller-->
+        <scene sceneID="y7e-ri-R0V">
+            <objects>
+                <viewController storyboardIdentifier="FavoriteLocationsViewController" id="dZi-6r-oMe" customClass="FavoriteLocationsViewController" customModule="BIT_Reminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eo5-d6-bkN" customClass="FavoriteLocationsView" customModule="BIT_Reminder" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Re7-qF-JJ1">
+                                <rect key="frame" x="0.0" y="109" width="393" height="709"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7g-fq-gxF">
+                                <rect key="frame" x="333" y="59" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="nIU-gu-OAM"/>
+                                    <constraint firstAttribute="width" constant="50" id="oYq-U2-Qt7"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SMs-0E-VXa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SMs-0E-VXa" firstAttribute="trailing" secondItem="U7g-fq-gxF" secondAttribute="trailing" constant="10" id="3Zt-uI-wPF"/>
+                            <constraint firstItem="Re7-qF-JJ1" firstAttribute="leading" secondItem="SMs-0E-VXa" secondAttribute="leading" id="A9c-OK-QO4"/>
+                            <constraint firstItem="Re7-qF-JJ1" firstAttribute="top" secondItem="SMs-0E-VXa" secondAttribute="top" constant="50" id="HeJ-gd-vFD"/>
+                            <constraint firstItem="SMs-0E-VXa" firstAttribute="trailing" secondItem="Re7-qF-JJ1" secondAttribute="trailing" id="oI3-98-Nvj"/>
+                            <constraint firstItem="U7g-fq-gxF" firstAttribute="top" secondItem="SMs-0E-VXa" secondAttribute="top" id="qAG-aG-tDa"/>
+                            <constraint firstItem="SMs-0E-VXa" firstAttribute="bottom" secondItem="Re7-qF-JJ1" secondAttribute="bottom" id="sls-gn-1OS"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="closeButton" destination="U7g-fq-gxF" id="IyX-Qn-DqI"/>
+                            <outlet property="tableView" destination="Re7-qF-JJ1" id="b2Y-TS-MUe"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p5i-AP-fGS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2636" y="1387"/>
+        </scene>
         <!--Album Details View Controller-->
         <scene sceneID="3Ey-nI-c01">
             <objects>
@@ -381,7 +423,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E66-9w-Hep" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3452.6717557251909" y="1404.9295774647887"/>
+            <point key="canvasLocation" x="3424" y="1387"/>
         </scene>
         <!--Image Details View Controller-->
         <scene sceneID="FoF-xi-75t">
