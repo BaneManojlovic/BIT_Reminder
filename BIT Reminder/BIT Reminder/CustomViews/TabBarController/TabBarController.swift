@@ -37,7 +37,8 @@ class TabBarController: UITabBarController {
         viewControllersList.append(UINavigationController(rootViewController: homeTabBarVC))
 
         let mapTabBarVC = setMapTabBarController()
-        viewControllersList.append(UINavigationController(rootViewController: mapTabBarVC))
+//        viewControllersList.append(UINavigationController(rootViewController: mapTabBarVC))
+        viewControllersList.append(mapTabBarVC)
 
         let albumTabBarVC = setAlbumTabBarController()
         viewControllersList.append(UINavigationController(rootViewController: albumTabBarVC))
@@ -48,7 +49,6 @@ class TabBarController: UITabBarController {
         viewControllers = viewControllersList
     }
 
-    // TODO: - Rename this VC maybe?!
     private func setHomeTabBarController() -> HomeViewController {
         let viewController = StoryboardScene.Authentification.homeViewController.instantiate()
         viewController.presenter = HomeViewPresenter()

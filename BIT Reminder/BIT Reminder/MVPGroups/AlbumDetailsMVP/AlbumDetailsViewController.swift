@@ -36,6 +36,10 @@ class AlbumDetailsViewController: BaseNavigationController, UINavigationControll
         debugPrint("viewWillAppear...")
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     private func setupUI() {
         self.navigationController?.navigationBar.isHidden = false
         self.albumDetailsView.setupUI()

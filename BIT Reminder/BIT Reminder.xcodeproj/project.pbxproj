@@ -906,6 +906,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BIT Reminder/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow BIT Reminder to access your camera in order to take new photo.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please allow BIT Reminder to acces your location in order to offers you better services.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Please allow BIT Reminder to acces your location in order to offers you better services.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow BIT Reminder to access your location in order to offers you better services.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow BIT Reminder to access your phot library in order to choose photo.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = Authentification;
@@ -938,6 +941,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BIT Reminder/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow BIT Reminder to access your camera in order to take new photo.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please allow BIT Reminder to acces your location in order to offers you better services.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Please allow BIT Reminder to acces your location in order to offers you better services.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow BIT Reminder to access your location in order to offers you better services.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow BIT Reminder to access your phot library in order to choose photo.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = Authentification;

@@ -51,6 +51,7 @@ class LoginView: IQPreviousNextView {
         self.passwordTextField.font = UIFont.systemFont(ofSize: 20)
         self.passwordTextField.backgroundColor = Asset.textfieldBlueColor.color
         self.passwordTextField.layer.cornerRadius = 10
+        self.passwordTextField.isSecureTextEntry = true
         self.passwordTextField.attributedPlaceholder = NSAttributedString(
                                                        string: "password",
                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])

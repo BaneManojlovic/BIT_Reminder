@@ -60,6 +60,7 @@ class RegistrationView: IQPreviousNextView {
         self.passwordTextField.font = UIFont.systemFont(ofSize: 20)
         self.passwordTextField.backgroundColor = Asset.textfieldBlueColor.color
         self.passwordTextField.layer.cornerRadius = 10
+        self.passwordTextField.isSecureTextEntry = true
         self.passwordTextField.attributedPlaceholder = NSAttributedString(
                                                        string: "password",
                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
@@ -69,6 +70,7 @@ class RegistrationView: IQPreviousNextView {
         self.repeatPasswordTextField.font = UIFont.systemFont(ofSize: 20)
         self.repeatPasswordTextField.backgroundColor = Asset.textfieldBlueColor.color
         self.repeatPasswordTextField.layer.cornerRadius = 10
+        self.repeatPasswordTextField.isSecureTextEntry = true
         self.repeatPasswordTextField.attributedPlaceholder = NSAttributedString(
                                                        string: "repeat password",
                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
