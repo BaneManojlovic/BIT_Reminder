@@ -8,9 +8,13 @@
 
 
 // MARK: - Alerts
+
 "alert_title_error" = "Error";
 "alert_button_title_ok" = "Ok";
+"alert_button_title_ok_uppercased" = "OK";
 "alert_button_title_cancel" = "Cancel";
+"alert_button_title_yes" = "Yes";
+"alert_button_title_no" = "No";
 "alert_title_alert" = "Alert";
 "alert_title_no_internet" = "No Internet";
 "alert_message_no_internet" = "It seems there is no Internet connection. Please check your settings and try again.";

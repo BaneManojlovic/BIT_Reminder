@@ -49,6 +49,13 @@ class SettingsViewController: BaseNavigationController {
             self.presenter.logoutUser()
         })
     }
+
+    @objc func deleteUserAccount() {
+        self.showCancelOrYesAlert(message: "Are you sure you want to delete user account?",
+                                  yesHandler: {
+            self.presenter.deleteUser()
+        })
+    }
 }
 
 // MARK: - Conforming to SettingsViewPresenterDelegate
@@ -117,6 +124,9 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         case 2:
             debugPrint("2")
             self.logout()
+        case 3:
+            debugPrint("3")
+            self.deleteUserAccount()
         default:
             break
         }

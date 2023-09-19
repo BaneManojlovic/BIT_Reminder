@@ -28,11 +28,10 @@ class AuthManager {
         do {
             let data = try await client.auth.signIn(email: email, password: password )
             if ((data as? Session) != nil) {
-                debugPrint("Session je = \(data)")
                 completion(nil, data)
             }
         } catch {
-            debugPrint("error")
+            debugPrint(error.localizedDescription)
             completion(error, nil)
         }
     }
@@ -44,10 +43,10 @@ class AuthManager {
             if let session = data.session {
                 completion(nil, session)
             } else {
-                debugPrint("error - session = nil")
+                debugPrint("error - session - nil")
             }
         } catch {
-            debugPrint("error")
+            debugPrint(error.localizedDescription)
             completion(error, nil)
         }
     }
@@ -58,6 +57,7 @@ class AuthManager {
             try await client.database.from("users").insert(values: user).execute()
             completion(nil)
         } catch {
+            debugPrint(error.localizedDescription)
             completion(error)
         }
     }
@@ -65,10 +65,11 @@ class AuthManager {
     func getUserData(completion: @escaping (Error?, [UserModel]?) -> Void) async {
         guard let user = self.userDefaults.getUser() else { return }
         do {
-            let response: [UserModel] = try await client.database.from("users").select().eq(column: "profileId", value: user.profileId).execute().value
+            let response: [UserModel] = try await client.database.from("users").select().eq(column: "profileId",
+                                                                                            value: user.profileId).execute().value
             completion(nil, response)
         } catch {
-            debugPrint("error")
+            debugPrint(error.localizedDescription)
             completion(error, nil)
         }
     }
@@ -79,6 +80,7 @@ class AuthManager {
             let data = try await client.auth.session.user
             completion(nil, data)
         } catch {
+            debugPrint(error.localizedDescription)
             completion(error, nil)
         }
     }
@@ -89,9 +91,19 @@ class AuthManager {
             try await client.auth.signOut()
             completion(nil)
         } catch {
-            debugPrint("error")
+            debugPrint(error.localizedDescription)
             completion(error)
         }
+    }
+    
+    func deleteUserAccount(completion: @escaping (Error?) -> Void) async {
+////        let userId = 9
+//        do {
+////            try await client.auth.from("Users").delete().eq(column: "id", value: userId).execute()
+//            completion(nil)
+//        } catch {
+//            completion(error)
+//        }
     }
 
     // MARK: - Reminder API Data Methods
@@ -99,10 +111,11 @@ class AuthManager {
     func getReminders(completion: @escaping (Error?, [Reminder]?) -> Void) async {
         guard let user = self.userDefaults.getUser() else { return }
         do {
-            let reminders: [Reminder] = try await client.database.from("reminders").select().eq(column: "profileId", value: user.profileId).execute().value
+            let reminders: [Reminder] = try await client.database.from("reminders").select().eq(column: "profileId",
+                                                                                                value: user.profileId).execute().value
             completion(nil, reminders)
         } catch {
-            debugPrint("error")
+            debugPrint(error.localizedDescription)
             completion(error, nil)
         }
     }
@@ -112,18 +125,19 @@ class AuthManager {
             let response = try await client.database.from("reminders").insert(values: model).execute()
             completion(nil, response)
         } catch {
-            debugPrint("error")
+            debugPrint(error.localizedDescription)
             completion(error, nil)
         }
     }
 
-    func deleteReminder(tableName: String, model: Reminder, completion: @escaping (Error?) -> Void) async {
+    func deleteReminder(model: Reminder, completion: @escaping (Error?) -> Void) async {
         if let modelId = model.id {
             do {
-                let response = try await client.database.from("reminders").delete().eq(column: "id", value: modelId).execute()
+                _ = try await client.database.from("reminders").delete().eq(column: "id",
+                                                                            value: modelId).execute()
                 completion(nil)
             } catch {
-                debugPrint("error")
+                debugPrint(error.localizedDescription)
                 completion(error)
             }
         }
@@ -134,10 +148,11 @@ class AuthManager {
     func getAlbums(completion: @escaping (Error?, [Album]?) -> Void) async {
         guard let user = self.userDefaults.getUser() else { return }
         do {
-            let albums: [Album] = try await client.database.from("albums").select().eq(column: "profileId", value: user.profileId).execute().value
+            let albums: [Album] = try await client.database.from("albums").select().eq(column: "profileId",
+                                                                                       value: user.profileId).execute().value
             completion(nil, albums)
         } catch {
-            debugPrint("error")
+            debugPrint(error.localizedDescription)
             completion(error, nil)
         }
     }
@@ -147,40 +162,44 @@ class AuthManager {
             try await client.database.from("albums").insert(values: album).execute()
             completion(nil)
         } catch {
+            debugPrint(error.localizedDescription)
             completion(error)
         }
     }
 
     func deleteAlbum(modelID: Int, completion: @escaping (Error?) -> Void) async {
         do {
-            let response = try await client.database.from("albums").delete().eq(column: "id", value: modelID).execute()
+            _ = try await client.database.from("albums").delete().eq(column: "id", value: modelID).execute()
             completion(nil)
         } catch {
-            debugPrint("error")
+            debugPrint(error.localizedDescription)
             completion(error)
         }
     }
 
     func getPhotos(albumId: Int, completion: @escaping (Error?, [Photo]?) -> Void) async {
         do {
-            let photos: [Photo] = try await client.database.from("photos").select().eq(column: "albumId", value: "\(albumId)").execute().value
+            let photos: [Photo] = try await client.database.from("photos").select().eq(column: "albumId",
+                                                                                       value: "\(albumId)").execute().value
             completion(nil, photos)
         } catch {
-            debugPrint("error")
+            debugPrint(error.localizedDescription)
             completion(error, nil)
         }
     }
 
     func uploadPhoto(imageData: Data, completion: @escaping (Error?, URL?) -> Void) async {
         /// add unique timestamp as part of the picture name
-        var uniqueNumber = Date.now.timeIntervalSince1970
+        let uniqueNumber = Date.now.timeIntervalSince1970
         let file = File(name: "picture", data: imageData, fileName: "picture.jpeg", contentType: "image/jpeg")
         do {
-            try await client.storage.from(id: "photos").upload(path: "picture\(uniqueNumber).jpeg", file: file, fileOptions: FileOptions(cacheControl: "3600"))
+            try await client.storage.from(id: "photos").upload(path: "picture\(uniqueNumber).jpeg",
+                                                               file: file,
+                                                               fileOptions: FileOptions(cacheControl: "3600"))
             let imageURL = try client.storage.from(id: "photos").getPublicURL(path: "picture\(uniqueNumber).jpeg")
             completion(nil, imageURL)
         } catch {
-            debugPrint("error")
+            debugPrint(error.localizedDescription)
             completion(error, nil)
         }
     }
@@ -190,6 +209,7 @@ class AuthManager {
             try await client.database.from("photos").insert(values: model).execute()
             completion(nil)
         } catch {
+            debugPrint(error.localizedDescription)
             completion(error)
         }
     }
@@ -199,7 +219,7 @@ class AuthManager {
             try await client.database.from("photos").delete().eq(column: "id", value: modelID).execute()
             completion(nil)
         } catch {
-            debugPrint("error")
+            debugPrint(error.localizedDescription)
             completion(error)
         }
     }

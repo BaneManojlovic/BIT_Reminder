@@ -260,20 +260,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		8D6B80AE2AA78ADB009DF810 /* Mapper */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mapper;
-			sourceTree = "<group>";
-		};
-		8D6B80AF2AA78AE4009DF810 /* Misc */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Misc;
-			sourceTree = "<group>";
-		};
 		8D6B80B02AA78AEF009DF810 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,8 +371,6 @@
 				8D6B80A92AA78A91009DF810 /* Config */,
 				8D6B80AC2AA78ABB009DF810 /* Extensions */,
 				8D6B80AD2AA78ACB009DF810 /* Helpers */,
-				8D6B80AE2AA78ADB009DF810 /* Mapper */,
-				8D6B80AF2AA78AE4009DF810 /* Misc */,
 				8D6B80B02AA78AEF009DF810 /* Models */,
 				8D6B80B12AA78AF9009DF810 /* Storyboards */,
 				8D6B80AB2AA78AAE009DF810 /* FlowControllers */,

@@ -12,8 +12,14 @@ import Foundation
 internal enum L10n {
   /// Cancel
   internal static let alertButtonTitleCancel = L10n.tr("Localizable", "alert_button_title_cancel", fallback: "Cancel")
+  /// No
+  internal static let alertButtonTitleNo = L10n.tr("Localizable", "alert_button_title_no", fallback: "No")
   /// Ok
   internal static let alertButtonTitleOk = L10n.tr("Localizable", "alert_button_title_ok", fallback: "Ok")
+  /// OK
+  internal static let alertButtonTitleOkUppercased = L10n.tr("Localizable", "alert_button_title_ok_uppercased", fallback: "OK")
+  /// Yes
+  internal static let alertButtonTitleYes = L10n.tr("Localizable", "alert_button_title_yes", fallback: "Yes")
   /// It seems there is no Internet connection. Please check your settings and try again.
   internal static let alertMessageNoInternet = L10n.tr("Localizable", "alert_message_no_internet", fallback: "It seems there is no Internet connection. Please check your settings and try again.")
   /// Alert

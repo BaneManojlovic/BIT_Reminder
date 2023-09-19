@@ -30,7 +30,6 @@ class SplashScreenViewController: BaseViewController {
 
         self.setupUI()
         self.setupDelegates()
-        // TODO: - Research bug with: Invalid Refresh Token: Refresh Token Not Found #436
 //        self.presenter.checkForRetrievedUser()
         self.presenter.checkAuthorizationStatus()
     }

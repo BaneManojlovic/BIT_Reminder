@@ -40,6 +40,7 @@ class SettingsViewPresenter {
         self.settingsModel.append(SettingsModel(title: "Profile"))
         self.settingsModel.append(SettingsModel(title: "Privacy Policy"))
         self.settingsModel.append(SettingsModel(title: "Logout"))
+        self.settingsModel.append(SettingsModel(title: "Delete account"))
         self.getUserData()
     }
 
@@ -56,6 +57,10 @@ class SettingsViewPresenter {
                 }
             }
         }
+    }
+    
+    func deleteUser() {
+        
     }
 
     func getUserData() {

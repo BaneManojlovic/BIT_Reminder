@@ -34,6 +34,9 @@ class SettingsTableViewCell: UITableViewCell {
 
     func fillCellData(text: String) {
         self.titleLabel.text = text
+        if text == "Delete account" {
+            self.titleLabel.textColor = .red
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
