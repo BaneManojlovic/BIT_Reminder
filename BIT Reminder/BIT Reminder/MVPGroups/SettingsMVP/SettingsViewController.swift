@@ -77,7 +77,9 @@ extension SettingsViewController: SettingsViewPresenterDelegate {
     }
 
     func userLogoutFailure(message: String) {
-        self.showOkAlert(message: message)
+        DispatchQueue.main.async {
+            self.showOkAlert(message: message)
+        }
     }
 
     func userLogoutSuccess() {

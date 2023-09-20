@@ -15,6 +15,14 @@ struct UserModel: Codable {
     var password: String?
     var repeatedPassword: String?
 
+    enum CodingKeys: String, CodingKey {
+        case profileId = "id"
+        case userName = "user_name"
+        case userEmail = "user_email"
+        case password = "password"
+        case repeatedPassword = "repeat_password"
+    }
+
     func validateLogin() throws {
         /// validate email textField entry
         if userEmail.isEmpty {

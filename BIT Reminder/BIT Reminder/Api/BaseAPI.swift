@@ -54,7 +54,7 @@ class AuthManager {
     /// API method for saving user to users table in database
     func saveUser(user: UserModel, completion: @escaping (Error?) -> Void) async {
         do {
-            try await client.database.from("users").insert(values: user).execute()
+            try await client.database.from("profiles").insert(values: user).execute()
             completion(nil)
         } catch {
             debugPrint(error.localizedDescription)
@@ -65,7 +65,7 @@ class AuthManager {
     func getUserData(completion: @escaping (Error?, [UserModel]?) -> Void) async {
         guard let user = self.userDefaults.getUser() else { return }
         do {
-            let response: [UserModel] = try await client.database.from("users").select().eq(column: "profileId",
+            let response: [UserModel] = try await client.database.from("profiles").select().eq(column: "id",
                                                                                             value: user.profileId).execute().value
             completion(nil, response)
         } catch {
@@ -95,15 +95,16 @@ class AuthManager {
             completion(error)
         }
     }
-    
+
     func deleteUserAccount(completion: @escaping (Error?) -> Void) async {
-////        let userId = 9
-//        do {
-////            try await client.auth.from("Users").delete().eq(column: "id", value: userId).execute()
-//            completion(nil)
-//        } catch {
-//            completion(error)
-//        }
+        guard let user = self.userDefaults.getUser() else { return }
+        debugPrint("\(user.profileId)")
+        do {
+            try await client.database.from("profiles").delete().eq(column: "id", value: user.profileId).execute()
+            completion(nil)
+        } catch {
+            completion(error)
+        }
     }
 
     // MARK: - Reminder API Data Methods
@@ -111,7 +112,7 @@ class AuthManager {
     func getReminders(completion: @escaping (Error?, [Reminder]?) -> Void) async {
         guard let user = self.userDefaults.getUser() else { return }
         do {
-            let reminders: [Reminder] = try await client.database.from("reminders").select().eq(column: "profileId",
+            let reminders: [Reminder] = try await client.database.from("reminders").select().eq(column: "profile_id",
                                                                                                 value: user.profileId).execute().value
             completion(nil, reminders)
         } catch {
@@ -148,7 +149,7 @@ class AuthManager {
     func getAlbums(completion: @escaping (Error?, [Album]?) -> Void) async {
         guard let user = self.userDefaults.getUser() else { return }
         do {
-            let albums: [Album] = try await client.database.from("albums").select().eq(column: "profileId",
+            let albums: [Album] = try await client.database.from("albums").select().eq(column: "profile_id",
                                                                                        value: user.profileId).execute().value
             completion(nil, albums)
         } catch {
@@ -179,7 +180,7 @@ class AuthManager {
 
     func getPhotos(albumId: Int, completion: @escaping (Error?, [Photo]?) -> Void) async {
         do {
-            let photos: [Photo] = try await client.database.from("photos").select().eq(column: "albumId",
+            let photos: [Photo] = try await client.database.from("photos").select().eq(column: "album_id",
                                                                                        value: "\(albumId)").execute().value
             completion(nil, photos)
         } catch {

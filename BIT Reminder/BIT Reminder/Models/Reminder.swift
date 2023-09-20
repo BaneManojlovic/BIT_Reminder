@@ -16,6 +16,15 @@ struct Reminder: Codable {
     var important: Bool?
     var date: String?
 
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case profileId = "profile_id"
+        case title = "title"
+        case description = "description"
+        case important = "important"
+        case date = "date"
+    }
+
     func validation() throws {
         /// validate title etxtField
         if title.isEmpty {
@@ -35,6 +44,15 @@ struct ReminderRequestModel: Codable {
     var description: String?
     var important: Bool?
     var date: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case profileId = "profile_id"
+        case title = "title"
+        case description = "description"
+        case important = "important"
+        case date = "date"
+    }
 
     func validation() throws {
         /// validate title etxtField

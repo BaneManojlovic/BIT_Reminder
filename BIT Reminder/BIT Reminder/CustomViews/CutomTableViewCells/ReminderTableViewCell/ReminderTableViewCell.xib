@@ -38,7 +38,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tar" translatesAutoresizingMaskIntoConstraints="NO" id="IQZ-84-kFh">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IQZ-84-kFh">
                                 <rect key="frame" x="330" y="40.666666666666664" width="30" height="29.999999999999993"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="U5o-ii-jmn"/>
@@ -74,7 +74,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="tar" width="128" height="128"/>
         <namedColor name="tableview_cell_blue_color">
             <color red="0.097999997437000275" green="0.16099999845027924" blue="0.28200000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

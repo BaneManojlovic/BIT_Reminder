@@ -35,7 +35,7 @@ class RegistrationPresenter {
     }
 
     func registerNewUserWithEmail(user: UserModel) {
-        KRProgressHUD.show()
+//        KRProgressHUD.show()
         Task {
             do {
                 try user.validateRegistration()
@@ -43,7 +43,7 @@ class RegistrationPresenter {
                     if let error = error {
                         debugPrint(error.localizedDescription)
                         DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-                           KRProgressHUD.dismiss()
+//                           KRProgressHUD.dismiss()
                         }
                         self.delegate?.registarNewUserActionFailure(error: error)
                     } else if let data = response {
@@ -68,12 +68,12 @@ class RegistrationPresenter {
                     if let error = error {
                         debugPrint(error.localizedDescription)
                         DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-                           KRProgressHUD.dismiss()
+//                           KRProgressHUD.dismiss()
                         }
                         self.delegate?.registarNewUserActionFailure(error: error)
                     } else {
                         DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-                           KRProgressHUD.dismiss()
+//                           KRProgressHUD.dismiss()
                         }
                         self.delegate?.registarNewUserActionSuccess()
                     }
