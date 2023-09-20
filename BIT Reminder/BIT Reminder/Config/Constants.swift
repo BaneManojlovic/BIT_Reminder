@@ -17,4 +17,9 @@ struct Constants {
 
     // MARK: - Privacy Policy URL
     static let privacyPolicyURL = ""
+
+    // MARK: - Notification Name
+
+    static let reloadAlbumDetailsView = "reloadAlbumDetailsView"
+    static let showMapPins = "showMapPins"
 }

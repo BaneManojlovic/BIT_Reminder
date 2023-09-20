@@ -85,7 +85,7 @@ class BaseNavigationController: BaseViewController {
             }
         }
     }
-    
+
     var haveDeleteAndUploadButtons: Bool = false {
         didSet {
             if haveDeleteAndUploadButtons {
@@ -292,7 +292,7 @@ class BaseNavigationController: BaseViewController {
          }
          */
     }
-    
+
     @objc func deleteAction() {
         // Override in ViewController that inherits BaseNavigationControllert if needed
         /*

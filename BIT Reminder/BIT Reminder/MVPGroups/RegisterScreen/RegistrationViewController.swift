@@ -63,7 +63,7 @@ class RegistrationViewController: BaseNavigationController {
                                                                     password: password,
                                                                     repeatedPassword: repeatedPassword))
         } else {
-            self.showOkAlert(message: "Error while Register new user")
+            self.showOkAlert(message: L10n.labelMessageErrorWhileRegister)
         }
     }
 }
@@ -92,7 +92,6 @@ extension RegistrationViewController: RegistrationPresenterDelegate {
     }
 
     func registarNewUserActionSuccess() {
-        debugPrint("Success")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.authFlowController.goToHome()
         }
@@ -101,29 +100,36 @@ extension RegistrationViewController: RegistrationPresenterDelegate {
     func handleValidationError(error: UserModel.ValidationError) {
         switch error {
         case .nameEmpty:
-            self.showValidationError(message: "nameEmpty")
+            self.showValidationError(message: L10n.labelErrorMessageNameCannotBeEmpty)
         case .nameInvalid:
-            self.showValidationError(message: "nameInvalid")
+            self.showValidationError(message: L10n.labelErrorMessageNameInvalidFormat)
         case .emailEmpty:
-            self.showValidationError(message: "emailEmpty")
+            self.showValidationError(message: L10n.labelErrorMessageEmailCannotBeEmpty)
         case .emailInvalid:
-            self.showValidationError(message: "emailInvalid")
+            self.showValidationError(message: L10n.labelErrorMessageEmailInvalidFormat)
         case .passwordEmpty:
-            self.showValidationError(message: "passwordEmpty")
+            self.showValidationError(message: L10n.labelErrorMessagePasswCannotBeEmpty)
         case .passwordInvalid:
-            self.showValidationError(message: "passwordInvalid")
+            self.showPasswordValidationMessage(message: L10n.labelErrorMessagePasswInvalidFormat)
         case .repeatPasswordEmpty:
-            self.showValidationError(message: "repeatPasswordEmpty")
+            self.showValidationError(message: L10n.labelErrorMessageRepeatedPasswCannotBeEmpty)
         case .repeatPasswordInvalid:
-            self.showValidationError(message: "repeatPasswordInvalid")
+            self.showPasswordValidationMessage(message: L10n.labelErrorMessageRepeatedPasswInvalidFormat)
         case .passwordsDontMatch:
-            self.showValidationError(message: "passwordsDontMatch")
+            self.showValidationError(message: L10n.labelErrorMessagePasswordsDontMatch)
         }
     }
 
     func showValidationError(message: String) {
         DispatchQueue.main.async {
             self.showOkAlert(message: message)
+        }
+    }
+
+    func showPasswordValidationMessage(message: String) {
+        let passwordInstruction = L10n.labelPasswordExplanation
+        DispatchQueue.main.async {
+            self.showOkAlert(title: message, message: passwordInstruction)
         }
     }
 }

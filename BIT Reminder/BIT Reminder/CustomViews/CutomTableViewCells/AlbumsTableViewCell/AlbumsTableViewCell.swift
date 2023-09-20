@@ -28,7 +28,7 @@ class AlbumsTableViewCell: UITableViewCell {
         // Initialization code
         self.setupUI()
     }
-    
+
     // MARK: - Setup Methods
 
     private func setupUI() {

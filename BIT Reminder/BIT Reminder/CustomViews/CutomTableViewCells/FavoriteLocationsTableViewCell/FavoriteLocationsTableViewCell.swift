@@ -15,6 +15,7 @@ class FavoriteLocationsTableViewCell: UITableViewCell {
     @IBOutlet weak var loactionPinImageView: UIImageView!
 
     // MARK: - Properties
+
     static let reuseIdentifier = "FavoriteLocationsTableViewCell"
 
     // MARK: - Initialization
@@ -30,7 +31,6 @@ class FavoriteLocationsTableViewCell: UITableViewCell {
     private func setupUI() {
         self.backgroundColor = Asset.backgroundBlueColor.color
         self.selectionStyle = .none
-
         /// setup titleLabel
         self.locationTitleLabel.textColor = .white
         self.locationTitleLabel.textAlignment = .left

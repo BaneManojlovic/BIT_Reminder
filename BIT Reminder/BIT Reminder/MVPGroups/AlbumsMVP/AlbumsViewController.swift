@@ -9,13 +9,16 @@ import UIKit
 
 class AlbumsViewController: BaseNavigationController {
 
+    // MARK: - Properties
+
     var presenter = AlbumsViewPresenter()
     lazy private var authFlowController = AuthentificationFlowController(currentViewController: self)
-
     private var albumsView: AlbumsView! {
         loadViewIfNeeded()
         return view as? AlbumsView
     }
+
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,12 +34,14 @@ class AlbumsViewController: BaseNavigationController {
         self.presenter.getAlbums()
     }
 
+    // MARK: - Setup Methods
+
     private func setupUI() {
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.title = "Albums"
+        self.navigationItem.title = L10n.titleLabelAlbums
         self.albumsView.setupUI()
     }
 
@@ -53,26 +58,26 @@ class AlbumsViewController: BaseNavigationController {
 
         if let user = self.presenter.user {
             /// Create the alert controller.
-            let alert = UIAlertController(title: "Create new album", message: "Enter album title:", preferredStyle: .alert)
+            let alert = UIAlertController(title: L10n.labelMessageCreateNewAlbum, message: L10n.labelMessageEnterAlbumTitle, preferredStyle: .alert)
             /// Add the text field. You can configure it however you need.
             alert.addTextField { (textField) in
                 textField.text = ""
             }
             /// Cancel action for create new Album feature
-            alert.addAction(UIAlertAction(title: "Cancel",
+            alert.addAction(UIAlertAction(title: L10n.alertButtonTitleCancel,
                                           style: .cancel,
                                           handler: { _ in
                 self.dismiss(animated: true)
             }))
             /// Grab the value from the text field, and print it when the user clicks OK.
-            alert.addAction(UIAlertAction(title: "Create", style: .default, handler: { [weak alert] (_) in
+            alert.addAction(UIAlertAction(title: L10n.labelTitleCreate, style: .default, handler: { [weak alert] (_) in
                 if let textField = alert?.textFields?[0] as? UITextField {
                     if let text = textField.text, text != "" {
                         let album = Album(albumName: text,
                                           profileId: user.profileId)
                         self.presenter.createNewAlbum(album: album)
                     } else {
-                        self.presenter.delegate?.createNewAlbumFailure(message: "Title is mandatory!")
+                        self.presenter.delegate?.createNewAlbumFailure(message: L10n.labelMessageTitleMandatory)
                     }
                 }
             }))
@@ -81,6 +86,8 @@ class AlbumsViewController: BaseNavigationController {
         }
     }
 }
+
+// MARK: - Conforming to AlbumsViewPresenterDelegate
 
 extension AlbumsViewController: AlbumsViewPresenterDelegate {
 
@@ -114,7 +121,14 @@ extension AlbumsViewController: AlbumsViewPresenterDelegate {
 
     func getAlbumsSuccess(response: [Album]) {
         DispatchQueue.main.async {
-            self.albumsView.tableView.reloadData()
+            if !response.isEmpty {
+                self.albumsView.messageLabel.isHidden = true
+                self.albumsView.tableView.isHidden = false
+                self.albumsView.tableView.reloadData()
+            } else {
+                self.albumsView.messageLabel.isHidden = false
+                self.albumsView.tableView.isHidden = true
+            }
         }
     }
 }

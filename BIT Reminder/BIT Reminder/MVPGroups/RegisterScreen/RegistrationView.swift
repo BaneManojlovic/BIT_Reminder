@@ -31,7 +31,7 @@ class RegistrationView: IQPreviousNextView {
     // MARK: - Private Setup Methods
 
     private func setupLabels() {
-        self.screenTitleLabel.text = "Register"
+        self.screenTitleLabel.text = L10n.titleLabelRegister
         self.screenTitleLabel.textColor = .white
         self.screenTitleLabel.textAlignment = .center
         self.screenTitleLabel.font = UIFont.systemFont(ofSize: 48)
@@ -46,7 +46,7 @@ class RegistrationView: IQPreviousNextView {
         self.userNameTextField.layer.masksToBounds = true
         self.userNameTextField.layer.cornerRadius = 10
         self.userNameTextField.attributedPlaceholder = NSAttributedString(
-                                                    string: "user name",
+            string: L10n.labelUserName,
                                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
         /// email TextField
         self.emailTextField.textColor = .white
@@ -56,26 +56,26 @@ class RegistrationView: IQPreviousNextView {
         self.emailTextField.layer.masksToBounds = true
         self.emailTextField.layer.cornerRadius = 10
         self.emailTextField.attributedPlaceholder = NSAttributedString(
-                                                    string: "email",
+            string: L10n.labelEmail,
                                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
 
         /// password TextField
         self.passwordTextField.inputTextField.textContentType = .newPassword
         self.passwordTextField.inputTextField.attributedPlaceholder = NSAttributedString(
-                                                       string: "password",
+            string: L10n.labelPassword,
                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
 
         /// repeatPassword  TextField
         self.repeatPasswordTextField.inputTextField.textContentType = .password
         self.repeatPasswordTextField.inputTextField.attributedPlaceholder = NSAttributedString(
-                                                       string: "repeat password",
+            string: L10n.labelRepeatPassword,
                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
     }
 
     private func setupButtons() {
         /// setup for login button
         self.registerButton.backgroundColor = Asset.buttonBlueColor.color
-        self.registerButton.setTitle("Register", for: .normal)
+        self.registerButton.setTitle(L10n.titleLabelRegister, for: .normal)
         self.registerButton.tintColor = .white
         self.registerButton.layer.cornerRadius = 10
     }

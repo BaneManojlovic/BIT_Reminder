@@ -16,9 +16,10 @@ protocol LoginViewPresenterDelegate: AnyObject {
 
 class LoginViewPresenter {
 
+    // MARK: - Properties
+
     weak var delegate: LoginViewPresenterDelegate?
     var authManager = AuthManager()
-
     private var userDefaultsHelper = UserDefaultsHelper()
 
     // MARK: - Initialization
@@ -45,7 +46,6 @@ class LoginViewPresenter {
                         debugPrint(error)
                         self.delegate?.loginActionFailed(error: error.localizedDescription)
                     } else if let session = response {
-                        debugPrint("Success")
                         let user = UserModel(profileId: session.user.id.uuidString,
                                              userName: user.userName,
                                              userEmail: session.user.email ?? "")

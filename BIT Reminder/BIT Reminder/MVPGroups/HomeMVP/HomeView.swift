@@ -24,10 +24,8 @@ class HomeView: UIView {
         self.tableView.register(UINib(nibName: ReminderTableViewCell.reuseIdentifier, bundle: nil),
                                 forCellReuseIdentifier: ReminderTableViewCell.reuseIdentifier)
         /// setup for homeMessageLabel
-        self.homeMessageLabel.text = "No Reminders"
+        self.homeMessageLabel.text = L10n.labelMessageNoReminders
         self.homeMessageLabel.textColor = .white
         self.homeMessageLabel.textAlignment = .center
-        
     }
-
 }

@@ -35,16 +35,12 @@ class RegistrationPresenter {
     }
 
     func registerNewUserWithEmail(user: UserModel) {
-//        KRProgressHUD.show()
         Task {
             do {
                 try user.validateRegistration()
                 try await self.authManager.registerNewUserWithEmailAndPassword(email: user.userEmail, password: user.password ?? "") { error, response  in
                     if let error = error {
                         debugPrint(error.localizedDescription)
-                        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-//                           KRProgressHUD.dismiss()
-                        }
                         self.delegate?.registarNewUserActionFailure(error: error)
                     } else if let data = response {
                         let user = UserModel(profileId: data.user.id.uuidString,
@@ -67,14 +63,8 @@ class RegistrationPresenter {
                 try await self.authManager.saveUser(user: user) { error in
                     if let error = error {
                         debugPrint(error.localizedDescription)
-                        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-//                           KRProgressHUD.dismiss()
-                        }
                         self.delegate?.registarNewUserActionFailure(error: error)
                     } else {
-                        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-//                           KRProgressHUD.dismiss()
-                        }
                         self.delegate?.registarNewUserActionSuccess()
                     }
                 }

@@ -16,7 +16,6 @@ class MapViewController: UIViewController {
     let locationManager = CLLocationManager()
     var myLocation: CLLocation?
     lazy private var authFlowController = AuthentificationFlowController(currentViewController: self)
-
     private var mapView: MapView! {
         loadViewIfNeeded()
         return view as? MapView
@@ -31,9 +30,8 @@ class MapViewController: UIViewController {
         self.setupDelegates()
         self.setupTargets()
         self.setupObservers()
-        
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let location = myLocation {
@@ -69,9 +67,9 @@ class MapViewController: UIViewController {
     func checkIsLocationManageEnabled() {
         let locationServicesEnabled = CLLocationManager.locationServicesEnabled()
         if locationServicesEnabled {
-            debugPrint("Servis je Enabled")
+            debugPrint("Servis enabled")
         } else {
-            debugPrint("Servis je disabled")
+            debugPrint("Servis disabled")
             locationManager.requestWhenInUseAuthorization()
         }
     }
@@ -89,6 +87,7 @@ class MapViewController: UIViewController {
     }
 
     private func setupTargets() {
+        self.mapView.clearMapButton.addTarget(self, action: #selector(removePinAndSetUserLocation), for: .touchUpInside)
         self.mapView.myLocationButton.addTarget(self, action: #selector(myLocationButtonAction), for: .touchUpInside)
         self.mapView.openLocationListButton.addTarget(self, action: #selector(openLocationListButtonAction), for: .touchUpInside)
     }
@@ -123,6 +122,13 @@ class MapViewController: UIViewController {
          */
     }
 
+    @objc func removePinAndSetUserLocation() {
+        self.removePins()
+        if let location = myLocation {
+            self.setupUserCurrentLocation(location)
+        }
+    }
+
     private func setupUserCurrentLocation(_ location: CLLocation) {
         let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude,
                                                 longitude: location.coordinate.longitude)
@@ -137,7 +143,7 @@ class MapViewController: UIViewController {
     private func addPin(_ coordinate: CLLocationCoordinate2D) {
         let pin = MKPointAnnotation()
         pin.coordinate = coordinate
-        pin.title = "My current location"
+        pin.title = L10n.labelMessageMyLocation
         self.mapView.mapView.showsUserLocation = true
         self.mapView.mapView.addAnnotation(pin)
     }
@@ -147,11 +153,11 @@ class MapViewController: UIViewController {
         searchRequest.region = self.mapView.mapView.region
         searchRequest.naturalLanguageQuery = query
         searchRequest.resultTypes = [.pointOfInterest, .address]
-        
+
         var search = MKLocalSearch(request: searchRequest)
         search.start { response, error in
             guard let response = response else {
-                debugPrint("Error: \(error?.localizedDescription ?? "No error specified").")
+                debugPrint("Error: \(error?.localizedDescription ?? "Unknown error")")
                 return
             }
             // Create annotation for every map item
@@ -192,22 +198,16 @@ extension MapViewController: CLLocationManagerDelegate {
 
         switch status {
         case .notDetermined:
-            debugPrint("Status je notDetermined")
             handleNotDeterminedAuthorization()
         case .restricted:
-            debugPrint("Status je restricted")
             handleRestrictedAuthorization()
         case .denied:
-            debugPrint("Status je denied")
             promptForAuthorization()
         case .authorizedAlways:
-            debugPrint("Status je authorizedAlways")
             self.startLocationUpadate()
         case .authorizedWhenInUse:
-            debugPrint("Status je authorizedWhenInUse")
             self.startLocationUpadate()
         case .authorized:
-            debugPrint("Status je authorized")
             self.startLocationUpadate()
         @unknown default:
             debugPrint("default...")

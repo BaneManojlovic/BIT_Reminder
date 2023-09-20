@@ -31,11 +31,6 @@ class AlbumDetailsViewController: BaseNavigationController, UINavigationControll
         self.presenter?.getAlbumDetails(albumId: self.presenter?.albumId ?? 0)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        debugPrint("viewWillAppear...")
-    }
-
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -71,7 +66,7 @@ class AlbumDetailsViewController: BaseNavigationController, UINavigationControll
 
     override func deleteAction() {
         super.deleteAction()
-        self.showCancelOrYesAlert(message: "Are you sure that you want to delete this Album?",
+        self.showCancelOrYesAlert(message: L10n.labelMessageSureDeleteAlbum,
                                   yesHandler: {
             if let modelId = self.presenter?.albumId {
                 self.presenter?.deleteAlbum(modelID: modelId)
@@ -80,9 +75,9 @@ class AlbumDetailsViewController: BaseNavigationController, UINavigationControll
     }
 
     override func uploadButtonAction() {
-        let actionSheet = UIAlertController(title: "", message: "Upload new photo:", preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "", message: L10n.labelMessageUploadNewPhoto, preferredStyle: .actionSheet)
         /// add take photo via camer action
-        actionSheet.addAction(UIAlertAction(title: "Take photo via camera",
+        actionSheet.addAction(UIAlertAction(title: L10n.labelMessageTakePhotoViaCamera,
                                             style: .default,
                                             handler: { [self] (_: UIAlertAction) in
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -91,14 +86,14 @@ class AlbumDetailsViewController: BaseNavigationController, UINavigationControll
             }
         }))
         /// add chose photo from gallery action
-        actionSheet.addAction(UIAlertAction(title: "Choose photo from library",
+        actionSheet.addAction(UIAlertAction(title: L10n.labelMessageChoosePhotoFromLibrary,
                                             style: .default,
                                             handler: { [self] (_: UIAlertAction) in
             imagePickerController.sourceType = .photoLibrary
             self.present(imagePickerController, animated: true, completion: nil)
         }))
         /// add cancel action
-        actionSheet.addAction(UIAlertAction(title: "Cancel",
+        actionSheet.addAction(UIAlertAction(title: L10n.alertButtonTitleCancel,
                                             style: .cancel,
                                             handler: nil))
         /// present action sheet
@@ -124,7 +119,7 @@ extension AlbumDetailsViewController: AlbumDetailsPresenterDelegate {
 
     func deleteAlbumSuccess() {
         DispatchQueue.main.async {
-            self.showOkAlert(message: "Album successfully deleted!", confirmation: {
+            self.showOkAlert(message: L10n.labelMessageAlbumDeleted, confirmation: {
                 self.navigationController?.popViewController(animated: true)
             })
         }
@@ -172,7 +167,6 @@ extension AlbumDetailsViewController: UIImagePickerControllerDelegate {
         }
 
         if let image = image?.jpegData(compressionQuality: 0.8) {
-            debugPrint("Image = \(image)")
             self.presenter?.uploadPhoto(image: image)
         }
 

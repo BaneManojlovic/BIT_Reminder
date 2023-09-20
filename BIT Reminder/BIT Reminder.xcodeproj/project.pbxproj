@@ -27,7 +27,6 @@
 		8D6B80DB2AA887C1009DF810 /* UIWindow+RootTransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B80DA2AA887C1009DF810 /* UIWindow+RootTransitionExtension.swift */; };
 		8D6F5CEB2AA3EABF006184CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F5CEA2AA3EABF006184CC /* AppDelegate.swift */; };
 		8D6F5CED2AA3EABF006184CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F5CEC2AA3EABF006184CC /* SceneDelegate.swift */; };
-		8D6F5CEF2AA3EABF006184CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F5CEE2AA3EABF006184CC /* ViewController.swift */; };
 		8D6F5CF42AA3EAC0006184CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D6F5CF32AA3EAC0006184CC /* Assets.xcassets */; };
 		8D8DE3752AB487D30063E62C /* AlbumDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DE3742AB487D30063E62C /* AlbumDetailsViewController.swift */; };
 		8D8DE3772AB487E50063E62C /* AlbumDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DE3762AB487E50063E62C /* AlbumDetailsView.swift */; };
@@ -108,7 +107,6 @@
 		8D6F5CE72AA3EABF006184CC /* BIT Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BIT Reminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D6F5CEA2AA3EABF006184CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D6F5CEC2AA3EABF006184CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8D6F5CEE2AA3EABF006184CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8D6F5CF32AA3EAC0006184CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D6F5CF82AA3EAC0006184CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D8DE3742AB487D30063E62C /* AlbumDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewController.swift; sourceTree = "<group>"; };
@@ -308,7 +306,6 @@
 				8D95136B2AAA167600A30E9B /* HomeMVP */,
 				8D6B80D32AA88433009DF810 /* BaseMVP */,
 				8D6B80CC2AA881CB009DF810 /* SplashScreenMVP */,
-				8D6F5CEE2AA3EABF006184CC /* ViewController.swift */,
 			);
 			path = MVPGroups;
 			sourceTree = "<group>";
@@ -758,7 +755,6 @@
 				8DBAA5682AB1FD640054A5FF /* SettingsViewPresenter.swift in Sources */,
 				8D9513702AAA185D00A30E9B /* HomeView.swift in Sources */,
 				8D95137D2AAB091400A30E9B /* RegistrationView.swift in Sources */,
-				8D6F5CEF2AA3EABF006184CC /* ViewController.swift in Sources */,
 				8DBAA5562AB0407C0054A5FF /* UserDefaultsHelper.swift in Sources */,
 				8D9513782AAAFDC100A30E9B /* LoginViewPresenter.swift in Sources */,
 				8D6B80D52AA88451009DF810 /* BaseViewController.swift in Sources */,

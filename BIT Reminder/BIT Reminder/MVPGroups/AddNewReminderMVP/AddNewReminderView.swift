@@ -9,6 +9,8 @@ import UIKit
 
 class AddNewReminderView: UIView {
 
+    // MARK: - Outlets
+
     @IBOutlet weak var addTitleLabel: UILabel!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var addDescriptionLabel: UILabel!
@@ -19,6 +21,8 @@ class AddNewReminderView: UIView {
     @IBOutlet weak var setReminderDateLabel: UILabel!
     @IBOutlet weak var datePickerTextField: UITextField!
     @IBOutlet weak var dateValueLabel: UILabel!
+
+    // MARK: - Setup Methods
 
     func setupUI() {
         self.backgroundColor = Asset.backgroundBlueColor.color
@@ -32,17 +36,17 @@ class AddNewReminderView: UIView {
         /// set addTitleLabel
         self.addTitleLabel.textColor = .white
         self.addTitleLabel.textAlignment = .left
-        self.addTitleLabel.text = "Set Reminder title:"
+        self.addTitleLabel.text = L10n.labelMessageSetReminderTitle
         /// set addDescriptionLabel
         self.addDescriptionLabel.textColor = .white
         self.addDescriptionLabel.textAlignment = .left
-        self.addDescriptionLabel.text = "Set Reminder description:"
+        self.addDescriptionLabel.text = L10n.labelMessageSetReminderDescription
         /// set setImportanceLabel
         self.setImportanceLabel.textColor = .white
         self.setImportanceLabel.textAlignment = .left
-        self.setImportanceLabel.text = "Set Reminder importance:"
+        self.setImportanceLabel.text = L10n.labelMessageSetReminderImportance
         /// set setReminderDateLabel
-        self.setReminderDateLabel.text = "Set Reminder date:"
+        self.setReminderDateLabel.text = L10n.labelMessageSetReminderDate
         self.setReminderDateLabel.textColor = .white
         self.setReminderDateLabel.textAlignment = .left
         /// set dateValueLabel
@@ -58,7 +62,7 @@ class AddNewReminderView: UIView {
         self.titleTextField.backgroundColor = Asset.textfieldBlueColor.color
         self.titleTextField.layer.cornerRadius = 10
         self.titleTextField.attributedPlaceholder = NSAttributedString(
-                                                       string: "title",
+            string: L10n.labelTitle,
                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
         /// set  descriptionTextView
         self.descriptionTextView.backgroundColor = Asset.textfieldBlueColor.color
@@ -71,7 +75,7 @@ class AddNewReminderView: UIView {
         self.datePickerTextField.layer.cornerRadius = 10
         self.datePickerTextField.isHidden = false
         self.datePickerTextField.attributedPlaceholder = NSAttributedString(
-                                                       string: "date",
+            string: L10n.labelDate,
                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
     }
 
@@ -82,17 +86,17 @@ class AddNewReminderView: UIView {
     private func setButtons() {
         /// setup for login button
         self.addButton.backgroundColor = Asset.buttonBlueColor.color
-        self.addButton.setTitle("Add", for: .normal)
+        self.addButton.setTitle(L10n.labelAdd, for: .normal)
         self.addButton.tintColor = .white
         self.addButton.layer.cornerRadius = 10
     }
 
     func setReminderData(model: Reminder) {
         /// Label text when Reminder have values
-        self.addTitleLabel.text = "Title:"
-        self.addDescriptionLabel.text = "Description:"
-        self.setImportanceLabel.text = "Reminder importance:"
-        self.setReminderDateLabel.text = "Reminder date:"
+        self.addTitleLabel.text = L10n.labelTitleWithDots
+        self.addDescriptionLabel.text = L10n.labelDescription
+        self.setImportanceLabel.text = L10n.labelReminderImportance
+        self.setReminderDateLabel.text = L10n.labelReminderDate
         /// Label values from Reminder model
         self.titleTextField.text = model.title
         if let description = model.description,

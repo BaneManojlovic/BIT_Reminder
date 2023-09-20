@@ -78,7 +78,7 @@ extension FavoriteLocationsViewController: UITableViewDelegate, UITableViewDataS
         let userInfo = ["location": model]
         DispatchQueue.main.async {
             NotificationCenter.default.post(name: Notification.Name.showMapPins, object: nil, userInfo: userInfo)
-            self.showOkAlert(message: "Odabrali ste \(model)", confirmation: {
+            self.showOkAlert(message: L10n.labelMessageYouHaveChoosen + " " + "\(model)", confirmation: {
                 self.dismiss(animated: true)
             })
         }

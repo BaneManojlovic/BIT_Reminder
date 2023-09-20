@@ -9,19 +9,26 @@ import UIKit
 
 class ReminderTableViewCell: UITableViewCell {
 
+    // MARK: - Outlets
+
     @IBOutlet weak var smallBackgroundView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var importanceImage: UIImageView!
 
     // MARK: - Properties
+
     static let reuseIdentifier = "ReminderTableViewCell"
+
+    // MARK: - Initialization
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.setupUI()
     }
+
+    // MARK: - Setup Methods
 
     func setupUI() {
         self.clipsToBounds = true
@@ -62,14 +69,13 @@ class ReminderTableViewCell: UITableViewCell {
         return formatter.string(from: firstDate)
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-
     func formatDate(date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.mm.yyyy"
         return formatter.string(from: date)
     }
 
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
 }

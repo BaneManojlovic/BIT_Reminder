@@ -19,6 +19,8 @@ protocol AlbumsViewPresenterDelegate: AnyObject {
 
 class AlbumsViewPresenter {
 
+    // MARK: - Properties
+
     weak var delegate: AlbumsViewPresenterDelegate?
     var albums: [Album] = []
     var authManager = AuthManager()

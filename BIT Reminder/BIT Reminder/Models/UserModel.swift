@@ -9,9 +9,9 @@ import Foundation
 
 struct UserModel: Codable {
 
-    var profileId: String // profileId
-    var userName: String? // userName
-    var userEmail: String // userEmail
+    var profileId: String
+    var userName: String?
+    var userEmail: String
     var password: String?
     var repeatedPassword: String?
 

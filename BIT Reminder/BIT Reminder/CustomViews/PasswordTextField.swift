@@ -10,6 +10,7 @@ import UIKit
 class PasswordTextField: UIView {
 
     // MARK: - Properties
+
     var iconClick = true
     var showSecureTextEntry = true
 

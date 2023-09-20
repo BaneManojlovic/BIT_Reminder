@@ -22,6 +22,7 @@ internal enum Asset {
   internal static let accentColor = ColorAsset(name: "AccentColor")
   internal static let backgroundBlueColor = ColorAsset(name: "background_blue_color")
   internal static let buttonBlueColor = ColorAsset(name: "button_blue_color")
+  internal static let redLogoColor = ColorAsset(name: "red_logo_color")
   internal static let tableviewCellBlueColor = ColorAsset(name: "tableview_cell_blue_color")
   internal static let textfieldBlueColor = ColorAsset(name: "textfield_blue_color")
 }

@@ -16,6 +16,8 @@ protocol SettingsViewPresenterDelegate: AnyObject {
 
 class SettingsViewPresenter {
 
+    // MARK: - Properties
+
     weak var delegate: SettingsViewPresenterDelegate?
     var authManager = AuthManager()
     let userDefaults = UserDefaultsHelper()
@@ -37,10 +39,10 @@ class SettingsViewPresenter {
 
     func setupSettingsList() {
         self.settingsModel = []
-        self.settingsModel.append(SettingsModel(title: "Profile"))
-        self.settingsModel.append(SettingsModel(title: "Privacy Policy"))
-        self.settingsModel.append(SettingsModel(title: "Logout"))
-        self.settingsModel.append(SettingsModel(title: "Delete account"))
+        self.settingsModel.append(SettingsModel(title: L10n.titleLabelProfile))
+        self.settingsModel.append(SettingsModel(title: L10n.titleLabelPrivacyPolicy))
+        self.settingsModel.append(SettingsModel(title: L10n.titleLabelLogout))
+        self.settingsModel.append(SettingsModel(title: L10n.labelDeleteAccount))
         self.getUserData()
     }
 

@@ -11,6 +11,7 @@ import MapKit
 class MapView: UIView {
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var clearMapButton: UIButton!
     @IBOutlet weak var myLocationButton: UIButton!
     @IBOutlet weak var openLocationListButton: UIButton!
 
@@ -23,6 +24,11 @@ class MapView: UIView {
     }
 
     private func setupButtons() {
+        /// setup for myLocationButton
+        self.clearMapButton.backgroundColor = Asset.backgroundBlueColor.color
+        self.clearMapButton.tintColor = .white
+        self.clearMapButton.layer.cornerRadius = 25
+        self.clearMapButton.setImage(UIImage(systemName: "xmark"), for: .normal)
         /// setup for myLocationButton
         self.myLocationButton.backgroundColor = Asset.backgroundBlueColor.color
         self.myLocationButton.tintColor = .white

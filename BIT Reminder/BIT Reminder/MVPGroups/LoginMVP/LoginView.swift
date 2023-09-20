@@ -30,7 +30,7 @@ class LoginView: IQPreviousNextView {
     // MARK: - Private Setup Methods
 
     private func setupLabels() {
-        self.screenTitleLabel.text = "Login"
+        self.screenTitleLabel.text = L10n.titleLabelLogin
         self.screenTitleLabel.textColor = .white
         self.screenTitleLabel.textAlignment = .center
         self.screenTitleLabel.font = UIFont.systemFont(ofSize: 48)
@@ -45,24 +45,24 @@ class LoginView: IQPreviousNextView {
         self.emailTextField.layer.masksToBounds = true
         self.emailTextField.layer.cornerRadius = 10
         self.emailTextField.attributedPlaceholder = NSAttributedString(
-                                                    string: "email",
+            string: L10n.labelEmail,
                                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
 
         /// password TextField
         self.passwordTextField.inputTextField.attributedPlaceholder = NSAttributedString(
-                                                       string: "password",
+            string: L10n.labelPassword,
                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
     }
 
     private func setupButtons() {
         /// setup for register new user button
         self.registerNewUserButton.backgroundColor = .clear
-        self.registerNewUserButton.setTitle("Register new user", for: .normal)
+        self.registerNewUserButton.setTitle(L10n.labelMessageRegisterNewUser, for: .normal)
         self.registerNewUserButton.contentHorizontalAlignment = .center
         self.registerNewUserButton.tintColor = .white
         /// setup for login button
         self.loginButton.backgroundColor = Asset.buttonBlueColor.color
-        self.loginButton.setTitle("Login", for: .normal)
+        self.loginButton.setTitle(L10n.titleLabelLogin, for: .normal)
         self.loginButton.tintColor = .white
         self.loginButton.layer.cornerRadius = 10
     }

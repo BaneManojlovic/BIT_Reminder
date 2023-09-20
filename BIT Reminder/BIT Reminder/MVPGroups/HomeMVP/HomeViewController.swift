@@ -41,7 +41,7 @@ class HomeViewController: BaseNavigationController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.title = "Reminders"
+        self.navigationItem.title = L10n.titleLabelReminders
         self.homeView.setupUI()
     }
 

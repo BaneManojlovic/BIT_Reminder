@@ -20,7 +20,7 @@ class FavoriteLocationsView: UIView {
     func setupUI() {
         self.backgroundColor = Asset.backgroundBlueColor.color
         self.titleLabel.textColor = .white
-        self.titleLabel.text = "Favorite locations"
+        self.titleLabel.text = L10n.titleLabelFavoriteLocations
         self.titleLabel.textAlignment = .center
         self.tableView.backgroundColor = Asset.backgroundBlueColor.color
         self.tableView.register(UINib(nibName: FavoriteLocationsTableViewCell.reuseIdentifier, bundle: nil),

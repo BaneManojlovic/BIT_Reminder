@@ -24,6 +24,6 @@ class AlbumDetailsView: UIView {
         self.collectionView.collectionViewLayout = UICollectionViewFlowLayout()
         self.textLabel.textAlignment = .center
         self.textLabel.textColor = .white
-        self.textLabel.text = "Album is empty"
+        self.textLabel.text = L10n.labelMessageAlbumIsEmpty
     }
 }

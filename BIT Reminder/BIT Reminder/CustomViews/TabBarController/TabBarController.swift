@@ -8,9 +8,9 @@
 import UIKit
 
 class TabBarController: UITabBarController {
-    
+
     // MARK: - Properties
-    
+
     var viewControllersList: [UIViewController] = []
 
     // MARK: - Lifecycle
@@ -52,8 +52,8 @@ class TabBarController: UITabBarController {
     private func setHomeTabBarController() -> HomeViewController {
         let viewController = StoryboardScene.Authentification.homeViewController.instantiate()
         viewController.presenter = HomeViewPresenter()
-        viewController.presenter.screenName = "Home"
-        viewController.tabBarItem = UITabBarItem.init(title: "Home",
+        viewController.presenter.screenName = L10n.titleLabelHome
+        viewController.tabBarItem = UITabBarItem.init(title: L10n.titleLabelHome,
                                               image: UIImage(systemName: "house"),
                                               selectedImage: UIImage(systemName: "house.fill"))
         return viewController
@@ -62,7 +62,7 @@ class TabBarController: UITabBarController {
     private func setMapTabBarController() -> MapViewController {
         let viewController = StoryboardScene.Authentification.mapViewController.instantiate()
         viewController.presenter = MapViewPresenter()
-        viewController.tabBarItem = UITabBarItem.init(title: "Map",
+        viewController.tabBarItem = UITabBarItem.init(title: L10n.titleLabelMap,
                                               image: UIImage(systemName: "map"),
                                               selectedImage: UIImage(systemName: "map.fill"))
         return viewController
@@ -71,7 +71,7 @@ class TabBarController: UITabBarController {
     private func setAlbumTabBarController() -> AlbumsViewController {
         let viewController = StoryboardScene.Authentification.albumsViewController.instantiate()
         viewController.presenter = AlbumsViewPresenter()
-        viewController.tabBarItem = UITabBarItem.init(title: "Album",
+        viewController.tabBarItem = UITabBarItem.init(title: L10n.titleLabelAlbum,
                                                       image: UIImage(systemName: "photo.on.rectangle"),
                                                       selectedImage: UIImage(systemName: "photo.fill.on.rectangle.fill"))
         return viewController
@@ -80,7 +80,7 @@ class TabBarController: UITabBarController {
     private func setSettingsTabBarController() -> SettingsViewController {
         let viewController = StoryboardScene.Authentification.settingsViewController.instantiate()
         viewController.presenter = SettingsViewPresenter()
-        viewController.tabBarItem = UITabBarItem.init(title: "Settings",
+        viewController.tabBarItem = UITabBarItem.init(title: L10n.titleLabelSettings,
                                                       image: UIImage(systemName: "gearshape"),
                                                       selectedImage: UIImage(systemName: "gearshape.fill"))
         return viewController

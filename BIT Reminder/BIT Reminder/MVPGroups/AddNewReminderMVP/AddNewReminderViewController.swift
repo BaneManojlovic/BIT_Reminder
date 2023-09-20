@@ -34,11 +34,11 @@ class AddNewReminderViewController: BaseNavigationController {
            let model = self.presenter?.model,
             screenType == .reminderDetailsScreen {
             self.haveDeleteButton = true
-            self.title = "Reminder Details"
+            self.title = L10n.titleLabelReminderDetails
             self.addNewReminderView.setReminderData(model: model)
         } else {
             self.haveDeleteButton = false
-            self.title = "Add New Reminder"
+            self.title = L10n.titleLabelAddNewReminder
         }
     }
 
@@ -55,6 +55,7 @@ class AddNewReminderViewController: BaseNavigationController {
         datePicker.addTarget(self, action: #selector(dateChanged(datePicker:)), for: UIControl.Event.valueChanged)
         datePicker.frame.size = CGSize(width: 0, height: 300)
         datePicker.preferredDatePickerStyle = .wheels
+        datePicker.minimumDate = Date.now
         self.addNewReminderView.datePickerTextField.inputView = datePicker
     }
 
@@ -65,7 +66,8 @@ class AddNewReminderViewController: BaseNavigationController {
 
     func formatDate(date: Date) -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
+//        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.dateFormat = "dd.MM.yyyy"
         return formatter.string(from: date)
     }
 
@@ -86,7 +88,7 @@ class AddNewReminderViewController: BaseNavigationController {
 
     override func deleteAction() {
         super.deleteAction()
-        self.showCancelOrYesAlert(message: "Are you sure that you want to delete this Reminder?",
+        self.showCancelOrYesAlert(message: L10n.labelMessageSureWantDeleteReminder,
                                   yesHandler: {
             if let model = self.presenter?.model {
                 self.presenter?.deleteReminder(model: model)
@@ -114,7 +116,7 @@ extension AddNewReminderViewController: AddNewReminderViewPresenterDelegate {
     func handleValidationError(error: Reminder.ValidationError) {
         switch error {
         case .titleEmpty:
-            self.showValidationError(message: "titleEmpty")
+            self.showValidationError(message: L10n.labelErrorTitleEmpty)
         }
     }
 
@@ -132,7 +134,7 @@ extension AddNewReminderViewController: AddNewReminderViewPresenterDelegate {
 
     func addNewReminderSuccess() {
         DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-            self.showOkAlert(message: "New Reminder successfully added!", confirmation: {
+            self.showOkAlert(message: L10n.labelMessageNewReminderAdded, confirmation: {
                 self.navigationController?.popViewController(animated: true)
             }, completion: nil)
         }

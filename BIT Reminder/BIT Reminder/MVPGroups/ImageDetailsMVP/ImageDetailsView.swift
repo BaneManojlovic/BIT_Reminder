@@ -15,6 +15,8 @@ class ImageDetailsView: UIView {
     @IBOutlet weak var closeImageButton: UIButton!
     @IBOutlet weak var deleteImageButton: UIButton!
 
+    // MAKR: - Setup Methods
+
     func setupUI() {
         self.backgroundColor = .black
         self.largeImageView.contentMode = .scaleAspectFill

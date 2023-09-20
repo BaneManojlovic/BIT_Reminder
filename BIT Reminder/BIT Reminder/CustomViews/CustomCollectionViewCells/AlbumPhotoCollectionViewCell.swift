@@ -9,15 +9,23 @@ import UIKit
 
 class AlbumPhotoCollectionViewCell: UICollectionViewCell {
 
+    // MARK: - Outlets
+
     @IBOutlet weak var cellImage: UIImageView!
 
+    // MARK: - Properties
+
     static let cellIdentifier = "AlbumPhotoCollectionViewCell"
+
+    // MARK: - Initialization
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.setupUI()
     }
+
+    // MARK: - Setup Methods
 
     func setupUI() {
         self.cellImage.backgroundColor = .gray
@@ -27,7 +35,6 @@ class AlbumPhotoCollectionViewCell: UICollectionViewCell {
     }
 
     func fillCellData(model: Photo) {
-        debugPrint("Image path: \(model.path)")
         self.cellImage.convertToUIImageFromURL(model.path)
     }
 }

@@ -23,6 +23,8 @@ protocol AddNewReminderViewPresenterDelegate: AnyObject {
 
 class AddNewReminderViewPresenter {
 
+    // MARK: - Properties
+
     weak var delegate: AddNewReminderViewPresenterDelegate?
     var authManager = AuthManager()
     var userDefaultsHelper = UserDefaultsHelper()
@@ -92,7 +94,6 @@ class AddNewReminderViewPresenter {
                         KRProgressHUD.dismiss()
                         self.delegate?.deleteReminderSuccess()
                     }
-                    
                 }
             }
         }

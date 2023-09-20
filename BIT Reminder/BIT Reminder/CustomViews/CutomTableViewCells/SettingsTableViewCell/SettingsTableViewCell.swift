@@ -34,7 +34,7 @@ class SettingsTableViewCell: UITableViewCell {
 
     func fillCellData(text: String) {
         self.titleLabel.text = text
-        if text == "Delete account" {
+        if text == L10n.labelDeleteAccount {
             self.titleLabel.textColor = .red
         }
     }
