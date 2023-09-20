@@ -49,7 +49,7 @@ class LoginViewController: BaseViewController {
 
     @objc func loginButtonAction() {
         if let email = self.loginView.emailTextField.text,
-            let password = self.loginView.passwordTextField.text {
+           let password = self.loginView.passwordTextField.inputTextField.text {
 
             self.presenter.loginWithEmail(user: UserModel(profileId: "", // API does not ask for it
                                                           userName: "", // API does not as for it

@@ -59,7 +59,7 @@ class AddNewReminderView: UIView {
         self.titleTextField.layer.cornerRadius = 10
         self.titleTextField.attributedPlaceholder = NSAttributedString(
                                                        string: "title",
-                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
         /// set  descriptionTextView
         self.descriptionTextView.backgroundColor = Asset.textfieldBlueColor.color
         self.descriptionTextView.layer.cornerRadius = 10
@@ -72,7 +72,7 @@ class AddNewReminderView: UIView {
         self.datePickerTextField.isHidden = false
         self.datePickerTextField.attributedPlaceholder = NSAttributedString(
                                                        string: "date",
-                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
     }
 
     private func setSwitch() {

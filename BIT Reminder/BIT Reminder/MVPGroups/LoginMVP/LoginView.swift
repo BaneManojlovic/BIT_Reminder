@@ -14,7 +14,7 @@ class LoginView: IQPreviousNextView {
 
     @IBOutlet weak var screenTitleLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: PasswordTextField!
     @IBOutlet weak var registerNewUserButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
 
@@ -41,20 +41,17 @@ class LoginView: IQPreviousNextView {
         self.emailTextField.textColor = .white
         self.emailTextField.font = UIFont.systemFont(ofSize: 20)
         self.emailTextField.backgroundColor = Asset.textfieldBlueColor.color
+        self.emailTextField.translatesAutoresizingMaskIntoConstraints = false
+        self.emailTextField.layer.masksToBounds = true
         self.emailTextField.layer.cornerRadius = 10
         self.emailTextField.attributedPlaceholder = NSAttributedString(
                                                     string: "email",
-                                                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+                                                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
 
         /// password TextField
-        self.passwordTextField.textColor = .white
-        self.passwordTextField.font = UIFont.systemFont(ofSize: 20)
-        self.passwordTextField.backgroundColor = Asset.textfieldBlueColor.color
-        self.passwordTextField.layer.cornerRadius = 10
-        self.passwordTextField.isSecureTextEntry = true
-        self.passwordTextField.attributedPlaceholder = NSAttributedString(
+        self.passwordTextField.inputTextField.attributedPlaceholder = NSAttributedString(
                                                        string: "password",
-                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
     }
 
     private func setupButtons() {
