@@ -509,6 +509,40 @@
             </objects>
             <point key="canvasLocation" x="3424" y="1387"/>
         </scene>
+        <!--Privacy Policy View Controller-->
+        <scene sceneID="Bq3-so-y7R">
+            <objects>
+                <viewController storyboardIdentifier="PrivacyPolicyViewController" id="pCi-QZ-N2K" customClass="PrivacyPolicyViewController" customModule="BIT_Reminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ElK-x3-vf7">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ye-lc-l9Y">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LCE-j9-EDo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LCE-j9-EDo" firstAttribute="bottom" secondItem="6ye-lc-l9Y" secondAttribute="bottom" id="JRg-u0-31y"/>
+                            <constraint firstItem="6ye-lc-l9Y" firstAttribute="top" secondItem="LCE-j9-EDo" secondAttribute="top" id="W5V-61-6Cs"/>
+                            <constraint firstItem="LCE-j9-EDo" firstAttribute="trailing" secondItem="6ye-lc-l9Y" secondAttribute="trailing" id="Xtj-Bq-vXD"/>
+                            <constraint firstItem="6ye-lc-l9Y" firstAttribute="leading" secondItem="LCE-j9-EDo" secondAttribute="leading" id="Ztt-H0-vGu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="6ye-lc-l9Y" id="nEc-p5-9fY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Bc-Uv-M3x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4259" y="1387"/>
+        </scene>
         <!--Image Details View Controller-->
         <scene sceneID="FoF-xi-75t">
             <objects>

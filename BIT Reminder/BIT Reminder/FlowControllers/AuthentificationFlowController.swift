@@ -67,4 +67,10 @@ class AuthentificationFlowController: FlowController {
         andVC.presenter = FavoriteLocationsPresenter()
         currentViewController.present(andVC, animated: true)
     }
+
+    func goToPrivacyPolicy() {
+        let andVC = StoryboardScene.Authentification.privacyPolicyViewController.instantiate()
+//        currentViewController.present(andVC, animated: true)
+        currentViewController.navigationController?.pushViewController(andVC, animated: true)
+    }
 }

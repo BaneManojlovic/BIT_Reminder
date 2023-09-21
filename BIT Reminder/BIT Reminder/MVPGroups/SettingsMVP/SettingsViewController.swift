@@ -120,8 +120,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
                 self.showOkAlert(title: name, message: user.userEmail)
             }
         case 1:
-            // TODO: - Open screen with privacy policy
-            self.showOkAlert(message: "Not yet implemented!")
+            self.authFlowController.goToPrivacyPolicy()
         case 2:
             self.logout()
         case 3:

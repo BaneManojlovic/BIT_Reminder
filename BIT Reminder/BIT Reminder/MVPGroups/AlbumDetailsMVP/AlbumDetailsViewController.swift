@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftPhotoGallery
 
 class AlbumDetailsViewController: BaseNavigationController, UINavigationControllerDelegate {
 
@@ -75,7 +74,14 @@ class AlbumDetailsViewController: BaseNavigationController, UINavigationControll
     }
 
     override func uploadButtonAction() {
-        let actionSheet = UIAlertController(title: "", message: L10n.labelMessageUploadNewPhoto, preferredStyle: .actionSheet)
+        /// support for iPad
+        var alertStyle = UIAlertController.Style.actionSheet
+        if (UIDevice.current.userInterfaceIdiom == .pad) {
+            alertStyle = UIAlertController.Style.alert
+        } else {
+            alertStyle = UIAlertController.Style.actionSheet
+        }
+        let actionSheet = UIAlertController(title: "", message: L10n.labelMessageUploadNewPhoto, preferredStyle: alertStyle)
         /// add take photo via camer action
         actionSheet.addAction(UIAlertAction(title: L10n.labelMessageTakePhotoViaCamera,
                                             style: .default,
@@ -156,7 +162,7 @@ extension AlbumDetailsViewController: AlbumDetailsPresenterDelegate {
 extension AlbumDetailsViewController: UIImagePickerControllerDelegate {
 
     func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
 
         var image: UIImage?
 

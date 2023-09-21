@@ -34,6 +34,8 @@ internal enum StoryboardScene {
 
     internal static let mapViewController = SceneType<MapViewController>(storyboard: Authentification.self, identifier: "MapViewController")
 
+    internal static let privacyPolicyViewController = SceneType<PrivacyPolicyViewController>(storyboard: Authentification.self, identifier: "PrivacyPolicyViewController")
+
     internal static let registrationViewController = SceneType<RegistrationViewController>(storyboard: Authentification.self, identifier: "RegistrationViewController")
 
     internal static let settingsViewController = SceneType<SettingsViewController>(storyboard: Authentification.self, identifier: "SettingsViewController")
