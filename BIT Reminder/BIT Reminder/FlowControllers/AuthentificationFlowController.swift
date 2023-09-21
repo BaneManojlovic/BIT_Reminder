@@ -44,11 +44,32 @@ class AuthentificationFlowController: FlowController {
         currentViewController.navigationController?.pushViewController(regVC, animated: true)
     }
 
-    func goToAddNewReminder() {
+    func goToAddNewReminder(screenType: ReminderScreenType, model: Reminder?) {
         let anrVC = StoryboardScene.Authentification.addNewReminderViewController.instantiate()
-        anrVC.presenter = AddNewReminderViewPresenter()
+        anrVC.presenter = AddNewReminderViewPresenter(screenType: screenType, model: model)
         currentViewController.navigationController?.pushViewController(anrVC, animated: true)
     }
 
-    func goToForgotPassword() { }
+    func goToAlbumDetails(albumId: Int, albumName: String) {
+        let andVC = StoryboardScene.Authentification.albumDetailsViewController.instantiate()
+        andVC.presenter = AlbumDetailsPresenter(albumId: albumId, albumName: albumName)
+        currentViewController.navigationController?.pushViewController(andVC, animated: true)
+    }
+
+    func goToImageDetails(model: Photo) {
+        let andVC = StoryboardScene.Authentification.imageDetailsViewController.instantiate()
+        andVC.presenter = ImageDetailsPresenter(photo: model)
+        currentViewController.navigationController?.present(andVC, animated: true)
+    }
+
+    func goToLocationList() {
+        let andVC = StoryboardScene.Authentification.favoriteLocationsViewController.instantiate()
+        andVC.presenter = FavoriteLocationsPresenter()
+        currentViewController.present(andVC, animated: true)
+    }
+
+    func goToPrivacyPolicy() {
+        let andVC = StoryboardScene.Authentification.privacyPolicyViewController.instantiate()
+        currentViewController.present(andVC, animated: true)
+    }
 }

@@ -31,7 +31,7 @@ class SettingsViewController: BaseNavigationController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.title = "Settings"
+        self.navigationItem.title = L10n.titleLabelSettings
         self.settingsView.setupUI()
     }
 
@@ -44,9 +44,16 @@ class SettingsViewController: BaseNavigationController {
     private func setupTargets() { }
 
     @objc func logout() {
-        self.showCancelOrYesAlert(message: "Are you sure you want to logout?",
+        self.showCancelOrYesAlert(message: L10n.labelMessageSureWantLogout,
                                   yesHandler: {
             self.presenter.logoutUser()
+        })
+    }
+
+    @objc func deleteUserAccount() {
+        self.showCancelOrYesAlert(message: L10n.labelMessageSureWantDeleteAccount,
+                                  yesHandler: {
+            self.presenter.deleteUser()
         })
     }
 }
@@ -55,8 +62,24 @@ class SettingsViewController: BaseNavigationController {
 
 extension SettingsViewController: SettingsViewPresenterDelegate {
 
+    func getUserDataSuccess(user: [UserModel]) {
+        DispatchQueue.main.async {
+            if let userData = user.first {
+                self.presenter.userDefaults.setUser(user: userData)
+            }
+        }
+    }
+
+    func getUserDataFailure(message: String) {
+        DispatchQueue.main.async {
+            self.showOkAlert(message: message)
+        }
+    }
+
     func userLogoutFailure(message: String) {
-        self.showOkAlert(message: message)
+        DispatchQueue.main.async {
+            self.showOkAlert(message: message)
+        }
     }
 
     func userLogoutSuccess() {
@@ -92,17 +115,16 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            debugPrint("0")
-            self.showOkAlert(message: "Not yet implemented!")
+            guard let user = self.presenter.userDefaults.getUser() else { return }
+            if let name = user.userName {
+                self.showOkAlert(title: name, message: user.userEmail)
+            }
         case 1:
-            debugPrint("1")
-            self.showOkAlert(message: "Not yet implemented!")
+            self.authFlowController.goToPrivacyPolicy()
         case 2:
-            debugPrint("2")
-            self.showOkAlert(message: "Not yet implemented!")
-        case 3:
-            debugPrint("3")
             self.logout()
+        case 3:
+            self.deleteUserAccount()
         default:
             break
         }

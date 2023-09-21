@@ -9,8 +9,6 @@ import UIKit
 
 class SplashScreenView: UIView {
 
-    // MARK: - Outlets
-
     // MARK: - Setup Methods
 
     func setupUI() {

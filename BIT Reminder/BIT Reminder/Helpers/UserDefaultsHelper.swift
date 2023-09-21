@@ -13,7 +13,7 @@ enum UserDefaultKeys: String {
 
 class UserDefaultsHelper {
 
-    func setUser(user: User) {
+    func setUser(user: UserModel) {
         do {
             let userData = try JSONEncoder().encode(user)
             UserDefaults.standard.set(userData, forKey: UserDefaultKeys.user.rawValue)
@@ -23,12 +23,12 @@ class UserDefaultsHelper {
         }
     }
 
-    func getUser() -> User? {
+    func getUser() -> UserModel? {
         do {
             guard let userData = UserDefaults.standard.data(forKey: UserDefaultKeys.user.rawValue) else {
                 return nil
             }
-            let user = try JSONDecoder().decode(User.self, from: userData)
+            let user = try JSONDecoder().decode(UserModel.self, from: userData)
             return user
         } catch {
             debugPrint(error)

@@ -16,9 +16,10 @@ protocol LoginViewPresenterDelegate: AnyObject {
 
 class LoginViewPresenter {
 
+    // MARK: - Properties
+
     weak var delegate: LoginViewPresenterDelegate?
     var authManager = AuthManager()
-
     private var userDefaultsHelper = UserDefaultsHelper()
 
     // MARK: - Initialization
@@ -39,14 +40,15 @@ class LoginViewPresenter {
         Task {
             do {
                 try user.validateLogin()
-                try await self.authManager.signInWithEmailAndPassword(email: user.email, password: user.password) { error, response  in
+                try await self.authManager.signInWithEmailAndPassword(email: user.userEmail,
+                                                                      password: user.password ?? "") { error, response  in
                     if let error = error {
                         debugPrint(error)
                         self.delegate?.loginActionFailed(error: error.localizedDescription)
                     } else if let session = response {
-                        debugPrint("Success")
-                        let user = User(uid: session.user.id.uuidString,
-                                        email: session.user.email)
+                        let user = UserModel(profileId: session.user.id.uuidString,
+                                             userName: user.userName,
+                                             userEmail: session.user.email ?? "")
                         self.userDefaultsHelper.setUser(user: user)
                         self.delegate?.loginActionSuccess()
                     }

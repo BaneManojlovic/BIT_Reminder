@@ -49,15 +49,15 @@ class LoginViewController: BaseViewController {
 
     @objc func loginButtonAction() {
         if let email = self.loginView.emailTextField.text,
-            let password = self.loginView.passwordTextField.text {
+           let password = self.loginView.passwordTextField.inputTextField.text {
 
-            self.presenter.loginWithEmail(user: UserModel(uid: "",
-                                                          name: "",
-                                                          email: email,
+            self.presenter.loginWithEmail(user: UserModel(profileId: "", // API does not ask for it
+                                                          userName: "", // API does not as for it
+                                                          userEmail: email,
                                                           password: password,
-                                                          repeatedPassword: ""))
+                                                          repeatedPassword: password))
         } else {
-            self.showOkAlert(message: "Error while Login")
+            self.showOkAlert(message: L10n.labelMessageLoginError)
         }
     }
 
@@ -69,7 +69,7 @@ class LoginViewController: BaseViewController {
 // MARK: - Conforming to LoginViewController
 
 extension LoginViewController: LoginViewPresenterDelegate {
-   
+
     func loginActionSuccess() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.authFlowController.goToHome()
@@ -85,23 +85,23 @@ extension LoginViewController: LoginViewPresenterDelegate {
     func handleValidationError(error: UserModel.ValidationError) {
         switch error {
         case .nameEmpty:
-            self.showValidationError(message: "nameEmpty")
+            self.showValidationError(message: L10n.labelErrorMessageNameCannotBeEmpty)
         case .nameInvalid:
-            self.showValidationError(message: "nameInvalid")
+            self.showValidationError(message: L10n.labelErrorMessageNameInvalidFormat)
         case .emailEmpty:
-            self.showValidationError(message: "emailEmpty")
+            self.showValidationError(message: L10n.labelErrorMessageEmailCannotBeEmpty)
         case .emailInvalid:
-            self.showValidationError(message: "emailInvalid")
+            self.showValidationError(message: L10n.labelErrorMessageEmailInvalidFormat)
         case .passwordEmpty:
-            self.showValidationError(message: "passwordEmpty")
+            self.showValidationError(message: L10n.labelErrorMessagePasswCannotBeEmpty)
         case .passwordInvalid:
-            self.showValidationError(message: "passwordInvalid")
+            self.showPasswordValidationMessage(message: L10n.labelErrorMessagePasswInvalidFormat)
         case .repeatPasswordEmpty:
-            self.showValidationError(message: "repeatPasswordEmpty")
+            self.showValidationError(message: L10n.labelErrorMessageRepeatedPasswCannotBeEmpty)
         case .repeatPasswordInvalid:
-            self.showValidationError(message: "repeatPasswordInvalid")
+            self.showPasswordValidationMessage(message: L10n.labelErrorMessageRepeatedPasswInvalidFormat)
         case .passwordsDontMatch:
-            self.showValidationError(message: "passwordsDontMatch")
+            self.showValidationError(message: L10n.labelErrorMessagePasswordsDontMatch)
         }
     }
 
@@ -110,5 +110,11 @@ extension LoginViewController: LoginViewPresenterDelegate {
             self.showOkAlert(message: message)
         }
     }
-}
 
+    func showPasswordValidationMessage(message: String) {
+        let passwordInstruction = L10n.labelPasswordExplanation
+        DispatchQueue.main.async {
+            self.showOkAlert(title: message, message: passwordInstruction)
+        }
+    }
+}

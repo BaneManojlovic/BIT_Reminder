@@ -16,7 +16,7 @@ extension UIViewController {
 
         let okAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
-        okAlert.addAction(UIAlertAction(title: "OK",
+        okAlert.addAction(UIAlertAction(title: L10n.alertButtonTitleOkUppercased,
                                         style: .default,
                                         handler: { _ in
             confirmation?()
@@ -33,12 +33,12 @@ extension UIViewController {
 
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "Cancel",
+        alert.addAction(UIAlertAction(title: L10n.alertButtonTitleCancel,
                                       style: .cancel,
                                       handler: { _ in
             noHandler?()
         }))
-        alert.addAction(UIAlertAction(title: "Yes",
+        alert.addAction(UIAlertAction(title: L10n.alertButtonTitleYes,
                                       style: .default,
                                       handler: { _ in
             yesHandler()
@@ -55,12 +55,12 @@ extension UIViewController {
 
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "No",
+        alert.addAction(UIAlertAction(title: L10n.alertButtonTitleNo,
                                       style: .cancel,
                                       handler: { _ in
             noHandler?()
         }))
-        alert.addAction(UIAlertAction(title: "Yes",
+        alert.addAction(UIAlertAction(title: L10n.alertButtonTitleYes,
                                       style: .default,
                                       handler: { _ in
             yesHandler()

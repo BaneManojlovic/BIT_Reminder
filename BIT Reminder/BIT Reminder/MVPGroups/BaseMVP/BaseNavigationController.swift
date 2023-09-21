@@ -56,6 +56,46 @@ class BaseNavigationController: BaseViewController {
         }
     }
 
+    var haveUploadButton: Bool = false {
+        didSet {
+            if haveUploadButton {
+                self.setUploadButton()
+            } else {
+                self.hideUploadButton()
+            }
+        }
+    }
+
+    var haveCreateFolderButton: Bool = false {
+        didSet {
+            if haveCreateFolderButton {
+                self.setCreateFolderButton()
+            } else {
+                self.hideUCreateFolderButton()
+            }
+        }
+    }
+
+    var haveDeleteButton: Bool = false {
+        didSet {
+            if haveDeleteButton {
+                self.setDeleteButton()
+            } else {
+                self.hideDeleteButton()
+            }
+        }
+    }
+
+    var haveDeleteAndUploadButtons: Bool = false {
+        didSet {
+            if haveDeleteAndUploadButtons {
+                self.setDeleteAndUploadButtons()
+            } else {
+                self.hideDeleteAndUploadButtons()
+            }
+        }
+    }
+
     lazy var customNavBarImage: UIImageView = {
        var image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -122,6 +162,67 @@ class BaseNavigationController: BaseViewController {
         navigationItem.rightBarButtonItem = nil
     }
 
+    /// setup for Add button if needed
+    private func setUploadButton() {
+        let addButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"),
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(uploadButtonAction))
+        addButton.tintColor = .white
+        navigationItem.rightBarButtonItem = addButton
+    }
+
+    private func hideUploadButton() {
+        navigationItem.rightBarButtonItem = nil
+    }
+
+    /// setup for setCreateFolderButton if needed
+    private func setCreateFolderButton() {
+        let addButton = UIBarButtonItem(image: UIImage(systemName: "folder.fill.badge.plus"),
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(createFolderButtonAction))
+        addButton.tintColor = .white
+        navigationItem.rightBarButtonItem = addButton
+    }
+
+    private func hideUCreateFolderButton() {
+        navigationItem.rightBarButtonItem = nil
+    }
+
+    /// setup for setDeleteButton if needed
+    private func setDeleteButton() {
+        let addButton = UIBarButtonItem(image: UIImage(systemName: "trash.fill"),
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(deleteAction))
+        addButton.tintColor = .white
+        navigationItem.rightBarButtonItem = addButton
+    }
+
+    private func hideDeleteButton() {
+        navigationItem.rightBarButtonItem = nil
+    }
+
+    /// setup for setDeleteButton if needed
+    private func setDeleteAndUploadButtons() {
+        let deleteButton = UIBarButtonItem(image: UIImage(systemName: "trash.fill"),
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(deleteAction))
+        deleteButton.tintColor = .white
+        let uploadButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"),
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(uploadButtonAction))
+        uploadButton.tintColor = .white
+        navigationItem.rightBarButtonItems = [deleteButton, uploadButton]
+    }
+
+    private func hideDeleteAndUploadButtons() {
+        navigationItem.rightBarButtonItem = nil
+    }
+
     func setupNavigationBarWithImage(image: UIImage) {
         /// fill data for image
         self.customNavBarImage.image = image
@@ -163,6 +264,42 @@ class BaseNavigationController: BaseViewController {
             
          override func addButtonAction() {
              super.addButtonAction()
+             debugPrint("overriden ... do something")
+         }
+         */
+    }
+
+    @objc func uploadButtonAction() {
+        // Override in ViewController that inherits BaseNavigationControllert if needed
+        /*
+         Example:
+            
+         override func uploadButtonAction() {
+             super.uploadButtonAction()
+             debugPrint("overriden ... do something")
+         }
+         */
+    }
+
+    @objc func createFolderButtonAction() {
+        // Override in ViewController that inherits BaseNavigationControllert if needed
+        /*
+         Example:
+         
+         override func uploadButtonAction() {
+         super.uploadButtonAction()
+         debugPrint("overriden ... do something")
+         }
+         */
+    }
+
+    @objc func deleteAction() {
+        // Override in ViewController that inherits BaseNavigationControllert if needed
+        /*
+         Example:
+            
+         override func uploadButtonAction() {
+             super.uploadButtonAction()
              debugPrint("overriden ... do something")
          }
          */

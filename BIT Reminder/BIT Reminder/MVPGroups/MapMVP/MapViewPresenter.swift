@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol MapViewPresenterDelegate: AnyObject {
-    
-}
+protocol MapViewPresenterDelegate: AnyObject { }
 
 class MapViewPresenter {
-    
+
+    // MARK: - Properties
+
     weak var delegate: MapViewPresenterDelegate?
-    
+
     // MARK: - Initialization
 
     init() { }

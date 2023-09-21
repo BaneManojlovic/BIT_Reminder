@@ -13,9 +13,6 @@ class HomeViewController: BaseNavigationController {
 
     var presenter = HomeViewPresenter()
     lazy private var authFlowController = AuthentificationFlowController(currentViewController: self)
-
-    // MARK: - Private Properties
-
     private var homeView: HomeView! {
         loadViewIfNeeded()
         return view as? HomeView
@@ -44,7 +41,7 @@ class HomeViewController: BaseNavigationController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.title = "Reminders"
+        self.navigationItem.title = L10n.titleLabelReminders
         self.homeView.setupUI()
     }
 
@@ -56,9 +53,11 @@ class HomeViewController: BaseNavigationController {
 
     private func setupTargets() { }
 
+    // MARK: - Overriden Methods
+
     override func addButtonAction() {
         super.addButtonAction()
-        self.authFlowController.goToAddNewReminder()
+        self.authFlowController.goToAddNewReminder(screenType: .addNewReminderScreen, model: nil)
     }
 }
 
@@ -86,7 +85,14 @@ extension HomeViewController: HomeViewPresenterDelegate {
 
     func getRemindersSuccess(response: [Reminder]) {
         DispatchQueue.main.async {
-            self.homeView.tableView.reloadData()
+            if !response.isEmpty {
+                self.homeView.homeMessageLabel.isHidden = true
+                self.homeView.tableView.isHidden = false
+                self.homeView.tableView.reloadData()
+            } else {
+                self.homeView.homeMessageLabel.isHidden = false
+                self.homeView.tableView.isHidden = true
+            }
         }
     }
 }
@@ -121,6 +127,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             self.presenter.reminders.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
 
+        }
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = self.presenter.reminders[indexPath.row]
+        if let modelId = model.id {
+            self.authFlowController.goToAddNewReminder(screenType: .reminderDetailsScreen, model: model)
         }
     }
 }

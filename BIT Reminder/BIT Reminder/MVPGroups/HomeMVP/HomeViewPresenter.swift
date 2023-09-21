@@ -18,6 +18,8 @@ protocol HomeViewPresenterDelegate: AnyObject {
 
 class HomeViewPresenter {
 
+    // MARK: - Properties
+
     weak var delegate: HomeViewPresenterDelegate?
     var authManager = AuthManager()
     let userDefaults = UserDefaultsHelper()
@@ -66,13 +68,10 @@ class HomeViewPresenter {
     }
 
     func deleteReminder(model: Reminder) {
-        // TODO: - to be implemented
-        debugPrint("delete delete ...")
-        let table = "reminders"
         KRProgressHUD.show()
         Task {
             do {
-                try await self.authManager.deleteReminder(tableName: table, model: model) { error in
+                try await self.authManager.deleteReminder(model: model) { error in
                     if let error = error {
                         debugPrint(error)
                         DispatchQueue.main.asyncAfter(deadline: .now()+1) {
@@ -84,7 +83,6 @@ class HomeViewPresenter {
                         KRProgressHUD.dismiss()
                         self.delegate?.deleteReminderSuccess()
                     }
-                    
                 }
             }
         }

@@ -20,13 +20,21 @@ internal enum StoryboardScene {
 
     internal static let addNewReminderViewController = SceneType<AddNewReminderViewController>(storyboard: Authentification.self, identifier: "AddNewReminderViewController")
 
+    internal static let albumDetailsViewController = SceneType<AlbumDetailsViewController>(storyboard: Authentification.self, identifier: "AlbumDetailsViewController")
+
     internal static let albumsViewController = SceneType<AlbumsViewController>(storyboard: Authentification.self, identifier: "AlbumsViewController")
 
+    internal static let favoriteLocationsViewController = SceneType<FavoriteLocationsViewController>(storyboard: Authentification.self, identifier: "FavoriteLocationsViewController")
+
     internal static let homeViewController = SceneType<HomeViewController>(storyboard: Authentification.self, identifier: "HomeViewController")
+
+    internal static let imageDetailsViewController = SceneType<ImageDetailsViewController>(storyboard: Authentification.self, identifier: "ImageDetailsViewController")
 
     internal static let loginViewController = SceneType<LoginViewController>(storyboard: Authentification.self, identifier: "LoginViewController")
 
     internal static let mapViewController = SceneType<MapViewController>(storyboard: Authentification.self, identifier: "MapViewController")
+
+    internal static let privacyPolicyViewController = SceneType<PrivacyPolicyViewController>(storyboard: Authentification.self, identifier: "PrivacyPolicyViewController")
 
     internal static let registrationViewController = SceneType<RegistrationViewController>(storyboard: Authentification.self, identifier: "RegistrationViewController")
 

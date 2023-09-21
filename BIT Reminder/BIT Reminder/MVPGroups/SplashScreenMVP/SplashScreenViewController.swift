@@ -30,7 +30,8 @@ class SplashScreenViewController: BaseViewController {
 
         self.setupUI()
         self.setupDelegates()
-        self.presenter.checkForRetrievedUser()
+//        self.presenter.checkForRetrievedUser()
+        self.presenter.checkAuthorizationStatus()
     }
 
     // MARK: - Private Setup Methods
@@ -62,7 +63,7 @@ extension SplashScreenViewController: SplashScreenPresenterDelegate {
             }
         } else {
             DispatchQueue.main.async {
-                self.showOkAlert(message: error.localizedDescription, completion:  {
+                self.showOkAlert(message: error.localizedDescription, completion: {
                     self.goToLogin()
                 })
             }

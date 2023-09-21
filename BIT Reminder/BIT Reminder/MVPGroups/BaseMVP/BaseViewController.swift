@@ -19,7 +19,6 @@ import UIKit
     inherited from any other ViewController
  */
 
-
 class BaseViewController: UIViewController {
 
     // MARK: - Lifecycle
@@ -31,6 +30,4 @@ class BaseViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-    
-    // TODO:- Write API Error handling methods
 }
