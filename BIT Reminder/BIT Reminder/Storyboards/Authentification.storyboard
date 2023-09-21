@@ -518,24 +518,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ye-lc-l9Y">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="109" width="393" height="709"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6G7-J6-PDh">
+                                <rect key="frame" x="333" y="59" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="R1R-fe-rTf"/>
+                                    <constraint firstAttribute="height" constant="50" id="aOg-Nr-Vma"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LCE-j9-EDo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6ye-lc-l9Y" firstAttribute="top" secondItem="6G7-J6-PDh" secondAttribute="bottom" id="9ac-Hy-GQ1"/>
                             <constraint firstItem="LCE-j9-EDo" firstAttribute="bottom" secondItem="6ye-lc-l9Y" secondAttribute="bottom" id="JRg-u0-31y"/>
-                            <constraint firstItem="6ye-lc-l9Y" firstAttribute="top" secondItem="LCE-j9-EDo" secondAttribute="top" id="W5V-61-6Cs"/>
+                            <constraint firstItem="LCE-j9-EDo" firstAttribute="trailing" secondItem="6G7-J6-PDh" secondAttribute="trailing" constant="10" id="Kz0-V2-YHI"/>
                             <constraint firstItem="LCE-j9-EDo" firstAttribute="trailing" secondItem="6ye-lc-l9Y" secondAttribute="trailing" id="Xtj-Bq-vXD"/>
                             <constraint firstItem="6ye-lc-l9Y" firstAttribute="leading" secondItem="LCE-j9-EDo" secondAttribute="leading" id="Ztt-H0-vGu"/>
+                            <constraint firstItem="6G7-J6-PDh" firstAttribute="top" secondItem="LCE-j9-EDo" secondAttribute="top" id="sLw-bb-AgW"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="closeButton" destination="6G7-J6-PDh" id="H75-MT-y8Z"/>
                         <outlet property="webView" destination="6ye-lc-l9Y" id="nEc-p5-9fY"/>
                     </connections>
                 </viewController>

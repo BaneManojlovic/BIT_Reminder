@@ -11,12 +11,14 @@ import KRProgressHUD
 
 class PrivacyPolicyViewController: BaseNavigationController {
 
+    @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var webView: WKWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.setupUI()
+        self.setupTargets()
         self.webView.navigationDelegate = self
         self.webView.scrollView.delegate = self
         self.loadPage(urlAdress: Constants.privacyPolicyURL)
@@ -29,6 +31,13 @@ class PrivacyPolicyViewController: BaseNavigationController {
 
     func setupUI() {
         self.title = L10n.titleLabelPrivacyPolicy
+        self.view.backgroundColor = .white
+        self.closeButton.setImage(UIImage(systemName: "xmark.circle"), for: .normal)
+        self.closeButton.tintColor = .black
+    }
+
+    func setupTargets() {
+        self.closeButton.addTarget(self, action: #selector(closeScreen), for: .touchUpInside)
     }
 
     func loadPage(urlAdress: String) {
@@ -37,12 +46,13 @@ class PrivacyPolicyViewController: BaseNavigationController {
 //            guard let url = URL(string: urlAdress) else { return }
             let url = NSURL(string: urlAdress)
             let request = URLRequest(url: url! as URL)
-//            let request = NSURLRequest.
             self.webView.load(request)
         }
     }
-    
-    
+
+    @objc func closeScreen() {
+        self.dismiss(animated: true)
+    }
 }
 
 // MARK: - Conforming to UIScrollViewDelegate

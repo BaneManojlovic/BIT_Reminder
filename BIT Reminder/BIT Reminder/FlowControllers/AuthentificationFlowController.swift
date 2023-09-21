@@ -70,7 +70,6 @@ class AuthentificationFlowController: FlowController {
 
     func goToPrivacyPolicy() {
         let andVC = StoryboardScene.Authentification.privacyPolicyViewController.instantiate()
-//        currentViewController.present(andVC, animated: true)
-        currentViewController.navigationController?.pushViewController(andVC, animated: true)
+        currentViewController.present(andVC, animated: true)
     }
 }

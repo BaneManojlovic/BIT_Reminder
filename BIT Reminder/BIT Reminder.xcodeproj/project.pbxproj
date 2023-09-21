@@ -936,10 +936,11 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "BIT Reminder/BIT Reminder.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 5M4MZAC8G6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BIT Reminder/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "BIT Reminder";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow BIT Reminder to access your camera in order to take new photo.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please allow BIT Reminder to acces your location in order to offers you better services.";
 				INFOPLIST_KEY_NSLocationUsageDescription = "Please allow BIT Reminder to acces your location in order to offers you better services.";
@@ -972,10 +973,11 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "BIT Reminder/BIT Reminder.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 5M4MZAC8G6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BIT Reminder/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "BIT Reminder";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow BIT Reminder to access your camera in order to take new photo.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please allow BIT Reminder to acces your location in order to offers you better services.";
 				INFOPLIST_KEY_NSLocationUsageDescription = "Please allow BIT Reminder to acces your location in order to offers you better services.";

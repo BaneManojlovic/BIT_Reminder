@@ -16,7 +16,8 @@ struct Constants {
     static let baseApiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9qaXFzZ2ttY2Nyb3ZrcHNiZnZzIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTUxOTY0MDEsImV4cCI6MjAxMDc3MjQwMX0.zeszkitC7aoHtc12BdALDjzaWbyYXdd2UuLhNi33-Gs"
 
     // MARK: - Privacy Policy URL
-    static let privacyPolicyURL = "https://bitnovisad.github.io/"
+
+    static let privacyPolicyURL = "https://www.freeprivacypolicy.com/live/c11a7e96-41da-45dd-af9b-0523c80955f1"
 
     // MARK: - Notification Name
 
