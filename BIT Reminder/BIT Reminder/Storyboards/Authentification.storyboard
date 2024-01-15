@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -291,7 +291,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmn-oB-4o4">
                                                 <rect key="frame" x="10" y="488.99999999999994" width="373" height="49.333333333333314"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rgx-8W-Hvs">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rgx-8W-Hvs" customClass="ReminderTextFieldCalendar" customModule="BIT_Reminder" customModuleProvider="target">
                                                         <rect key="frame" x="2" y="4.6666666666666288" width="369" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="Rbg-vv-OGt"/>
@@ -800,6 +800,7 @@
                                 <color key="backgroundColor" name="background_blue_color"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="7TF-XZ-PUr" secondAttribute="trailing" id="2XK-kv-jd4"/>
+                                    <constraint firstItem="7TF-XZ-PUr" firstAttribute="height" secondItem="jls-tm-VyY" secondAttribute="height" multiplier="0.9" priority="750" id="7jD-yc-2sj"/>
                                     <constraint firstItem="7TF-XZ-PUr" firstAttribute="leading" secondItem="jls-tm-VyY" secondAttribute="leading" id="8uh-ug-v58"/>
                                     <constraint firstAttribute="bottom" secondItem="7TF-XZ-PUr" secondAttribute="bottom" id="Chf-3U-paU"/>
                                     <constraint firstItem="7TF-XZ-PUr" firstAttribute="top" secondItem="jls-tm-VyY" secondAttribute="top" id="dRw-IG-WT4"/>
@@ -810,7 +811,6 @@
                         <viewLayoutGuide key="safeArea" id="YyL-Zg-nOj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="7TF-XZ-PUr" firstAttribute="height" secondItem="jls-tm-VyY" secondAttribute="height" multiplier="0.9" priority="750" id="7jD-yc-2sj"/>
                             <constraint firstAttribute="trailing" secondItem="jls-tm-VyY" secondAttribute="trailing" id="Mw9-a2-oOE"/>
                             <constraint firstAttribute="bottom" secondItem="jls-tm-VyY" secondAttribute="bottom" id="ZX7-kX-dEu"/>
                             <constraint firstItem="7TF-XZ-PUr" firstAttribute="width" secondItem="hGg-Ac-vyO" secondAttribute="width" id="khM-4T-RTw"/>
@@ -838,10 +838,10 @@
             <color red="0.0" green="0.075000002980232239" blue="0.21199999749660492" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="red_logo_color">
-            <color red="0.84313725490196079" green="0.18823529411764706" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.84299999475479126" green="0.18799999356269836" blue="0.13300000131130219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

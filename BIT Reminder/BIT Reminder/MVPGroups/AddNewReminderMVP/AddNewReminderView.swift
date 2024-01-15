@@ -19,7 +19,7 @@ class AddNewReminderView: UIView {
     @IBOutlet weak var setImportanceSwitch: UISwitch!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var setReminderDateLabel: UILabel!
-    @IBOutlet weak var datePickerTextField: UITextField!
+    @IBOutlet weak var datePickerTextField: ReminderTextFieldCalendar!
     @IBOutlet weak var dateValueLabel: UILabel!
 
     // MARK: - Setup Methods
@@ -68,15 +68,6 @@ class AddNewReminderView: UIView {
         self.descriptionTextView.backgroundColor = Asset.textfieldBlueColor.color
         self.descriptionTextView.layer.cornerRadius = 10
         self.descriptionTextView.textColor = .white
-        /// set titleTextField
-        self.datePickerTextField.textColor = .white
-        self.datePickerTextField.font = UIFont.systemFont(ofSize: 20)
-        self.datePickerTextField.backgroundColor = Asset.textfieldBlueColor.color
-        self.datePickerTextField.layer.cornerRadius = 10
-        self.datePickerTextField.isHidden = false
-        self.datePickerTextField.attributedPlaceholder = NSAttributedString(
-            string: L10n.labelDate,
-                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
     }
 
     private func setSwitch() {

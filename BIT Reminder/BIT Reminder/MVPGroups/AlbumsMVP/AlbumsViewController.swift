@@ -17,6 +17,14 @@ class AlbumsViewController: BaseNavigationController {
         loadViewIfNeeded()
         return view as? AlbumsView
     }
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    var isSearchBarEmpty: Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
+    var isFiltering: Bool {
+      return searchController.isActive && !isSearchBarEmpty
+    }
 
     // MARK: - Lifecycle
 
@@ -27,6 +35,7 @@ class AlbumsViewController: BaseNavigationController {
         self.haveCreateFolderButton = true
         self.setupDelegates()
         self.setupTargets()
+        self.configureSearch()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +61,20 @@ class AlbumsViewController: BaseNavigationController {
     }
 
     private func setupTargets() { }
+    
+    func configureSearch() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        searchController.searchBar.delegate = self
+        searchController.searchBar.searchTextField.textColor = .white
+        self.searchController.searchBar.searchTextField.attributedPlaceholder =  NSAttributedString.init(string: "Search...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        if let leftView = searchController.searchBar.searchTextField.leftView as? UIImageView {
+               leftView.image = leftView.image?.withRenderingMode(.alwaysTemplate)
+            leftView.tintColor = UIColor.lightGray
+           }
+    }
 
     override func createFolderButtonAction() {
         super.createFolderButtonAction()
@@ -138,13 +161,26 @@ extension AlbumsViewController: AlbumsViewPresenterDelegate {
 extension AlbumsViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering {
+            return self.presenter.filteredAlbums.count
+        }
         return self.presenter.albums.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: AlbumsTableViewCell.reuseIdentifier,
         for: indexPath) as? AlbumsTableViewCell else { return UITableViewCell() }
-        let model = self.presenter.albums[indexPath.row]
+        /// create model to fill in data for cell
+        var model = self.presenter.albums[indexPath.row]
+        /// determine what array to get for fill out data to cell
+        if isFiltering {
+            /// albums filtered after search
+            model = self.presenter.filteredAlbums[indexPath.row]
+        } else {
+            /// albums unfiltered
+            model = self.presenter.albums[indexPath.row]
+        }
+        /// fill in data for cell
         cell.setupCellData(model: model)
         return cell
     }
@@ -163,9 +199,48 @@ extension AlbumsViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let model = self.presenter.albums[indexPath.row]
-        if let modelId = model.id {
-            self.authFlowController.goToAlbumDetails(albumId: modelId, albumName: model.albumName)
+        if let index = tableView.indexPathForSelectedRow?.row {
+            if isFiltering {
+                /// filtered data
+                if let filteredModelId = self.presenter.filteredAlbums[index].id {
+                    self.authFlowController.goToAlbumDetails(albumId: filteredModelId, albumName: self.presenter.filteredAlbums[index].albumName)
+                }
+            } else {
+                /// unfiltered data
+                if let modelId = self.presenter.albums[index].id {
+                    self.authFlowController.goToAlbumDetails(albumId: modelId, albumName: self.presenter.albums[index].albumName)
+                }
+            }
+        } else {
+            debugPrint("No row selected")
         }
     }
+
+    // Fill filteredAlbums array with albums filtered by albumName
+    func filterContentForSearchText(_ searchText: String,
+                                    name: Album? = nil) {
+        self.presenter.filteredAlbums = self.presenter.albums.filter { (product: Album) -> Bool in
+            return product.albumName.lowercased().contains(searchText.lowercased())
+      }
+        self.albumsView.tableView.reloadData()
+    }
+}
+
+// MARK: - Conforming to UISearchResultsUpdating
+
+extension AlbumsViewController: UISearchResultsUpdating {
+
+  func updateSearchResults(for searchController: UISearchController) {
+      let searchBar = searchController.searchBar
+      filterContentForSearchText(searchBar.text!)
+  }
+}
+
+// MARK: - Conforming to UISearchBarDelegate
+
+extension AlbumsViewController: UISearchBarDelegate {
+
+  func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+    filterContentForSearchText(searchBar.text!)
+  }
 }

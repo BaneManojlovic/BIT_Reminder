@@ -10,7 +10,6 @@ import UIKit
 class AddNewReminderViewController: BaseNavigationController {
 
     var presenter: AddNewReminderViewPresenter?
-    let datePicker = UIDatePicker()
     var choosenDate: Date?
 
     private var addNewReminderView: AddNewReminderView! {
@@ -51,22 +50,30 @@ class AddNewReminderViewController: BaseNavigationController {
     }
 
     func setupDatePicker() {
-        datePicker.datePickerMode = .date
-        datePicker.addTarget(self, action: #selector(dateChanged(datePicker:)), for: UIControl.Event.valueChanged)
-        datePicker.frame.size = CGSize(width: 0, height: 300)
-        datePicker.preferredDatePickerStyle = .wheels
-        datePicker.minimumDate = Date.now
-        self.addNewReminderView.datePickerTextField.inputView = datePicker
+        self.addNewReminderView.datePickerTextField.addInputViewDatePicker(target: self, selector: #selector((selectReminderDate)))
+        self.addNewReminderView.datePickerTextField.inputDatePicker?.addTarget(self, action: #selector(dateChanged(datePicker:)), for: UIControl.Event.valueChanged)
+    }
+
+    @objc func selectReminderDate() {
+        if let  datePicker = self.addNewReminderView.datePickerTextField.inputView as? UIDatePicker {
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd.MM.yyyy"
+            datePicker.date = Calendar.current.startOfDay(for: datePicker.date)
+            self.addNewReminderView.datePickerTextField.text = dateFormatter.string(from: datePicker.date)
+        }
+
+        self.addNewReminderView.datePickerTextField.resignFirstResponder()
+        self.choosenDate = self.addNewReminderView.datePickerTextField.inputDatePicker?.date
     }
 
     @objc func dateChanged(datePicker: UIDatePicker) {
         self.addNewReminderView.datePickerTextField.text = formatDate(date: datePicker.date)
-        self.choosenDate = datePicker.date
+        self.choosenDate = self.addNewReminderView.datePickerTextField.inputDatePicker?.date
     }
 
     func formatDate(date: Date) -> String {
         let formatter = DateFormatter()
-//        formatter.dateFormat = "yyyy-MM-dd"
         formatter.dateFormat = "dd.MM.yyyy"
         return formatter.string(from: date)
     }

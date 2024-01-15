@@ -26,6 +26,7 @@ class HomeViewPresenter {
     var userEmail: String?
     var screenName: String?
     var reminders: [Reminder] = []
+    var filteredReminders: [Reminder] = []
 
     // MARK: - Initialization
 

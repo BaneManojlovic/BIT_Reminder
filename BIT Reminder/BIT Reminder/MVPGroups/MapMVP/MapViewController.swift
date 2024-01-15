@@ -171,6 +171,33 @@ class MapViewController: UIViewController {
             self.mapView.mapView.setRegion(response.boundingRegion, animated: true)
         }
     }
+    func extractPhoneNumber(from subtitle: String) -> String? {
+        let components = subtitle.components(separatedBy: " ")
+        return components.joined()
+    }
+
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let identifier = "customAnnotationView"
+
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.canShowCallout = true
+
+            // Extract phone number from the subtitle and pass it to the callout view
+            if let subtitle = annotation.subtitle {
+                let phoneNumber = extractPhoneNumber(from: subtitle ?? "")
+                let customCalloutView = CustomCalloutView(frame: CGRect(x: 0, y: 0, width: 200, height: 70))
+                customCalloutView.configure(withTitle: "", subtitle: subtitle, phoneNumber: phoneNumber)
+                annotationView?.detailCalloutAccessoryView = customCalloutView
+            }
+
+        } else {
+            annotationView?.annotation = annotation
+        }
+        return annotationView
+    }
 }
 
 // MARK: - Conforming to MapViewPresenterDelegate
