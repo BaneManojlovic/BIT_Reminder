@@ -50,6 +50,7 @@ class BaseInputTextFieldView: UIView {
     func setup() {
         self.backgroundColor = .clear
         addSubview(mainStackView)
+        inputTextField.isEnabled = true
         inputTextField.delegate = self
         mainStackView.addArrangedSubview(inputTextField)
         mainStackView.addArrangedSubview(errorLabel)
