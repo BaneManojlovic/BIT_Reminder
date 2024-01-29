@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6F28FBA5FB39873CD08AA695 /* Pods_BIT_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1CD5190B349858D99F73037 /* Pods_BIT_Reminder.framework */; };
+		8D19ED1A2B67F42D00F32B97 /* EmailAndPasswordValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D19ED192B67F42D00F32B97 /* EmailAndPasswordValidation.swift */; };
 		8D32EA992AB424E30080CB5E /* AlbumsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32EA982AB424E30080CB5E /* AlbumsTableViewCell.swift */; };
 		8D32EA9C2AB4252F0080CB5E /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32EA9B2AB4252F0080CB5E /* Album.swift */; };
 		8D40CAB82ABB06140039AB5B /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D40CAB72ABB06140039AB5B /* PasswordTextField.swift */; };
@@ -58,6 +59,11 @@
 		8D9B9A042B4FDE85003EEC9B /* ReminderTextFieldCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9B9A032B4FDE85003EEC9B /* ReminderTextFieldCalendar.swift */; };
 		8D9B9A062B4FDE9F003EEC9B /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9B9A052B4FDE9F003EEC9B /* BaseTextField.swift */; };
 		8DABAFFB2B5572EF00155B0D /* CustomCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABAFFA2B5572EF00155B0D /* CustomCalloutView.swift */; };
+		8DABAFFE2B56C31C00155B0D /* ErrorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABAFFD2B56C31C00155B0D /* ErrorLabel.swift */; };
+		8DABB0012B56C72E00155B0D /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABB0002B56C72E00155B0D /* EmailTextField.swift */; };
+		8DABB0032B56CCAD00155B0D /* BaseInputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABB0022B56CCAD00155B0D /* BaseInputTextField.swift */; };
+		8DABB0052B56CE7B00155B0D /* SecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABB0042B56CE7B00155B0D /* SecureTextField.swift */; };
+		8DABB0072B5C390900155B0D /* NameTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABB0062B5C390900155B0D /* NameTextFieldView.swift */; };
 		8DB8580D2AB44120009DE52F /* AlbumsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D32EA9A2AB424E70080CB5E /* AlbumsTableViewCell.xib */; };
 		8DBAA5522AAEF2AB0054A5FF /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5512AAEF2AB0054A5FF /* BaseNavigationController.swift */; };
 		8DBAA5542AB03BA40054A5FF /* UIVewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5532AB03BA40054A5FF /* UIVewController+Alerts.swift */; };
@@ -89,6 +95,7 @@
 /* Begin PBXFileReference section */
 		6F4ED9D45104BC656CBEF8E6 /* Pods-BIT Reminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIT Reminder.release.xcconfig"; path = "Target Support Files/Pods-BIT Reminder/Pods-BIT Reminder.release.xcconfig"; sourceTree = "<group>"; };
 		7B43CDD8A64CF72BA1F51449 /* Pods-BIT Reminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIT Reminder.debug.xcconfig"; path = "Target Support Files/Pods-BIT Reminder/Pods-BIT Reminder.debug.xcconfig"; sourceTree = "<group>"; };
+		8D19ED192B67F42D00F32B97 /* EmailAndPasswordValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAndPasswordValidation.swift; sourceTree = "<group>"; };
 		8D32EA982AB424E30080CB5E /* AlbumsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewCell.swift; sourceTree = "<group>"; };
 		8D32EA9A2AB424E70080CB5E /* AlbumsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumsTableViewCell.xib; sourceTree = "<group>"; };
 		8D32EA9B2AB4252F0080CB5E /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
@@ -142,6 +149,11 @@
 		8D9B9A032B4FDE85003EEC9B /* ReminderTextFieldCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTextFieldCalendar.swift; sourceTree = "<group>"; };
 		8D9B9A052B4FDE9F003EEC9B /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
 		8DABAFFA2B5572EF00155B0D /* CustomCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalloutView.swift; sourceTree = "<group>"; };
+		8DABAFFD2B56C31C00155B0D /* ErrorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLabel.swift; sourceTree = "<group>"; };
+		8DABB0002B56C72E00155B0D /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
+		8DABB0022B56CCAD00155B0D /* BaseInputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInputTextField.swift; sourceTree = "<group>"; };
+		8DABB0042B56CE7B00155B0D /* SecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextField.swift; sourceTree = "<group>"; };
+		8DABB0062B5C390900155B0D /* NameTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextFieldView.swift; sourceTree = "<group>"; };
 		8DBAA5512AAEF2AB0054A5FF /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		8DBAA5532AB03BA40054A5FF /* UIVewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVewController+Alerts.swift"; sourceTree = "<group>"; };
 		8DBAA5552AB0407C0054A5FF /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
@@ -273,6 +285,7 @@
 			children = (
 				8DBAA5552AB0407C0054A5FF /* UserDefaultsHelper.swift */,
 				8DBAA55E2AB1DDEB0054A5FF /* StringHelper.swift */,
+				8D19ED192B67F42D00F32B97 /* EmailAndPasswordValidation.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -299,6 +312,8 @@
 		8D6B80B22AA78B08009DF810 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				8DABAFFF2B56C71C00155B0D /* CustomTextFieldViews */,
+				8DABAFFC2B56C30900155B0D /* Custom Labels */,
 				8D9B9A022B4FDE38003EEC9B /* CustomDatePicker */,
 				8D8DE37A2AB841B90063E62C /* CustomCollectionViewCells */,
 				8DBAA5692AB204DF0054A5FF /* CutomTableViewCells */,
@@ -485,6 +500,25 @@
 				8D9B9A052B4FDE9F003EEC9B /* BaseTextField.swift */,
 			);
 			path = CustomDatePicker;
+			sourceTree = "<group>";
+		};
+		8DABAFFC2B56C30900155B0D /* Custom Labels */ = {
+			isa = PBXGroup;
+			children = (
+				8DABAFFD2B56C31C00155B0D /* ErrorLabel.swift */,
+			);
+			path = "Custom Labels";
+			sourceTree = "<group>";
+		};
+		8DABAFFF2B56C71C00155B0D /* CustomTextFieldViews */ = {
+			isa = PBXGroup;
+			children = (
+				8DABB0002B56C72E00155B0D /* EmailTextField.swift */,
+				8DABB0022B56CCAD00155B0D /* BaseInputTextField.swift */,
+				8DABB0042B56CE7B00155B0D /* SecureTextField.swift */,
+				8DABB0062B5C390900155B0D /* NameTextFieldView.swift */,
+			);
+			path = CustomTextFieldViews;
 			sourceTree = "<group>";
 		};
 		8DBAA5572AB19ED50054A5FF /* TabBarController */ = {
@@ -753,6 +787,7 @@
 				8DABAFFB2B5572EF00155B0D /* CustomCalloutView.swift in Sources */,
 				8DBAA5802AB30D6E0054A5FF /* AlbumsViewController.swift in Sources */,
 				8D6B80C92AA861A5009DF810 /* Fonts.swift in Sources */,
+				8DABB0052B56CE7B00155B0D /* SecureTextField.swift in Sources */,
 				8D95137B2AAB090500A30E9B /* RegistrationViewController.swift in Sources */,
 				8D8DE3842AB87AF20063E62C /* ImageDetailsViewController.swift in Sources */,
 				8D8DE3772AB487E50063E62C /* AlbumDetailsView.swift in Sources */,
@@ -772,6 +807,7 @@
 				8D8DE37D2AB841E10063E62C /* AlbumPhotoCollectionViewCell.swift in Sources */,
 				8D8DE38D2AB949B00063E62C /* FavoriteLocationsViewController.swift in Sources */,
 				8D8DE3882AB87B330063E62C /* ImageDetailsPresenter.swift in Sources */,
+				8DABAFFE2B56C31C00155B0D /* ErrorLabel.swift in Sources */,
 				8D9513742AAAFDA700A30E9B /* LoginViewController.swift in Sources */,
 				8D8DE3952AB94DAA0063E62C /* FavoriteLocationsTableViewCell.swift in Sources */,
 				8DBAA5752AB2AA720054A5FF /* SettingsModel.swift in Sources */,
@@ -785,8 +821,11 @@
 				8DBAA5682AB1FD640054A5FF /* SettingsViewPresenter.swift in Sources */,
 				8D9513702AAA185D00A30E9B /* HomeView.swift in Sources */,
 				8D95137D2AAB091400A30E9B /* RegistrationView.swift in Sources */,
+				8DABB0032B56CCAD00155B0D /* BaseInputTextField.swift in Sources */,
 				8DBAA5562AB0407C0054A5FF /* UserDefaultsHelper.swift in Sources */,
+				8D19ED1A2B67F42D00F32B97 /* EmailAndPasswordValidation.swift in Sources */,
 				8D9513782AAAFDC100A30E9B /* LoginViewPresenter.swift in Sources */,
+				8DABB0012B56C72E00155B0D /* EmailTextField.swift in Sources */,
 				8D6B80D52AA88451009DF810 /* BaseViewController.swift in Sources */,
 				8D6F5CEB2AA3EABF006184CC /* AppDelegate.swift in Sources */,
 				8D6F5CED2AA3EABF006184CC /* SceneDelegate.swift in Sources */,
@@ -806,6 +845,7 @@
 				8DBAA5882AB30F650054A5FF /* MapView.swift in Sources */,
 				8D6B80DB2AA887C1009DF810 /* UIWindow+RootTransitionExtension.swift in Sources */,
 				8DBAA5642AB1FD400054A5FF /* SettingsViewController.swift in Sources */,
+				8DABB0072B5C390900155B0D /* NameTextFieldView.swift in Sources */,
 				8DBAA57A2AB2AF860054A5FF /* AddNewReminderView.swift in Sources */,
 				8D6B80D02AA88201009DF810 /* SplashScreenView.swift in Sources */,
 				8D6B80C52AA861A5009DF810 /* StoryboardScenes.swift in Sources */,

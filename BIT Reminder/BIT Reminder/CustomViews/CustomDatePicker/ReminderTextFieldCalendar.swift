@@ -44,8 +44,8 @@ class ReminderTextFieldCalendar: BaseTextField {
 extension ReminderTextFieldCalendar {
     
     func addInputViewDatePicker(target: Any, selector: Selector) {
-
-       let screenWidth = UIScreen.main.bounds.width
+        
+        let screenWidth = UIScreen.main.bounds.width
         inputDatePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 216))
         inputDatePicker?.datePickerMode = .date
         inputDatePicker?.minimumDate = Date.now
@@ -56,8 +56,8 @@ extension ReminderTextFieldCalendar {
        self.inputView = inputDatePicker
       
        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 44))
-           toolBar.sizeToFit()
-           toolBar.isUserInteractionEnabled = true
+        toolBar.sizeToFit()
+        toolBar.isUserInteractionEnabled = true
        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
        let cancelBarButton = UIBarButtonItem(title: NSLocalizedString("Cancel", comment: ""), style: .plain, target: self, action: #selector(cancelPressed))
        let doneBarButton = UIBarButtonItem(title: NSLocalizedString("Done", comment: ""), style: .plain, target: target, action: selector)

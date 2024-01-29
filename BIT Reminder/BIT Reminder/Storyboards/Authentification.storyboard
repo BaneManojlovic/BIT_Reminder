@@ -626,36 +626,34 @@
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="712.66666666666663"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eIU-D0-yJb">
-                                                <rect key="frame" x="16" y="226.33333333333331" width="359" height="260"/>
+                                                <rect key="frame" x="16" y="186.33333333333337" width="359" height="340"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jmR-4x-zLj">
-                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="W92-5G-8fC"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qcF-rJ-btC">
-                                                        <rect key="frame" x="0.0" y="70" width="359" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="5cR-KL-uOZ"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYb-n4-CJh" customClass="PasswordTextField" customModule="BIT_Reminder" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="140" width="359" height="50"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yJg-c1-KYV" customClass="NameTextFieldView" customModule="BIT_Reminder" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="70"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="9Qo-f4-CsJ"/>
+                                                            <constraint firstAttribute="height" constant="70" id="Eue-D1-aUv"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Va-tT-pBl" customClass="EmailInputTextFieldView" customModule="BIT_Reminder" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="89.999999999999972" width="359" height="70"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="70" id="Hq0-Kc-ZfL"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYb-n4-CJh" customClass="PasswordTextField" customModule="BIT_Reminder" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="179.99999999999997" width="359" height="70"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="70" id="9Qo-f4-CsJ"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SyE-Eb-mxl" customClass="PasswordTextField" customModule="BIT_Reminder" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="210" width="359" height="50"/>
+                                                        <rect key="frame" x="0.0" y="270" width="359" height="70"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="Pis-1r-Txk"/>
+                                                            <constraint firstAttribute="height" constant="70" id="Pis-1r-Txk"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -669,7 +667,7 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWZ-HX-ppW">
-                                                <rect key="frame" x="8" y="166" width="377" height="20.333333333333343"/>
+                                                <rect key="frame" x="8" y="125.99999999999999" width="377" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -709,12 +707,12 @@
                             <constraint firstItem="YAl-Mq-kTS" firstAttribute="bottom" secondItem="jbl-Le-Vgs" secondAttribute="bottom" id="xK6-bW-hF7"/>
                         </constraints>
                         <connections>
-                            <outlet property="emailTextField" destination="qcF-rJ-btC" id="QhJ-X5-P8F"/>
+                            <outlet property="emailTextField" destination="7Va-tT-pBl" id="Hkk-UC-UTJ"/>
                             <outlet property="passwordTextField" destination="BYb-n4-CJh" id="6Vk-Qe-L4T"/>
                             <outlet property="registerButton" destination="Dyd-4U-AVF" id="VZO-gu-7xl"/>
                             <outlet property="repeatPasswordTextField" destination="SyE-Eb-mxl" id="5Hx-ce-ULa"/>
                             <outlet property="screenTitleLabel" destination="pWZ-HX-ppW" id="AK9-Yu-cqm"/>
-                            <outlet property="userNameTextField" destination="jmR-4x-zLj" id="ciL-WN-x3T"/>
+                            <outlet property="userNameTextField" destination="yJg-c1-KYV" id="4kC-di-Vyp"/>
                         </connections>
                     </view>
                 </viewController>
@@ -745,34 +743,36 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cRI-Dc-EIM">
-                                                <rect key="frame" x="16" y="296.33333333333331" width="361" height="120"/>
+                                                <rect key="frame" x="16" y="276.33333333333331" width="361" height="160"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gYh-ql-M1D">
-                                                        <rect key="frame" x="0.0" y="0.0" width="361" height="50"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="stB-CW-dXL" customClass="EmailInputTextFieldView" customModule="BIT_Reminder" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="361" height="70"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="Cbl-fh-xvm"/>
+                                                            <constraint firstAttribute="height" constant="70" id="3l9-aT-5DD"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
+                                                    </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LoU-lu-ODB" customClass="PasswordTextField" customModule="BIT_Reminder" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="70" width="361" height="50"/>
+                                                        <rect key="frame" x="0.0" y="90" width="361" height="70"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="YPF-83-esP"/>
+                                                            <constraint firstAttribute="height" constant="70" id="YPF-83-esP"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="cvp-WR-YYV"/>
+                                                </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7b-nI-tRJ">
-                                                <rect key="frame" x="8" y="236" width="377" height="20.333333333333314"/>
+                                                <rect key="frame" x="8" y="216" width="377" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7B-NQ-bfN">
-                                                <rect key="frame" x="8" y="436.33333333333331" width="377" height="24"/>
+                                                <rect key="frame" x="8" y="456.33333333333337" width="377" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="4rt-gb-ywd"/>
                                                 </constraints>
@@ -818,7 +818,7 @@
                             <constraint firstItem="jls-tm-VyY" firstAttribute="top" secondItem="hGg-Ac-vyO" secondAttribute="top" constant="60" id="o97-aA-khG"/>
                         </constraints>
                         <connections>
-                            <outlet property="emailTextField" destination="gYh-ql-M1D" id="gPz-rl-wti"/>
+                            <outlet property="emailTextField" destination="stB-CW-dXL" id="k8N-C7-62O"/>
                             <outlet property="loginButton" destination="7gy-Fe-JSF" id="fcB-q8-Og3"/>
                             <outlet property="passwordTextField" destination="LoU-lu-ODB" id="1F0-3C-Iud"/>
                             <outlet property="registerNewUserButton" destination="S7B-NQ-bfN" id="6On-fh-sPI"/>
@@ -828,7 +828,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lvm-rx-zYg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1889" y="-35"/>
+            <point key="canvasLocation" x="1887.7862595419847" y="-35.211267605633807"/>
         </scene>
     </scenes>
     <resources>

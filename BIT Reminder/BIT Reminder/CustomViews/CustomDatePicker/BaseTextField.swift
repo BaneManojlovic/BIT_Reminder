@@ -21,15 +21,14 @@ class BaseTextField: UITextField {
     }
 
     private func initilize() {
-        borderStyle = .none
         layer.cornerRadius = 10
-        backgroundColor = .gray
         placeholder = super.placeholder
         tintColor = super.tintColor
         textColor = .white
-        textContentType = UITextContentType.oneTimeCode
+        textContentType = .oneTimeCode
         autocorrectionType = .no
         autocapitalizationType = .none
+        backgroundColor = Asset.textfieldBlueColor.color
         setupFont()
         setUpVisibility()
     }
@@ -43,7 +42,7 @@ class BaseTextField: UITextField {
 
         didSet {
             if let placeholder = self.placeholder {
-                let color = UIColor.secondaryLabel
+                let color = UIColor.white
                 let font = UIFont.systemFont(ofSize: 16)
                 let placeholderString = NSAttributedString(string: placeholder,
                 attributes: [NSAttributedString.Key.foregroundColor: color, NSAttributedString.Key.font: font])
