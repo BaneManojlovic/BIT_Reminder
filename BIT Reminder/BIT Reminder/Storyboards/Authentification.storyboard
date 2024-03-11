@@ -58,7 +58,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="90U-qL-4wX">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -72,7 +72,7 @@
                             <constraint firstItem="90U-qL-4wX" firstAttribute="top" secondItem="ac8-dn-MLZ" secondAttribute="top" id="dBh-o2-b3e"/>
                             <constraint firstItem="ac8-dn-MLZ" firstAttribute="trailing" secondItem="90U-qL-4wX" secondAttribute="trailing" id="dmy-r8-aSz"/>
                             <constraint firstItem="zMm-dO-OHO" firstAttribute="centerY" secondItem="4oJ-DN-VDv" secondAttribute="centerY" id="pSw-vR-5Xr"/>
-                            <constraint firstItem="ac8-dn-MLZ" firstAttribute="bottom" secondItem="90U-qL-4wX" secondAttribute="bottom" id="qNl-CP-G65"/>
+                            <constraint firstAttribute="bottom" secondItem="90U-qL-4wX" secondAttribute="bottom" id="qNl-CP-G65"/>
                         </constraints>
                         <connections>
                             <outlet property="homeMessageLabel" destination="zMm-dO-OHO" id="mXh-Ak-pkJ"/>
@@ -93,7 +93,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ti2-SW-a6a">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDA-G9-SDN">
@@ -136,7 +136,7 @@
                             <constraint firstItem="6Hc-bT-Yxn" firstAttribute="trailing" secondItem="G2P-x7-fmc" secondAttribute="trailing" constant="10" id="tUx-02-7x6"/>
                             <constraint firstItem="ti2-SW-a6a" firstAttribute="leading" secondItem="6Hc-bT-Yxn" secondAttribute="leading" id="w8u-H2-qBc"/>
                             <constraint firstItem="6Hc-bT-Yxn" firstAttribute="trailing" secondItem="2ZJ-ix-NFB" secondAttribute="trailing" constant="10" id="x9i-qt-BNE"/>
-                            <constraint firstItem="6Hc-bT-Yxn" firstAttribute="bottom" secondItem="ti2-SW-a6a" secondAttribute="bottom" id="yZG-xZ-P3J"/>
+                            <constraint firstAttribute="bottom" secondItem="ti2-SW-a6a" secondAttribute="bottom" id="yZG-xZ-P3J"/>
                         </constraints>
                         <connections>
                             <outlet property="clearMapButton" destination="zDA-G9-SDN" id="Scx-Gb-D2E"/>
@@ -165,7 +165,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DdE-so-yAy">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -174,7 +174,7 @@
                         <constraints>
                             <constraint firstItem="gGO-FL-Tzh" firstAttribute="centerY" secondItem="WG5-om-GCj" secondAttribute="centerY" id="4CU-Hm-h0C"/>
                             <constraint firstItem="gGO-FL-Tzh" firstAttribute="leading" secondItem="rDR-Cd-e1t" secondAttribute="leading" constant="10" id="5jV-74-ZHk"/>
-                            <constraint firstItem="rDR-Cd-e1t" firstAttribute="bottom" secondItem="DdE-so-yAy" secondAttribute="bottom" id="SzE-ez-nhc"/>
+                            <constraint firstAttribute="bottom" secondItem="DdE-so-yAy" secondAttribute="bottom" id="SzE-ez-nhc"/>
                             <constraint firstItem="rDR-Cd-e1t" firstAttribute="trailing" secondItem="DdE-so-yAy" secondAttribute="trailing" id="Xts-bi-zQg"/>
                             <constraint firstItem="DdE-so-yAy" firstAttribute="top" secondItem="rDR-Cd-e1t" secondAttribute="top" id="Ytw-nI-gMt"/>
                             <constraint firstItem="rDR-Cd-e1t" firstAttribute="trailing" secondItem="gGO-FL-Tzh" secondAttribute="trailing" constant="10" id="axz-WD-6LG"/>

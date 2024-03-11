@@ -26,11 +26,30 @@ class TabBarController: UITabBarController {
 
     private func setupUI() {
         self.tabBar.isHidden = false
-        self.tabBar.backgroundColor = Asset.textfieldBlueColor.color
-        self.tabBar.barTintColor = Asset.textfieldBlueColor.color
+        self.tabBar.backgroundColor = .clear
+        self.tabBar.barTintColor = .clear
         self.tabBar.tintColor = .white
+        let layer = CAShapeLayer()
+        layer.path = UIBezierPath(roundedRect: CGRect(x: 10, y: self.tabBar.bounds.minY, width: self.tabBar.bounds.width - 20, height: self.tabBar.bounds.height + 10), cornerRadius: (self.tabBar.frame.width/2)).cgPath
+        layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
+        layer.shadowRadius = 25.0
+        layer.shadowOpacity = 0.3
+        layer.borderWidth = 1.0
+        layer.opacity = 1.0
+        layer.isHidden = false
+        layer.masksToBounds = false
+        layer.fillColor = Asset.textfieldBlueColor.color.cgColor
+  
+        self.tabBar.layer.insertSublayer(layer, at: 0)
+        
+        if let items = self.tabBar.items {
+          items.forEach { item in item.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0) }
+        }
+        
+        self.tabBar.itemWidth = 45.0
+        self.tabBar.itemPositioning = .centered
     }
-
+    
     private func configureControllers() {
 
         let homeTabBarVC = setHomeTabBarController()
