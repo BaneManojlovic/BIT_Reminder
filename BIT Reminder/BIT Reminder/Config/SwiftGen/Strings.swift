@@ -71,6 +71,10 @@ internal enum L10n {
   internal static let labelErrorMessageRepeatedPasswInvalidFormat = L10n.tr("Localizable", "label_error_message_repeated_passw_invalid_format", fallback: "Repeated Password is in invalid format")
   /// Title cannot be empty!
   internal static let labelErrorTitleEmpty = L10n.tr("Localizable", "label_error_title_empty", fallback: "Title cannot be empty!")
+  /// Filter by date
+  internal static let labelFilterDate = L10n.tr("Localizable", "label_filter_date", fallback: "Filter by date")
+  /// Filter by importance
+  internal static let labelFilterImportance = L10n.tr("Localizable", "label_filter_importance", fallback: "Filter by importance")
   /// gas station
   internal static let labelGasStation = L10n.tr("Localizable", "label_gas_station", fallback: "gas station")
   /// hospital
@@ -145,6 +149,8 @@ internal enum L10n {
   internal static let labelPasswordExplanation = L10n.tr("Localizable", "label_password_explanation", fallback: "Use at least one uppercased character and one number, with minimum 8 characters in total.")
   /// pharmacy
   internal static let labelPharmacy = L10n.tr("Localizable", "label_pharmacy", fallback: "pharmacy")
+  /// Search...
+  internal static let labelPlaceholderSearch = L10n.tr("Localizable", "label_placeholder_search", fallback: "Search...")
   /// police station
   internal static let labelPoliceStation = L10n.tr("Localizable", "label_police_station", fallback: "police station")
   /// post office
@@ -155,6 +161,8 @@ internal enum L10n {
   internal static let labelReminderImportance = L10n.tr("Localizable", "label_reminder_importance", fallback: "Reminder importance:")
   /// repeat password
   internal static let labelRepeatPassword = L10n.tr("Localizable", "label_repeat_password", fallback: "repeat password")
+  /// Reset filter
+  internal static let labelResetFilter = L10n.tr("Localizable", "label_reset_filter", fallback: "Reset filter")
   /// skool
   internal static let labelSkool = L10n.tr("Localizable", "label_skool", fallback: "skool")
   /// sport gym
