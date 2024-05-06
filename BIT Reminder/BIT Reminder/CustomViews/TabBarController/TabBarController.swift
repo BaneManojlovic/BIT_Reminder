@@ -8,29 +8,38 @@
 import UIKit
 
 class TabBarController: UITabBarController {
-
+    
     // MARK: - Properties
-
+    
     var viewControllersList: [UIViewController] = []
-
+    
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.setupUI()
         self.configureControllers()
     }
-
+    
     // MARK: - Setup Methods
-
+    
     private func setupUI() {
         self.tabBar.isHidden = false
         self.tabBar.backgroundColor = .clear
         self.tabBar.barTintColor = .clear
         self.tabBar.tintColor = .white
+        let height = UIScreen.main.bounds.height
         let layer = CAShapeLayer()
-        layer.path = UIBezierPath(roundedRect: CGRect(x: 10, y: self.tabBar.bounds.minY, width: self.tabBar.bounds.width - 20, height: self.tabBar.bounds.height + 10), cornerRadius: (self.tabBar.frame.width/2)).cgPath
+        
+        if height > 736 {
+            layer.path = UIBezierPath(roundedRect: CGRect(x: 10, y: self.tabBar.bounds.minY, width: self.tabBar.bounds.width - 20, height:
+            self.tabBar.bounds.height + 10), cornerRadius: (self.tabBar.frame.width/2)).cgPath
+        } else {
+            layer.path = UIBezierPath(roundedRect: CGRect(x: 10, y: self.tabBar.bounds.minY, width: self.tabBar.bounds.width - 20, height:
+            self.tabBar.bounds.height + 10), cornerRadius: (0)).cgPath
+        }
+        
         layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
         layer.shadowRadius = 25.0
         layer.shadowOpacity = 0.3
@@ -39,7 +48,7 @@ class TabBarController: UITabBarController {
         layer.isHidden = false
         layer.masksToBounds = false
         layer.fillColor = Asset.textfieldBlueColor.color.cgColor
-  
+        
         self.tabBar.layer.insertSublayer(layer, at: 0)
         
         if let items = self.tabBar.items {
