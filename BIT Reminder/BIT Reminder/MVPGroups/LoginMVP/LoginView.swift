@@ -8,12 +8,12 @@
 import UIKit
 import IQKeyboardManager
 
-class LoginView: IQPreviousNextView {
+class LoginView: IQPreviousNextView, UITextFieldDelegate {
 
     // MARK: - Outlets
 
     @IBOutlet weak var screenTitleLabel: UILabel!
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var emailTextField: EmailInputTextFieldView!
     @IBOutlet weak var passwordTextField: PasswordTextField!
     @IBOutlet weak var registerNewUserButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
@@ -37,21 +37,12 @@ class LoginView: IQPreviousNextView {
     }
 
     private func setupTextFields() {
-        /// email TextField
-        self.emailTextField.textColor = .white
-        self.emailTextField.font = UIFont.systemFont(ofSize: 20)
-        self.emailTextField.backgroundColor = Asset.textfieldBlueColor.color
-        self.emailTextField.translatesAutoresizingMaskIntoConstraints = false
-        self.emailTextField.layer.masksToBounds = true
-        self.emailTextField.layer.cornerRadius = 10
-        self.emailTextField.attributedPlaceholder = NSAttributedString(
-            string: L10n.labelEmail,
-                                                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
-
-        /// password TextField
-        self.passwordTextField.inputTextField.attributedPlaceholder = NSAttributedString(
-            string: L10n.labelPassword,
-                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        emailTextField.inputTextField.tag = 1
+        passwordTextField.secureTextField.tag = 2
+        emailTextField.inputTextField.delegate = self
+        passwordTextField.secureTextField.delegate = self
+        self.emailTextField.inputTextField.placeholder = L10n.labelEmail
+        self.passwordTextField.secureTextField.placeholder = L10n.labelPassword
     }
 
     private func setupButtons() {
@@ -65,5 +56,16 @@ class LoginView: IQPreviousNextView {
         self.loginButton.setTitle(L10n.titleLabelLogin, for: .normal)
         self.loginButton.tintColor = .white
         self.loginButton.layer.cornerRadius = 10
+        self.loginButton.isEnabled = false
     }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.tag == 1 || textField.tag == 2 {
+            if !emailTextField.isError && !passwordTextField.isError {
+                loginButton.isEnabled = true
+            } else {
+                loginButton.isEnabled = false
+            }
+        }
+    }
+
 }

@@ -88,10 +88,15 @@
 "label_message_no_albums" = "No Album";
 
 
-// MARK: - Home scrren
+// MARK: - Home screen
 
 "label_message_no_reminders" = "No Reminders";
 "title_label_reminders" = "Reminders";
+"label_filter_importance" = "Filter by importance";
+"label_filter_date" = "Filter by date";
+"label_reset_filter" = "Reset filter";
+"label_placeholder_search" = "Search...";
+
 
 // MARK: - Login screen
 

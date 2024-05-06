@@ -23,6 +23,7 @@ class AlbumsViewPresenter {
 
     weak var delegate: AlbumsViewPresenterDelegate?
     var albums: [Album] = []
+    var filteredAlbums: [Album] = []
     var authManager = AuthManager()
     var userDefaultHelper = UserDefaultsHelper()
     var user: UserModel?

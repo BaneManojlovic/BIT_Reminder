@@ -23,4 +23,5 @@ struct Constants {
 
     static let reloadAlbumDetailsView = "reloadAlbumDetailsView"
     static let showMapPins = "showMapPins"
+    static let reloadFilter = "reloadFilter"
 }
