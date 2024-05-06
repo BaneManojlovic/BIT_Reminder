@@ -7,37 +7,26 @@
 
 import UIKit
 
-class PasswordTextField: UIView {
+class PasswordTextField: BaseInputTextFieldView {
 
     // MARK: - Properties
 
     var iconClick = true
-    var showSecureTextEntry = true
-
+    
     var rightEyeButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.tintColor = .white
+        button.backgroundColor = .clear
         button.setImage(UIImage(systemName: "eye.slash"), for: .normal)
         return button
     }()
-
-    lazy var inputTextField: UITextField = {
-        let textField = UITextField()
-        textField.backgroundColor = Asset.textfieldBlueColor.color
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.font = UIFont.systemFont(ofSize: 20)
-        textField.leftViewMode = .always
+    lazy var secureTextField: SecureTextField = {
+        let textField = SecureTextField()
         textField.layer.masksToBounds = true
-        textField.textContentType = .none
-        textField.autocorrectionType = .no
-        textField.textContentType = .init(rawValue: "")
-        textField.isSecureTextEntry = true
-        textField.textColor = .white
-        textField.layer.cornerRadius = 10
+        textField.clearsOnBeginEditing = false
         return textField
     }()
-
     // MARK: - Initialization via code
 
     override init(frame: CGRect) {
@@ -53,37 +42,89 @@ class PasswordTextField: UIView {
     }
 
     // MARK: - Setup method
-
-    func setup() {
-        self.inputTextField.textContentType = .oneTimeCode
-        self.inputTextField.textContentType = .init(rawValue: "")
-        self.backgroundColor = Asset.textfieldBlueColor.color
-        self.layer.cornerRadius = 10
-        self.addSubview(inputTextField)
-        self.addSubview(rightEyeButton)
-        /// set constraints for inputTextField & rightEyeButton
+    override func setup() {
+        secureTextField.rightView = self.rightEyeButton
+        secureTextField.rightViewMode = .always
+        secureTextField.delegate = self
+        addSubview(mainStackView)
+        mainStackView.addArrangedSubview(secureTextField)
+        mainStackView.addArrangedSubview(errorLabel)
+        /// set constraints
         NSLayoutConstraint.activate([
-            inputTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 6),
-            inputTextField.heightAnchor.constraint(equalToConstant: 50.0),
-            inputTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -60),
-            rightEyeButton.heightAnchor.constraint(equalToConstant: 30),
-            rightEyeButton.widthAnchor.constraint(equalToConstant: 30),
-            rightEyeButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -6),
-            rightEyeButton.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0)
+            mainStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+            mainStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
+            mainStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+            secureTextField.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor, constant: 0),
+            secureTextField.topAnchor.constraint(equalTo: mainStackView.topAnchor, constant: 0),
+            secureTextField.heightAnchor.constraint(equalToConstant: 60),
+            secureTextField.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor, constant: 0),
+            rightEyeButton.heightAnchor.constraint(equalToConstant: 40),
+            rightEyeButton.widthAnchor.constraint(equalToConstant: 60),
+            errorLabel.bottomAnchor.constraint(greaterThanOrEqualTo: mainStackView.bottomAnchor, constant: -5)
 
             ])
-        /// set target for rightEyeButton
+        /// set target for rightEyeButton and textField
+        secureTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         self.rightEyeButton.addTarget(self, action: #selector(toggleButton), for: .touchUpInside)
     }
+    
+    @objc override func textFieldDidChange(_ textField: UITextField) {
+        let isValid = EmailAndPasswordValidation.isPasswordValid(textField: secureTextField)
+        if let text = secureTextField.text {
+            if text.isEmpty {
+                setUpNoErrorView()
+                isError = true
+            } else {
+                if isValid == false {
+                    errorLabel.text = L10n.labelErrorMessagePasswInvalidFormat
+                    setUpErrorView()
+                    if secureTextField.text?.isEmpty == true {
+                        setUpNoErrorView()
+                    }
+                } else {
+                    setUpNoErrorView()
+                }
+            }
+        }
+    }
 
+    func setUpErrorView() {
+        errorLabel.isHidden = false
+        isError = true
+        errorLabel.textColor = UIColor.systemRed
+        secureTextField.layer.borderWidth = 2
+        secureTextField.layer.borderColor = UIColor.systemRed.cgColor
+    }
+    
+    func setUpNoErrorView() {
+        isError = false
+        errorLabel.isHidden = true
+        secureTextField.layer.borderWidth = 0
+    }
+    
+    func setupEyeButtonImage(withImage image: UIImage?) {
+        rightEyeButton.setImage(image, for: .normal)
+        rightEyeButton.imageView?.contentMode = .scaleAspectFit
+    }
+    
     @objc func toggleButton() {
         if iconClick == true {
-            self.inputTextField.isSecureTextEntry = false
-            self.rightEyeButton.setImage(UIImage(systemName: "eye"), for: .normal)
+            self.secureTextField.isSecureTextEntry = false
+            setupEyeButtonImage(withImage: UIImage(systemName: "eye"))
         } else {
-            self.inputTextField.isSecureTextEntry = true
-            self.rightEyeButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+            self.secureTextField.isSecureTextEntry = true
+            setupEyeButtonImage(withImage: UIImage(systemName: "eye.slash"))
         }
         iconClick = !iconClick
+    }
+    
+    override func textFieldDidBeginEditing(_ textField: UITextField) {
+        setUpNoErrorView()
+    }
+    override func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.text?.isEmpty == true {
+            setUpNoErrorView()
+            isError = true
+        }
     }
 }

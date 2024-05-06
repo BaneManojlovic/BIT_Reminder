@@ -53,10 +53,10 @@ class RegistrationViewController: BaseNavigationController {
 
     @objc func registerButtonAction() {
 
-        if let name = self.registrationView.userNameTextField.text,
-           let email = self.registrationView.emailTextField.text,
-           let password = self.registrationView.passwordTextField.inputTextField.text,
-           let repeatedPassword = self.registrationView.repeatPasswordTextField.inputTextField.text {
+        if let name = self.registrationView.userNameTextField.inputTextField.text,
+           let email = self.registrationView.emailTextField.inputTextField.text,
+           let password = self.registrationView.passwordTextField.secureTextField.text,
+           let repeatedPassword = self.registrationView.repeatPasswordTextField.secureTextField.text {
             self.presenter.registerNewUserWithEmail(user: UserModel(profileId: "",
                                                                     userName: name,
                                                                     userEmail: email,
@@ -100,36 +100,34 @@ extension RegistrationViewController: RegistrationPresenterDelegate {
     func handleValidationError(error: UserModel.ValidationError) {
         switch error {
         case .nameEmpty:
-            self.showValidationError(message: L10n.labelErrorMessageNameCannotBeEmpty)
+            registrationView.userNameTextField.errorLabel.text = L10n.labelErrorMessageNameCannotBeEmpty
+            registrationView.userNameTextField.setUpErrorView()
         case .nameInvalid:
-            self.showValidationError(message: L10n.labelErrorMessageNameInvalidFormat)
+            registrationView.userNameTextField.errorLabel.text = L10n.labelErrorMessageNameInvalidFormat
+            registrationView.userNameTextField.setUpErrorView()
         case .emailEmpty:
-            self.showValidationError(message: L10n.labelErrorMessageEmailCannotBeEmpty)
+            registrationView.emailTextField.errorLabel.text = L10n.labelErrorMessageEmailCannotBeEmpty
+            registrationView.emailTextField.setUpErrorView()
         case .emailInvalid:
-            self.showValidationError(message: L10n.labelErrorMessageEmailInvalidFormat)
+            registrationView.emailTextField.errorLabel.text = L10n.labelErrorMessageEmailInvalidFormat
+            registrationView.emailTextField.setUpErrorView()
         case .passwordEmpty:
-            self.showValidationError(message: L10n.labelErrorMessagePasswCannotBeEmpty)
+            registrationView.passwordTextField.errorLabel.text = L10n.labelErrorMessagePasswCannotBeEmpty
+            registrationView.passwordTextField.setUpErrorView()
         case .passwordInvalid:
-            self.showPasswordValidationMessage(message: L10n.labelErrorMessagePasswInvalidFormat)
+            registrationView.passwordTextField.errorLabel.text = L10n.labelErrorMessagePasswInvalidFormat
+            registrationView.passwordTextField.setUpErrorView()
         case .repeatPasswordEmpty:
-            self.showValidationError(message: L10n.labelErrorMessageRepeatedPasswCannotBeEmpty)
+            registrationView.repeatPasswordTextField.errorLabel.text = L10n.labelErrorMessageRepeatedPasswCannotBeEmpty
+            registrationView.repeatPasswordTextField.setUpErrorView()
         case .repeatPasswordInvalid:
-            self.showPasswordValidationMessage(message: L10n.labelErrorMessageRepeatedPasswInvalidFormat)
+            registrationView.repeatPasswordTextField.errorLabel.text = L10n.labelErrorMessageRepeatedPasswInvalidFormat
+            registrationView.repeatPasswordTextField.setUpErrorView()
         case .passwordsDontMatch:
-            self.showValidationError(message: L10n.labelErrorMessagePasswordsDontMatch)
-        }
-    }
-
-    func showValidationError(message: String) {
-        DispatchQueue.main.async {
-            self.showOkAlert(message: message)
-        }
-    }
-
-    func showPasswordValidationMessage(message: String) {
-        let passwordInstruction = L10n.labelPasswordExplanation
-        DispatchQueue.main.async {
-            self.showOkAlert(title: message, message: passwordInstruction)
+            registrationView.repeatPasswordTextField.errorLabel.text = L10n.labelErrorMessagePasswordsDontMatch
+            registrationView.passwordTextField.errorLabel.text = L10n.labelErrorMessagePasswordsDontMatch
+            registrationView.passwordTextField.setUpErrorView()
+            registrationView.repeatPasswordTextField.setUpErrorView()
         }
     }
 }

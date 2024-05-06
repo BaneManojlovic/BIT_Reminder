@@ -48,8 +48,8 @@ class LoginViewController: BaseViewController {
     }
 
     @objc func loginButtonAction() {
-        if let email = self.loginView.emailTextField.text,
-           let password = self.loginView.passwordTextField.inputTextField.text {
+        if let email = self.loginView.emailTextField.inputTextField.text,
+           let password = self.loginView.passwordTextField.secureTextField.text {
 
             self.presenter.loginWithEmail(user: UserModel(profileId: "", // API does not ask for it
                                                           userName: "", // API does not as for it
@@ -84,24 +84,20 @@ extension LoginViewController: LoginViewPresenterDelegate {
 
     func handleValidationError(error: UserModel.ValidationError) {
         switch error {
-        case .nameEmpty:
-            self.showValidationError(message: L10n.labelErrorMessageNameCannotBeEmpty)
-        case .nameInvalid:
-            self.showValidationError(message: L10n.labelErrorMessageNameInvalidFormat)
         case .emailEmpty:
-            self.showValidationError(message: L10n.labelErrorMessageEmailCannotBeEmpty)
+            loginView.emailTextField.errorLabel.text = L10n.labelErrorMessageEmailCannotBeEmpty
+            loginView.emailTextField.setUpErrorView()
         case .emailInvalid:
-            self.showValidationError(message: L10n.labelErrorMessageEmailInvalidFormat)
+            loginView.emailTextField.errorLabel.text = L10n.labelErrorMessageEmailInvalidFormat
+            loginView.emailTextField.setUpErrorView()
         case .passwordEmpty:
-            self.showValidationError(message: L10n.labelErrorMessagePasswCannotBeEmpty)
+            loginView.passwordTextField.errorLabel.text = L10n.labelErrorMessagePasswCannotBeEmpty
+            loginView.passwordTextField.setUpErrorView()
         case .passwordInvalid:
-            self.showPasswordValidationMessage(message: L10n.labelErrorMessagePasswInvalidFormat)
-        case .repeatPasswordEmpty:
-            self.showValidationError(message: L10n.labelErrorMessageRepeatedPasswCannotBeEmpty)
-        case .repeatPasswordInvalid:
-            self.showPasswordValidationMessage(message: L10n.labelErrorMessageRepeatedPasswInvalidFormat)
-        case .passwordsDontMatch:
-            self.showValidationError(message: L10n.labelErrorMessagePasswordsDontMatch)
+            loginView.passwordTextField.errorLabel.text = L10n.labelErrorMessagePasswInvalidFormat
+            loginView.passwordTextField.setUpErrorView()
+        default:
+            debugPrint("No matching cases")
         }
     }
 

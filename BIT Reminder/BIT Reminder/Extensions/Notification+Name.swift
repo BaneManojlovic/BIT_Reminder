@@ -11,4 +11,5 @@ extension Notification.Name {
 
     static let reloadAlbumDetailsView = Notification.Name(Constants.reloadAlbumDetailsView)
     static let showMapPins = Notification.Name(Constants.showMapPins)
+    static let reloadFilter = Notification.Name(Constants.reloadFilter)
 }
