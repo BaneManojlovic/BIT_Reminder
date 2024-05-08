@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct UserModel: Codable {
+struct UserModel: Codable, Identifiable {
+    var id: String?
+    
 
     var profileId: String
     var userName: String?

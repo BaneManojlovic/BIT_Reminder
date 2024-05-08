@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SettingsViewController: BaseNavigationController {
 
@@ -115,10 +116,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            guard let user = self.presenter.userDefaults.getUser() else { return }
-            if let name = user.userName {
-                self.showOkAlert(title: name, message: user.userEmail)
-            }
+            self.navigationController?.pushViewController(UIHostingController(rootView: ProfileView(navigationController: self.navigationController)), animated: true)
+            self.tabBarController?.tabBar.isHidden = true
         case 1:
             self.authFlowController.goToPrivacyPolicy()
         case 2:
