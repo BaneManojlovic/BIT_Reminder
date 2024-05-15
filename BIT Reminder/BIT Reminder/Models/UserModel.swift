@@ -14,6 +14,7 @@ struct UserModel: Codable {
     var userEmail: String
     var password: String?
     var repeatedPassword: String?
+    var avatarURL: String?
 
     enum CodingKeys: String, CodingKey {
         case profileId = "id"
@@ -21,6 +22,7 @@ struct UserModel: Codable {
         case userEmail = "user_email"
         case password = "password"
         case repeatedPassword = "repeat_password"
+        case avatarURL = "avatar_url"
     }
 
     func validateLogin() throws {
@@ -114,3 +116,4 @@ struct UserModel: Codable {
         case passwordsDontMatch
     }
 }
+
