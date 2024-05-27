@@ -173,6 +173,18 @@ internal enum L10n {
   internal static let labelTitle = L10n.tr("Localizable", "label_title", fallback: "title")
   /// Create
   internal static let labelTitleCreate = L10n.tr("Localizable", "label_title_create", fallback: "Create")
+  /// Password must contain at least a number, an uppercased letter and eight characters
+  internal static let labelTitleErrorNoAllNewPassword = L10n.tr("Localizable", "label_title_error_no_all_new_password", fallback: "Password must contain at least a number, an uppercased letter and eight characters")
+  /// Password must contain at least an uppercased letter and eight characters
+  internal static let labelTitleErrorNoLetterAndLengthNewPassword = L10n.tr("Localizable", "label_title_error_no_letter_and_length_new_password", fallback: "Password must contain at least an uppercased letter and eight characters")
+  /// Password must contain at least an uppercased letter
+  internal static let labelTitleErrorNoLetterNewPassword = L10n.tr("Localizable", "label_title_error_no_letter_new_password", fallback: "Password must contain at least an uppercased letter")
+  /// Password must contain at least a number and eight characters
+  internal static let labelTitleErrorNoNumberAndLengthNewPassword = L10n.tr("Localizable", "label_title_error_no_number_and_length_new_password", fallback: "Password must contain at least a number and eight characters")
+  /// Password must contain at least a number and an uppercased letter
+  internal static let labelTitleErrorNoNumberAndLetterNewPassword = L10n.tr("Localizable", "label_title_error_no_number_and_letter_new_password", fallback: "Password must contain at least a number and an uppercased letter")
+  /// Password must contain at least a number
+  internal static let labelTitleErrorNoNumberNewPassword = L10n.tr("Localizable", "label_title_error_no_number_new_password", fallback: "Password must contain at least a number")
   /// Title:
   internal static let labelTitleWithDots = L10n.tr("Localizable", "label_title_with_dots", fallback: "Title:")
   /// user name
@@ -183,8 +195,16 @@ internal enum L10n {
   internal static let titleLabelAlbum = L10n.tr("Localizable", "title_label_album", fallback: "Album")
   /// Albums
   internal static let titleLabelAlbums = L10n.tr("Localizable", "title_label_albums", fallback: "Albums")
+  /// Change Password
+  internal static let titleLabelChangePassword = L10n.tr("Localizable", "title_label_change_password", fallback: "Change Password")
+  /// Delete
+  internal static let titleLabelDelete = L10n.tr("Localizable", "title_label_delete", fallback: "Delete")
   /// Delete account
   internal static let titleLabelDeleteAccount = L10n.tr("Localizable", "title_label_delete_account", fallback: "Delete account")
+  /// Edit Profile
+  internal static let titleLabelEditProfile = L10n.tr("Localizable", "title_label_edit_profile", fallback: "Edit Profile")
+  /// Enter new password
+  internal static let titleLabelEnterNewPassword = L10n.tr("Localizable", "title_label_enter_new_password", fallback: "Enter new password")
   /// Favorite locations
   internal static let titleLabelFavoriteLocations = L10n.tr("Localizable", "title_label_favorite_locations", fallback: "Favorite locations")
   /// Home
@@ -195,6 +215,8 @@ internal enum L10n {
   internal static let titleLabelLogout = L10n.tr("Localizable", "title_label_logout", fallback: "Logout")
   /// Map
   internal static let titleLabelMap = L10n.tr("Localizable", "title_label_map", fallback: "Map")
+  /// Password must contain at least eight characters
+  internal static let titleLabelPasswordNoLenght = L10n.tr("Localizable", "title_label_password_no_lenght", fallback: "Password must contain at least eight characters")
   /// Privacy Policy
   internal static let titleLabelPrivacyPolicy = L10n.tr("Localizable", "title_label_privacy_policy", fallback: "Privacy Policy")
   /// Profile
@@ -207,6 +229,8 @@ internal enum L10n {
   internal static let titleLabelReminders = L10n.tr("Localizable", "title_label_reminders", fallback: "Reminders")
   /// Settings
   internal static let titleLabelSettings = L10n.tr("Localizable", "title_label_settings", fallback: "Settings")
+  /// Update Profile
+  internal static let titleLabelUpdatePassword = L10n.tr("Localizable", "title_label_update_password", fallback: "Update Profile")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

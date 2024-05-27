@@ -6,6 +6,20 @@
 //
 
 import Foundation
+import SwiftUI
+
+
+enum ValidationError: Error {
+    case nameEmpty
+    case nameInvalid
+    case emailEmpty
+    case emailInvalid
+    case passwordEmpty
+    case passwordInvalid
+    case repeatPasswordEmpty
+    case repeatPasswordInvalid
+    case passwordsDontMatch
+}
 
 struct UserModel: Codable {
 
@@ -103,17 +117,4 @@ struct UserModel: Codable {
             }
         }
     }
-
-    enum ValidationError: Error {
-        case nameEmpty
-        case nameInvalid
-        case emailEmpty
-        case emailInvalid
-        case passwordEmpty
-        case passwordInvalid
-        case repeatPasswordEmpty
-        case repeatPasswordInvalid
-        case passwordsDontMatch
-    }
 }
-

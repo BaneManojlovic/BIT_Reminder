@@ -8,13 +8,16 @@
 import Foundation
 import SupabaseStorage
 import UIKit
+import KRProgressHUD
 
+// swiftlint: disable trailing_whitespace vertical_whitespace
 class ProfileViewModel: ObservableObject {
     
     @Published var username = ""
     @Published var email = ""
     @Published var avatarImage: AvatarImage?
-    
+    @Published var isFormNotValid = true
+    @Published var profileValidation: [ValidationError: Bool] = [.nameInvalid: false, .emailInvalid: false]
     init() {
 
     }
@@ -54,6 +57,7 @@ class ProfileViewModel: ObservableObject {
       }
     
     func updateProfileButtonTapped() {
+        KRProgressHUD.show()
         Task {
             isLoading = true
             defer { isLoading = false }
@@ -74,7 +78,11 @@ class ProfileViewModel: ObservableObject {
                     .update(values: updatedProfile)
                     .eq(column: "id", value: currentUser.id)
                     .execute()
+                DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                    KRProgressHUD.dismiss()
+                }
             } catch {
+                KRProgressHUD.dismiss()
                 debugPrint("Error updating profile: \(error)")
             }
         }

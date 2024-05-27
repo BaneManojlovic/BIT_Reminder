@@ -11,7 +11,7 @@ import KRProgressHUD
 protocol RegistrationPresenterDelegate: AnyObject {
     func registarNewUserActionSuccess()
     func registarNewUserActionFailure(error: Error)
-    func handleValidationError(error: UserModel.ValidationError)
+    func handleValidationError(error: ValidationError)
 }
 
 class RegistrationPresenter {
@@ -51,7 +51,7 @@ class RegistrationPresenter {
                         self.saveUserData(user: user)
                     }
                 }
-            } catch let error as UserModel.ValidationError {
+            } catch let error as ValidationError {
                 self.delegate?.handleValidationError(error: error)
             }
         }

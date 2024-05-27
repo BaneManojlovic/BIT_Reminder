@@ -10,11 +10,13 @@ import PhotosUI
 import Supabase
 import KRProgressHUD
 
+// swiftlint: disable trailing_whitespace vertical_whitespace
+
 struct ProfileView: View {
     @Environment(\.editMode) private var editMode
     
     weak var navigationController: UINavigationController?
-    var authManager = AuthManager()
+
     
     @StateObject private var profileVC = ProfileViewModel()
     
@@ -23,17 +25,24 @@ struct ProfileView: View {
     @State var disableTextField = true
     @State var imageSelection: PhotosPickerItem?
     @State private var showingAlert = false
+    @State private var isButtonDisabled = true
+    @State private var initialUsername = ""
     
     
     var body: some View {
-        Form {
-            Section {
-                VStack {
+        ScrollView {
+            VStack {
+                ZStack {
+                    Spacer()
+                        .frame(height: 30)
                     Group {
                         if let avatarImage = profileVC.avatarImage {
                             avatarImage.image.resizable()
                         } else {
-                            Image(systemName: "person")
+                            Image(systemName: "person.circle.fill")
+                                .resizable()
+                                .frame(width: 100, height: 100, alignment: .center)
+                                .foregroundStyle(Color.white)
                         }
                     }
                     .clipShape(Circle())
@@ -44,138 +53,169 @@ struct ProfileView: View {
                     Spacer()
                         .frame(height: 10)
                     if isEditindModeOn == true {
-                        PhotosPicker(selection: $imageSelection, matching: .images) {
-                            Image(systemName: "photo.badge.plus")
-                                .font(.system(size: 30))
-                                .foregroundColor(.white)
-                        }
+                            PhotosPicker(selection: $imageSelection, matching: .images) {
+                                Image(systemName: "photo.badge.plus")
+                                    .font(.system(size: 30))
+                                    .foregroundColor(.white)
+                                    .blur(radius: 1)
+                            }
+                        
+                      
                     }
                 }
-            }
-            .listRowBackground(Color.clear)
-            
-            Section {
-                TextField("Username", text: $profileVC.username)
-                    .disabled(disableTextField)
-                    .onChange(of: editMode?.wrappedValue) { newValue in
-                        if (newValue != nil) && (newValue!.isEditing) {
-                            // Edit button tapped
-                            disableTextField = false
-                        } else {
-                            // Done button tapped
-                            disableTextField = true
-                        }
-                    }
-                    .foregroundStyle(.white)
-                    .textContentType(.username)
-                    .textInputAutocapitalization(.never)
-                TextField("Email", text: $profileVC.email)
-                    .disabled(disableTextField)
-                    .onChange(of: editMode?.wrappedValue) { newValue in
-                        if (newValue != nil) && (newValue!.isEditing) {
-                            // Edit button tapped
-                            disableTextField = false
-                        } else {
-                            // Done button tapped
-                            disableTextField = true
-                        }
-                    }
-                    .foregroundStyle(.white)
-                    .textContentType(.emailAddress)
-                    .textInputAutocapitalization(.never)
-            }
-            .listRowBackground(isEditindModeOn == false ? Color("tableview_cell_blue_color") : Color("textfield_blue_color") )
-            Section {
-                Button("Change Password") {
-                    debugPrint("Change password")
-                }
-                .padding()
-                .background(Color("textfield_blue_color"))
-                .foregroundColor(Color.white)
-                .clipShape(Capsule())
+                .background(Color("background_blue_color"))
                 
-            }
-            .listRowBackground(Color.clear)
-            
-            Section {
-                Button("Delete account") {
-                    showingAlert = true
-                }
-                .padding()
-                .background(Color("textfield_blue_color"))
-                .foregroundColor(Color.red)
-                .clipShape(Capsule())
+                BaseCustomTextFieldView(text: $profileVC.username,
+                                        placeholderText: "",
+                                        isFormNotValid: $profileVC.isFormNotValid,
+                                        fieldContentType: .nameInvalid,
+                                        isInputValid: $profileVC.profileValidation, 
+                                        isEditMode: isEditindModeOn)
+                .foregroundStyle(.white)
+                .disabled(disableTextField)
                 
-                .alert(isPresented:$showingAlert) {
+//                .onChange(of: initialUsername) { newValue in
+//                    self.initialUsername = newValue
+//                    
+//                }
+                .onChange(of: editMode?.wrappedValue) { newValue in
+                    if (newValue != nil) && (newValue!.isEditing) {
+                        disableTextField = false
+                    } else {
+                        disableTextField = true
+                    }
+                }
+         
+                
+                
+                BaseCustomTextFieldView(text: $profileVC.email,
+                                        placeholderText: "",
+                                        isFormNotValid: $profileVC.isFormNotValid,
+                                        fieldContentType: .emailInvalid,
+                                        isInputValid: $profileVC.profileValidation, 
+                                        isEditMode: isEditindModeOn)
+                
+                .foregroundStyle(.white)
+                .disabled(disableTextField)
+                .onChange(of: editMode?.wrappedValue) { newValue in
+                    if (newValue != nil) && (newValue!.isEditing) {
+                        disableTextField = false
+                    } else {
+                        disableTextField = true
+                    }
+                }
+                
+                
+                Spacer()
+                    .frame(height: 40)
+                
+                VStack(alignment: .center, spacing: 20) {
+                    NavigationLink {
+                        ChangePasswordView()
+                    } label: {
+                        Text(L10n.titleLabelChangePassword)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 50)
+                    .background(Color("textfield_blue_color"))
+                    .foregroundColor(Color.white)
+                    .clipShape(Capsule())
+                    .padding(.horizontal, 30)
+                    
+                    Button(L10n.labelDeleteAccount) {
+                        showingAlert = true
+                    }
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 50)
+                    .background(Color("textfield_blue_color"))
+                    .foregroundColor(Color.red)
+                    .clipShape(Capsule())
+                    .padding(.horizontal, 30)
+                    
+                    Spacer()
+                        .frame(height: 40)
+                    VStack {
+                        
+                        if isEditindModeOn == true {
+                            Button(L10n.titleLabelUpdatePassword) {
+                                profileVC.updateProfileButtonTapped()
+                                DispatchQueue.main.asyncAfter(deadline: .now()+5) {
+                                    self.navigationController?.popViewController(animated: true)
+                                }
+                            }
+                            .disabled((profileVC.username.isEmpty || profileVC.username == initialUsername) || profileVC.email.isEmpty || profileVC.isFormNotValid)
+                           // .disabled(isButtonDisabled)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 50)
+                            .background(.orange)
+                            .clipShape(Capsule())
+                            .padding(.horizontal, 30)
+                            
+                            
+                            if isLoading {
+                                ProgressView()
+                            }
+                        }
+                    }
+                  
+                }
+                .padding(.horizontal, 30)
+                .padding(.top, 20)
+                
+                .alert(isPresented: $showingAlert) {
                     Alert(
-                        title: Text("Are you sure you want to delete this account?"),
+                        title: Text(L10n.labelMessageSureWantDeleteAccount),
                         message: Text(""),
-                        primaryButton: .destructive(Text("Delete")) {
+                        primaryButton: .destructive(Text(L10n.titleLabelDelete)) {
                             profileVC.deleteUser()
-                            debugPrint("Deleting...")
                         },
                         secondaryButton: .cancel()
                     )
                 }
+                
+                
+                .onChange(of: imageSelection) { newValue in
+                    guard let newValue else { return }
+                    loadTransferable(from: newValue)
+                }
             }
-            .listRowBackground(Color.clear)
-        }
-        
-        .onChange(of: imageSelection) { newValue in
-            guard let newValue else { return }
-            loadTransferable(from: newValue)
-        }
-            .scrollContentBackground(.hidden)
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             .background(Color("background_blue_color"))
-            
-        VStack {
-            
-            if isEditindModeOn == true {
-                
-                Button("Update Profile") {
-                    profileVC.updateProfileButtonTapped()
-                    DispatchQueue.main.asyncAfter(deadline: .now()+5) {
-                        self.navigationController?.popViewController(animated: true)
-                    }
+        }
+        .background(Color("background_blue_color"))
+        .navigationTitle(isEditindModeOn == true ? L10n.titleLabelEditProfile : L10n.titleLabelProfile)
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    self.navigationController?.popViewController(animated: true)
+                } label: {
+                    Image(systemName: "arrow.left")
+                        .foregroundStyle(.white)
                 }
-                .padding()
-                .background(Color(red: 0, green: 0, blue: 0.5))
-                .foregroundColor(Color.white)
-                .clipShape(Capsule())
-                
-                if isLoading {
-                    ProgressView()
+            }
+            
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    isEditindModeOn.toggle()
+                    disableTextField = false
+                } label: {
+                    Image(systemName: "square.and.pencil")
+                        .foregroundStyle(isEditindModeOn == false ? .white : .red)
                 }
             }
         }
-            .navigationTitle(isEditindModeOn == true ? "Edit Profile" : "Profile")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        isEditindModeOn = true
-                        disableTextField = false
-                    } label: {
-                        Image(systemName: "square.and.pencil")
-                            .foregroundStyle(.white)
-                    }
-                }
-                if isEditindModeOn == true {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button {
-                            isEditindModeOn = false
-                            disableTextField = true
-                        } label: {
-                            Image(systemName: "xmark.circle")
-                                .foregroundStyle(.white)
-                        }
-                    }
-                }
-            }
-            .task {
-                await profileVC.getInitialProfile()
-                }
+        .task {
+            await profileVC.getInitialProfile()
+        }
+   
+        
     }
+
+    
+    
     private func loadTransferable(from imageSelection: PhotosPickerItem) {
        Task {
           do {

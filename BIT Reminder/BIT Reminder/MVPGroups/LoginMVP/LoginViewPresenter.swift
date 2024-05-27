@@ -11,7 +11,7 @@ import Supabase
 protocol LoginViewPresenterDelegate: AnyObject {
     func loginActionSuccess()
     func loginActionFailed(error: String)
-    func handleValidationError(error: UserModel.ValidationError)
+    func handleValidationError(error: ValidationError)
 }
 
 class LoginViewPresenter {
@@ -53,7 +53,7 @@ class LoginViewPresenter {
                         self.delegate?.loginActionSuccess()
                     }
                 }
-            } catch let error as UserModel.ValidationError {
+            } catch let error as ValidationError {
                 self.delegate?.handleValidationError(error: error)
             }
         }
