@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: BaseNavigationController {
+class HomeViewController: BaseNavigationController, UIScrollViewDelegate {
 
     // MARK: - Properties
 
@@ -23,9 +23,11 @@ class HomeViewController: BaseNavigationController {
     }
     var isFiltering: Bool {
         return searchController.isActive && !isSearchBarEmpty
+      
     }
     var isSortedByImportance = false
     var isSortedByDate = false
+    var isPaginating = false
 
     // MARK: - Lifecycle Methods
     
@@ -42,7 +44,7 @@ class HomeViewController: BaseNavigationController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.presenter.getReminders()
+        self.loadReminders()
     }
     
     deinit {
@@ -50,6 +52,36 @@ class HomeViewController: BaseNavigationController {
     }
 
     // MARK: - Private Setup Methods
+    
+    func loadReminders() {
+        presenter.isLoading = true
+        self.isPaginating = true
+        Task {
+            do {
+                let reminders = try await presenter.getReminders()
+                DispatchQueue.main.async {
+                    self.presenter.displayedReminders.append(contentsOf: reminders)
+                    self.homeView.tableView.reloadData()
+                    self.presenter.isLoading = false
+                    self.isPaginating = false
+                    debugPrint("Reminders loaded successfully, removing spinner")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        self.homeView.tableView.tableFooterView = nil
+                    }
+    
+                }
+            } catch {
+                debugPrint("Failed to fetch reminders: \(error.localizedDescription)")
+                DispatchQueue.main.async {
+                    self.presenter.isLoading = false
+                    self.isPaginating = false
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        self.homeView.tableView.tableFooterView = nil
+                    }
+                }
+            }
+        }
+    }
     
     func configureSearch() {
         searchController.searchResultsUpdater = self
@@ -98,6 +130,7 @@ class HomeViewController: BaseNavigationController {
         self.presenter.attachView(view: self)
         self.homeView.tableView.delegate = self
         self.homeView.tableView.dataSource = self
+        self.homeView.tableView.isScrollEnabled = true
     }
     
     private func setupObservers() {
@@ -153,8 +186,7 @@ class HomeViewController: BaseNavigationController {
     func resetFilters() {
         isSortedByImportance = false
         isSortedByDate = false
-        self.presenter.getReminders()
-        self.homeView.tableView.reloadData()
+        self.loadReminders()
     }
 }
 // MARK: - Conforming to HomeViewPresenterDelegate
@@ -215,6 +247,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ReminderTableViewCell.reuseIdentifier,
                                                        for: indexPath) as? ReminderTableViewCell else { return UITableViewCell() }
         /// create model to fill in data for cell
+            //TODO : fatal error index out of range
+        
         var reminders = self.presenter.reminders[indexPath.row]
         /// determine what array to get for fill out data to cell
         if isFiltering {
@@ -223,6 +257,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         } else if isSortedByImportance || isSortedByDate {
             /// reminders filtered after sorting functions
             reminders = self.presenter.sortedReminders[indexPath.row]
+        } else if isPaginating {
+            reminders = self.presenter.displayedReminders[indexPath.row]
         } else {
             /// reminders unfiltered
             reminders = self.presenter.reminders[indexPath.row]
@@ -241,6 +277,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             } else if isSortedByImportance || isSortedByDate {
                 self.presenter.deleteReminder(model: self.presenter.sortedReminders[indexPath.row])
                 self.presenter.sortedReminders.remove(at: indexPath.row)
+            } else if isPaginating {
+                self.presenter.deleteReminder(model: self.presenter.displayedReminders[indexPath.row])
+                self.presenter.displayedReminders.remove(at: indexPath.row)
             } else {
                 self.presenter.deleteReminder(model: model)
                 self.presenter.reminders.remove(at: indexPath.row)
@@ -261,6 +300,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 if let sortedModelId = self.presenter.sortedReminders[index].id {
                     self.authFlowController.goToAddNewReminder(screenType: .reminderDetailsScreen, model: self.presenter.sortedReminders[indexPath.row])
                 }
+                //pagination is on
+            } else if isPaginating {
+                if let displayedModelId = self.presenter.displayedReminders[index].id {
+                    self.authFlowController.goToAddNewReminder(screenType: .reminderDetailsScreen, model: self.presenter.displayedReminders[indexPath.row])
+                }
             } else {
                 /// unfiltered data
                 if let modelId = self.presenter.reminders[index].id {
@@ -272,12 +316,45 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    private func createSpinnerFooter() -> UIView {
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 100))
+        let spinner = UIActivityIndicatorView()
+        spinner.color = .white
+        spinner.center = footerView.center
+        footerView.addSubview(spinner)
+        spinner.startAnimating()
+        
+        return footerView
+    }
+    
+    // MARK: detecting user scroll did reach bootom- start paginating
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        
+        if offsetY > contentHeight - scrollView.frame.size.height {
+            if self.homeView.tableView.tableFooterView == nil {
+                debugPrint("Adding spinner footer")
+                self.homeView.tableView.tableFooterView = createSpinnerFooter()
+                isPaginating = true
+                presenter.itemsPerPage += 1
+                self.loadReminders()
+            }
+        }
+    }
+
+    
+    
     // Fill filteredReminders array with reminders filtered by title
     func filterContentForSearchText(_ searchText: String, name: Reminder? = nil) {
         if isSortedByImportance || isSortedByDate {
             self.presenter.filteredReminders = self.presenter.sortedReminders.filter { (product: Reminder) -> Bool in
                 return product.title.lowercased().contains(searchText.lowercased())
             }
+        } else if isPaginating {
+            self.presenter.filteredReminders = self.presenter.displayedReminders.filter { (product: Reminder) -> Bool in
+                return product.title.lowercased().contains(searchText.lowercased())}
         } else {
             self.presenter.filteredReminders = self.presenter.reminders.filter { (product: Reminder) -> Bool in
                 return product.title.lowercased().contains(searchText.lowercased())
