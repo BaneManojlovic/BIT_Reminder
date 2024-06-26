@@ -10,11 +10,10 @@ import PhotosUI
 import Supabase
 import KRProgressHUD
 
-// swiftlint: disable trailing_whitespace vertical_whitespace
-
 struct ProfileView: View {
-    @Environment(\.editMode) private var editMode
     
+    @Environment(\.editMode) private var editMode
+
     weak var navigationController: UINavigationController?
 
     @StateObject private var profileVC = ProfileViewModel()
@@ -26,10 +25,11 @@ struct ProfileView: View {
     @State private var showingAlert = false
 
     // Track initial values
-    @State private var initialUsername: String = ""
-    @State private var initialEmail: String = ""
+    @State private var initialUsername = ""
+    @State private var initialEmail = ""
+    @State private var initialImageData: Data?
 
-    // Track image change
+    // Track if image has changed
     @State private var isImageChanged = false
 
     var body: some View {
@@ -133,7 +133,9 @@ struct ProfileView: View {
                             .disabled(
                                 profileVC.username.isEmpty ||
                                 profileVC.email.isEmpty ||
-                                (profileVC.username == initialUsername && profileVC.email == initialEmail && !isImageChanged) ||
+                                (profileVC.username == initialUsername &&
+                                 profileVC.email == initialEmail &&
+                                 !isImageChanged) ||
                                 profileVC.isFormNotValid
                             )
                             .frame(maxWidth: .infinity)
@@ -165,7 +167,6 @@ struct ProfileView: View {
                 .onChange(of: imageSelection) { newValue in
                     guard let newValue = newValue else { return }
                     loadTransferable(from: newValue)
-                    isImageChanged = true // Mark the image as changed
                 }
             }
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
@@ -200,6 +201,7 @@ struct ProfileView: View {
             // Set the initial values once the profile is loaded
             initialUsername = profileVC.username
             initialEmail = profileVC.email
+            initialImageData = profileVC.avatarImage?.data // Track initial image data
         }
         .onChange(of: editMode?.wrappedValue) { newValue in
             if let mode = newValue {
@@ -207,6 +209,7 @@ struct ProfileView: View {
                     // Entering edit mode: set initial values and enable fields
                     initialUsername = profileVC.username
                     initialEmail = profileVC.email
+                    initialImageData = profileVC.avatarImage?.data // Set initial image data
                     disableTextField = false
                 } else {
                     // Exiting edit mode: disable fields and reset image change flag
@@ -225,6 +228,7 @@ struct ProfileView: View {
             // Set initial values when entering edit mode
             initialUsername = profileVC.username
             initialEmail = profileVC.email
+            initialImageData = profileVC.avatarImage?.data // Track initial image data
             disableTextField = false
         } else {
             // Disable text fields when exiting edit mode
@@ -237,11 +241,15 @@ struct ProfileView: View {
         Task {
             do {
                 profileVC.avatarImage = try await imageSelection.loadTransferable(type: AvatarImage.self)
+                // Compare new image data with the initial one
+                if let newData = profileVC.avatarImage?.data, newData != initialImageData {
+                    isImageChanged = true
+                } else {
+                    isImageChanged = false
+                }
             } catch {
                 debugPrint(error)
             }
         }
     }
 }
-
-
