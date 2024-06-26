@@ -21,7 +21,9 @@ enum ValidationError: Error {
     case passwordsDontMatch
 }
 
-struct UserModel: Codable {
+struct UserModel: Codable, Identifiable {
+    var id: String?
+    
 
     var profileId: String
     var userName: String?
