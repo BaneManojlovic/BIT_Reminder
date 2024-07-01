@@ -42,7 +42,6 @@ class SettingsViewPresenter {
         self.settingsModel.append(SettingsModel(title: L10n.titleLabelProfile))
         self.settingsModel.append(SettingsModel(title: L10n.titleLabelPrivacyPolicy))
         self.settingsModel.append(SettingsModel(title: L10n.titleLabelLogout))
-        self.settingsModel.append(SettingsModel(title: L10n.labelDeleteAccount))
         self.getUserData()
     }
 
@@ -60,22 +59,6 @@ class SettingsViewPresenter {
             }
         }
     }
-
-    func deleteUser() {
-        Task {
-            do {
-                try await self.authManager.deleteUserAccount { error in
-                    if let error = error {
-                        self.delegate?.userLogoutFailure(message: error.localizedDescription)
-                    } else {
-                        self.userDefaults.removeUser()
-                        self.delegate?.userLogoutSuccess()
-                    }
-                }
-            }
-        }
-    }
-
     func getUserData() {
         Task {
             do {

@@ -82,7 +82,7 @@ extension LoginViewController: LoginViewPresenterDelegate {
         }
     }
 
-    func handleValidationError(error: UserModel.ValidationError) {
+    func handleValidationError(error: ValidationError) {
         switch error {
         case .emailEmpty:
             loginView.emailTextField.errorLabel.text = L10n.labelErrorMessageEmailCannotBeEmpty

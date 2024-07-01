@@ -75,11 +75,21 @@ class AddNewReminderView: UIView {
     }
 
     private func setButtons() {
-        /// setup for login button
+        /// setup for add/edit button
         self.addButton.backgroundColor = Asset.buttonBlueColor.color
         self.addButton.setTitle(L10n.labelAdd, for: .normal)
         self.addButton.tintColor = .white
         self.addButton.layer.cornerRadius = 10
+        self.addButton.isEnabled = false
+    }
+
+    func changeEditButtonStatus(isChanged: Bool) {
+
+        if isChanged {
+            self.addButton.isEnabled = true
+        } else {
+            self.addButton.isEnabled = false
+        }
     }
 
     func setReminderData(model: Reminder) {
@@ -95,10 +105,15 @@ class AddNewReminderView: UIView {
             self.descriptionTextView.text = description
             self.setImportanceSwitch.isOn = isImportant
         }
-        self.datePickerTextField.isHidden = true
+       // self.datePickerTextField.isHidden = true
+        self.datePickerTextField.isUserInteractionEnabled = false
         self.dateValueLabel.isHidden = false
         self.dateValueLabel.text = formatDateToShow(date: model.date ?? "")
         self.addButton.isEnabled = false
+        self.titleTextField.isEnabled = false
+        self.descriptionTextView.isUserInteractionEnabled = false
+        self.setImportanceSwitch.isUserInteractionEnabled = false
+        self.addButton.setTitle("Edit", for: .normal)
     }
 
     func formatDateToShow(date: String) -> String {

@@ -7,9 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		217456CA2BF5FD4800A7E68A /* BaseCustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217456C92BF5FD4800A7E68A /* BaseCustomTextFieldView.swift */; };
+		217456CC2BF5FF3500A7E68A /* BaseTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217456CB2BF5FF3500A7E68A /* BaseTextFieldView.swift */; };
+		217456CE2BF5FFF700A7E68A /* SecureCustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217456CD2BF5FFF700A7E68A /* SecureCustomTextFieldView.swift */; };
+		217456D02BF6006400A7E68A /* BaseSecureTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217456CF2BF6006400A7E68A /* BaseSecureTextFieldView.swift */; };
+		217456D22BF600D000A7E68A /* SecuredEyeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217456D12BF600D000A7E68A /* SecuredEyeButtonView.swift */; };
+		217456D52BFB57D900A7E68A /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217456D42BFB57D900A7E68A /* ChangePasswordView.swift */; };
+		217456D72BFB57E600A7E68A /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217456D62BFB57E600A7E68A /* ChangePasswordViewModel.swift */; };
+		217456D92BFCF61F00A7E68A /* PasswordErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217456D82BFCF61F00A7E68A /* PasswordErrorType.swift */; };
+		2196DDB52BF21912007F81C1 /* AvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2196DDB42BF21912007F81C1 /* AvatarImage.swift */; };
 		6F28FBA5FB39873CD08AA695 /* Pods_BIT_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1CD5190B349858D99F73037 /* Pods_BIT_Reminder.framework */; };
 		8D06A3042BBFD5C3006613C9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 8D06A3032BBFD5C3006613C9 /* PrivacyInfo.xcprivacy */; };
 		8D19ED1A2B67F42D00F32B97 /* EmailAndPasswordValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D19ED192B67F42D00F32B97 /* EmailAndPasswordValidation.swift */; };
+		8D2373232BEA35BA001E74BF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2373222BEA35BA001E74BF /* ProfileView.swift */; };
+		8D2373252BEA3842001E74BF /* CustomHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2373242BEA3842001E74BF /* CustomHostingController.swift */; };
+		8D2373272BEA388E001E74BF /* SwiftUIBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2373262BEA388E001E74BF /* SwiftUIBridge.swift */; };
+		8D2373292BEB7856001E74BF /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2373282BEB7856001E74BF /* ProfileViewModel.swift */; };
 		8D32EA992AB424E30080CB5E /* AlbumsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32EA982AB424E30080CB5E /* AlbumsTableViewCell.swift */; };
 		8D32EA9C2AB4252F0080CB5E /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32EA9B2AB4252F0080CB5E /* Album.swift */; };
 		8D40CAB82ABB06140039AB5B /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D40CAB72ABB06140039AB5B /* PasswordTextField.swift */; };
@@ -94,10 +107,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		217456C92BF5FD4800A7E68A /* BaseCustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCustomTextFieldView.swift; sourceTree = "<group>"; };
+		217456CB2BF5FF3500A7E68A /* BaseTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextFieldView.swift; sourceTree = "<group>"; };
+		217456CD2BF5FFF700A7E68A /* SecureCustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureCustomTextFieldView.swift; sourceTree = "<group>"; };
+		217456CF2BF6006400A7E68A /* BaseSecureTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSecureTextFieldView.swift; sourceTree = "<group>"; };
+		217456D12BF600D000A7E68A /* SecuredEyeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecuredEyeButtonView.swift; sourceTree = "<group>"; };
+		217456D42BFB57D900A7E68A /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		217456D62BFB57E600A7E68A /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
+		217456D82BFCF61F00A7E68A /* PasswordErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordErrorType.swift; sourceTree = "<group>"; };
+		2196DDB42BF21912007F81C1 /* AvatarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImage.swift; sourceTree = "<group>"; };
 		6F4ED9D45104BC656CBEF8E6 /* Pods-BIT Reminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIT Reminder.release.xcconfig"; path = "Target Support Files/Pods-BIT Reminder/Pods-BIT Reminder.release.xcconfig"; sourceTree = "<group>"; };
 		7B43CDD8A64CF72BA1F51449 /* Pods-BIT Reminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIT Reminder.debug.xcconfig"; path = "Target Support Files/Pods-BIT Reminder/Pods-BIT Reminder.debug.xcconfig"; sourceTree = "<group>"; };
 		8D06A3032BBFD5C3006613C9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		8D19ED192B67F42D00F32B97 /* EmailAndPasswordValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAndPasswordValidation.swift; sourceTree = "<group>"; };
+		8D2373222BEA35BA001E74BF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		8D2373242BEA3842001E74BF /* CustomHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHostingController.swift; sourceTree = "<group>"; };
+		8D2373262BEA388E001E74BF /* SwiftUIBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIBridge.swift; sourceTree = "<group>"; };
+		8D2373282BEB7856001E74BF /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		8D32EA982AB424E30080CB5E /* AlbumsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewCell.swift; sourceTree = "<group>"; };
 		8D32EA9A2AB424E70080CB5E /* AlbumsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumsTableViewCell.xib; sourceTree = "<group>"; };
 		8D32EA9B2AB4252F0080CB5E /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
@@ -197,6 +223,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		217456C82BF5FD2600A7E68A /* SwiftUICustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				217456C92BF5FD4800A7E68A /* BaseCustomTextFieldView.swift */,
+				217456CB2BF5FF3500A7E68A /* BaseTextFieldView.swift */,
+				217456CD2BF5FFF700A7E68A /* SecureCustomTextFieldView.swift */,
+				217456CF2BF6006400A7E68A /* BaseSecureTextFieldView.swift */,
+				217456D12BF600D000A7E68A /* SecuredEyeButtonView.swift */,
+			);
+			path = SwiftUICustomViews;
+			sourceTree = "<group>";
+		};
+		217456D32BFB575F00A7E68A /* ChangePasswordMVP */ = {
+			isa = PBXGroup;
+			children = (
+				217456D42BFB57D900A7E68A /* ChangePasswordView.swift */,
+				217456D62BFB57E600A7E68A /* ChangePasswordViewModel.swift */,
+			);
+			path = ChangePasswordMVP;
+			sourceTree = "<group>";
+		};
+		8D2373212BEA358A001E74BF /* ProfileMVP */ = {
+			isa = PBXGroup;
+			children = (
+				8D2373222BEA35BA001E74BF /* ProfileView.swift */,
+				8D2373282BEB7856001E74BF /* ProfileViewModel.swift */,
+			);
+			path = ProfileMVP;
+			sourceTree = "<group>";
+		};
 		8D32EA972AB424BA0080CB5E /* AlbumsTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +344,10 @@
 				8DBAA5552AB0407C0054A5FF /* UserDefaultsHelper.swift */,
 				8DBAA55E2AB1DDEB0054A5FF /* StringHelper.swift */,
 				8D19ED192B67F42D00F32B97 /* EmailAndPasswordValidation.swift */,
+				8D2373242BEA3842001E74BF /* CustomHostingController.swift */,
+				2196DDB42BF21912007F81C1 /* AvatarImage.swift */,
+				217456D82BFCF61F00A7E68A /* PasswordErrorType.swift */,
+				8D2373262BEA388E001E74BF /* SwiftUIBridge.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -314,6 +374,7 @@
 		8D6B80B22AA78B08009DF810 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				217456C82BF5FD2600A7E68A /* SwiftUICustomViews */,
 				8DABAFFF2B56C71C00155B0D /* CustomTextFieldViews */,
 				8DABAFFC2B56C30900155B0D /* Custom Labels */,
 				8D9B9A022B4FDE38003EEC9B /* CustomDatePicker */,
@@ -328,6 +389,8 @@
 		8D6B80B32AA78B17009DF810 /* MVPGroups */ = {
 			isa = PBXGroup;
 			children = (
+				217456D32BFB575F00A7E68A /* ChangePasswordMVP */,
+				8D2373212BEA358A001E74BF /* ProfileMVP */,
 				8D8DE38B2AB949880063E62C /* FavoriteLocationsMVP */,
 				8D8DE3822AB87AD70063E62C /* ImageDetailsMVP */,
 				8D8DE3732AB46A8B0063E62C /* AlbumDetailsMVP */,
@@ -785,12 +848,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				217456CE2BF5FFF700A7E68A /* SecureCustomTextFieldView.swift in Sources */,
 				8DBAA5662AB1FD510054A5FF /* SettingsView.swift in Sources */,
+				217456CC2BF5FF3500A7E68A /* BaseTextFieldView.swift in Sources */,
 				8DBAA5542AB03BA40054A5FF /* UIVewController+Alerts.swift in Sources */,
+				8D2373272BEA388E001E74BF /* SwiftUIBridge.swift in Sources */,
 				8DBAA5522AAEF2AB0054A5FF /* BaseNavigationController.swift in Sources */,
 				8DABAFFB2B5572EF00155B0D /* CustomCalloutView.swift in Sources */,
 				8DBAA5802AB30D6E0054A5FF /* AlbumsViewController.swift in Sources */,
 				8D6B80C92AA861A5009DF810 /* Fonts.swift in Sources */,
+				8D2373232BEA35BA001E74BF /* ProfileView.swift in Sources */,
 				8DABB0052B56CE7B00155B0D /* SecureTextField.swift in Sources */,
 				8D95137B2AAB090500A30E9B /* RegistrationViewController.swift in Sources */,
 				8D8DE3842AB87AF20063E62C /* ImageDetailsViewController.swift in Sources */,
@@ -802,10 +869,13 @@
 				8D32EA9C2AB4252F0080CB5E /* Album.swift in Sources */,
 				8DBAA5862AB30F580054A5FF /* MapViewController.swift in Sources */,
 				8D40CAB82ABB06140039AB5B /* PasswordTextField.swift in Sources */,
+				217456D22BF600D000A7E68A /* SecuredEyeButtonView.swift in Sources */,
+				217456D92BFCF61F00A7E68A /* PasswordErrorType.swift in Sources */,
 				8DBAA5842AB30D920054A5FF /* AlbumsViewPresenter.swift in Sources */,
 				8D6B80D92AA885E0009DF810 /* AuthentificationFlowController.swift in Sources */,
 				8DBAA5822AB30D7D0054A5FF /* AlbumsView.swift in Sources */,
 				8DBAA56C2AB204FF0054A5FF /* ReminderTableViewCell.swift in Sources */,
+				217456D72BFB57E600A7E68A /* ChangePasswordViewModel.swift in Sources */,
 				8D6B80C72AA861A5009DF810 /* StoryboardSegues.swift in Sources */,
 				8D8DE38F2AB949BD0063E62C /* FavoriteLocationsView.swift in Sources */,
 				8D8DE37D2AB841E10063E62C /* AlbumPhotoCollectionViewCell.swift in Sources */,
@@ -816,8 +886,10 @@
 				8D8DE3952AB94DAA0063E62C /* FavoriteLocationsTableViewCell.swift in Sources */,
 				8DBAA5752AB2AA720054A5FF /* SettingsModel.swift in Sources */,
 				8D40CAC02ABB9F1E0039AB5B /* PrivacyPolicyViewController.swift in Sources */,
+				217456CA2BF5FD4800A7E68A /* BaseCustomTextFieldView.swift in Sources */,
 				8D9513722AAA186800A30E9B /* HomeViewPresenter.swift in Sources */,
 				8D8DE3862AB87B250063E62C /* ImageDetailsView.swift in Sources */,
+				217456D02BF6006400A7E68A /* BaseSecureTextFieldView.swift in Sources */,
 				8DBAA58A2AB30F790054A5FF /* MapViewPresenter.swift in Sources */,
 				8D32EA992AB424E30080CB5E /* AlbumsTableViewCell.swift in Sources */,
 				8D95137F2AAB092100A30E9B /* RegistrationPresenter.swift in Sources */,
@@ -838,12 +910,16 @@
 				8DBAA5722AB2A80A0054A5FF /* SettingsTableViewCell.swift in Sources */,
 				8DBAA55D2AB1DDA70054A5FF /* UserModel.swift in Sources */,
 				8D6B80D72AA885A5009DF810 /* FlowController.swift in Sources */,
+				217456D52BFB57D900A7E68A /* ChangePasswordView.swift in Sources */,
 				8D6B80C62AA861A5009DF810 /* Assets.swift in Sources */,
 				8D9B9A062B4FDE9F003EEC9B /* BaseTextField.swift in Sources */,
 				8DBAA57C2AB2AF950054A5FF /* AddNewReminderViewPresenter.swift in Sources */,
+				2196DDB52BF21912007F81C1 /* AvatarImage.swift in Sources */,
 				8D8DE3802AB85C0F0063E62C /* UIImageView+Image.swift in Sources */,
 				8DBAA5612AB1F5AA0054A5FF /* Reminder.swift in Sources */,
 				8D95136E2AAA184E00A30E9B /* HomeViewController.swift in Sources */,
+				8D2373252BEA3842001E74BF /* CustomHostingController.swift in Sources */,
+				8D2373292BEB7856001E74BF /* ProfileViewModel.swift in Sources */,
 				8D9513812AAB309A00A30E9B /* BaseAPI.swift in Sources */,
 				8DBAA5592AB19EEC0054A5FF /* TabBarController.swift in Sources */,
 				8DBAA5882AB30F650054A5FF /* MapView.swift in Sources */,
@@ -1015,6 +1091,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Authentification;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1055,6 +1132,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Authentification;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

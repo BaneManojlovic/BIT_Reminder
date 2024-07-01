@@ -141,3 +141,21 @@
 "label_description" = "Description:";
 "label_reminder_importance" = "Reminder importance:";
 "label_reminder_date" = "Reminder date:";
+
+// MARK: - Change password screen
+
+"title_label_password_no_lenght" = "Password must contain at least eight characters";
+"label_title_error_no_letter_new_password" = "Password must contain at least an uppercased letter";
+"label_title_error_no_number_new_password" = "Password must contain at least a number";
+"label_title_error_no_number_and_letter_new_password" = "Password must contain at least a number and an uppercased letter";
+"label_title_error_no_number_and_length_new_password" = "Password must contain at least a number and eight characters";
+"label_title_error_no_letter_and_length_new_password" = "Password must contain at least an uppercased letter and eight characters";
+"label_title_error_no_all_new_password" = "Password must contain at least a number, an uppercased letter and eight characters";
+"title_label_enter_new_password" = "Enter new password";
+
+//MARK: - Profile screen
+
+"title_label_update_password" = "Update Profile";
+"title_label_delete" = "Delete";
+"title_label_change_password" = "Change Password";
+"title_label_edit_profile" = "Edit Profile";

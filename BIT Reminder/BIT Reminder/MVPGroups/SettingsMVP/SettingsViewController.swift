@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SettingsViewController: BaseNavigationController {
 
@@ -16,6 +17,11 @@ class SettingsViewController: BaseNavigationController {
         loadViewIfNeeded()
         return view as? SettingsView
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +30,7 @@ class SettingsViewController: BaseNavigationController {
         self.setupDelegates()
         self.setupTargets()
         self.presenter.setupSettingsList()
+
     }
 
     private func setupUI() {
@@ -49,12 +56,12 @@ class SettingsViewController: BaseNavigationController {
             self.presenter.logoutUser()
         })
     }
-
-    @objc func deleteUserAccount() {
-        self.showCancelOrYesAlert(message: L10n.labelMessageSureWantDeleteAccount,
-                                  yesHandler: {
-            self.presenter.deleteUser()
-        })
+    
+// MARK: this func is for pushing from UIKit to SwiftUI with animation without unwanted navigation
+    
+    @objc func adaptNavigationViewDelayFromSwiftUI() {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
 }
 
@@ -111,20 +118,19 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         /// return cell
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            guard let user = self.presenter.userDefaults.getUser() else { return }
-            if let name = user.userName {
-                self.showOkAlert(title: name, message: user.userEmail)
-            }
+            let profileView = ProfileView(navigationController: self.navigationController)
+            let hostingController = UIHostingController(rootView: profileView)
+            self.navigationController?.pushViewController(hostingController, animated: true)
+            self.adaptNavigationViewDelayFromSwiftUI()
+            self.tabBarController?.tabBar.isHidden = true
         case 1:
             self.authFlowController.goToPrivacyPolicy()
         case 2:
             self.logout()
-        case 3:
-            self.deleteUserAccount()
         default:
             break
         }
