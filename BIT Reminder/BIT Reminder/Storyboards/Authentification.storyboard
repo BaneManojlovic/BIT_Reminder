@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -779,17 +779,28 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zu3-BQ-5Sc">
+                                                <rect key="frame" x="20" y="490.33333333333337" width="353" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="FQd-s9-ttQ"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button" subtitle=""/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" name="background_blue_color"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="S7B-NQ-bfN" secondAttribute="trailing" constant="8" id="1Rn-3u-JSi"/>
+                                            <constraint firstAttribute="trailing" secondItem="Zu3-BQ-5Sc" secondAttribute="trailing" constant="20" id="7Yw-Ro-xN8"/>
                                             <constraint firstItem="S7B-NQ-bfN" firstAttribute="leading" secondItem="7TF-XZ-PUr" secondAttribute="leading" constant="8" id="9T1-rO-wyA"/>
                                             <constraint firstAttribute="bottom" secondItem="7gy-Fe-JSF" secondAttribute="bottom" id="BOL-J6-XcC"/>
                                             <constraint firstAttribute="trailing" secondItem="7gy-Fe-JSF" secondAttribute="trailing" constant="50" id="J75-Gh-hgI"/>
+                                            <constraint firstItem="Zu3-BQ-5Sc" firstAttribute="leading" secondItem="7TF-XZ-PUr" secondAttribute="leading" constant="20" id="XCY-47-6YT"/>
                                             <constraint firstItem="cRI-Dc-EIM" firstAttribute="leading" secondItem="7TF-XZ-PUr" secondAttribute="leading" constant="16" id="Xi9-SZ-Tga"/>
                                             <constraint firstItem="S7B-NQ-bfN" firstAttribute="top" secondItem="cRI-Dc-EIM" secondAttribute="bottom" constant="20" id="bbL-Ng-3fQ"/>
                                             <constraint firstItem="cRI-Dc-EIM" firstAttribute="centerY" secondItem="7TF-XZ-PUr" secondAttribute="centerY" id="frl-VK-G2p"/>
                                             <constraint firstItem="7gy-Fe-JSF" firstAttribute="leading" secondItem="7TF-XZ-PUr" secondAttribute="leading" constant="50" id="gAv-yu-cnO"/>
+                                            <constraint firstItem="Zu3-BQ-5Sc" firstAttribute="top" secondItem="S7B-NQ-bfN" secondAttribute="bottom" constant="10" id="kWV-Ij-TQe"/>
                                             <constraint firstItem="cRI-Dc-EIM" firstAttribute="top" secondItem="R7b-nI-tRJ" secondAttribute="bottom" constant="40" id="lvo-H2-UuA"/>
                                             <constraint firstAttribute="trailing" secondItem="R7b-nI-tRJ" secondAttribute="trailing" constant="8" id="o8y-AX-d7n"/>
                                             <constraint firstItem="R7b-nI-tRJ" firstAttribute="leading" secondItem="7TF-XZ-PUr" secondAttribute="leading" constant="8" id="tdk-IA-NZG"/>
@@ -822,6 +833,7 @@
                             <outlet property="loginButton" destination="7gy-Fe-JSF" id="fcB-q8-Og3"/>
                             <outlet property="passwordTextField" destination="LoU-lu-ODB" id="1F0-3C-Iud"/>
                             <outlet property="registerNewUserButton" destination="S7B-NQ-bfN" id="6On-fh-sPI"/>
+                            <outlet property="resetPasswordButton" destination="Zu3-BQ-5Sc" id="gd0-ab-9Ji"/>
                             <outlet property="screenTitleLabel" destination="R7b-nI-tRJ" id="gQY-zZ-fRb"/>
                         </connections>
                     </view>

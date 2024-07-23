@@ -19,7 +19,7 @@ class AuthManager {
     /// unique api key from supabase
     static let apiKey = Constants.baseApiKey
 
-    let client = SupabaseClient(supabaseURL: projectUrl, supabaseKey: apiKey)
+    var client = SupabaseClient(supabaseURL: projectUrl, supabaseKey: apiKey)
 
     init() {}
 
