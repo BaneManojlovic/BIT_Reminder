@@ -69,10 +69,10 @@ class RegistrationView: IQPreviousNextView, UITextFieldDelegate {
     }
     private func setupButtons() {
         /// setup for login button
-        self.registerButton.backgroundColor = Asset.buttonBlueColor.color
+        self.registerButton.backgroundColor = .orange
         self.registerButton.setTitle(L10n.titleLabelRegister, for: .normal)
         self.registerButton.tintColor = .white
-        self.registerButton.layer.cornerRadius = 10
+        self.registerButton.layer.cornerRadius = 25
         self.registerButton.isEnabled = false
     }
     

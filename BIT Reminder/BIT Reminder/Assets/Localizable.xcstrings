@@ -3253,6 +3253,35 @@
           }
         }
       }
+    },
+    "title_lable_reset_password" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reset password"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reimposta password"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resetujte lozinku"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ресетујте лозинку"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

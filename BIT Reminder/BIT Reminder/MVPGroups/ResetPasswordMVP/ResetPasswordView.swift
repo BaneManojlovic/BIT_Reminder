@@ -32,29 +32,28 @@ struct ResetPasswordView: View {
                 )
                 .foregroundStyle(.white)
                 .disabled(disableTextField)
-
+                
                 VStack(alignment: .center, spacing: 20) {
                     Button(L10n.titleLableResetPassword) {
                         Task {
                             do {
                                 await resetPasswordViewModel.resetPassword()
-
+                                
                             } catch {
                                 debugPrint("Error initializing user or resetting password: \(error)")
                             }
                         }
                     }
-
-                        .disabled(resetPasswordViewModel.email.isEmpty || resetPasswordViewModel.isFormNotValid)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 60)
-                        .background(Color("darkOrange"))
-                        .clipShape(Capsule())
-                    }
-                    .padding(.horizontal, 20)
-                    .padding(.top, 20)
+                    .disabled(resetPasswordViewModel.email.isEmpty || resetPasswordViewModel.isFormNotValid)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 60)
+                    .background(Color("darkOrange"))
+                    .clipShape(Capsule())
                 }
-                Spacer()
+                .padding(.horizontal, 20)
+                .padding(.top, 20)
+            }
+            Spacer()
 
             }
               .alert(L10n.titleAlertResetLinkSent, isPresented: $resetPasswordViewModel.showingAlert) {

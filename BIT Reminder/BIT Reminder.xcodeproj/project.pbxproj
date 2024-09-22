@@ -1103,7 +1103,7 @@
 				CODE_SIGN_ENTITLEMENTS = "BIT Reminder/BIT Reminder.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = WJRVW4JJ9W;
+				DEVELOPMENT_TEAM = 5M4MZAC8G6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BIT Reminder/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "BIT Reminder";
@@ -1144,7 +1144,7 @@
 				CODE_SIGN_ENTITLEMENTS = "BIT Reminder/BIT Reminder.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = WJRVW4JJ9W;
+				DEVELOPMENT_TEAM = 5M4MZAC8G6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BIT Reminder/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "BIT Reminder";

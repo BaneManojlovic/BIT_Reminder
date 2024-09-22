@@ -37,7 +37,7 @@ struct ChangePasswordView: View {
 //                }
             }
             .frame(maxWidth: .infinity)
-            .frame(height: 60)
+            .frame(height: 50)
             .disabled(changePasswordVC.password.isEmpty || changePasswordVC.isFormNotValid)
             .disabled($changePasswordVC.isFormNotValid.wrappedValue)
             .background(Color("darkOrange"))

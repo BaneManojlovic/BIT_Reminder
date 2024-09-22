@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct BaseSecureTextFieldView: View {
-    
+
     var placeholderText: String
     var backgroundColor: Color
     @Binding var text: String
-    
+
     var body: some View {
         SecureField(placeholderText, text: $text)
             .frame(height: 60)

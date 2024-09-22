@@ -9,9 +9,8 @@ import Foundation
 import SwiftUI
 import Combine
 
-
 struct SecureCustomTextFieldView: View {
-    
+
     var text: Binding<String>
     var placeholderText: String
     @Binding var isFormNotValid: Bool
@@ -20,7 +19,7 @@ struct SecureCustomTextFieldView: View {
     @State private var isSecured: Bool = true
     @State private var errorMessage: String = ""
     var fieldContentType: ValidationError
-    
+
     var body: some View {
         HStack {
             Spacer()
@@ -37,14 +36,14 @@ struct SecureCustomTextFieldView: View {
                                 .foregroundStyle(.white)
                         } else {
                             BaseTextFieldView(placeholderText: placeholderText,
-                                              backgroundColor: Color ("textfield_blue_color"),
+                                              backgroundColor: Color("textfield_blue_color"),
                                               text: text)
                                 .foregroundStyle(.white)
                         }
                     }
                     .overlay(RoundedRectangle(cornerRadius: 16).stroke(isInputValid[fieldContentType] == true || text.wrappedValue.isEmpty ? Color.clear : Color.red, lineWidth: 2))
                     .onChange(of: text.wrappedValue) { newValue in
-                        
+
                         switch fieldContentType {
                         case .passwordInvalid:
                             let result =  StringHelper.validatePassword(text: newValue)
@@ -56,7 +55,7 @@ struct SecureCustomTextFieldView: View {
                             } else {
                                 isInputValid[fieldContentType] = false
                             }
-                            
+
                         default:
                             if newValue.isEmpty {
                                 isInputValid[fieldContentType] = false
@@ -64,7 +63,6 @@ struct SecureCustomTextFieldView: View {
                                 isInputValid[fieldContentType] = true
                             }
                         }
-                        
                         isFormNotValid = isInputValid.values.contains(false)
                     }
                     SecuredEyeButtonView(isSecured: $isSecured)

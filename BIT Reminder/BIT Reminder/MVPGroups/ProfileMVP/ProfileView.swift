@@ -81,7 +81,6 @@ struct ProfileView: View {
                     .background(Color("textfield_blue_color"))
                     .foregroundColor(Color.white)
                     .clipShape(Capsule())
-                    .padding(.horizontal, 30)
 
                     Button(L10n.labelDeleteAccount) {
                         activeAlert = .deleteConfirmation
@@ -91,10 +90,6 @@ struct ProfileView: View {
                     .background(Color("textfield_blue_color"))
                     .foregroundColor(Color.red)
                     .clipShape(Capsule())
-                    .padding(.horizontal, 30)
-
-                    Spacer()
-                        .frame(height: 40)
 
                     VStack {
                         if isEditindModeOn {
@@ -107,7 +102,6 @@ struct ProfileView: View {
                             .frame(height: 50)
                             .background(Color("darkOrange"))
                             .clipShape(Capsule())
-                            .padding(.horizontal, 30)
 
                             if isLoading {
                                 ProgressView()
@@ -122,7 +116,6 @@ struct ProfileView: View {
                         activeAlert = .profileUpdate
                     }
                 }
-
                 .alert(item: $activeAlert) { alertType in
                     switch alertType {
                     case .deleteConfirmation:
