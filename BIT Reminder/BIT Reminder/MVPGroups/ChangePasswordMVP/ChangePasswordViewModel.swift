@@ -15,14 +15,26 @@ class ChangePasswordViewModel: ObservableObject {
     @Published var password = ""
     @Published var isFormNotValid = true
     @Published var profileValidation: [ValidationError: Bool] = [.passwordInvalid: false]
+
     var authManager = AuthManager()
     let userDefaults = UserDefaultsHelper()
-    
+    var accessToken: String?
+    var refreshToken: String?
+
     func updatePassword() {
+        guard let accessToken = userDefaults.getAccessToken(), !accessToken.isEmpty else {
+            KRProgressHUD.showError(withMessage: L10n.alertMessageSessionNotFound)
+                   return
+              }
         KRProgressHUD.show()
+
         Task {
             do {
-                try await authManager.client.auth.update(user: UserAttributes(password: password))
+                // Update the Supabase session with the access and refresh token
+
+                try await authManager.client.auth.setSession(accessToken: accessToken, refreshToken: refreshToken ?? "")
+
+                try await authManager.client.auth.update(user: UserAttributes(password: password, emailChangeToken: accessToken))
                 DispatchQueue.main.asyncAfter(deadline: .now()+2) {
                     KRProgressHUD.dismiss()
                     self.logoutUser()
@@ -33,7 +45,7 @@ class ChangePasswordViewModel: ObservableObject {
             }
         }
     }
-    
+
     func logoutUser() {
         Task {
             do {

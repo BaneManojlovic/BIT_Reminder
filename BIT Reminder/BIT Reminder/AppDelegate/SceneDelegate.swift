@@ -6,10 +6,60 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var userDefaultsHelper = UserDefaultsHelper()
+    
+    lazy var deeplinkCoordinator: DeeplinkCoordinatorProtocol = {
+           return DeeplinkCoordinator(handlers: [
+               ResetPasswordDeeplinkHandler(rootViewController: self.rootViewController)
+           ])
+       }()
+
+       var rootViewController: UIViewController? {
+           return window?.rootViewController
+       }
+
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        guard let firstUrl = URLContexts.first?.url else {
+            return
+        }
+        // Extract fragment and create a dictionary of query items
+        if let fragment = URLComponents(url: firstUrl, resolvingAgainstBaseURL: false)?.fragment {
+            let queryItems = fragment
+                .split(separator: "&")
+                .map { $0.split(separator: "=") }
+                .reduce(into: [String: String]()) { dict, pair in
+                    if pair.count == 2 {
+                        dict[String(pair[0])] = String(pair[1])
+                    }
+                }
+
+            let token = queryItems["access_token"]
+            let refreshToken = queryItems["refresh_token"]
+            
+            if let token = token {
+                debugPrint("Access Token: \(token)")
+                userDefaultsHelper.saveAccessToken(token) // save access token to user defaults
+            } else {
+                debugPrint("Access Token is nil")
+            }
+            
+            if let refreshToken = refreshToken {
+                debugPrint("Refresh Token: \(refreshToken)")
+                userDefaultsHelper.saveRefreshToken(refreshToken) // save refresh token to user defaults
+            } else {
+                debugPrint("Refresh Token is nil")
+            }
+        } else {
+            debugPrint("No fragment found in the URL")
+        }
+        
+        deeplinkCoordinator.handleURL(firstUrl)
+    }
 
     func scene(_ scene: UIScene,
                willConnectTo session: UISceneSession,
@@ -20,12 +70,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session
         // are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
 
         let appDel = (UIApplication.shared.delegate as? AppDelegate)
         appDel?.window = window
     }
-
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.

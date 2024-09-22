@@ -6,18 +6,32 @@
 //
 
 import UIKit
+import SwiftUI
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    lazy var deeplinkCoordinator: DeeplinkCoordinatorProtocol = {
+         return DeeplinkCoordinator(handlers: [
+             ResetPasswordDeeplinkHandler(rootViewController: self.rootViewController)
+         ])
+     }()
+    var rootViewController: UIViewController? {
+        return window?.rootViewController
+    }
+
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
-
+    
+    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return deeplinkCoordinator.handleURL(url)
+    }
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication,

@@ -11,7 +11,6 @@ import Supabase
 import KRProgressHUD
 
 struct ProfileView: View {
-    
     @Environment(\.editMode) private var editMode
 
     weak var navigationController: UINavigationController?
@@ -60,9 +59,10 @@ struct ProfileView: View {
                     if isEditindModeOn {
                         PhotosPicker(selection: $imageSelection, matching: .images) {
                             Image(systemName: "photo.badge.plus")
-                                .font(.system(size: 30))
+                                .frame(width: 50, height: 50)
+                                .background(Color("textfield_blue_color"))
                                 .foregroundColor(.white)
-                                .blur(radius: 1)
+                                .clipShape(Circle())
                         }
                     }
                 }

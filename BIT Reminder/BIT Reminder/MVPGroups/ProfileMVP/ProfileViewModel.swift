@@ -18,9 +18,7 @@ class ProfileViewModel: ObservableObject {
     @Published var avatarImage: AvatarImage?
     @Published var isFormNotValid = true
     @Published var profileValidation: [ValidationError: Bool] = [.nameInvalid: false, .emailInvalid: false]
-    init() {
 
-    }
     var isLoading = false
     var authManager = AuthManager()
     let userDefaults = UserDefaultsHelper()

@@ -22,6 +22,8 @@ internal enum L10n {
   internal static let alertButtonTitleYes = L10n.tr("Localizable", "alert_button_title_yes", fallback: "Yes")
   /// It seems there is no Internet connection. Please check your settings and try again.
   internal static let alertMessageNoInternet = L10n.tr("Localizable", "alert_message_no_internet", fallback: "It seems there is no Internet connection. Please check your settings and try again.")
+  /// Session not found
+  internal static let alertMessageSessionNotFound = L10n.tr("Localizable", "alert_message_session_not_found", fallback: "Session not found")
   /// Alert
   internal static let alertTitleAlert = L10n.tr("Localizable", "alert_title_alert", fallback: "Alert")
   /// Localizable.strings
@@ -231,6 +233,10 @@ internal enum L10n {
   internal static let titleLabelSettings = L10n.tr("Localizable", "title_label_settings", fallback: "Settings")
   /// Update Profile
   internal static let titleLabelUpdatePassword = L10n.tr("Localizable", "title_label_update_password", fallback: "Update Profile")
+  /// Reset password
+  internal static let titleLableResetPassword = L10n.tr("Localizable", "title_lable_reset_password", fallback: "Reset password")
+  /// Enter your email
+  internal static let titlePlaceholderEnterYourEmail = L10n.tr("Localizable", "title_placeholder_enter_your_email", fallback: "Enter your email")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

@@ -18,6 +18,7 @@
 "alert_title_alert" = "Alert";
 "alert_title_no_internet" = "No Internet";
 "alert_message_no_internet" = "It seems there is no Internet connection. Please check your settings and try again.";
+"alert_message_session_not_found" = "Session not found";
 
 // MARK: - Tab Bar
 
@@ -159,3 +160,8 @@
 "title_label_delete" = "Delete";
 "title_label_change_password" = "Change Password";
 "title_label_edit_profile" = "Edit Profile";
+
+//MARK: - Reset password screen
+
+"title_placeholder_enter_your_email" = "Enter your email";
+"title_lable_reset_password" = "Reset password";

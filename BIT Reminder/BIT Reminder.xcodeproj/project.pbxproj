@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		210347362C4A796500A6E39B /* DeeplinkHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210347352C4A796500A6E39B /* DeeplinkHandlerProtocol.swift */; };
+		210347382C4A79C600A6E39B /* ResetPasswordDeeplinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210347372C4A79C600A6E39B /* ResetPasswordDeeplinkHandler.swift */; };
 		217456CA2BF5FD4800A7E68A /* BaseCustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217456C92BF5FD4800A7E68A /* BaseCustomTextFieldView.swift */; };
 		217456CC2BF5FF3500A7E68A /* BaseTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217456CB2BF5FF3500A7E68A /* BaseTextFieldView.swift */; };
 		217456CE2BF5FFF700A7E68A /* SecureCustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217456CD2BF5FFF700A7E68A /* SecureCustomTextFieldView.swift */; };
@@ -16,6 +18,8 @@
 		217456D72BFB57E600A7E68A /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217456D62BFB57E600A7E68A /* ChangePasswordViewModel.swift */; };
 		217456D92BFCF61F00A7E68A /* PasswordErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217456D82BFCF61F00A7E68A /* PasswordErrorType.swift */; };
 		2196DDB52BF21912007F81C1 /* AvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2196DDB42BF21912007F81C1 /* AvatarImage.swift */; };
+		21F9D28F2C33F2A7009920A1 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F9D28E2C33F2A7009920A1 /* ResetPasswordView.swift */; };
+		21F9D2912C33F2D3009920A1 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F9D2902C33F2D3009920A1 /* ResetPasswordViewModel.swift */; };
 		6F28FBA5FB39873CD08AA695 /* Pods_BIT_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1CD5190B349858D99F73037 /* Pods_BIT_Reminder.framework */; };
 		8D06A3042BBFD5C3006613C9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 8D06A3032BBFD5C3006613C9 /* PrivacyInfo.xcprivacy */; };
 		8D19ED1A2B67F42D00F32B97 /* EmailAndPasswordValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D19ED192B67F42D00F32B97 /* EmailAndPasswordValidation.swift */; };
@@ -107,6 +111,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		210347352C4A796500A6E39B /* DeeplinkHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkHandlerProtocol.swift; sourceTree = "<group>"; };
+		210347372C4A79C600A6E39B /* ResetPasswordDeeplinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordDeeplinkHandler.swift; sourceTree = "<group>"; };
 		217456C92BF5FD4800A7E68A /* BaseCustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCustomTextFieldView.swift; sourceTree = "<group>"; };
 		217456CB2BF5FF3500A7E68A /* BaseTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextFieldView.swift; sourceTree = "<group>"; };
 		217456CD2BF5FFF700A7E68A /* SecureCustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureCustomTextFieldView.swift; sourceTree = "<group>"; };
@@ -116,6 +122,8 @@
 		217456D62BFB57E600A7E68A /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
 		217456D82BFCF61F00A7E68A /* PasswordErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordErrorType.swift; sourceTree = "<group>"; };
 		2196DDB42BF21912007F81C1 /* AvatarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImage.swift; sourceTree = "<group>"; };
+		21F9D28E2C33F2A7009920A1 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		21F9D2902C33F2D3009920A1 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		6F4ED9D45104BC656CBEF8E6 /* Pods-BIT Reminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIT Reminder.release.xcconfig"; path = "Target Support Files/Pods-BIT Reminder/Pods-BIT Reminder.release.xcconfig"; sourceTree = "<group>"; };
 		7B43CDD8A64CF72BA1F51449 /* Pods-BIT Reminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIT Reminder.debug.xcconfig"; path = "Target Support Files/Pods-BIT Reminder/Pods-BIT Reminder.debug.xcconfig"; sourceTree = "<group>"; };
 		8D06A3032BBFD5C3006613C9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
@@ -223,6 +231,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		210347342C4A793800A6E39B /* DeeplinkingHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				210347352C4A796500A6E39B /* DeeplinkHandlerProtocol.swift */,
+				210347372C4A79C600A6E39B /* ResetPasswordDeeplinkHandler.swift */,
+			);
+			path = DeeplinkingHelpers;
+			sourceTree = "<group>";
+		};
 		217456C82BF5FD2600A7E68A /* SwiftUICustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +259,15 @@
 				217456D62BFB57E600A7E68A /* ChangePasswordViewModel.swift */,
 			);
 			path = ChangePasswordMVP;
+			sourceTree = "<group>";
+		};
+		21F9D28D2C33F284009920A1 /* ResetPasswordMVP */ = {
+			isa = PBXGroup;
+			children = (
+				21F9D28E2C33F2A7009920A1 /* ResetPasswordView.swift */,
+				21F9D2902C33F2D3009920A1 /* ResetPasswordViewModel.swift */,
+			);
+			path = ResetPasswordMVP;
 			sourceTree = "<group>";
 		};
 		8D2373212BEA358A001E74BF /* ProfileMVP */ = {
@@ -389,6 +415,7 @@
 		8D6B80B32AA78B17009DF810 /* MVPGroups */ = {
 			isa = PBXGroup;
 			children = (
+				21F9D28D2C33F284009920A1 /* ResetPasswordMVP */,
 				217456D32BFB575F00A7E68A /* ChangePasswordMVP */,
 				8D2373212BEA358A001E74BF /* ProfileMVP */,
 				8D8DE38B2AB949880063E62C /* FavoriteLocationsMVP */,
@@ -463,6 +490,7 @@
 		8D6F5CE92AA3EABF006184CC /* BIT Reminder */ = {
 			isa = PBXGroup;
 			children = (
+				210347342C4A793800A6E39B /* DeeplinkingHelpers */,
 				8D40CABB2ABB21170039AB5B /* BIT Reminder.entitlements */,
 				8D6F5CF82AA3EAC0006184CC /* Info.plist */,
 				8D6B80A62AA78A43009DF810 /* Api */,
@@ -875,6 +903,7 @@
 				8D6B80D92AA885E0009DF810 /* AuthentificationFlowController.swift in Sources */,
 				8DBAA5822AB30D7D0054A5FF /* AlbumsView.swift in Sources */,
 				8DBAA56C2AB204FF0054A5FF /* ReminderTableViewCell.swift in Sources */,
+				21F9D28F2C33F2A7009920A1 /* ResetPasswordView.swift in Sources */,
 				217456D72BFB57E600A7E68A /* ChangePasswordViewModel.swift in Sources */,
 				8D6B80C72AA861A5009DF810 /* StoryboardSegues.swift in Sources */,
 				8D8DE38F2AB949BD0063E62C /* FavoriteLocationsView.swift in Sources */,
@@ -896,9 +925,11 @@
 				8D6B80CE2AA881EC009DF810 /* SplashScreenViewController.swift in Sources */,
 				8DBAA5682AB1FD640054A5FF /* SettingsViewPresenter.swift in Sources */,
 				8D9513702AAA185D00A30E9B /* HomeView.swift in Sources */,
+				21F9D2912C33F2D3009920A1 /* ResetPasswordViewModel.swift in Sources */,
 				8D95137D2AAB091400A30E9B /* RegistrationView.swift in Sources */,
 				8DABB0032B56CCAD00155B0D /* BaseInputTextField.swift in Sources */,
 				8DBAA5562AB0407C0054A5FF /* UserDefaultsHelper.swift in Sources */,
+				210347362C4A796500A6E39B /* DeeplinkHandlerProtocol.swift in Sources */,
 				8D19ED1A2B67F42D00F32B97 /* EmailAndPasswordValidation.swift in Sources */,
 				8D9513782AAAFDC100A30E9B /* LoginViewPresenter.swift in Sources */,
 				8DABB0012B56C72E00155B0D /* EmailTextField.swift in Sources */,
@@ -916,6 +947,7 @@
 				8DBAA57C2AB2AF950054A5FF /* AddNewReminderViewPresenter.swift in Sources */,
 				2196DDB52BF21912007F81C1 /* AvatarImage.swift in Sources */,
 				8D8DE3802AB85C0F0063E62C /* UIImageView+Image.swift in Sources */,
+				210347382C4A79C600A6E39B /* ResetPasswordDeeplinkHandler.swift in Sources */,
 				8DBAA5612AB1F5AA0054A5FF /* Reminder.swift in Sources */,
 				8D95136E2AAA184E00A30E9B /* HomeViewController.swift in Sources */,
 				8D2373252BEA3842001E74BF /* CustomHostingController.swift in Sources */,
