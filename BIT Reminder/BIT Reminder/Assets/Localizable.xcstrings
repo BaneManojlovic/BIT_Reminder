@@ -1,0 +1,3259 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "alert_button_title_cancel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancellare"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otkaži"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Откажи"
+          }
+        }
+      }
+    },
+    "alert_button_title_no" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ne"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не"
+          }
+        }
+      }
+    },
+    "alert_button_title_ok" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ок"
+          }
+        }
+      }
+    },
+    "alert_button_title_ok_uppercased" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ОК"
+          }
+        }
+      }
+    },
+    "alert_button_title_yes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yes"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SÌ"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Da"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Да"
+          }
+        }
+      }
+    },
+    "alert_message_no_internet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "It seems there is no Internet connection. Please check your settings and try again."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sembra che non ci sia connessione Internet. Controlla le impostazioni e riprova."
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Izgleda da nemate internet vezu. Molim proverite u podešavanjima uređaja i probajte ponovo."
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изгледа да немате интернет везу. Молим проверите у подешавањима уређаја и пробајте поново."
+          }
+        }
+      }
+    },
+    "alert_title_alert" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alert"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Attenzione"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pažnja"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пажња"
+          }
+        }
+      }
+    },
+    "alert_title_error" : {
+      "comment" : "MARK: - Alerts",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Errore"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Greška"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Грешка"
+          }
+        }
+      }
+    },
+    "alert_title_no_internet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Internet"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessuna connessione Internet"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nema interneta"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нема интернета"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancellare"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otkaži"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Откажи"
+          }
+        }
+      }
+    },
+    "Done" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fatto"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gotovo"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Готово"
+          }
+        }
+      }
+    },
+    "label_add" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungere"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodaj"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Додај"
+          }
+        }
+      }
+    },
+    "label_atm" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ATM"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "bancomat"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "bankomat"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "банкомат"
+          }
+        }
+      }
+    },
+    "label_bakery" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "bakery"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "panetteria"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pekara"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "пекара"
+          }
+        }
+      }
+    },
+    "label_bank" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "bank"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "banca"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "banka"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "банка"
+          }
+        }
+      }
+    },
+    "label_barbaque" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "barbaque shop"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "negozio di barbecue"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "roštilj"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "роштиљ"
+          }
+        }
+      }
+    },
+    "label_coffy_shop" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "coffy shop"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "negozio di caffè"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kafe bar"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "кафе бар"
+          }
+        }
+      }
+    },
+    "label_date" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "date"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "data"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "datum"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "датум"
+          }
+        }
+      }
+    },
+    "label_delete_account" : {
+      "comment" : "MARK: - Settings screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete account"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancella conto"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obirišite profil"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Обришите профил"
+          }
+        }
+      }
+    },
+    "label_description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description:"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descrizione:"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opis:"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Опис:"
+          }
+        }
+      }
+    },
+    "label_email" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "email"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "l'email"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "email"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "емаил"
+          }
+        }
+      }
+    },
+    "label_error_message_email_cannot_be_empty" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email cannot be empty"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'email non può essere vuota"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email ne mode biti prazan"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Емаил не може бити празан"
+          }
+        }
+      }
+    },
+    "label_error_message_email_invalid_format" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email is in invalid format"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'email non è in formato valido"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email je u pogrešnom formatu"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Емаил је у погрешном формату"
+          }
+        }
+      }
+    },
+    "label_error_message_name_cannot_be_empty" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name cannot be empty"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il nome non può essere vuoto"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ime ne može biti prazno"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Име не мозе бити празно"
+          }
+        }
+      }
+    },
+    "label_error_message_name_invalid_format" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name is in invalid format"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il nome è in un formato non valido"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ime je u pogrešnom formatu"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Име је у погрешном формату"
+          }
+        }
+      }
+    },
+    "label_error_message_passw_cannot_be_empty" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password cannot be empty"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La password non può essere vuota"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lozinka ne može biti prazna"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лозинка не може бити празна"
+          }
+        }
+      }
+    },
+    "label_error_message_passw_invalid_format" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password is in invalid format"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La password è in un formato non valido"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lozinka je u pogrešnom formatu"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лозинка је у погрешном формату"
+          }
+        }
+      }
+    },
+    "label_error_message_passwords_dont_match" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password and Repeated Password don't match."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La password e la password ripetuta non corrispondono."
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lozinka i ponovljena lozinka se ne poklapaju"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лозинка и поновљена лозинка се не поклапају"
+          }
+        }
+      }
+    },
+    "label_error_message_repeated_passw_cannot_be_empty." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repeated Password cannot be empty"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La password ripetuta non può essere vuota"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ponovljena lozinka ne može biti prazna"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поновљена лозинка не може бити празна"
+          }
+        }
+      }
+    },
+    "label_error_message_repeated_passw_invalid_format" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repeated Password is in invalid format"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La password ripetuta è in un formato non valido"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ponovljena lozinka je u pogrešnom formatu"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поновљена лозинка је у погрешном формату"
+          }
+        }
+      }
+    },
+    "label_error_title_empty" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Title cannot be empty!"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il titolo non può essere vuoto!"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naslov ne može biti prazan"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Наслов не може бити празан!"
+          }
+        }
+      }
+    },
+    "label_filter_date" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter by date"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtra per data"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtriraj po datumu"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Филтрирај по датуму"
+          }
+        }
+      }
+    },
+    "label_filter_importance" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter by importance"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtra per importanza"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtriraj po važnosti"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Филтрирај по важности"
+          }
+        }
+      }
+    },
+    "label_gas_station" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "gas station"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "stazione di servizio"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "benzinska pumpa"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "бензинска пумпа"
+          }
+        }
+      }
+    },
+    "label_hospital" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hospital"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ospedale"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "bolnica"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "болница"
+          }
+        }
+      }
+    },
+    "label_kindergarden" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kindergarden"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scuola materna"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vrtić"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "вртић"
+          }
+        }
+      }
+    },
+    "label_library" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "library"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "biblioteca"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "biblioteka"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "библиотека"
+          }
+        }
+      }
+    },
+    "label_market" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "market"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mercato"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pijaca"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "пијаца"
+          }
+        }
+      }
+    },
+    "label_message_album_deleted" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Album successfully deleted!"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Album eliminato con successo!"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Album je uspešno dodat"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Албум је успешно додат"
+          }
+        }
+      }
+    },
+    "label_message_album_is_empty" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Album is empty"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'album è vuoto"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Album je prazan"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Албум је празан"
+          }
+        }
+      }
+    },
+    "label_message_choose_photo_from_library" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose photo from library"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scegli la foto dalla libreria"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Izaberite sliku iz biblioteke"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изаберите слику из библиотеке"
+          }
+        }
+      }
+    },
+    "label_message_create_new_album" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create new album"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crea un nuovo album"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Napravite novi album"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Направите нови албум"
+          }
+        }
+      }
+    },
+    "label_message_enter_album_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter album title:"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inserisci il titolo dell'album:"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unesite naslov albuma:"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Унесите наслов албума:"
+          }
+        }
+      }
+    },
+    "label_message_error_while_register" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error while Register new user"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Errore durante la registrazione del nuovo utente"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Greška pri registraciji korisnika"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Грешка при регистрацији корисника"
+          }
+        }
+      }
+    },
+    "label_message_image_deleted" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Image deleted"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Immagine cancellata"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slika je obrisana"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slika je obrisana"
+          }
+        }
+      }
+    },
+    "label_message_login_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error while Login"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Errore durante l'accesso"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Greška prilikom prijave"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Грешка приликом пријаве"
+          }
+        }
+      }
+    },
+    "label_message_my_location" : {
+      "comment" : "MARK: - Map screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My current location"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La mia posizione attuale"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moja trenutna lokacija"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moja trenutna lokacija"
+          }
+        }
+      }
+    },
+    "label_message_new_reminder_added" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New Reminder successfully added!"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuovo promemoria aggiunto con successo!"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novi podsetnik je uspešno dodat!"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нови подсетник је успешно додат!"
+          }
+        }
+      }
+    },
+    "label_message_no_albums" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Album"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niente album"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nema Albuma"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нема Албума"
+          }
+        }
+      }
+    },
+    "label_message_no_reminders" : {
+      "comment" : "MARK: - Home screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Reminders"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessun promemoria"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nema Podsetnika"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нема Подсетника"
+          }
+        }
+      }
+    },
+    "label_message_register_new_user" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Register new user"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registra un nuovo utente"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registrujte novog korisnika"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Региструјте новог корисника"
+          }
+        }
+      }
+    },
+    "label_message_set_reminder_date" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set Reminder date:"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imposta la data del promemoria:"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unesite datum podsetinka:"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Унесите датум подсетника:"
+          }
+        }
+      }
+    },
+    "label_message_set_reminder_description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set Reminder description:"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imposta la descrizione del promemoria:"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unesite opis podsetnika:"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Унесите опис подсетника:"
+          }
+        }
+      }
+    },
+    "label_message_set_reminder_importance" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set Reminder importance:"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imposta l'importanza del promemoria:"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unesite važnost podsetnika:"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Унесите важност подсетника:"
+          }
+        }
+      }
+    },
+    "label_message_set_reminder_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set Reminder title:"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imposta il titolo del promemoria:"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unesite naslov podsetnika:"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Унесите наслов подсетника:"
+          }
+        }
+      }
+    },
+    "label_message_sure_delete_album" : {
+      "comment" : "MARK: - Album Details screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure that you want to delete this Album?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sei sicuro di voler eliminare questo album?"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Da li ste sigurni da želite da obrišete ovaj album?"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Да ли сте сигурни да желите да обришете овај албум?"
+          }
+        }
+      }
+    },
+    "label_message_sure_delete_image" : {
+      "comment" : "MARK: - Image Details screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure that you want to delete image?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sei sicuro di voler eliminare l'immagine?"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Da li ste sigurni da želite da obrišete sliku?"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Да ли сте сигурни да желите да обришете слику?"
+          }
+        }
+      }
+    },
+    "label_message_sure_want_delete_account" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to delete user account?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sei sicuro di voler eliminare l'account utente?"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Da li ste sigurni da želite da obrišete korisnički profil?"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Да ли сте сигурни да желите да обришете кориснички профил?"
+          }
+        }
+      }
+    },
+    "label_message_sure_want_delete_reminder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure that you want to delete this Reminder?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sei sicuro di voler eliminare questo promemoria?"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Da li ste sigurni da želite da obrišete ovaj podsetnik?"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Да ли сте сигурни да желите да обришете овај подсетник?"
+          }
+        }
+      }
+    },
+    "label_message_sure_want_logout" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to logout?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sei sicuro di voler effettuare il log out?"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Da li ste sigurni da želite da se odjavite?"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Да ли сте сигурни да желите да се одјавите?"
+          }
+        }
+      }
+    },
+    "label_message_take_photo_via_camera" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Take photo via camera"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scatta una foto tramite la fotocamera"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uslikajte sliku pomoću kamere."
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Усликајте слику помоћу камере."
+          }
+        }
+      }
+    },
+    "label_message_title_mandatory" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Title is mandatory!"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il titolo è obbligatorio!"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naslov je obavezan!"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Наслов је обавезан!"
+          }
+        }
+      }
+    },
+    "label_message_upload_new_photo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upload new photo:"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carica una nuova foto:"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ubacite novu fotografiju:"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Убаците нову фотографију:"
+          }
+        }
+      }
+    },
+    "label_message_you_have_choosen" : {
+      "comment" : "MARK: - Favorite Locations screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You have choosen:"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hai scelto:"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odabrali ste:"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Одабрали сте:"
+          }
+        }
+      }
+    },
+    "label_movie_theater" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "movie theater"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "cinema"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "bioskop"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "биоскоп"
+          }
+        }
+      }
+    },
+    "label_park" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "park"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "parco"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "park"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "парк"
+          }
+        }
+      }
+    },
+    "label_parking" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "parking"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "parcheggio"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "parking"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "паркинг"
+          }
+        }
+      }
+    },
+    "label_password" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "password"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "password"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "lozinka"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "лозинка"
+          }
+        }
+      }
+    },
+    "label_password_explanation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use at least one uppercased character and one number, with minimum 8 characters in total."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilizzare almeno un carattere maiuscolo e un numero, per un minimo di 8 caratteri in totale."
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upotrebite najmanje 1 veliko slovo i 1 broj, sa najmanje 8 karaktera ukupno."
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Употребите најмање 1 велико слово и 1 број, са најмање 8 карактера укупно."
+          }
+        }
+      }
+    },
+    "label_pharmacy" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pharmacy"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "farmacia"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "apoteka"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "апотека"
+          }
+        }
+      }
+    },
+    "label_placeholder_search" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search..."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cercare..."
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pretraga..."
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Претрага..."
+          }
+        }
+      }
+    },
+    "label_police_station" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "police station"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "stazione di polizia"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "policijska stanica"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "полицијска станица"
+          }
+        }
+      }
+    },
+    "label_post_office" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "post office"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ufficio postale"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pošta"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "пошта"
+          }
+        }
+      }
+    },
+    "label_reminder_date" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reminder date:"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data promemoria:"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datum podsetnika:"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Датум подсетника:"
+          }
+        }
+      }
+    },
+    "label_reminder_importance" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reminder importance:"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Promemoria importante:"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Važnost podsetnika:"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Важност подсетника:"
+          }
+        }
+      }
+    },
+    "label_repeat_password" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "repeat password"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ripeti la password"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ponovite lozinku"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "поновите лозинку"
+          }
+        }
+      }
+    },
+    "label_reset_filter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reset filter"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reimposta filtro"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resetujte filter"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ресетујте филтер"
+          }
+        }
+      }
+    },
+    "label_skool" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "skool"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "scuola"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "škola"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "школа"
+          }
+        }
+      }
+    },
+    "label_sport_gym" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sport gym"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "palestra"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "teretana"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "теретана"
+          }
+        }
+      }
+    },
+    "label_theater" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "theater"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "teatro"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pozorište"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "позориште"
+          }
+        }
+      }
+    },
+    "label_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "title"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "titolo"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "naslov"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "наслов"
+          }
+        }
+      }
+    },
+    "label_title_create" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Creare"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Napravite"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Направите"
+          }
+        }
+      }
+    },
+    "label_title_error_no_all_new_password" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password must contain at least a number, an uppercased letter and eight characters"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La password deve contenere almeno un numero, una lettera maiuscola e otto caratteri"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lozinka mora sadržati najmanje 1 broj, 1 veliko slovo i 8 karaktera"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лозинка мора садржати најмање 1 број, 1 велико слово и 8 карактера"
+          }
+        }
+      }
+    },
+    "label_title_error_no_letter_and_length_new_password" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password must contain at least an uppercased letter and eight characters"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La password deve contenere almeno una lettera maiuscola e otto caratteri"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lozinka mora sadržati najmanje 1 veliko slovo i 8 karaktera"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лозинка мора садржати најмање 1 велико слово и 8 карактера"
+          }
+        }
+      }
+    },
+    "label_title_error_no_letter_new_password" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password must contain at least an uppercased letter"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La password deve contenere almeno una lettera maiuscola"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lozinka mora sadržati najmanje 1 veliko slovo"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лозинка мора садржати најмање 1 велико слово"
+          }
+        }
+      }
+    },
+    "label_title_error_no_number_and_length_new_password" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password must contain at least a number and eight characters"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La password deve contenere almeno un numero e otto caratteri"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lozinka mora sadržati najmanje 1 broj i 8 karaktera"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лозинка мора садржати најмање 1 број и 8 карактера"
+          }
+        }
+      }
+    },
+    "label_title_error_no_number_and_letter_new_password" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password must contain at least a number and an uppercased letter"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La password deve contenere almeno un numero e una lettera maiuscola"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lozinka mora sadržati najmanje 1 broj i 1 veliko slovo"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лозинка мора садржати најмање 1 број и 1 велико слово"
+          }
+        }
+      }
+    },
+    "label_title_error_no_number_new_password" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password must contain at least a number"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La password deve contenere almeno un numero"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lozinka mora sadržati najmanje 1 broj"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лозинка мора садржати најмање 1 број"
+          }
+        }
+      }
+    },
+    "label_title_with_dots" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Title:"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Titolo:"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naslov:"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Наслов:"
+          }
+        }
+      }
+    },
+    "label_user_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "user name"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nome utente"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "korisničko ime"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "корисничко име"
+          }
+        }
+      }
+    },
+    "title_label_add_new_reminder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add New Reminder"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi nuovo promemoria"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodajte podsetnik"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Додајте подсетник"
+          }
+        }
+      }
+    },
+    "title_label_album" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Album"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Album"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Album"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Албум"
+          }
+        }
+      }
+    },
+    "title_label_albums" : {
+      "comment" : "MARK: - Album screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Albums"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Albi"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Albumi"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Албуми"
+          }
+        }
+      }
+    },
+    "title_label_change_password" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Change Password"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cambiare la password"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Promenite lozinku"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Промените лозинку"
+          }
+        }
+      }
+    },
+    "title_label_delete" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elimina"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obrišite"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Обришите"
+          }
+        }
+      }
+    },
+    "title_label_delete_account" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete account"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancella conto"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obrišite nalog"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Обришите налог"
+          }
+        }
+      }
+    },
+    "title_label_edit_profile" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit Profile"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modifica profilo"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uredite profil"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Уредите профил"
+          }
+        }
+      }
+    },
+    "title_label_enter_new_password" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter new password"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inserisci la nuova password"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unesite novu lozinku"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Унесите нову лозинку"
+          }
+        }
+      }
+    },
+    "title_label_favorite_locations" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorite locations"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luoghi preferiti"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omiljene lokacije"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Омиљене локације"
+          }
+        }
+      }
+    },
+    "title_label_home" : {
+      "comment" : "MARK: - Tab Bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Casa"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Početna"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Почетна"
+          }
+        }
+      }
+    },
+    "title_label_login" : {
+      "comment" : "MARK: - Login screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Login"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Login"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prijava"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пријава"
+          }
+        }
+      }
+    },
+    "title_label_logout" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logout"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logout"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odjava"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Одјава"
+          }
+        }
+      }
+    },
+    "title_label_map" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Map"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mappa"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mapa"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мапа"
+          }
+        }
+      }
+    },
+    "title_label_password_no_lenght" : {
+      "comment" : "MARK: - Change password screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password must contain at least eight characters"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La password deve contenere almeno otto caratteri"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lozinka mora sadržati najmanje 8 karaktera"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лозинка мора садржати најмање 8 карактера"
+          }
+        }
+      }
+    },
+    "title_label_privacy_policy" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Privacy Policy"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informativa sulla privacy"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Politika privatnosti"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Политика приватности"
+          }
+        }
+      }
+    },
+    "title_label_profile" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profile"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profilo"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profil"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Профил"
+          }
+        }
+      }
+    },
+    "title_label_register" : {
+      "comment" : "MARK: - Register new user screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Register"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registro"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registracija"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Регистрација"
+          }
+        }
+      }
+    },
+    "title_label_reminder_details" : {
+      "comment" : "MARK: - Reminder Details & Add New Reminder screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reminder Details"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dettagli del promemoria"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detalji podsetnika"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Детаљи подсетника"
+          }
+        }
+      }
+    },
+    "title_label_reminders" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reminders"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Promemoria"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podsetnici"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Подсетници"
+          }
+        }
+      }
+    },
+    "title_label_settings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impostazioni"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podešavanja"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Подешавања"
+          }
+        }
+      }
+    },
+    "title_label_update_password" : {
+      "comment" : "MARK: - Profile screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update Profile"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiorna profilo"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uredite profil"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Уредите профил"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

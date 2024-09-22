@@ -1,8 +1,8 @@
-strings:
-  inputs: BIT Reminder/Assets/en.lproj/Localizable.strings
-  outputs:
-    templateName: structured-swift4
-    output: BIT Reminder/Config/Swiftgen/Strings.swift
+#strings:
+#  inputs: BIT Reminder/Assets/en.lproj/Localizable.strings
+#  outputs:
+#    templateName: structured-swift4
+#    output: BIT Reminder/Config/Swiftgen/Strings.swift
 
 ib:
   inputs: BIT Reminder/Storyboards
