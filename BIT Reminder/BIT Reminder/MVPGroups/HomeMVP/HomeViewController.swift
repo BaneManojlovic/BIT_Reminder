@@ -41,7 +41,7 @@ class HomeViewController: BaseNavigationController, UIScrollViewDelegate {
         self.configureMenu()
         self.homeView.tableView.register(FilterSectionView.self, forHeaderFooterViewReuseIdentifier: FilterSectionView.identifier)
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false

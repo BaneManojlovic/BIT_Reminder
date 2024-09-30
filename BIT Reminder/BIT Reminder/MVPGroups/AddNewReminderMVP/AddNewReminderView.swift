@@ -76,10 +76,10 @@ class AddNewReminderView: UIView {
 
     private func setButtons() {
         /// setup for add/edit button
-        self.addButton.backgroundColor = Asset.buttonBlueColor.color
+        self.addButton.backgroundColor = Asset.darkOrange.color
         self.addButton.setTitle(L10n.labelAdd, for: .normal)
         self.addButton.tintColor = .white
-        self.addButton.layer.cornerRadius = 10
+        self.addButton.layer.cornerRadius = 25
         self.addButton.isEnabled = false
     }
 

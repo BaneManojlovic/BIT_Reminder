@@ -33,7 +33,6 @@
 		8D32EA9C2AB4252F0080CB5E /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32EA9B2AB4252F0080CB5E /* Album.swift */; };
 		8D40CAB82ABB06140039AB5B /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D40CAB72ABB06140039AB5B /* PasswordTextField.swift */; };
 		8D40CAC02ABB9F1E0039AB5B /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D40CABF2ABB9F1E0039AB5B /* PrivacyPolicyViewController.swift */; };
-		8D6B80BF2AA8617D009DF810 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D6B80BD2AA8617D009DF810 /* Localizable.strings */; };
 		8D6B80C52AA861A5009DF810 /* StoryboardScenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B80C02AA861A5009DF810 /* StoryboardScenes.swift */; };
 		8D6B80C62AA861A5009DF810 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B80C12AA861A5009DF810 /* Assets.swift */; };
 		8D6B80C72AA861A5009DF810 /* StoryboardSegues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6B80C22AA861A5009DF810 /* StoryboardSegues.swift */; };
@@ -110,6 +109,7 @@
 		8DBAA5862AB30F580054A5FF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5852AB30F580054A5FF /* MapViewController.swift */; };
 		8DBAA5882AB30F650054A5FF /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5872AB30F650054A5FF /* MapView.swift */; };
 		8DBAA58A2AB30F790054A5FF /* MapViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAA5892AB30F790054A5FF /* MapViewPresenter.swift */; };
+		8DE2711E2C99929B00B3920E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8DE2711D2C99929A00B3920E /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -142,7 +142,6 @@
 		8D40CAB72ABB06140039AB5B /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		8D40CABB2ABB21170039AB5B /* BIT Reminder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BIT Reminder.entitlements"; sourceTree = "<group>"; };
 		8D40CABF2ABB9F1E0039AB5B /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
-		8D6B80BE2AA8617D009DF810 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		8D6B80C02AA861A5009DF810 /* StoryboardScenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardScenes.swift; sourceTree = "<group>"; };
 		8D6B80C12AA861A5009DF810 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		8D6B80C22AA861A5009DF810 /* StoryboardSegues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardSegues.swift; sourceTree = "<group>"; };
@@ -219,6 +218,7 @@
 		8DBAA5852AB30F580054A5FF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8DBAA5872AB30F650054A5FF /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		8DBAA5892AB30F790054A5FF /* MapViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewPresenter.swift; sourceTree = "<group>"; };
+		8DE2711D2C99929A00B3920E /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		D1CD5190B349858D99F73037 /* Pods_BIT_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BIT_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -320,7 +320,7 @@
 		8D6B80A82AA78A63009DF810 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				8D6B80BC2AA86163009DF810 /* en.lproj */,
+				8DE2711D2C99929A00B3920E /* Localizable.xcstrings */,
 				8D6B80B72AA8571D009DF810 /* Fonts */,
 				8D6F5CF32AA3EAC0006184CC /* Assets.xcassets */,
 			);
@@ -446,14 +446,6 @@
 			children = (
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		8D6B80BC2AA86163009DF810 /* en.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				8D6B80BD2AA8617D009DF810 /* Localizable.strings */,
-			);
-			path = en.lproj;
 			sourceTree = "<group>";
 		};
 		8D6B80CC2AA881CB009DF810 /* SplashScreenMVP */ = {
@@ -765,6 +757,9 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
+				sr,
+				"sr-RS",
 			);
 			mainGroup = 8D6F5CDE2AA3EABF006184CC;
 			packageReferences = (
@@ -785,11 +780,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D8DE37E2AB841E10063E62C /* AlbumPhotoCollectionViewCell.xib in Resources */,
-				8D6B80BF2AA8617D009DF810 /* Localizable.strings in Resources */,
 				8D8DE3962AB94DAA0063E62C /* FavoriteLocationsTableViewCell.xib in Resources */,
 				8D06A3042BBFD5C3006613C9 /* PrivacyInfo.xcprivacy in Resources */,
 				8DB8580D2AB44120009DE52F /* AlbumsTableViewCell.xib in Resources */,
 				8D6B80CB2AA881BF009DF810 /* Authentification.storyboard in Resources */,
+				8DE2711E2C99929B00B3920E /* Localizable.xcstrings in Resources */,
 				8D6F5CF42AA3EAC0006184CC /* Assets.xcassets in Resources */,
 				8DBAA5732AB2A80A0054A5FF /* SettingsTableViewCell.xib in Resources */,
 				8DBAA56D2AB204FF0054A5FF /* ReminderTableViewCell.xib in Resources */,
@@ -979,17 +974,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		8D6B80BD2AA8617D009DF810 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8D6B80BE2AA8617D009DF810 /* en */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		8D6F5CF92AA3EAC0006184CC /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1043,6 +1027,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1098,6 +1083,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
