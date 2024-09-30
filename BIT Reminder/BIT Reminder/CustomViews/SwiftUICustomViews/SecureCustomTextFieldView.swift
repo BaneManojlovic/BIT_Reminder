@@ -12,6 +12,7 @@ import Combine
 struct SecureCustomTextFieldView: View {
 
     var text: Binding<String>
+    var title: String
     var placeholderText: String
     @Binding var isFormNotValid: Bool
     @Binding var password: String
@@ -25,13 +26,13 @@ struct SecureCustomTextFieldView: View {
             Spacer()
                 .frame(width: 20)
             VStack(alignment: .leading, spacing: 10) {
-                Text(placeholderText)
+                Text(title)
                     .foregroundStyle(.white)
                 ZStack(alignment: .trailing) {
                     Group {
                         if isSecured {
                             BaseSecureTextFieldView(placeholderText: placeholderText, 
-                                                    backgroundColor: Color("tableview_cell_blue_color"),
+                                                    backgroundColor: Color("textfield_blue_color"),
                                                     text: text)
                                 .foregroundStyle(.white)
                         } else {
@@ -41,7 +42,7 @@ struct SecureCustomTextFieldView: View {
                                 .foregroundStyle(.white)
                         }
                     }
-                    .overlay(RoundedRectangle(cornerRadius: 16).stroke(isInputValid[fieldContentType] == true || text.wrappedValue.isEmpty ? Color.clear : Color.red, lineWidth: 2))
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(isInputValid[fieldContentType] == true || text.wrappedValue.isEmpty ? Color.clear : Color.red, lineWidth: 2))
                     .onChange(of: text.wrappedValue) { newValue in
 
                         switch fieldContentType {

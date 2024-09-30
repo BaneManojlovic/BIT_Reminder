@@ -778,7 +778,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zu3-BQ-5Sc">
-                                                <rect key="frame" x="20" y="456.33333333333337" width="353" height="35"/>
+                                                <rect key="frame" x="20" y="450.33333333333331" width="353" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="FQd-s9-ttQ"/>
                                                 </constraints>
@@ -798,7 +798,7 @@
                                             <constraint firstItem="cRI-Dc-EIM" firstAttribute="leading" secondItem="7TF-XZ-PUr" secondAttribute="leading" constant="16" id="Xi9-SZ-Tga"/>
                                             <constraint firstItem="cRI-Dc-EIM" firstAttribute="centerY" secondItem="7TF-XZ-PUr" secondAttribute="centerY" id="frl-VK-G2p"/>
                                             <constraint firstItem="7gy-Fe-JSF" firstAttribute="leading" secondItem="7TF-XZ-PUr" secondAttribute="leading" constant="20" id="gAv-yu-cnO"/>
-                                            <constraint firstItem="Zu3-BQ-5Sc" firstAttribute="top" secondItem="cRI-Dc-EIM" secondAttribute="bottom" constant="20" id="kWV-Ij-TQe"/>
+                                            <constraint firstItem="Zu3-BQ-5Sc" firstAttribute="top" secondItem="cRI-Dc-EIM" secondAttribute="bottom" constant="14" id="kWV-Ij-TQe"/>
                                             <constraint firstItem="cRI-Dc-EIM" firstAttribute="top" secondItem="R7b-nI-tRJ" secondAttribute="bottom" constant="40" id="lvo-H2-UuA"/>
                                             <constraint firstAttribute="trailing" secondItem="R7b-nI-tRJ" secondAttribute="trailing" constant="8" id="o8y-AX-d7n"/>
                                             <constraint firstItem="R7b-nI-tRJ" firstAttribute="leading" secondItem="7TF-XZ-PUr" secondAttribute="leading" constant="8" id="tdk-IA-NZG"/>

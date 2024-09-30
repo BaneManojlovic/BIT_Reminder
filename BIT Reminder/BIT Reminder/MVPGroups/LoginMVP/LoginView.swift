@@ -48,13 +48,13 @@ class LoginView: IQPreviousNextView, UITextFieldDelegate {
 
     private func setupButtons() {
         /// setup for register new user button
-        self.registerNewUserButton.backgroundColor = .orange
+        self.registerNewUserButton.backgroundColor = Asset.darkOrange.color
         self.registerNewUserButton.setTitle(L10n.labelMessageRegisterNewUser, for: .normal)
         self.registerNewUserButton.tintColor = .white
         self.registerNewUserButton.layer.cornerRadius = 25
         self.registerNewUserButton.isEnabled = true
         /// setup for login button
-        self.loginButton.backgroundColor = .orange
+        self.loginButton.backgroundColor = Asset.darkOrange.color
         self.loginButton.setTitle(L10n.titleLabelLogin, for: .normal)
         self.loginButton.tintColor = .white
         self.loginButton.layer.cornerRadius = 25
@@ -62,7 +62,7 @@ class LoginView: IQPreviousNextView, UITextFieldDelegate {
         /// setup for resetPasswordButton
         self.resetPasswordButton.setTitle(L10n.titleLableResetPassword, for: .normal)
         self.resetPasswordButton.contentHorizontalAlignment = .center
-        self.resetPasswordButton.tintColor = .blue
+        self.resetPasswordButton.tintColor = Asset.buttonBlueColor.color
         /// resetPasswordButton underline
         let title = L10n.titleLableResetPassword
         let attributedString = NSMutableAttributedString(string: title)

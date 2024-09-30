@@ -21,6 +21,6 @@ struct BaseSecureTextFieldView: View {
             .textInputAutocapitalization(.never)
             .padding(EdgeInsets(top: 0, leading: 6, bottom: 0, trailing: 60))
             .background(backgroundColor)
-            .cornerRadius(16)
+            .cornerRadius(10)
     }
 }

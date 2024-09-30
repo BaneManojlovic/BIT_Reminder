@@ -29,14 +29,14 @@ class RegistrationView: IQPreviousNextView, UITextFieldDelegate {
         self.setupDelegates()
     }
     // MARK: - Private Setup Methods
-    
+
     private func setupLabels() {
         self.screenTitleLabel.text = L10n.titleLabelRegister
         self.screenTitleLabel.textColor = .white
         self.screenTitleLabel.textAlignment = .center
         self.screenTitleLabel.font = UIFont.systemFont(ofSize: 48)
     }
-    
+
     private func setupTextFields() {
         /// userName TextField
         self.userNameTextField.inputTextField.tag = 1
@@ -69,13 +69,13 @@ class RegistrationView: IQPreviousNextView, UITextFieldDelegate {
     }
     private func setupButtons() {
         /// setup for login button
-        self.registerButton.backgroundColor = .orange
+        self.registerButton.backgroundColor = Asset.darkOrange.color
         self.registerButton.setTitle(L10n.titleLabelRegister, for: .normal)
         self.registerButton.tintColor = .white
         self.registerButton.layer.cornerRadius = 25
         self.registerButton.isEnabled = false
     }
-    
+
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.tag == 1 || textField.tag == 2 || textField.tag == 3 || textField.tag == 4 {
             if !emailTextField.isError && !passwordTextField.isError &&
@@ -106,7 +106,7 @@ class RegistrationView: IQPreviousNextView, UITextFieldDelegate {
         repeatPasswordTextField.errorLabel.isHidden = false
         repeatPasswordTextField.errorLabel.text = L10n.labelErrorMessagePasswordsDontMatch
     }
-    
+
     func setUpNoMatchingErrorLabel() {
         repeatPasswordTextField.errorLabel.isHidden = true
         repeatPasswordTextField.secureTextField.layer.borderWidth = 0

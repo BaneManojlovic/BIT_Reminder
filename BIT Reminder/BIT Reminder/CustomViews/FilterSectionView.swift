@@ -15,7 +15,7 @@ class FilterSectionView: UITableViewHeaderFooterView {
         let label = UILabel()
         label.textColor = .white
         label.textAlignment = .left
-        label.font = .systemFont(ofSize: 14, weight: .regular)
+        label.font = .systemFont(ofSize: 16, weight: .bold)
         return label
     }()
 
@@ -43,7 +43,7 @@ class FilterSectionView: UITableViewHeaderFooterView {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            titleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: -4)
         ])
     }
 }

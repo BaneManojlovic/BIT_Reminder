@@ -22,7 +22,8 @@ struct ChangePasswordView: View {
             Spacer()
                 .frame(height: 20)
             SecureCustomTextFieldView(text: $changePasswordVC.password,
-                                      placeholderText: L10n.titleLabelEnterNewPassword,
+                                      title: L10n.titleLabelEnterNewPassword + ":",
+                                      placeholderText: L10n.labelPassword,
                                       isFormNotValid: $changePasswordVC.isFormNotValid,
                                       password: $changePasswordVC.password,
                                       isInputValid: $changePasswordVC.profileValidation,
@@ -32,15 +33,13 @@ struct ChangePasswordView: View {
 
             Button(L10n.titleLabelChangePassword) {
                 self.changePasswordVC.updatePassword()
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//                    changePasswordVC.showingAlert = true
-//                }
             }
             .frame(maxWidth: .infinity)
             .frame(height: 50)
             .disabled(changePasswordVC.password.isEmpty || changePasswordVC.isFormNotValid)
             .disabled($changePasswordVC.isFormNotValid.wrappedValue)
             .background(Color("darkOrange"))
+            .foregroundColor((changePasswordVC.password.isEmpty || changePasswordVC.isFormNotValid) ? Color("orange_disabled_color") : .white)
             .clipShape(Capsule())
             .padding(.horizontal, 20)
 
