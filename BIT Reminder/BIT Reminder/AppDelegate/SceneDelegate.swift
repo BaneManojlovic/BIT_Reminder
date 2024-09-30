@@ -12,7 +12,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var userDefaultsHelper = UserDefaultsHelper()
-    
     lazy var deeplinkCoordinator: DeeplinkCoordinatorProtocol = {
            return DeeplinkCoordinator(handlers: [
                ResetPasswordDeeplinkHandler(rootViewController: self.rootViewController)

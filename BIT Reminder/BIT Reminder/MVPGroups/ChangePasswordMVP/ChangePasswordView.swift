@@ -10,7 +10,9 @@ import SwiftUI
 struct ChangePasswordView: View {
 
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.dismiss) var dismiss
     @StateObject private var changePasswordVC = ChangePasswordViewModel()
+
     var accessToken: String?
     var refreshToken: String?
 
@@ -30,12 +32,15 @@ struct ChangePasswordView: View {
 
             Button(L10n.titleLabelChangePassword) {
                 self.changePasswordVC.updatePassword()
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//                    changePasswordVC.showingAlert = true
+//                }
             }
             .frame(maxWidth: .infinity)
             .frame(height: 60)
             .disabled(changePasswordVC.password.isEmpty || changePasswordVC.isFormNotValid)
             .disabled($changePasswordVC.isFormNotValid.wrappedValue)
-            .background(.orange)
+            .background(Color("darkOrange"))
             .clipShape(Capsule())
             .padding(.horizontal, 20)
 
@@ -60,14 +65,16 @@ struct ChangePasswordView: View {
             }
         }
         .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                Button {
-                    self.presentationMode.wrappedValue.dismiss()
-                } label: {
-                    Image(systemName: "arrow.left")
-                        .foregroundStyle(.white)
-                }
-            }
-        }
-    }
-}
+            if refreshToken == nil {
+                 ToolbarItem(placement: .topBarLeading) {
+                     Button {
+                         self.presentationMode.wrappedValue.dismiss()
+                     } label: {
+                         Image(systemName: "arrow.left")
+                             .foregroundStyle(.white)
+                     }
+                 }
+             }
+         }
+     }
+ }

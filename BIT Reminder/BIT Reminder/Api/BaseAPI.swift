@@ -109,16 +109,11 @@ class AuthManager {
 
     // MARK: - Reminder API Data Methods
 
-    func getReminders(limit: Int, offset: Int, completion: @escaping (Error?, [Reminder]?) -> Void) async {
+    func getReminders(completion: @escaping (Error?, [Reminder]?) -> Void) async {
         guard let user = self.userDefaults.getUser() else { return }
         do {
-            let reminders: [Reminder] = try await client.database
-                .from("reminders")
-                .select()
-                .eq(column: "profile_id", value: user.profileId)
-                .range(from: offset, to: offset + limit - 1)
-                .execute()
-                .value
+            let reminders: [Reminder] = try await client.database.from("reminders").select().eq(column: "profile_id",
+                                                                                                value: user.profileId).execute().value
             completion(nil, reminders)
         } catch {
             debugPrint(error.localizedDescription)

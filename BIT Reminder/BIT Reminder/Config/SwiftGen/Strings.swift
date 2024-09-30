@@ -22,6 +22,10 @@ internal enum L10n {
   internal static let alertButtonTitleYes = L10n.tr("Localizable", "alert_button_title_yes", fallback: "Yes")
   /// It seems there is no Internet connection. Please check your settings and try again.
   internal static let alertMessageNoInternet = L10n.tr("Localizable", "alert_message_no_internet", fallback: "It seems there is no Internet connection. Please check your settings and try again.")
+  /// Your profile was successfully updated.
+  internal static let alertMessageProfileSuccess = L10n.tr("Localizable", "alert_message_profile_success", fallback: "Your profile was successfully updated.")
+  /// Profile Updated
+  internal static let alertMessageProfileUpdated = L10n.tr("Localizable", "alert_message_profile_updated", fallback: "Profile Updated")
   /// Session not found
   internal static let alertMessageSessionNotFound = L10n.tr("Localizable", "alert_message_session_not_found", fallback: "Session not found")
   /// Alert
@@ -33,6 +37,8 @@ internal enum L10n {
   internal static let alertTitleError = L10n.tr("Localizable", "alert_title_error", fallback: "Error")
   /// No Internet
   internal static let alertTitleNoInternet = L10n.tr("Localizable", "alert_title_no_internet", fallback: "No Internet")
+  /// Unknown error
+  internal static let alertTitleUnknownMessage = L10n.tr("Localizable", "alert_title_unknown_message", fallback: "Unknown error")
   /// Add
   internal static let labelAdd = L10n.tr("Localizable", "label_add", fallback: "Add")
   /// ATM
@@ -59,8 +65,8 @@ internal enum L10n {
   internal static let labelErrorMessageEmailInvalidFormat = L10n.tr("Localizable", "label_error_message_email_invalid_format", fallback: "Email is in invalid format")
   /// Name cannot be empty
   internal static let labelErrorMessageNameCannotBeEmpty = L10n.tr("Localizable", "label_error_message_name_cannot_be_empty", fallback: "Name cannot be empty")
-  /// Name is in invalid format
-  internal static let labelErrorMessageNameInvalidFormat = L10n.tr("Localizable", "label_error_message_name_invalid_format", fallback: "Name is in invalid format")
+  /// Enter your full name with each word starting with an uppercase letter (e.g., John Doe)
+  internal static let labelErrorMessageNameInvalidFormat = L10n.tr("Localizable", "label_error_message_name_invalid_format", fallback: "Enter your full name with each word starting with an uppercase letter (e.g., John Doe)")
   /// Password cannot be empty
   internal static let labelErrorMessagePasswCannotBeEmpty = L10n.tr("Localizable", "label_error_message_passw_cannot_be_empty", fallback: "Password cannot be empty")
   /// Password is in invalid format
@@ -73,10 +79,10 @@ internal enum L10n {
   internal static let labelErrorMessageRepeatedPasswInvalidFormat = L10n.tr("Localizable", "label_error_message_repeated_passw_invalid_format", fallback: "Repeated Password is in invalid format")
   /// Title cannot be empty!
   internal static let labelErrorTitleEmpty = L10n.tr("Localizable", "label_error_title_empty", fallback: "Title cannot be empty!")
-  /// Filter by date
-  internal static let labelFilterDate = L10n.tr("Localizable", "label_filter_date", fallback: "Filter by date")
-  /// Filter by importance
-  internal static let labelFilterImportance = L10n.tr("Localizable", "label_filter_importance", fallback: "Filter by importance")
+  /// Filtered by date
+  internal static let labelFilterDate = L10n.tr("Localizable", "label_filter_date", fallback: "Filtered by date")
+  /// Filtered by importance
+  internal static let labelFilterImportance = L10n.tr("Localizable", "label_filter_importance", fallback: "Filtered by importance")
   /// gas station
   internal static let labelGasStation = L10n.tr("Localizable", "label_gas_station", fallback: "gas station")
   /// hospital
@@ -175,6 +181,10 @@ internal enum L10n {
   internal static let labelTitle = L10n.tr("Localizable", "label_title", fallback: "title")
   /// Create
   internal static let labelTitleCreate = L10n.tr("Localizable", "label_title_create", fallback: "Create")
+  /// Done
+  internal static let labelTitleDone = L10n.tr("Localizable", "label_title_done", fallback: "Done")
+  /// Edit
+  internal static let labelTitleEdit = L10n.tr("Localizable", "label_title_edit", fallback: "Edit")
   /// Password must contain at least a number, an uppercased letter and eight characters
   internal static let labelTitleErrorNoAllNewPassword = L10n.tr("Localizable", "label_title_error_no_all_new_password", fallback: "Password must contain at least a number, an uppercased letter and eight characters")
   /// Password must contain at least an uppercased letter and eight characters
@@ -191,6 +201,10 @@ internal enum L10n {
   internal static let labelTitleWithDots = L10n.tr("Localizable", "label_title_with_dots", fallback: "Title:")
   /// user name
   internal static let labelUserName = L10n.tr("Localizable", "label_user_name", fallback: "user name")
+  /// Password has been changed, please log in again
+  internal static let titleAlertPasswordHasBeenChanged = L10n.tr("Localizable", "title_alert_password_has_been_changed", fallback: "Password has been changed, please log in again")
+  /// Reset link has been sent to your email
+  internal static let titleAlertResetLinkSent = L10n.tr("Localizable", "title_alert_reset_link_sent", fallback: "Reset link has been sent to your email")
   /// Add New Reminder
   internal static let titleLabelAddNewReminder = L10n.tr("Localizable", "title_label_add_new_reminder", fallback: "Add New Reminder")
   /// Album

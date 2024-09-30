@@ -28,11 +28,6 @@ class HomeViewPresenter {
     var reminders: [Reminder] = []
     var filteredReminders: [Reminder] = []
     var sortedReminders: [Reminder] = []
-    
-    var displayedReminders: [Reminder] = []
-    var currentPage = 0
-    var itemsPerPage = 5
-    var isLoading = false
 
     // MARK: - Initialization
 
@@ -47,40 +42,37 @@ class HomeViewPresenter {
     func detachView() {
         self.delegate = nil
     }
-    
-    func getReminders() -> [Reminder]{
-           self.reminders = []
-           KRProgressHUD.show()
-           Task {
-               do {
-                   try await self.authManager.getReminders(limit: itemsPerPage, offset: currentPage * itemsPerPage) { [weak self] error, response in
-                       guard let self = self else { return }
-                       DispatchQueue.main.async {
-                           if let error = error {
-                               debugPrint(error)
-                               KRProgressHUD.dismiss()
-                               self.delegate?.getRemindersFailure(error: error.localizedDescription)
-                           } else {
-                               KRProgressHUD.dismiss()
-                               if let resp = response {
-                                   debugPrint(resp)
-                                   self.reminders.append(contentsOf: resp) // Append the fetched reminders
-                                   self.delegate?.getRemindersSuccess(response: resp)
-                               }
-                           }
-                       }
-                   }
-               } catch {
-                   DispatchQueue.main.async {
-                       KRProgressHUD.dismiss()
-                       self.delegate?.getRemindersFailure(error: error.localizedDescription)
-                   }
-               }
-           }
-        return reminders
-       }
+
+    func getReminders() {
+        self.reminders = []
+        KRProgressHUD.show()
+        Task {
+            do {
+                try await self.authManager.getReminders { error, response  in
+                    if let error = error {
+                        debugPrint(error)
+                        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                           KRProgressHUD.dismiss()
+                        }
+                        self.delegate?.getRemindersFailure(error: error.localizedDescription)
+                    } else {
+                        debugPrint("")
+                        KRProgressHUD.dismiss()
+                        if let resp = response {
+                            debugPrint(resp)
+                            self.reminders = resp
+                            self.delegate?.getRemindersSuccess(response: resp)
+                        }
+                    }
+                }
+            } catch {
+                    self.delegate?.getRemindersFailure(error: error.localizedDescription)
+            }
+        }
+    }
 
     func deleteReminder(model: Reminder) {
+
         KRProgressHUD.show()
         Task {
             do {

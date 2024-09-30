@@ -126,6 +126,7 @@ class MapViewController: UIViewController {
         self.removePins()
         if let location = myLocation {
             self.setupUserCurrentLocation(location)
+            self.mapView.clearMapButton.isHidden = true
         }
     }
 
@@ -153,14 +154,14 @@ class MapViewController: UIViewController {
         searchRequest.region = self.mapView.mapView.region
         searchRequest.naturalLanguageQuery = query
         searchRequest.resultTypes = [.pointOfInterest, .address]
+        self.mapView.clearMapButton.isHidden = false
 
-        var search = MKLocalSearch(request: searchRequest)
+        let search = MKLocalSearch(request: searchRequest)
         search.start { response, error in
             guard let response = response else {
                 debugPrint("Error: \(error?.localizedDescription ?? "Unknown error")")
                 return
             }
-            // Create annotation for every map item
             for mapItem in response.mapItems {
                 let annotation = MKPointAnnotation()
                 annotation.coordinate = mapItem.placemark.coordinate
@@ -179,10 +180,10 @@ class MapViewController: UIViewController {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "customAnnotationView"
 
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView
 
         if annotationView == nil {
-            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             annotationView?.canShowCallout = true
 
             // Extract phone number from the subtitle and pass it to the callout view

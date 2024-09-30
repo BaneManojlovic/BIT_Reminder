@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 struct BaseCustomTextFieldView: View {
-    
+
     var text: Binding<String>
     var placeholderText: String
     @Binding var isFormNotValid: Bool
@@ -18,7 +18,6 @@ struct BaseCustomTextFieldView: View {
     @State private var errorMessage = ""
     @Binding var isInputValid: [ValidationError: Bool]
     var isEditMode: Bool
-    
     var body: some View {
         HStack {
             Spacer()
@@ -29,20 +28,19 @@ struct BaseCustomTextFieldView: View {
                     .keyboardType(.default)
                     .overlay(RoundedRectangle(cornerRadius: 16).stroke(isInputValid[fieldContentType] == true || text.wrappedValue.isEmpty ? Color.clear : Color.red, lineWidth: 2))
                     .onChange(of: text.wrappedValue) { newValue in
-                        
+
                         switch fieldContentType {
                         case .emailInvalid:
                             if StringHelper.isEmailValid(newValue) {
-                                
+
                                 isInputValid[fieldContentType] = true
                             } else {
-                                $errorMessage.wrappedValue = "Email is not in valid format "
+                                $errorMessage.wrappedValue = L10n.labelErrorMessageEmailInvalidFormat
                                 isInputValid[fieldContentType] = false
-                            
                             }
                         case .nameInvalid:
                             if StringHelper.isFullNameValid(newValue) {
-                                $errorMessage.wrappedValue = "Name is not in valid format"
+                                $errorMessage.wrappedValue = L10n.labelErrorMessageNameInvalidFormat
                                 isInputValid[fieldContentType] = true
                             } else {
                                 isInputValid[fieldContentType] = false
@@ -54,10 +52,9 @@ struct BaseCustomTextFieldView: View {
                                 isInputValid[fieldContentType] = true
                             }
                         }
-                        
                         isFormNotValid = isInputValid.values.contains(false)
                     }
-                
+
                 if isInputValid[fieldContentType] == false && !text.wrappedValue.isEmpty {
                     Text($errorMessage.wrappedValue)
                         .font(.footnote)
@@ -69,4 +66,3 @@ struct BaseCustomTextFieldView: View {
         .background(Color.clear)
     }
 }
-

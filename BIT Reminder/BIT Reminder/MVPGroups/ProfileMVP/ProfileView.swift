@@ -4,24 +4,32 @@
 //
 //  Created by Branislav Manojlovic on 7.5.24..
 //
-
 import SwiftUI
 import PhotosUI
 import Supabase
 import KRProgressHUD
 
 struct ProfileView: View {
+
     @Environment(\.editMode) private var editMode
-
     weak var navigationController: UINavigationController?
-
+    @Environment(\.dismiss) var dismiss
     @StateObject private var profileVC = ProfileViewModel()
 
+    var isUpdateButtonDisabled: Bool {
+        profileVC.username.isEmpty ||
+        profileVC.email.isEmpty ||
+        (profileVC.username == initialUsername &&
+         profileVC.email == initialEmail &&
+         !isImageChanged) ||
+        profileVC.isFormNotValid
+    }
+
+    @State private var activeAlert: ActiveAlert?
     @State var isLoading = false
     @State var isEditindModeOn = false
     @State var disableTextField = true
     @State var imageSelection: PhotosPickerItem?
-    @State private var showingAlert = false
 
     // Track initial values
     @State private var initialUsername = ""
@@ -30,43 +38,10 @@ struct ProfileView: View {
 
     // Track if image has changed
     @State private var isImageChanged = false
-
     var body: some View {
         ScrollView {
             VStack {
-                // Avatar and Image Picker
-                ZStack {
-                    Spacer()
-                        .frame(height: 30)
-                    Group {
-                        if let avatarImage = profileVC.avatarImage {
-                            avatarImage.image.resizable()
-                        } else {
-                            Image(systemName: "person.circle.fill")
-                                .resizable()
-                                .frame(width: 100, height: 100, alignment: .center)
-                                .foregroundStyle(Color.white)
-                        }
-                    }
-                    .clipShape(Circle())
-                    .shadow(radius: 10)
-                    .frame(width: 130, height: 130)
-                    .frame(maxWidth: .infinity, alignment: .center)
-
-                    Spacer()
-                        .frame(height: 10)
-
-                    if isEditindModeOn {
-                        PhotosPicker(selection: $imageSelection, matching: .images) {
-                            Image(systemName: "photo.badge.plus")
-                                .frame(width: 50, height: 50)
-                                .background(Color("textfield_blue_color"))
-                                .foregroundColor(.white)
-                                .clipShape(Circle())
-                        }
-                    }
-                }
-                .background(Color("background_blue_color"))
+                profileImageView()
 
                 // Username Field
                 BaseCustomTextFieldView(
@@ -109,7 +84,7 @@ struct ProfileView: View {
                     .padding(.horizontal, 30)
 
                     Button(L10n.labelDeleteAccount) {
-                        showingAlert = true
+                        activeAlert = .deleteConfirmation
                     }
                     .frame(maxWidth: .infinity)
                     .frame(height: 50)
@@ -125,22 +100,12 @@ struct ProfileView: View {
                         if isEditindModeOn {
                             Button(L10n.titleLabelUpdatePassword) {
                                 profileVC.updateProfileButtonTapped()
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                                    self.navigationController?.popViewController(animated: true)
-                                }
                             }
                             // Disable button unless there's a change or inputs are invalid
-                            .disabled(
-                                profileVC.username.isEmpty ||
-                                profileVC.email.isEmpty ||
-                                (profileVC.username == initialUsername &&
-                                 profileVC.email == initialEmail &&
-                                 !isImageChanged) ||
-                                profileVC.isFormNotValid
-                            )
+                            .disabled(isUpdateButtonDisabled)
                             .frame(maxWidth: .infinity)
                             .frame(height: 50)
-                            .background(.orange)
+                            .background(Color("darkOrange"))
                             .clipShape(Capsule())
                             .padding(.horizontal, 30)
 
@@ -152,16 +117,34 @@ struct ProfileView: View {
                 }
                 .padding(.horizontal, 30)
                 .padding(.top, 20)
+                .onChange(of: profileVC.profileUpdateSuccess) { success in
+                    if success || profileVC.errorMessage != nil {
+                        activeAlert = .profileUpdate
+                    }
+                }
 
-                .alert(isPresented: $showingAlert) {
-                    Alert(
-                        title: Text(L10n.labelMessageSureWantDeleteAccount),
-                        message: Text(""),
-                        primaryButton: .destructive(Text(L10n.titleLabelDelete)) {
-                            profileVC.deleteUser()
-                        },
-                        secondaryButton: .cancel()
-                    )
+                .alert(item: $activeAlert) { alertType in
+                    switch alertType {
+                    case .deleteConfirmation:
+                        return Alert(
+                            title: Text(L10n.labelMessageSureWantDeleteAccount),
+                            message: Text(""),
+                            primaryButton: .destructive(Text(L10n.titleLabelDelete)) {
+                                profileVC.deleteUser()
+                            },
+                            secondaryButton: .cancel()
+                        )
+                    case .profileUpdate:
+                        return Alert(
+                            title: Text(profileVC.profileUpdateSuccess ? L10n.alertMessageProfileUpdated : "Error"),
+                            message: Text(profileVC.profileUpdateSuccess ? L10n.alertMessageProfileSuccess : profileVC.errorMessage ?? L10n.alertTitleUnknownMessage),
+                            dismissButton: .default(Text(L10n.alertButtonTitleOk)) {
+                                if profileVC.profileUpdateSuccess {
+                                    self.navigationController?.popViewController(animated: true)
+                                }
+                            }
+                        )
+                    }
                 }
 
                 .onChange(of: imageSelection) { newValue in
@@ -188,37 +171,74 @@ struct ProfileView: View {
             }
 
             ToolbarItem(placement: .topBarTrailing) {
-                Button {
+                Button(action: {
                     toggleEditMode()
-                } label: {
-                    Image(systemName: "square.and.pencil")
+                }) {
+                    Text(isEditindModeOn ? L10n.labelTitleDone : L10n.labelTitleEdit)
                         .foregroundStyle(isEditindModeOn ? .red : .white)
                 }
             }
         }
-        .task {
-            await profileVC.getInitialProfile()
+
+        .onAppear {
             // Set the initial values once the profile is loaded
             initialUsername = profileVC.username
             initialEmail = profileVC.email
             initialImageData = profileVC.avatarImage?.data // Track initial image data
-        }
-        .onChange(of: editMode?.wrappedValue) { newValue in
-            if let mode = newValue {
-                if mode.isEditing {
-                    // Entering edit mode: set initial values and enable fields
-                    initialUsername = profileVC.username
-                    initialEmail = profileVC.email
-                    initialImageData = profileVC.avatarImage?.data // Set initial image data
-                    disableTextField = false
-                } else {
-                    // Exiting edit mode: disable fields and reset image change flag
-                    disableTextField = true
-                    isImageChanged = false // Reset image change flag
-                }
-                // Sync edit mode state
-                isEditindModeOn = mode.isEditing
+            Task {
+                await profileVC.getInitialProfile()
             }
+        }
+        .onChange(of: editMode?.wrappedValue, perform: handleEditModeChange)
+
+    }
+
+    // Extracted function for profile image view
+    private func profileImageView() -> some View {
+        ZStack {
+            Spacer().frame(height: 30)
+            Group {
+                if let avatarImage = profileVC.avatarImage {
+                    avatarImage.image.resizable()
+                } else {
+                    Image(systemName: "person.circle.fill")
+                        .resizable()
+                        .frame(width: 100, height: 100, alignment: .center)
+                        .foregroundStyle(Color.white)
+                }
+            }
+            .clipShape(Circle())
+            .shadow(radius: 10)
+            .frame(width: 130, height: 130)
+            .frame(maxWidth: .infinity, alignment: .center)
+
+            Spacer().frame(height: 10)
+
+            if isEditindModeOn {
+                PhotosPicker(selection: $imageSelection, matching: .images) {
+                    Image(systemName: "photo.badge.plus")
+                        .frame(width: 50, height: 50)
+                        .background(Color("textfield_blue_color"))
+                        .foregroundColor(.white)
+                        .clipShape(Circle())
+                }
+            }
+        }
+        .background(Color("background_blue_color"))
+    }
+
+    private func handleEditModeChange(_ newValue: EditMode?) {
+        if let mode = newValue {
+            if mode.isEditing {
+                initialUsername = profileVC.username
+                initialEmail = profileVC.email
+                initialImageData = profileVC.avatarImage?.data
+                disableTextField = false
+            } else {
+                disableTextField = true
+                isImageChanged = false
+            }
+            isEditindModeOn = mode.isEditing
         }
     }
 
