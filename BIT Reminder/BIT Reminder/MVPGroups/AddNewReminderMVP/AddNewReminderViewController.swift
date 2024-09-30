@@ -17,6 +17,7 @@ class AddNewReminderViewController: BaseNavigationController {
     var descriptionHasChanged = false
     var importanceHasChanged = false
     var dateHasChanged = false
+    var initialSwitchState = false
 
     private var addNewReminderView: AddNewReminderView! {
         loadViewIfNeeded()
@@ -68,15 +69,10 @@ class AddNewReminderViewController: BaseNavigationController {
         self.addNewReminderView.datePickerTextField.addInputViewDatePicker(target: self, selector: #selector((selectReminderDate)))
         self.addNewReminderView.datePickerTextField.inputDatePicker?.addTarget(self, action: #selector(dateChanged(datePicker:)), for: UIControl.Event.valueChanged)
     }
-    
+
     @objc func switchStateChanged(_ sender: UISwitch) {
-        if sender.isOn {
-            self.importanceHasChanged = false
-            debugPrint("Switch is not changed")
-        } else {
-            self.importanceHasChanged = true
-            debugPrint("Switch is changed")
-        }
+        let currentSwitchState = sender.isOn
+        self.importanceHasChanged = currentSwitchState != initialSwitchState
         self.addNewReminderView.changeEditButtonStatus(isChanged: dateHasChanged || importanceHasChanged || titleHasChanged || descriptionHasChanged)
     }
 
@@ -184,6 +180,7 @@ class AddNewReminderViewController: BaseNavigationController {
         super.editAction()
         isEditingModeOn.toggle()
         if isEditingModeOn {
+            self.addNewReminderView.datePickerTextField.isHidden = false
             self.addNewReminderView.titleTextField.isEnabled = true
             self.addNewReminderView.descriptionTextView.isUserInteractionEnabled = true
             self.addNewReminderView.setImportanceSwitch.isUserInteractionEnabled = true
@@ -192,6 +189,7 @@ class AddNewReminderViewController: BaseNavigationController {
             self.setEditAndDeleteButton()
 
         } else {
+            self.addNewReminderView.datePickerTextField.isHidden = true
             self.addNewReminderView.titleTextField.isEnabled = false
             self.addNewReminderView.descriptionTextView.isUserInteractionEnabled = false
             self.addNewReminderView.setImportanceSwitch.isUserInteractionEnabled = false

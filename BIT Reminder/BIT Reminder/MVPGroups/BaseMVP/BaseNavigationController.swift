@@ -127,6 +127,7 @@ class BaseNavigationController: BaseViewController {
         UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationBarAppearance.shadowColor = .clear
     }
 
     // MARK: - Private Setup Methods
@@ -236,11 +237,12 @@ class BaseNavigationController: BaseViewController {
     var shouldChangeEditButtonColor = false
 
      func setEditAndDeleteButton() {
-        let editButton = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"),
+         let editButton = UIBarButtonItem(title: L10n.labelTitleEdit,
                                          style: .plain,
                                          target: self,
                                          action: #selector(editAction))
         editButton.tintColor = shouldChangeEditButtonColor ? .red : .white
+         editButton.title = shouldChangeEditButtonColor ? L10n.labelTitleDone : L10n.labelTitleEdit
         let deleteButton = UIBarButtonItem(image: UIImage(systemName: "trash.fill"),
                                          style: .plain,
                                          target: self,

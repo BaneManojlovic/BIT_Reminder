@@ -11,10 +11,13 @@ import GoTrue
 import KRProgressHUD
 
 class ChangePasswordViewModel: ObservableObject {
-    
+
     @Published var password = ""
     @Published var isFormNotValid = true
     @Published var profileValidation: [ValidationError: Bool] = [.passwordInvalid: false]
+    @Published var showingAlert = false
+    @Published var errorMessage: String?
+    @Published var passwordChangeSuccess = false
 
     var authManager = AuthManager()
     let userDefaults = UserDefaultsHelper()
@@ -30,18 +33,29 @@ class ChangePasswordViewModel: ObservableObject {
 
         Task {
             do {
-                // Update the Supabase session with the access and refresh token
 
-                try await authManager.client.auth.setSession(accessToken: accessToken, refreshToken: refreshToken ?? "")
+                debugPrint("Access Token: \(accessToken), Refresh Token: \(String(describing: refreshToken))")
+                // Update the Supabase session with the access and refresh token (only needed if reset password is trigered)
+                if refreshToken != nil {
+                    try await authManager.client.auth.setSession(accessToken: accessToken, refreshToken: refreshToken ?? "")
+                }
+
+                debugPrint("Attempting to update password to: \(password)")
 
                 try await authManager.client.auth.update(user: UserAttributes(password: password, emailChangeToken: accessToken))
-                DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+                DispatchQueue.main.asyncAfter(deadline: .now()+1) {
                     KRProgressHUD.dismiss()
-                    self.logoutUser()
+                    self.passwordChangeSuccess = true
+                    self.showingAlert = true
                 }
             } catch {
+
+                debugPrint("Error changing password: \(error)")
                 KRProgressHUD.dismiss()
-                debugPrint("Error reseting password\(error)")
+                self.showingAlert = true
+                self.passwordChangeSuccess = false
+                self.errorMessage = "Error changing password: \(error.localizedDescription)"
+
             }
         }
     }
@@ -64,7 +78,7 @@ class ChangePasswordViewModel: ObservableObject {
     }
     func goToSplashScreen() {
         guard let app = UIApplication.shared.delegate as? AppDelegate,
-        let window = app.window else { return }
+              let window = app.window else { return }
 
         let splashVC = StoryboardScene.Authentification.splashScreenViewController.instantiate()
 

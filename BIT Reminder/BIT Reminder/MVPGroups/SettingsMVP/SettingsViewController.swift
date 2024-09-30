@@ -17,7 +17,6 @@ class SettingsViewController: BaseNavigationController {
         loadViewIfNeeded()
         return view as? SettingsView
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
@@ -56,9 +55,9 @@ class SettingsViewController: BaseNavigationController {
             self.presenter.logoutUser()
         })
     }
-    
+
 // MARK: this func is for pushing from UIKit to SwiftUI with animation without unwanted navigation
-    
+
     @objc func adaptNavigationViewDelayFromSwiftUI() {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.navigationController?.setNavigationBarHidden(false, animated: false)

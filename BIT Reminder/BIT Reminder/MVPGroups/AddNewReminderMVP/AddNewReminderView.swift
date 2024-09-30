@@ -105,7 +105,7 @@ class AddNewReminderView: UIView {
             self.descriptionTextView.text = description
             self.setImportanceSwitch.isOn = isImportant
         }
-       // self.datePickerTextField.isHidden = true
+        self.datePickerTextField.isHidden = true
         self.datePickerTextField.isUserInteractionEnabled = false
         self.dateValueLabel.isHidden = false
         self.dateValueLabel.text = formatDateToShow(date: model.date ?? "")
@@ -113,7 +113,7 @@ class AddNewReminderView: UIView {
         self.titleTextField.isEnabled = false
         self.descriptionTextView.isUserInteractionEnabled = false
         self.setImportanceSwitch.isUserInteractionEnabled = false
-        self.addButton.setTitle("Edit", for: .normal)
+        self.addButton.setTitle(L10n.labelTitleEdit, for: .normal)
     }
 
     func formatDateToShow(date: String) -> String {

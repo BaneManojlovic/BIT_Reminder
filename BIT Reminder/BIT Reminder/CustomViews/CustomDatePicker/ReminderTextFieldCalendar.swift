@@ -42,25 +42,25 @@ class ReminderTextFieldCalendar: BaseTextField {
 }
 
 extension ReminderTextFieldCalendar {
-    
+
     func addInputViewDatePicker(target: Any, selector: Selector) {
         
         let screenWidth = UIScreen.main.bounds.width
         inputDatePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 216))
         inputDatePicker?.datePickerMode = .date
         inputDatePicker?.minimumDate = Date.now
-  
+
         if #available(iOS 13.4, *) {
             inputDatePicker?.preferredDatePickerStyle = UIDatePickerStyle.wheels
         }
        self.inputView = inputDatePicker
-      
+
        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 44))
         toolBar.sizeToFit()
         toolBar.isUserInteractionEnabled = true
        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-       let cancelBarButton = UIBarButtonItem(title: NSLocalizedString("Cancel", comment: ""), style: .plain, target: self, action: #selector(cancelPressed))
-       let doneBarButton = UIBarButtonItem(title: NSLocalizedString("Done", comment: ""), style: .plain, target: target, action: selector)
+        let cancelBarButton = UIBarButtonItem(title: NSLocalizedString(L10n.alertButtonTitleCancel, comment: ""), style: .plain, target: self, action: #selector(cancelPressed))
+        let doneBarButton = UIBarButtonItem(title: NSLocalizedString(L10n.labelTitleDone, comment: ""), style: .plain, target: target, action: selector)
        toolBar.setItems([cancelBarButton, flexibleSpace, doneBarButton], animated: false)
 
        self.inputAccessoryView = toolBar

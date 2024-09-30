@@ -18,6 +18,8 @@
 		217456D72BFB57E600A7E68A /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217456D62BFB57E600A7E68A /* ChangePasswordViewModel.swift */; };
 		217456D92BFCF61F00A7E68A /* PasswordErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217456D82BFCF61F00A7E68A /* PasswordErrorType.swift */; };
 		2196DDB52BF21912007F81C1 /* AvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2196DDB42BF21912007F81C1 /* AvatarImage.swift */; };
+		21AF6E8C2CA82E8700254727 /* ActiveAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF6E8B2CA82E8700254727 /* ActiveAlerts.swift */; };
+		21E753692C5787BD0051E4E4 /* FilterSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E753682C5787BD0051E4E4 /* FilterSectionView.swift */; };
 		21F9D28F2C33F2A7009920A1 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F9D28E2C33F2A7009920A1 /* ResetPasswordView.swift */; };
 		21F9D2912C33F2D3009920A1 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F9D2902C33F2D3009920A1 /* ResetPasswordViewModel.swift */; };
 		6F28FBA5FB39873CD08AA695 /* Pods_BIT_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1CD5190B349858D99F73037 /* Pods_BIT_Reminder.framework */; };
@@ -122,6 +124,8 @@
 		217456D62BFB57E600A7E68A /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
 		217456D82BFCF61F00A7E68A /* PasswordErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordErrorType.swift; sourceTree = "<group>"; };
 		2196DDB42BF21912007F81C1 /* AvatarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImage.swift; sourceTree = "<group>"; };
+		21AF6E8B2CA82E8700254727 /* ActiveAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveAlerts.swift; sourceTree = "<group>"; };
+		21E753682C5787BD0051E4E4 /* FilterSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSectionView.swift; sourceTree = "<group>"; };
 		21F9D28E2C33F2A7009920A1 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		21F9D2902C33F2D3009920A1 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		6F4ED9D45104BC656CBEF8E6 /* Pods-BIT Reminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BIT Reminder.release.xcconfig"; path = "Target Support Files/Pods-BIT Reminder/Pods-BIT Reminder.release.xcconfig"; sourceTree = "<group>"; };
@@ -374,6 +378,7 @@
 				2196DDB42BF21912007F81C1 /* AvatarImage.swift */,
 				217456D82BFCF61F00A7E68A /* PasswordErrorType.swift */,
 				8D2373262BEA388E001E74BF /* SwiftUIBridge.swift */,
+				21AF6E8B2CA82E8700254727 /* ActiveAlerts.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -408,6 +413,7 @@
 				8DBAA5692AB204DF0054A5FF /* CutomTableViewCells */,
 				8DBAA5572AB19ED50054A5FF /* TabBarController */,
 				8D40CAB72ABB06140039AB5B /* PasswordTextField.swift */,
+				21E753682C5787BD0051E4E4 /* FilterSectionView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -426,7 +432,7 @@
 				8DBAA5762AB2AF170054A5FF /* AddNewReminderMVP */,
 				8D40CABE2ABB9EEC0039AB5B /* PrivacyPolicyScreen */,
 				8DBAA5622AB1FD220054A5FF /* SettingsMVP */,
-				8D9513792AAB08E800A30E9B /* RegisterScreen */,
+				8D9513792AAB08E800A30E9B /* RegistrationMVP */,
 				8D95136C2AAA167F00A30E9B /* LoginMVP */,
 				8D95136B2AAA167600A30E9B /* HomeMVP */,
 				8D6B80D32AA88433009DF810 /* BaseMVP */,
@@ -577,14 +583,14 @@
 			path = LoginMVP;
 			sourceTree = "<group>";
 		};
-		8D9513792AAB08E800A30E9B /* RegisterScreen */ = {
+		8D9513792AAB08E800A30E9B /* RegistrationMVP */ = {
 			isa = PBXGroup;
 			children = (
 				8D95137A2AAB090500A30E9B /* RegistrationViewController.swift */,
 				8D95137C2AAB091400A30E9B /* RegistrationView.swift */,
 				8D95137E2AAB092100A30E9B /* RegistrationPresenter.swift */,
 			);
-			path = RegisterScreen;
+			path = RegistrationMVP;
 			sourceTree = "<group>";
 		};
 		8D9B9A022B4FDE38003EEC9B /* CustomDatePicker */ = {
@@ -897,8 +903,10 @@
 				8D32EA9C2AB4252F0080CB5E /* Album.swift in Sources */,
 				8DBAA5862AB30F580054A5FF /* MapViewController.swift in Sources */,
 				8D40CAB82ABB06140039AB5B /* PasswordTextField.swift in Sources */,
+				21E753692C5787BD0051E4E4 /* FilterSectionView.swift in Sources */,
 				217456D22BF600D000A7E68A /* SecuredEyeButtonView.swift in Sources */,
 				217456D92BFCF61F00A7E68A /* PasswordErrorType.swift in Sources */,
+				21AF6E8C2CA82E8700254727 /* ActiveAlerts.swift in Sources */,
 				8DBAA5842AB30D920054A5FF /* AlbumsViewPresenter.swift in Sources */,
 				8D6B80D92AA885E0009DF810 /* AuthentificationFlowController.swift in Sources */,
 				8DBAA5822AB30D7D0054A5FF /* AlbumsView.swift in Sources */,

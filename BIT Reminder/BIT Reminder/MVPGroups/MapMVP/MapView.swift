@@ -18,7 +18,7 @@ class MapView: UIView {
     func setupUI() {
         self.backgroundColor = Asset.backgroundBlueColor.color
         self.setupButtons()
-        self.mapView.register(MKPinAnnotationView.self,
+        self.mapView.register(MKMarkerAnnotationView.self,
                               forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
 
     }
@@ -29,6 +29,7 @@ class MapView: UIView {
         self.clearMapButton.tintColor = .white
         self.clearMapButton.layer.cornerRadius = 25
         self.clearMapButton.setImage(UIImage(systemName: "xmark"), for: .normal)
+        self.clearMapButton.isHidden = true
         /// setup for myLocationButton
         self.myLocationButton.backgroundColor = Asset.backgroundBlueColor.color
         self.myLocationButton.tintColor = .white
