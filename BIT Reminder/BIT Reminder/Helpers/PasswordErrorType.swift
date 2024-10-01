@@ -16,7 +16,7 @@ enum PasswordErrorType {
     case noLetterandLength
     case noAll
     case noError
-    
+
     var errorMessages: String? {
         switch self {
         case .noLength:

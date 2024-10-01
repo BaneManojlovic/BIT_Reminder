@@ -26,8 +26,6 @@
 		8D06A3042BBFD5C3006613C9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 8D06A3032BBFD5C3006613C9 /* PrivacyInfo.xcprivacy */; };
 		8D19ED1A2B67F42D00F32B97 /* EmailAndPasswordValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D19ED192B67F42D00F32B97 /* EmailAndPasswordValidation.swift */; };
 		8D2373232BEA35BA001E74BF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2373222BEA35BA001E74BF /* ProfileView.swift */; };
-		8D2373252BEA3842001E74BF /* CustomHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2373242BEA3842001E74BF /* CustomHostingController.swift */; };
-		8D2373272BEA388E001E74BF /* SwiftUIBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2373262BEA388E001E74BF /* SwiftUIBridge.swift */; };
 		8D2373292BEB7856001E74BF /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2373282BEB7856001E74BF /* ProfileViewModel.swift */; };
 		8D32EA992AB424E30080CB5E /* AlbumsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32EA982AB424E30080CB5E /* AlbumsTableViewCell.swift */; };
 		8D32EA9C2AB4252F0080CB5E /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32EA9B2AB4252F0080CB5E /* Album.swift */; };
@@ -133,8 +131,6 @@
 		8D06A3032BBFD5C3006613C9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		8D19ED192B67F42D00F32B97 /* EmailAndPasswordValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAndPasswordValidation.swift; sourceTree = "<group>"; };
 		8D2373222BEA35BA001E74BF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		8D2373242BEA3842001E74BF /* CustomHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHostingController.swift; sourceTree = "<group>"; };
-		8D2373262BEA388E001E74BF /* SwiftUIBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIBridge.swift; sourceTree = "<group>"; };
 		8D2373282BEB7856001E74BF /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		8D32EA982AB424E30080CB5E /* AlbumsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewCell.swift; sourceTree = "<group>"; };
 		8D32EA9A2AB424E70080CB5E /* AlbumsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumsTableViewCell.xib; sourceTree = "<group>"; };
@@ -374,10 +370,8 @@
 				8DBAA5552AB0407C0054A5FF /* UserDefaultsHelper.swift */,
 				8DBAA55E2AB1DDEB0054A5FF /* StringHelper.swift */,
 				8D19ED192B67F42D00F32B97 /* EmailAndPasswordValidation.swift */,
-				8D2373242BEA3842001E74BF /* CustomHostingController.swift */,
 				2196DDB42BF21912007F81C1 /* AvatarImage.swift */,
 				217456D82BFCF61F00A7E68A /* PasswordErrorType.swift */,
-				8D2373262BEA388E001E74BF /* SwiftUIBridge.swift */,
 				21AF6E8B2CA82E8700254727 /* ActiveAlerts.swift */,
 			);
 			path = Helpers;
@@ -881,7 +875,6 @@
 				8DBAA5662AB1FD510054A5FF /* SettingsView.swift in Sources */,
 				217456CC2BF5FF3500A7E68A /* BaseTextFieldView.swift in Sources */,
 				8DBAA5542AB03BA40054A5FF /* UIVewController+Alerts.swift in Sources */,
-				8D2373272BEA388E001E74BF /* SwiftUIBridge.swift in Sources */,
 				8DBAA5522AAEF2AB0054A5FF /* BaseNavigationController.swift in Sources */,
 				8DABAFFB2B5572EF00155B0D /* CustomCalloutView.swift in Sources */,
 				8DBAA5802AB30D6E0054A5FF /* AlbumsViewController.swift in Sources */,
@@ -953,7 +946,6 @@
 				210347382C4A79C600A6E39B /* ResetPasswordDeeplinkHandler.swift in Sources */,
 				8DBAA5612AB1F5AA0054A5FF /* Reminder.swift in Sources */,
 				8D95136E2AAA184E00A30E9B /* HomeViewController.swift in Sources */,
-				8D2373252BEA3842001E74BF /* CustomHostingController.swift in Sources */,
 				8D2373292BEB7856001E74BF /* ProfileViewModel.swift in Sources */,
 				8D9513812AAB309A00A30E9B /* BaseAPI.swift in Sources */,
 				8DBAA5592AB19EEC0054A5FF /* TabBarController.swift in Sources */,

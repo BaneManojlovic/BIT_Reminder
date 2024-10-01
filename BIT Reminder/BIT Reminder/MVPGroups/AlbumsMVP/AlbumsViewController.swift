@@ -17,7 +17,7 @@ class AlbumsViewController: BaseNavigationController {
         loadViewIfNeeded()
         return view as? AlbumsView
     }
-    
+
     let searchController = UISearchController(searchResultsController: nil)
     var isSearchBarEmpty: Bool {
       return searchController.searchBar.text?.isEmpty ?? true
@@ -61,7 +61,7 @@ class AlbumsViewController: BaseNavigationController {
     }
 
     private func setupTargets() { }
-    
+
     func configureSearch() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false

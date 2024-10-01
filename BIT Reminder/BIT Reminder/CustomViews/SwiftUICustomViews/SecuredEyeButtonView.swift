@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct SecuredEyeButtonView: View {
-    
+
     @Binding var isSecured: Bool
-    
+
     var body: some View {
         Button(action: {
             isSecured.toggle()

@@ -19,7 +19,7 @@ final class ResetPasswordDeeplinkHandler: DeeplinkHandlerProtocol {
     }
 
     // MARK: - DeeplinkHandlerProtocol
-    
+
     func canOpenURL(_ url: URL) -> Bool {
         // cheking for custom scheme and host in info plist
         return url.scheme == "bitreminder" && url.host == "resetpassword"
@@ -39,15 +39,15 @@ final class ResetPasswordDeeplinkHandler: DeeplinkHandlerProtocol {
         if let accessToken = queryItems?["access_token"], let refreshToken = queryItems?["refresh_token"] {
             debugPrint("Access Token: \(accessToken)")
             debugPrint("Refresh Token: \(refreshToken)")
-            
+
             let userDefaults = UserDefaultsHelper()
             userDefaults.saveAccessToken(accessToken)
             userDefaults.saveRefreshToken(refreshToken)
-            
+
             // passing the tokens to the ChangePasswordView
             let changePasswordView = ChangePasswordView(accessToken: accessToken, refreshToken: refreshToken)
             let hostingController = UIHostingController(rootView: changePasswordView)
-            
+
             if let navigationController = rootViewController as? UINavigationController {
                 navigationController.pushViewController(hostingController, animated: true)
             } else {

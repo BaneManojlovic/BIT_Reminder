@@ -18,7 +18,7 @@ protocol DeeplinkCoordinatorProtocol {
 }
 
 final class DeeplinkCoordinator {
-    
+
     let handlers: [DeeplinkHandlerProtocol]
     init(handlers: [DeeplinkHandlerProtocol]) {
         self.handlers = handlers

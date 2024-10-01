@@ -12,7 +12,7 @@ enum UserDefaultKeys: String {
 }
 
 class UserDefaultsHelper {
-    
+
     private let accessTokenKey = "accessToken"
     private let refreshTokenKey = "refreshToken"
 
@@ -50,7 +50,7 @@ class UserDefaultsHelper {
     }
 
 // MARK: methods for saving and retreving tokens after reseting users password
-    
+
     func saveAccessToken(_ token: String) {
          UserDefaults.standard.set(token, forKey: accessTokenKey)
      }
@@ -66,7 +66,7 @@ class UserDefaultsHelper {
      func getRefreshToken() -> String? {
          return UserDefaults.standard.string(forKey: refreshTokenKey)
      }
-    
+
     func removeTokens() {
          UserDefaults.standard.removeObject(forKey: accessTokenKey)
          UserDefaults.standard.removeObject(forKey: refreshTokenKey)

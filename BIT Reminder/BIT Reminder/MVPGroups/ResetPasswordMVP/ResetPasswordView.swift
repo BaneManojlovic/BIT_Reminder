@@ -9,14 +9,14 @@ import SwiftUI
 import Supabase
 
 struct ResetPasswordView: View {
-    
+
     weak var navigationController: UINavigationController?
     @Environment(\.dismiss) var dismiss
     @StateObject private var resetPasswordViewModel = ResetPasswordViewModel()
     @State var disableTextField = false
-    
+
     var body: some View {
-        
+
         VStack {
             VStack {
                 Spacer()
@@ -47,8 +47,8 @@ struct ResetPasswordView: View {
                     .disabled(resetPasswordViewModel.email.isEmpty || resetPasswordViewModel.isFormNotValid)
                     .frame(maxWidth: .infinity)
                     .frame(height: 50)
-                    .background(Color("darkOrange"))
-                    .foregroundColor((resetPasswordViewModel.email.isEmpty || resetPasswordViewModel.isFormNotValid) ? Color("orange_disabled_color") : .white)
+                    .background(Color(Asset.darkOrange.color))
+                    .foregroundColor((resetPasswordViewModel.email.isEmpty || resetPasswordViewModel.isFormNotValid) ? Color(Asset.disabledDarkGrayColor.color) : .white)
                     .clipShape(Capsule())
                 }
                 .padding(.horizontal, 20)
@@ -64,7 +64,7 @@ struct ResetPasswordView: View {
             Text(resetPasswordViewModel.resetSuccess ? "Reset password link sent successfully." : (resetPasswordViewModel.errorMessage ?? "An unknown error occurred"))
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-        .background(Color("background_blue_color"))
+        .background(Color(Asset.backgroundBlueColor.color))
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .toolbar {
