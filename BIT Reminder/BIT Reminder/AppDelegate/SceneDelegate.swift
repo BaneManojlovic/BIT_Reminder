@@ -39,14 +39,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
             let token = queryItems["access_token"]
             let refreshToken = queryItems["refresh_token"]
-            
+
             if let token = token {
                 debugPrint("Access Token: \(token)")
                 userDefaultsHelper.saveAccessToken(token) // save access token to user defaults
             } else {
                 debugPrint("Access Token is nil")
             }
-            
+
             if let refreshToken = refreshToken {
                 debugPrint("Refresh Token: \(refreshToken)")
                 userDefaultsHelper.saveRefreshToken(refreshToken) // save refresh token to user defaults
@@ -56,7 +56,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
             debugPrint("No fragment found in the URL")
         }
-        
+
         deeplinkCoordinator.handleURL(firstUrl)
     }
 

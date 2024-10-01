@@ -44,7 +44,7 @@ class ReminderTextFieldCalendar: BaseTextField {
 extension ReminderTextFieldCalendar {
 
     func addInputViewDatePicker(target: Any, selector: Selector) {
-        
+
         let screenWidth = UIScreen.main.bounds.width
         inputDatePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 216))
         inputDatePicker?.datePickerMode = .date

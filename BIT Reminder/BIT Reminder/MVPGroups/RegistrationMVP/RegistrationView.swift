@@ -9,18 +9,18 @@ import UIKit
 import IQKeyboardManager
 
 class RegistrationView: IQPreviousNextView, UITextFieldDelegate {
-    
+
     // MARK: - Outlets
-    
+
     @IBOutlet weak var screenTitleLabel: UILabel!
     @IBOutlet weak var userNameTextField: NameTextFieldView!
     @IBOutlet weak var emailTextField: EmailInputTextFieldView!
     @IBOutlet weak var passwordTextField: PasswordTextField!
     @IBOutlet weak var repeatPasswordTextField: PasswordTextField!
     @IBOutlet weak var registerButton: UIButton!
-    
+
     // MARK: - Setup methods
-    
+
     func setupUI() {
         self.backgroundColor = Asset.backgroundBlueColor.color
         self.setupLabels()
@@ -71,9 +71,13 @@ class RegistrationView: IQPreviousNextView, UITextFieldDelegate {
         /// setup for login button
         self.registerButton.backgroundColor = Asset.darkOrange.color
         self.registerButton.setTitle(L10n.titleLabelRegister, for: .normal)
-        self.registerButton.tintColor = .white
         self.registerButton.layer.cornerRadius = 25
         self.registerButton.isEnabled = false
+        self.updateRegisterButtonTintColor()
+    }
+
+    func updateRegisterButtonTintColor() {
+        self.registerButton.tintColor = self.registerButton.isEnabled ? .white : Asset.disabledDarkGrayColor.color
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {

@@ -31,13 +31,13 @@ struct SecureCustomTextFieldView: View {
                 ZStack(alignment: .trailing) {
                     Group {
                         if isSecured {
-                            BaseSecureTextFieldView(placeholderText: placeholderText, 
-                                                    backgroundColor: Color("textfield_blue_color"),
+                            BaseSecureTextFieldView(placeholderText: placeholderText,
+                                                    backgroundColor: Color(Asset.textfieldBlueColor.color),
                                                     text: text)
                                 .foregroundStyle(.white)
                         } else {
                             BaseTextFieldView(placeholderText: placeholderText,
-                                              backgroundColor: Color("textfield_blue_color"),
+                                              backgroundColor: Color(Asset.textfieldBlueColor.color),
                                               text: text)
                                 .foregroundStyle(.white)
                         }

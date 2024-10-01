@@ -17,7 +17,7 @@ struct BaseTextFieldView: View {
     var body: some View {
         TextField(placeholderText, text: $text)
             .frame(height: 60)
-            .disableAutocorrection(true)     
+            .disableAutocorrection(true)
             .submitLabel(.done)
             .textInputAutocapitalization(.never)
             .padding(EdgeInsets(top: 0, leading: 6, bottom: 0, trailing: 40))

@@ -80,7 +80,7 @@ struct ProfileView: View {
                     }
                     .frame(maxWidth: .infinity)
                     .frame(height: 50)
-                    .background(Color("textfield_blue_color"))
+                    .background(Color(Asset.textfieldBlueColor.color))
                     .foregroundColor(Color.white)
                     .clipShape(Capsule())
 
@@ -89,7 +89,7 @@ struct ProfileView: View {
                     }
                     .frame(maxWidth: .infinity)
                     .frame(height: 50)
-                    .background(Color("textfield_blue_color"))
+                    .background(Color(Asset.textfieldBlueColor.color))
                     .foregroundColor(Color.red)
                     .clipShape(Capsule())
 
@@ -102,8 +102,8 @@ struct ProfileView: View {
                             .disabled(isUpdateButtonDisabled)
                             .frame(maxWidth: .infinity)
                             .frame(height: 50)
-                            .background(Color("darkOrange"))
-                            .foregroundStyle(isUpdateButtonDisabled ? Color("orange_disabled_color") : .white)
+                            .background(Color(Asset.darkOrange.color))
+                            .foregroundStyle(isUpdateButtonDisabled ? Color(Asset.disabledDarkGrayColor.color) : .white)
                             .clipShape(Capsule())
 
                             if isLoading {
@@ -149,9 +149,9 @@ struct ProfileView: View {
                 }
             }
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-            .background(Color("background_blue_color"))
+            .background(Color(Asset.backgroundBlueColor.color))
         }
-        .background(Color("background_blue_color"))
+        .background(Color(Asset.backgroundBlueColor.color))
         .navigationTitle(isEditindModeOn ? L10n.titleLabelEditProfile : L10n.titleLabelProfile)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
@@ -214,13 +214,13 @@ struct ProfileView: View {
                 PhotosPicker(selection: $imageSelection, matching: .images) {
                     Image(systemName: "photo.badge.plus")
                         .frame(width: 50, height: 50)
-                        .background(Color("textfield_blue_color"))
+                        .background(Color(Asset.textfieldBlueColor.color))
                         .foregroundColor(.white)
                         .clipShape(Circle())
                 }
             }
         }
-        .background(Color("background_blue_color"))
+        .background(Color(Asset.backgroundBlueColor.color))
     }
 
     private func handleEditModeChange(_ newValue: EditMode?) {

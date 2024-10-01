@@ -336,7 +336,7 @@ class BaseNavigationController: BaseViewController {
          }
          */
     }
-    
+
     @objc func editAction() {
         // Override in ViewController that inherits BaseNavigationControllert if needed
         /*

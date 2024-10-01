@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-
 enum ValidationError: Error {
     case nameEmpty
     case nameInvalid
@@ -22,9 +21,8 @@ enum ValidationError: Error {
 }
 
 struct UserModel: Codable, Identifiable {
-    var id: String?
-    
 
+    var id: String?
     var profileId: String
     var userName: String?
     var userEmail: String

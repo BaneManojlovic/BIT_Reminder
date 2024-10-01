@@ -38,8 +38,8 @@ struct ChangePasswordView: View {
             .frame(height: 50)
             .disabled(changePasswordVC.password.isEmpty || changePasswordVC.isFormNotValid)
             .disabled($changePasswordVC.isFormNotValid.wrappedValue)
-            .background(Color("darkOrange"))
-            .foregroundColor((changePasswordVC.password.isEmpty || changePasswordVC.isFormNotValid) ? Color("orange_disabled_color") : .white)
+            .background(Color(Asset.darkOrange.color))
+            .foregroundColor((changePasswordVC.password.isEmpty || changePasswordVC.isFormNotValid) ? Color(Asset.disabledDarkGrayColor.color) : .white)
             .clipShape(Capsule())
             .padding(.horizontal, 20)
 
@@ -52,7 +52,7 @@ struct ChangePasswordView: View {
             changePasswordVC.isFormNotValid = true
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-        .background(Color("background_blue_color"))
+        .background(Color(Asset.backgroundBlueColor.color))
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
 

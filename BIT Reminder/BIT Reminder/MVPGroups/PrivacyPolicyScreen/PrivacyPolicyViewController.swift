@@ -74,7 +74,7 @@ extension PrivacyPolicyViewController: WKNavigationDelegate {
 //            self.loadPage(urlAdress: self.screenType.urlAdress)
 //        })
     }
-    
+
     func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         guard let serverTrust = challenge.protectionSpace.serverTrust  else {
             completionHandler(.cancelAuthenticationChallenge, nil)
@@ -87,8 +87,6 @@ extension PrivacyPolicyViewController: WKNavigationDelegate {
             SecTrustSetExceptions(serverTrust, exceptions)
             completionHandler(.useCredential, URLCredential(trust: serverTrust))
         }
-    
-        
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

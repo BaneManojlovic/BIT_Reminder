@@ -26,7 +26,6 @@ class ProfileViewModel: ObservableObject {
     var authManager = AuthManager()
     let userDefaults = UserDefaultsHelper()
 
-    
     func getInitialProfile() async {
         do {
 

@@ -7,8 +7,8 @@
 
 import UIKit
 
-
 class EmailAndPasswordValidation {
+
     // check is name valid
     static func isFullNameValid(textField: UITextField) -> Bool {
         let regex = NSPredicate(format: "SELF MATCHES %@", "^([A-Z][a-z]*((\\s)))+[A-Z][a-z]*$")
@@ -22,9 +22,8 @@ class EmailAndPasswordValidation {
         }
         return false
     }
-    
     static func isPasswordValid(textField: UITextField) -> Bool {
-        
+
         // check if password contains at least one capital letter
         let capitalLetterRegex = NSPredicate(format: "SELF MATCHES %@", ".*[A-Z]+.*")
         guard capitalLetterRegex.evaluate(with: textField.text) else { return false }
@@ -38,7 +37,7 @@ class EmailAndPasswordValidation {
 
         return true
     }
-    
+
     // check if password & repeatedPasswords match
     static func repeatPasswordValidation(password: UITextField, repeatPassword: UITextField) -> Bool {
         if password.text == repeatPassword.text {

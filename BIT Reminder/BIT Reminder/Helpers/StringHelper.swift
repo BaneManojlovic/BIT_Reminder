@@ -41,11 +41,10 @@ struct StringHelper {
             return false
         }
     }
-    
+
     // password errors helper
-    
     static func checkBigLetter(text: String) -> Bool {
-        
+
         let capitalLetterRegEx  = ".*[A-Z]+.*"
         let texttest = NSPredicate(format: "SELF MATCHES %@", capitalLetterRegEx)
         let capitalresult = texttest.evaluate(with: text)
@@ -53,7 +52,7 @@ struct StringHelper {
     }
 
     static func doStringContainsNumber(text: String) -> Bool {
-        
+
         let numberRegEx  = ".*[0-9]+.*"
         let testCase = NSPredicate(format: "SELF MATCHES %@", numberRegEx)
         let containsNumber = testCase.evaluate(with: text)
@@ -61,9 +60,8 @@ struct StringHelper {
         return containsNumber
         }
 
-    
     static func validatePassword(text: String) -> (PasswordErrorType, Bool) {
-        
+
         if !text.isEmpty {
             let letter = checkBigLetter(text: text)
             let number = doStringContainsNumber(text: text)
@@ -83,7 +81,6 @@ struct StringHelper {
                 return (PasswordErrorType.noAll, false)
             }
         }
-        
         return (PasswordErrorType.noError, true)
     }
 }

@@ -12,7 +12,7 @@ class PasswordTextField: BaseInputTextFieldView {
     // MARK: - Properties
 
     var iconClick = true
-    
+
     var rightEyeButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -67,7 +67,7 @@ class PasswordTextField: BaseInputTextFieldView {
         secureTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         self.rightEyeButton.addTarget(self, action: #selector(toggleButton), for: .touchUpInside)
     }
-    
+
     @objc override func textFieldDidChange(_ textField: UITextField) {
         let isValid = EmailAndPasswordValidation.isPasswordValid(textField: secureTextField)
         if let text = secureTextField.text {
@@ -95,18 +95,18 @@ class PasswordTextField: BaseInputTextFieldView {
         secureTextField.layer.borderWidth = 2
         secureTextField.layer.borderColor = UIColor.systemRed.cgColor
     }
-    
+
     func setUpNoErrorView() {
         isError = false
         errorLabel.isHidden = true
         secureTextField.layer.borderWidth = 0
     }
-    
+
     func setupEyeButtonImage(withImage image: UIImage?) {
         rightEyeButton.setImage(image, for: .normal)
         rightEyeButton.imageView?.contentMode = .scaleAspectFit
     }
-    
+
     @objc func toggleButton() {
         if iconClick == true {
             self.secureTextField.isSecureTextEntry = false
@@ -117,7 +117,7 @@ class PasswordTextField: BaseInputTextFieldView {
         }
         iconClick = !iconClick
     }
-    
+
     override func textFieldDidBeginEditing(_ textField: UITextField) {
         setUpNoErrorView()
     }

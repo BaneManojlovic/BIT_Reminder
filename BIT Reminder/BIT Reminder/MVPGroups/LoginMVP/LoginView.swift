@@ -56,7 +56,7 @@ class LoginView: IQPreviousNextView, UITextFieldDelegate {
         /// setup for login button
         self.loginButton.backgroundColor = Asset.darkOrange.color
         self.loginButton.setTitle(L10n.titleLabelLogin, for: .normal)
-        self.loginButton.tintColor = .white
+        self.updateLoginButtonTintColor()
         self.loginButton.layer.cornerRadius = 25
         self.loginButton.isEnabled = false
         /// setup for resetPasswordButton
@@ -69,6 +69,11 @@ class LoginView: IQPreviousNextView, UITextFieldDelegate {
         attributedString.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: title.count))
         resetPasswordButton.setAttributedTitle(attributedString, for: .normal)
     }
+
+    func updateLoginButtonTintColor() {
+        self.loginButton.tintColor = self.loginButton.isEnabled ? .white : Asset.disabledDarkGrayColor.color
+    }
+
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.tag == 1 || textField.tag == 2 {
             if !emailTextField.isError && !passwordTextField.isError {
