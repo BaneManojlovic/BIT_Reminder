@@ -16,6 +16,8 @@ struct ProfileView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject private var profileVC = ProfileViewModel()
 
+    var userDefaultsHelper = UserDefaultsHelper()
+
     var isUpdateButtonDisabled: Bool {
         profileVC.username.isEmpty ||
         profileVC.email.isEmpty ||
@@ -175,18 +177,15 @@ struct ProfileView: View {
                 }
             }
         }
-
         .onAppear {
-            // Set the initial values once the profile is loaded
-            initialUsername = profileVC.username
-            initialEmail = profileVC.email
-            initialImageData = profileVC.avatarImage?.data // Track initial image data
+            // Set initial values from local cache before fetching data
+            initialUsername = userDefaultsHelper.getUser()?.userName ?? "No data"
+            initialEmail = userDefaultsHelper.getUser()?.userEmail ?? "No data"
             Task {
                 await profileVC.getInitialProfile()
             }
         }
         .onChange(of: editMode?.wrappedValue, perform: handleEditModeChange)
-
     }
 
     // Extracted function for profile image view
