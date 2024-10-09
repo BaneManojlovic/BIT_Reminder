@@ -69,21 +69,21 @@ class PasswordTextField: BaseInputTextFieldView {
     }
 
     @objc override func textFieldDidChange(_ textField: UITextField) {
-        let isValid = EmailAndPasswordValidation.isPasswordValid(textField: secureTextField)
-        if let text = secureTextField.text {
-            if text.isEmpty {
-                setUpNoErrorView()
-                isError = true
+        guard let text = secureTextField.text else { return }
+
+        let validationResult = StringHelper.validatePassword(text: text)
+
+        if text.isEmpty {
+            setUpNoErrorView()
+            isError = true
+        } else {
+            if validationResult.1 == false {
+                // If the password is invalid, show the error message
+                errorLabel.text = validationResult.0.errorMessages
+                setUpErrorView()
             } else {
-                if isValid == false {
-                    errorLabel.text = L10n.labelErrorMessagePasswInvalidFormat
-                    setUpErrorView()
-                    if secureTextField.text?.isEmpty == true {
-                        setUpNoErrorView()
-                    }
-                } else {
-                    setUpNoErrorView()
-                }
+                // If the password is valid, hide the error view
+                setUpNoErrorView()
             }
         }
     }

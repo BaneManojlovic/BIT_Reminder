@@ -22,6 +22,7 @@ class ResetPasswordViewModel: ObservableObject {
 
     var isLoading = false
     var authManager = AuthManager()
+    var alertManager = AlertManager.shared 
     let userDefaults = UserDefaultsHelper()
 
     func resetPassword() async {
@@ -48,6 +49,7 @@ class ResetPasswordViewModel: ObservableObject {
                     self.resetSuccess = false
                     self.errorMessage = "Error resetting password: \(error.localizedDescription)"
                     self.showingAlert = false
+                    self.alertManager.triggerAlert(for: error)
                 }
             }
         }

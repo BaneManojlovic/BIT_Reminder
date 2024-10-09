@@ -13,6 +13,7 @@ struct ResetPasswordView: View {
     weak var navigationController: UINavigationController?
     @Environment(\.dismiss) var dismiss
     @StateObject private var resetPasswordViewModel = ResetPasswordViewModel()
+    @StateObject private var alertManager = AlertManager.shared
     @State var disableTextField = false
 
     var body: some View {
@@ -67,6 +68,11 @@ struct ResetPasswordView: View {
         .background(Color(Asset.backgroundBlueColor.color))
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
+        
+        .alert(isPresented: $alertManager.showAlert) {
+                Alert(title: Text(alertManager.alertMessage), message: Text(""), dismissButton: .default(Text("OK")))
+            }
+        
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button {

@@ -2640,6 +2640,9 @@
         }
       }
     },
+    "OK" : {
+
+    },
     "title_label_add_new_reminder" : {
       "extractionState" : "manual",
       "localizations" : {
