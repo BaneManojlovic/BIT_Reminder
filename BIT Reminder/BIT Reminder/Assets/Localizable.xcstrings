@@ -256,6 +256,35 @@
         }
       }
     },
+    "alert_title_location_access_denied" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Location Access Denied"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accesso alla posizione negato"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pristup lokaciji odbijen"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Приступ локацији одбијен"
+          }
+        }
+      }
+    },
     "alert_title_no_internet" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1239,6 +1268,35 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Направите нови албум"
+          }
+        }
+      }
+    },
+    "label_message_enable_location_in_settings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please enable location access in Settings to use this feature."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Per utilizzare questa funzione, abilita l'accesso alla posizione nelle Impostazioni."
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omogućite pristup lokaciji u podešavanjima da biste koristili ovu funkciju."
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Омогућите приступ локацији у подешавањима да бисте користили ову функцију."
           }
         }
       }

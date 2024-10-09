@@ -25,32 +25,28 @@ class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.setupUI()
-        self.setupDelegates()
-        self.setupTargets()
-        self.setupObservers()
+        setup()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let location = myLocation {
-            self.setupUserCurrentLocation(location)
-        }
+        updateUserLocationIfAvailable()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.removePins()
+        removePins()
     }
 
     // MARK: - Setup Methods
 
-    private func setupUI() {
-        self.navigationController?.isNavigationBarHidden = true
-        self.setupLocationManager()
-        self.mapView.setupUI()
-        self.checkIsLocationManageEnabled()
+    private func setup() {
+        navigationController?.isNavigationBarHidden = true
+        setupLocationManager()
+        setupObservers()
+        setupDelegates()
+        setupTargets()
+        mapView.setupUI()
     }
 
     private func setupObservers() {
@@ -62,16 +58,6 @@ class MapViewController: UIViewController {
 
     deinit {
         NotificationCenter.default.removeObserver(self)
-    }
-
-    func checkIsLocationManageEnabled() {
-        let locationServicesEnabled = CLLocationManager.locationServicesEnabled()
-        if locationServicesEnabled {
-            debugPrint("Servis enabled")
-        } else {
-            debugPrint("Servis disabled")
-            locationManager.requestWhenInUseAuthorization()
-        }
     }
 
     @objc func showPins(_ notification: NSNotification) {
@@ -95,31 +81,12 @@ class MapViewController: UIViewController {
     // MARK: - Action Methods
 
     @objc func myLocationButtonAction() {
-        if let location = myLocation {
-            self.setupUserCurrentLocation(location)
-        }
+        updateUserLocationIfAvailable()
     }
 
     @objc func openLocationListButtonAction() {
-        self.removePins()
-        self.authFlowController.goToLocationList()
-    }
-
-    func removePins() {
-        let annotations = self.mapView.mapView.annotations
-        for item in annotations {
-            if let annotation = item as? MKAnnotation {
-                self.mapView.mapView.removeAnnotation(annotation)
-            }
-        }
-        /*
-         Or try this:
-         func removeAllAnnotations() {
-             for annotation in self.mapView.annotations {
-                 self.mapView.removeAnnotation(annotation)
-             }
-         }
-         */
+        removePins()
+        authFlowController.goToLocationList()
     }
 
     @objc func removePinAndSetUserLocation() {
@@ -128,6 +95,16 @@ class MapViewController: UIViewController {
             self.setupUserCurrentLocation(location)
             self.mapView.clearMapButton.isHidden = true
         }
+    }
+
+    // MARK: - Location Hanling
+
+    private func updateUserLocationIfAvailable() {
+        guard let location = myLocation else {
+            setupLocationManager()
+            return
+        }
+        setupUserCurrentLocation(location)
     }
 
     private func setupUserCurrentLocation(_ location: CLLocation) {
@@ -147,6 +124,15 @@ class MapViewController: UIViewController {
         pin.title = L10n.labelMessageMyLocation
         self.mapView.mapView.showsUserLocation = true
         self.mapView.mapView.addAnnotation(pin)
+    }
+
+    func removePins() {
+        let annotations = self.mapView.mapView.annotations
+        for item in annotations {
+            if let annotation = item as? MKAnnotation {
+                self.mapView.mapView.removeAnnotation(annotation)
+            }
+        }
     }
 
     func showChoosenDestinations(query: String) {
@@ -172,6 +158,7 @@ class MapViewController: UIViewController {
             self.mapView.mapView.setRegion(response.boundingRegion, animated: true)
         }
     }
+
     func extractPhoneNumber(from subtitle: String) -> String? {
         let components = subtitle.components(separatedBy: " ")
         return components.joined()
@@ -214,47 +201,48 @@ extension MapViewController: MKMapViewDelegate { }
 extension MapViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            locationManager.stopUpdatingLocation()
-            self.myLocation = location
-            self.setupUserCurrentLocation(location)
-        }
+        guard let location = locations.first else { return }
+        locationManager.stopUpdatingLocation()
+        self.myLocation = location
+        self.setupUserCurrentLocation(location)
     }
 
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        let status = manager.authorizationStatus
+        handleAuthorizationStatus(manager.authorizationStatus)
+    }
 
+    func handleAuthorizationStatus(_ status: CLAuthorizationStatus) {
         switch status {
         case .notDetermined:
-            handleNotDeterminedAuthorization()
-        case .restricted:
-            handleRestrictedAuthorization()
-        case .denied:
-            promptForAuthorization()
-        case .authorizedAlways:
-            self.startLocationUpadate()
-        case .authorizedWhenInUse:
-            self.startLocationUpadate()
-        case .authorized:
-            self.startLocationUpadate()
+            // Ask for permission if the status is not determined
+            locationManager.requestWhenInUseAuthorization()
+        case .denied, .restricted:
+            // Prompt the user to enable permissions if denied or restricted
+            self.promptForAuthorization()
+        case .authorizedWhenInUse, .authorizedAlways:
+            // Start location updates if permission is granted
+            self.startLocationUpdate()
         @unknown default:
-            debugPrint("default...")
+            debugPrint("Unknown authorization status.")
         }
     }
 
     func setupLocationManager() {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        startLocationUpadate()
+        handleAuthorizationStatus(locationManager.authorizationStatus)
     }
 
-    func startLocationUpadate() {
+    func startLocationUpdate() {
         locationManager.startUpdatingLocation()
     }
 
-    func promptForAuthorization() { }
-
-    func handleRestrictedAuthorization() { }
-
-    func handleNotDeterminedAuthorization() { }
+    func promptForAuthorization() {
+        self.showCancelOrSettingsAlert(title: "alert_title_location_access_denied",
+                                       message: "label_message_enable_location_in_settings",
+                                       yesHandler: {
+            if let appSettings = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
+            }
+        })
+    }
 }
