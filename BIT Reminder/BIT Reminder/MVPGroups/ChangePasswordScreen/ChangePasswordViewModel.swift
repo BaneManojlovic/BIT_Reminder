@@ -20,6 +20,7 @@ class ChangePasswordViewModel: ObservableObject {
     @Published var passwordChangeSuccess = false
 
     var authManager = AuthManager()
+    var alertManager = AlertManager.shared 
     let userDefaults = UserDefaultsHelper()
     var accessToken: String?
     var refreshToken: String?
@@ -49,12 +50,15 @@ class ChangePasswordViewModel: ObservableObject {
                     self.showingAlert = true
                 }
             } catch {
+                DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                    debugPrint("Error changing password: \(error)")
+                    KRProgressHUD.dismiss()
+                    self.showingAlert = true
+                    self.passwordChangeSuccess = false
+                    self.errorMessage = "Error changing password: \(error.localizedDescription)"
+                    self.alertManager.triggerAlert(for: error)
+                }
 
-                debugPrint("Error changing password: \(error)")
-                KRProgressHUD.dismiss()
-                self.showingAlert = true
-                self.passwordChangeSuccess = false
-                self.errorMessage = "Error changing password: \(error.localizedDescription)"
 
             }
         }

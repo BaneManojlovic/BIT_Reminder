@@ -19,6 +19,7 @@
 		217456D92BFCF61F00A7E68A /* PasswordErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217456D82BFCF61F00A7E68A /* PasswordErrorType.swift */; };
 		2196DDB52BF21912007F81C1 /* AvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2196DDB42BF21912007F81C1 /* AvatarImage.swift */; };
 		21AF6E8C2CA82E8700254727 /* ActiveAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF6E8B2CA82E8700254727 /* ActiveAlerts.swift */; };
+		21AF6E8E2CB0038D00254727 /* InternetErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AF6E8D2CB0038D00254727 /* InternetErrorHandling.swift */; };
 		21E753692C5787BD0051E4E4 /* FilterSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E753682C5787BD0051E4E4 /* FilterSectionView.swift */; };
 		21F9D28F2C33F2A7009920A1 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F9D28E2C33F2A7009920A1 /* ResetPasswordView.swift */; };
 		21F9D2912C33F2D3009920A1 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F9D2902C33F2D3009920A1 /* ResetPasswordViewModel.swift */; };
@@ -123,6 +124,7 @@
 		217456D82BFCF61F00A7E68A /* PasswordErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordErrorType.swift; sourceTree = "<group>"; };
 		2196DDB42BF21912007F81C1 /* AvatarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImage.swift; sourceTree = "<group>"; };
 		21AF6E8B2CA82E8700254727 /* ActiveAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveAlerts.swift; sourceTree = "<group>"; };
+		21AF6E8D2CB0038D00254727 /* InternetErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetErrorHandling.swift; sourceTree = "<group>"; };
 		21E753682C5787BD0051E4E4 /* FilterSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSectionView.swift; sourceTree = "<group>"; };
 		21F9D28E2C33F2A7009920A1 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		21F9D2902C33F2D3009920A1 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
@@ -252,31 +254,31 @@
 			path = SwiftUICustomViews;
 			sourceTree = "<group>";
 		};
-		217456D32BFB575F00A7E68A /* ChangePasswordMVP */ = {
+		217456D32BFB575F00A7E68A /* ChangePasswordScreen */ = {
 			isa = PBXGroup;
 			children = (
 				217456D42BFB57D900A7E68A /* ChangePasswordView.swift */,
 				217456D62BFB57E600A7E68A /* ChangePasswordViewModel.swift */,
 			);
-			path = ChangePasswordMVP;
+			path = ChangePasswordScreen;
 			sourceTree = "<group>";
 		};
-		21F9D28D2C33F284009920A1 /* ResetPasswordMVP */ = {
+		21F9D28D2C33F284009920A1 /* ResetPasswordScreen */ = {
 			isa = PBXGroup;
 			children = (
 				21F9D28E2C33F2A7009920A1 /* ResetPasswordView.swift */,
 				21F9D2902C33F2D3009920A1 /* ResetPasswordViewModel.swift */,
 			);
-			path = ResetPasswordMVP;
+			path = ResetPasswordScreen;
 			sourceTree = "<group>";
 		};
-		8D2373212BEA358A001E74BF /* ProfileMVP */ = {
+		8D2373212BEA358A001E74BF /* ProfileScreen */ = {
 			isa = PBXGroup;
 			children = (
 				8D2373222BEA35BA001E74BF /* ProfileView.swift */,
 				8D2373282BEB7856001E74BF /* ProfileViewModel.swift */,
 			);
-			path = ProfileMVP;
+			path = ProfileScreen;
 			sourceTree = "<group>";
 		};
 		8D32EA972AB424BA0080CB5E /* AlbumsTableViewCell */ = {
@@ -373,6 +375,7 @@
 				2196DDB42BF21912007F81C1 /* AvatarImage.swift */,
 				217456D82BFCF61F00A7E68A /* PasswordErrorType.swift */,
 				21AF6E8B2CA82E8700254727 /* ActiveAlerts.swift */,
+				21AF6E8D2CB0038D00254727 /* InternetErrorHandling.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -415,9 +418,9 @@
 		8D6B80B32AA78B17009DF810 /* MVPGroups */ = {
 			isa = PBXGroup;
 			children = (
-				21F9D28D2C33F284009920A1 /* ResetPasswordMVP */,
-				217456D32BFB575F00A7E68A /* ChangePasswordMVP */,
-				8D2373212BEA358A001E74BF /* ProfileMVP */,
+				21F9D28D2C33F284009920A1 /* ResetPasswordScreen */,
+				217456D32BFB575F00A7E68A /* ChangePasswordScreen */,
+				8D2373212BEA358A001E74BF /* ProfileScreen */,
 				8D8DE38B2AB949880063E62C /* FavoriteLocationsMVP */,
 				8D8DE3822AB87AD70063E62C /* ImageDetailsMVP */,
 				8D8DE3732AB46A8B0063E62C /* AlbumDetailsMVP */,
@@ -910,6 +913,7 @@
 				8D9513742AAAFDA700A30E9B /* LoginViewController.swift in Sources */,
 				8D8DE3952AB94DAA0063E62C /* FavoriteLocationsTableViewCell.swift in Sources */,
 				8DBAA5752AB2AA720054A5FF /* SettingsModel.swift in Sources */,
+				21AF6E8E2CB0038D00254727 /* InternetErrorHandling.swift in Sources */,
 				8D40CAC02ABB9F1E0039AB5B /* PrivacyPolicyViewController.swift in Sources */,
 				217456CA2BF5FD4800A7E68A /* BaseCustomTextFieldView.swift in Sources */,
 				8D9513722AAA186800A30E9B /* HomeViewPresenter.swift in Sources */,
@@ -1094,7 +1098,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "BIT Reminder/BIT Reminder.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5M4MZAC8G6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BIT Reminder/Info.plist";
@@ -1114,7 +1118,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bitnovisad.bitreminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1135,7 +1139,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "BIT Reminder/BIT Reminder.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5M4MZAC8G6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BIT Reminder/Info.plist";
@@ -1155,7 +1159,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bitnovisad.bitreminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

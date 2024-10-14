@@ -14,15 +14,18 @@ struct ProfileView: View {
     @Environment(\.editMode) private var editMode
     weak var navigationController: UINavigationController?
     @Environment(\.dismiss) var dismiss
-    @StateObject private var profileVC = ProfileViewModel()
+    @StateObject private var alertManager = AlertManager.shared
+    @StateObject private var profileViewModel = ProfileViewModel()
+
+    var userDefaultsHelper = UserDefaultsHelper()
 
     var isUpdateButtonDisabled: Bool {
-        profileVC.username.isEmpty ||
-        profileVC.email.isEmpty ||
-        (profileVC.username == initialUsername &&
-         profileVC.email == initialEmail &&
+        profileViewModel.username.isEmpty ||
+        profileViewModel.email.isEmpty ||
+        (profileViewModel.username == initialUsername &&
+         profileViewModel.email == initialEmail &&
          !isImageChanged) ||
-        profileVC.isFormNotValid
+        profileViewModel.isFormNotValid
     }
 
     @State private var activeAlert: ActiveAlert?
@@ -45,12 +48,12 @@ struct ProfileView: View {
 
                 // Username Field
                 BaseCustomTextFieldView(
-                    text: $profileVC.username,
+                    text: $profileViewModel.username,
                     title: "",
                     placeholderText: "",
-                    isFormNotValid: $profileVC.isFormNotValid,
+                    isFormNotValid: $profileViewModel.isFormNotValid,
                     fieldContentType: .nameInvalid,
-                    isInputValid: $profileVC.profileValidation,
+                    isInputValid: $profileViewModel.profileValidation,
                     isEditMode: isEditindModeOn
                 )
                 .foregroundStyle(.white)
@@ -58,12 +61,12 @@ struct ProfileView: View {
 
                 // Email Field
                 BaseCustomTextFieldView(
-                    text: $profileVC.email,
+                    text: $profileViewModel.email,
                     title: "",
                     placeholderText: "",
-                    isFormNotValid: $profileVC.isFormNotValid,
+                    isFormNotValid: $profileViewModel.isFormNotValid,
                     fieldContentType: .emailInvalid,
-                    isInputValid: $profileVC.profileValidation,
+                    isInputValid: $profileViewModel.profileValidation,
                     isEditMode: isEditindModeOn
                 )
                 .foregroundStyle(.white)
@@ -96,7 +99,7 @@ struct ProfileView: View {
                     VStack {
                         if isEditindModeOn {
                             Button(L10n.titleLabelUpdatePassword) {
-                                profileVC.updateProfileButtonTapped()
+                                profileViewModel.updateProfileButtonTapped()
                             }
                             // Disable button unless there's a change or inputs are invalid
                             .disabled(isUpdateButtonDisabled)
@@ -114,8 +117,8 @@ struct ProfileView: View {
                 }
                 .padding(.horizontal, 20)
                 .padding(.top, 20)
-                .onChange(of: profileVC.profileUpdateSuccess) { success in
-                    if success || profileVC.errorMessage != nil {
+                .onChange(of: profileViewModel.profileUpdateSuccess) { success in
+                    if success || profileViewModel.errorMessage != nil {
                         activeAlert = .profileUpdate
                     }
                 }
@@ -126,16 +129,16 @@ struct ProfileView: View {
                             title: Text(L10n.labelMessageSureWantDeleteAccount),
                             message: Text(""),
                             primaryButton: .destructive(Text(L10n.titleLabelDelete)) {
-                                profileVC.deleteUser()
+                                profileViewModel.deleteUser()
                             },
                             secondaryButton: .cancel()
                         )
                     case .profileUpdate:
                         return Alert(
-                            title: Text(profileVC.profileUpdateSuccess ? L10n.alertMessageProfileUpdated : "Error"),
-                            message: Text(profileVC.profileUpdateSuccess ? L10n.alertMessageProfileSuccess : profileVC.errorMessage ?? L10n.alertTitleUnknownMessage),
+                            title: Text(profileViewModel.profileUpdateSuccess ? L10n.alertMessageProfileUpdated : "Error"),
+                            message: Text(profileViewModel.profileUpdateSuccess ? L10n.alertMessageProfileSuccess : profileViewModel.errorMessage ?? L10n.alertTitleUnknownMessage),
                             dismissButton: .default(Text(L10n.alertButtonTitleOk)) {
-                                if profileVC.profileUpdateSuccess {
+                                if profileViewModel.profileUpdateSuccess {
                                     self.navigationController?.popViewController(animated: true)
                                 }
                             }
@@ -175,18 +178,18 @@ struct ProfileView: View {
                 }
             }
         }
-
         .onAppear {
-            // Set the initial values once the profile is loaded
-            initialUsername = profileVC.username
-            initialEmail = profileVC.email
-            initialImageData = profileVC.avatarImage?.data // Track initial image data
+            // Set initial values from local cache before fetching data
+            initialUsername = userDefaultsHelper.getUser()?.userName ?? "No data"
+            initialEmail = userDefaultsHelper.getUser()?.userEmail ?? "No data"
             Task {
-                await profileVC.getInitialProfile()
+                await profileViewModel.getInitialProfile()
             }
         }
         .onChange(of: editMode?.wrappedValue, perform: handleEditModeChange)
-
+        .alert(isPresented: $alertManager.showAlert) {
+                Alert(title: Text(alertManager.alertMessage), message: Text(""), dismissButton: .default(Text("OK")))
+            }
     }
 
     // Extracted function for profile image view
@@ -194,7 +197,7 @@ struct ProfileView: View {
         ZStack {
             Spacer().frame(height: 30)
             Group {
-                if let avatarImage = profileVC.avatarImage {
+                if let avatarImage = profileViewModel.avatarImage {
                     avatarImage.image.resizable()
                 } else {
                     Image(systemName: "person.circle.fill")
@@ -226,9 +229,9 @@ struct ProfileView: View {
     private func handleEditModeChange(_ newValue: EditMode?) {
         if let mode = newValue {
             if mode.isEditing {
-                initialUsername = profileVC.username
-                initialEmail = profileVC.email
-                initialImageData = profileVC.avatarImage?.data
+                initialUsername = profileViewModel.username
+                initialEmail = profileViewModel.email
+                initialImageData = profileViewModel.avatarImage?.data
                 disableTextField = false
             } else {
                 disableTextField = true
@@ -242,9 +245,9 @@ struct ProfileView: View {
         isEditindModeOn.toggle()
         if isEditindModeOn {
             // Set initial values when entering edit mode
-            initialUsername = profileVC.username
-            initialEmail = profileVC.email
-            initialImageData = profileVC.avatarImage?.data // Track initial image data
+            initialUsername = profileViewModel.username
+            initialEmail = profileViewModel.email
+            initialImageData = profileViewModel.avatarImage?.data // Track initial image data
             disableTextField = false
         } else {
             // Disable text fields when exiting edit mode
@@ -256,9 +259,9 @@ struct ProfileView: View {
     private func loadTransferable(from imageSelection: PhotosPickerItem) {
         Task {
             do {
-                profileVC.avatarImage = try await imageSelection.loadTransferable(type: AvatarImage.self)
+                profileViewModel.avatarImage = try await imageSelection.loadTransferable(type: AvatarImage.self)
                 // Compare new image data with the initial one
-                if let newData = profileVC.avatarImage?.data, newData != initialImageData {
+                if let newData = profileViewModel.avatarImage?.data, newData != initialImageData {
                     isImageChanged = true
                 } else {
                     isImageChanged = false

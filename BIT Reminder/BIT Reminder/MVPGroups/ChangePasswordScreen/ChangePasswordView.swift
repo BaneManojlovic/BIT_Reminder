@@ -11,7 +11,8 @@ struct ChangePasswordView: View {
 
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.dismiss) var dismiss
-    @StateObject private var changePasswordVC = ChangePasswordViewModel()
+    @StateObject private var changePasswordViewModel = ChangePasswordViewModel()
+    @StateObject private var alertManager = AlertManager.shared
 
     var accessToken: String?
     var refreshToken: String?
@@ -21,25 +22,25 @@ struct ChangePasswordView: View {
 
             Spacer()
                 .frame(height: 20)
-            SecureCustomTextFieldView(text: $changePasswordVC.password,
+            SecureCustomTextFieldView(text: $changePasswordViewModel.password,
                                       title: L10n.titleLabelEnterNewPassword + ":",
                                       placeholderText: L10n.labelPassword,
-                                      isFormNotValid: $changePasswordVC.isFormNotValid,
-                                      password: $changePasswordVC.password,
-                                      isInputValid: $changePasswordVC.profileValidation,
+                                      isFormNotValid: $changePasswordViewModel.isFormNotValid,
+                                      password: $changePasswordViewModel.password,
+                                      isInputValid: $changePasswordViewModel.profileValidation,
                                       fieldContentType: .passwordInvalid)
             Spacer()
                 .frame(height: 10)
 
             Button(L10n.titleLabelChangePassword) {
-                self.changePasswordVC.updatePassword()
+                self.changePasswordViewModel.updatePassword()
             }
             .frame(maxWidth: .infinity)
             .frame(height: 50)
-            .disabled(changePasswordVC.password.isEmpty || changePasswordVC.isFormNotValid)
-            .disabled($changePasswordVC.isFormNotValid.wrappedValue)
+            .disabled(changePasswordViewModel.password.isEmpty || changePasswordViewModel.isFormNotValid)
+            .disabled($changePasswordViewModel.isFormNotValid.wrappedValue)
             .background(Color(Asset.darkOrange.color))
-            .foregroundColor((changePasswordVC.password.isEmpty || changePasswordVC.isFormNotValid) ? Color(Asset.disabledDarkGrayColor.color) : .white)
+            .foregroundColor((changePasswordViewModel.password.isEmpty || changePasswordViewModel.isFormNotValid) ? Color(Asset.disabledDarkGrayColor.color) : .white)
             .clipShape(Capsule())
             .padding(.horizontal, 20)
 
@@ -47,14 +48,18 @@ struct ChangePasswordView: View {
         }
 
         .onAppear {
-            changePasswordVC.accessToken = accessToken
-            changePasswordVC.refreshToken = refreshToken
-            changePasswordVC.isFormNotValid = true
+            changePasswordViewModel.accessToken = accessToken
+            changePasswordViewModel.refreshToken = refreshToken
+            changePasswordViewModel.isFormNotValid = true
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         .background(Color(Asset.backgroundBlueColor.color))
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
+        
+        .alert(isPresented: $alertManager.showAlert) {
+                Alert(title: Text(alertManager.alertMessage), message: Text(""), dismissButton: .default(Text("OK")))
+            }
 
         .toolbar {
             ToolbarItem(placement: .principal) {

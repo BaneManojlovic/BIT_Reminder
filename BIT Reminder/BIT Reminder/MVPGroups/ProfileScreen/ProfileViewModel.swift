@@ -24,6 +24,7 @@ class ProfileViewModel: ObservableObject {
 
     var isLoading = false
     var authManager = AuthManager()
+    var alertManager = AlertManager.shared 
     let userDefaults = UserDefaultsHelper()
 
     func getInitialProfile() async {
@@ -49,7 +50,9 @@ class ProfileViewModel: ObservableObject {
                 try await downloadImage(path: avatarURL)
             }
         } catch {
-            debugPrint(error)
+            DispatchQueue.main.async {
+                         self.alertManager.triggerAlert(for: error)
+                     }
         }
     }
     private func downloadImage(path: String) async throws {
@@ -87,10 +90,12 @@ class ProfileViewModel: ObservableObject {
                 }
             } catch {
                 DispatchQueue.main.async {
-                    KRProgressHUD.dismiss()
-                    self.profileUpdateSuccess = false
-                    self.errorMessage = "Error updating profile: \(error.localizedDescription)"
-                }
+                           KRProgressHUD.dismiss()
+                           self.profileUpdateSuccess = false
+                           self.errorMessage = "Error updating profile: \(error.localizedDescription)"
+                           // Trigger the internet alert when there is no connection
+                            self.alertManager.triggerAlert(for: error)
+                       }
                 debugPrint("Error updating profile: \(error)")
             }
         }
@@ -136,6 +141,7 @@ class ProfileViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.errorMessage = "Unexpected error: \(error.localizedDescription)"
                     self.showingDeleteAlert = true  // Optional alert for unexpected error
+                    self.alertManager.triggerAlert(for: error)
                 }
             }
         }
