@@ -56,10 +56,46 @@ struct ChangePasswordView: View {
         .background(Color(Asset.backgroundBlueColor.color))
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
-        
-        .alert(isPresented: $alertManager.showAlert) {
-                Alert(title: Text(alertManager.alertMessage), message: Text(""), dismissButton: .default(Text("OK")))
+
+        .alert(isPresented: Binding<Bool>(
+            get: {
+                changePasswordViewModel.showingAlert || alertManager.showAlert
+            },
+            set: { newValue in
+                if changePasswordViewModel.showingAlert {
+                    changePasswordViewModel.showingAlert = newValue
+                }
+                if alertManager.showAlert {
+                    alertManager.showAlert = newValue
+                }
             }
+        )) {
+            if changePasswordViewModel.showingAlert {
+                if changePasswordViewModel.passwordChangeSuccess {
+                    return Alert(
+                        title: Text(""),
+                        message: Text("Password updated successfully!"),
+                        dismissButton: .default(Text("OK"), action: {
+                            changePasswordViewModel.logoutUser()
+                        })
+                    )
+                } else {
+                    return Alert(
+                        title: Text("Error"),
+                        message: Text(changePasswordViewModel.errorMessage ?? ""),
+                        dismissButton: .default(Text("OK"))
+                    )
+                }
+            } else if alertManager.showAlert {
+                return Alert(
+                    title: Text(alertManager.alertMessage),
+                    message: Text(""),
+                    dismissButton: .default(Text("OK"))
+                )
+            } else {
+                return Alert(title: Text(""), message: Text(""), dismissButton: .default(Text("OK")))
+            }
+        }
 
         .toolbar {
             ToolbarItem(placement: .principal) {

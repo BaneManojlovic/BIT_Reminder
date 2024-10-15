@@ -84,6 +84,16 @@ class ProfileViewModel: ObservableObject {
                     .update(values: updatedProfile)
                     .eq(column: "id", value: currentUser.id)
                     .execute()
+                
+                let cachedProfile = UserModel(
+                             profileId: currentUser.id.uuidString,
+                             userName: username,
+                             userEmail: email,
+                             avatarURL: imageURL
+                         )
+                userDefaults.setUser(user: cachedProfile)
+                
+                
                 DispatchQueue.main.asyncAfter(deadline: .now()+1) {
                     KRProgressHUD.dismiss()
                     self.profileUpdateSuccess = true

@@ -45,6 +45,7 @@ class ChangePasswordViewModel: ObservableObject {
 
                 try await authManager.client.auth.update(user: UserAttributes(password: password, emailChangeToken: accessToken))
                 DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                    debugPrint("Succes in change/reset password")
                     KRProgressHUD.dismiss()
                     self.passwordChangeSuccess = true
                     self.showingAlert = true
