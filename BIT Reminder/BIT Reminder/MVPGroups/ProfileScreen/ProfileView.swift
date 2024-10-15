@@ -122,30 +122,6 @@ struct ProfileView: View {
                         activeAlert = .profileUpdate
                     }
                 }
-                .alert(item: $activeAlert) { alertType in
-                    switch alertType {
-                    case .deleteConfirmation:
-                        return Alert(
-                            title: Text(L10n.labelMessageSureWantDeleteAccount),
-                            message: Text(""),
-                            primaryButton: .destructive(Text(L10n.titleLabelDelete)) {
-                                profileViewModel.deleteUser()
-                            },
-                            secondaryButton: .cancel()
-                        )
-                    case .profileUpdate:
-                        return Alert(
-                            title: Text(profileViewModel.profileUpdateSuccess ? L10n.alertMessageProfileUpdated : "Error"),
-                            message: Text(profileViewModel.profileUpdateSuccess ? L10n.alertMessageProfileSuccess : profileViewModel.errorMessage ?? L10n.alertTitleUnknownMessage),
-                            dismissButton: .default(Text(L10n.alertButtonTitleOk)) {
-                                if profileViewModel.profileUpdateSuccess {
-                                    self.navigationController?.popViewController(animated: true)
-                                }
-                            }
-                        )
-                    }
-                }
-
                 .onChange(of: imageSelection) { newValue in
                     guard let newValue = newValue else { return }
                     loadTransferable(from: newValue)
@@ -179,17 +155,63 @@ struct ProfileView: View {
             }
         }
         .onAppear {
-            // Set initial values from local cache before fetching data
-            initialUsername = userDefaultsHelper.getUser()?.userName ?? "No data"
-            initialEmail = userDefaultsHelper.getUser()?.userEmail ?? "No data"
+            // data from UserDefaults (for offline use)
+            if let user = userDefaultsHelper.getUser() {
+                initialUsername = user.userName ?? ""
+                initialEmail = user.userEmail
+                
+                profileViewModel.username = initialUsername
+                profileViewModel.email = initialEmail
+            }
             Task {
                 await profileViewModel.getInitialProfile()
             }
         }
+
         .onChange(of: editMode?.wrappedValue, perform: handleEditModeChange)
-        .alert(isPresented: $alertManager.showAlert) {
-                Alert(title: Text(alertManager.alertMessage), message: Text(""), dismissButton: .default(Text("OK")))
+
+        .alert(item: Binding<ActiveAlert?>(
+            get: {
+                activeAlert ?? (alertManager.showAlert ? .generalAlert : nil)
+            },
+            set: { newValue in
+                if newValue == nil {
+                    activeAlert = nil
+                    alertManager.showAlert = false
+                } else {
+                    activeAlert = newValue
+                }
             }
+        )) { alertType in
+            switch alertType {
+            case .deleteConfirmation:
+                return Alert(
+                    title: Text(L10n.labelMessageSureWantDeleteAccount),
+                    message: Text(""),
+                    primaryButton: .destructive(Text(L10n.titleLabelDelete)) {
+                        profileViewModel.deleteUser()
+                    },
+                    secondaryButton: .cancel()
+                )
+            case .profileUpdate:
+                return Alert(
+                    title: Text(profileViewModel.profileUpdateSuccess ? L10n.alertMessageProfileUpdated : "Error"),
+                    message: Text(profileViewModel.profileUpdateSuccess ? L10n.alertMessageProfileSuccess : profileViewModel.errorMessage ?? L10n.alertTitleUnknownMessage),
+                    dismissButton: .default(Text(L10n.alertButtonTitleOk)) {
+                        if profileViewModel.profileUpdateSuccess {
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                    }
+                )
+            case .generalAlert:
+                return Alert(
+                    title: Text(alertManager.alertMessage),
+                    message: Text(""),
+                    dismissButton: .default(Text("OK"))
+                )
+            }
+        }
+
     }
 
     // Extracted function for profile image view

@@ -372,6 +372,9 @@
         }
       }
     },
+    "Error" : {
+
+    },
     "label_add" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2699,6 +2702,9 @@
       }
     },
     "OK" : {
+
+    },
+    "Password updated successfully!" : {
 
     },
     "title_label_add_new_reminder" : {

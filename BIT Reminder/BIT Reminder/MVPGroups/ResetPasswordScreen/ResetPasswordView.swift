@@ -68,11 +68,9 @@ struct ResetPasswordView: View {
         .background(Color(Asset.backgroundBlueColor.color))
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
-        
         .alert(isPresented: $alertManager.showAlert) {
                 Alert(title: Text(alertManager.alertMessage), message: Text(""), dismissButton: .default(Text("OK")))
             }
-        
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button {
