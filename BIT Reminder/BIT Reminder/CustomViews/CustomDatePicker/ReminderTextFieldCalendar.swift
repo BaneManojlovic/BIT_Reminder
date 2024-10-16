@@ -59,8 +59,14 @@ extension ReminderTextFieldCalendar {
         toolBar.sizeToFit()
         toolBar.isUserInteractionEnabled = true
        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let cancelBarButton = UIBarButtonItem(title: NSLocalizedString(L10n.alertButtonTitleCancel, comment: ""), style: .plain, target: self, action: #selector(cancelPressed))
-        let doneBarButton = UIBarButtonItem(title: NSLocalizedString(L10n.labelTitleDone, comment: ""), style: .plain, target: target, action: selector)
+        let cancelBarButton = UIBarButtonItem(title: NSLocalizedString(L10n.alertButtonTitleCancel, comment: ""),
+                                              style: .plain,
+                                              target: self,
+                                              action: #selector(cancelPressed))
+        let doneBarButton = UIBarButtonItem(title: NSLocalizedString(L10n.labelTitleDone, comment: ""),
+                                            style: .plain,
+                                            target: target,
+                                            action: selector)
        toolBar.setItems([cancelBarButton, flexibleSpace, doneBarButton], animated: false)
 
        self.inputAccessoryView = toolBar

@@ -24,7 +24,7 @@ class ProfileViewModel: ObservableObject {
 
     var isLoading = false
     var authManager = AuthManager()
-    var alertManager = AlertManager.shared 
+    var alertManager = AlertManager.shared
     let userDefaults = UserDefaultsHelper()
 
     func getInitialProfile() async {
@@ -84,7 +84,7 @@ class ProfileViewModel: ObservableObject {
                     .update(values: updatedProfile)
                     .eq(column: "id", value: currentUser.id)
                     .execute()
-                
+
                 let cachedProfile = UserModel(
                              profileId: currentUser.id.uuidString,
                              userName: username,
@@ -92,8 +92,7 @@ class ProfileViewModel: ObservableObject {
                              avatarURL: imageURL
                          )
                 userDefaults.setUser(user: cachedProfile)
-                
-                
+
                 DispatchQueue.main.asyncAfter(deadline: .now()+1) {
                     KRProgressHUD.dismiss()
                     self.profileUpdateSuccess = true
@@ -140,7 +139,7 @@ class ProfileViewModel: ObservableObject {
                     } else {
                         // Account successfully deleted, remove user data and navigate
                         self.userDefaults.removeUser()
-                        
+
                         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                             self.goToSplashScreen()  // Navigate to splash screen after delay
                         }

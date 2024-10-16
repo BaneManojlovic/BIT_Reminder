@@ -69,7 +69,7 @@ class AlbumsViewController: BaseNavigationController {
         definesPresentationContext = true
         searchController.searchBar.delegate = self
         searchController.searchBar.searchTextField.textColor = .white
-        self.searchController.searchBar.searchTextField.attributedPlaceholder =  NSAttributedString.init(string: "Search...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        self.searchController.searchBar.searchTextField.attributedPlaceholder = NSAttributedString.init(string: "Search...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         if let leftView = searchController.searchBar.searchTextField.leftView as? UIImageView {
                leftView.image = leftView.image?.withRenderingMode(.alwaysTemplate)
             leftView.tintColor = UIColor.lightGray
@@ -81,7 +81,9 @@ class AlbumsViewController: BaseNavigationController {
 
         if let user = self.presenter.user {
             /// Create the alert controller.
-            let alert = UIAlertController(title: L10n.labelMessageCreateNewAlbum, message: L10n.labelMessageEnterAlbumTitle, preferredStyle: .alert)
+            let alert = UIAlertController(title: L10n.labelMessageCreateNewAlbum,
+                                          message: L10n.labelMessageEnterAlbumTitle,
+                                          preferredStyle: .alert)
             /// Add the text field. You can configure it however you need.
             alert.addTextField { (textField) in
                 textField.text = ""
@@ -203,7 +205,8 @@ extension AlbumsViewController: UITableViewDelegate, UITableViewDataSource {
             if isFiltering {
                 /// filtered data
                 if let filteredModelId = self.presenter.filteredAlbums[index].id {
-                    self.authFlowController.goToAlbumDetails(albumId: filteredModelId, albumName: self.presenter.filteredAlbums[index].albumName)
+                    self.authFlowController.goToAlbumDetails(albumId: filteredModelId,
+                                                             albumName: self.presenter.filteredAlbums[index].albumName)
                 }
             } else {
                 /// unfiltered data

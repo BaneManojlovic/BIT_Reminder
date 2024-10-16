@@ -94,7 +94,9 @@ class RegistrationView: IQPreviousNextView, UITextFieldDelegate {
                 registerButton.isEnabled = false
             }
         }
+        self.updateRegisterButtonTintColor()
     }
+
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField.tag == 4 {
             setUpNoMatchingErrorLabel()

@@ -38,7 +38,8 @@ class RegistrationPresenter {
         Task {
             do {
                 try user.validateRegistration()
-                try await self.authManager.registerNewUserWithEmailAndPassword(email: user.userEmail, password: user.password ?? "") { error, response  in
+                try await self.authManager.registerNewUserWithEmailAndPassword(email: user.userEmail,
+                                                                               password: user.password ?? "") { error, response  in
                     if let error = error {
                         debugPrint(error.localizedDescription)
                         self.delegate?.registarNewUserActionFailure(error: error)

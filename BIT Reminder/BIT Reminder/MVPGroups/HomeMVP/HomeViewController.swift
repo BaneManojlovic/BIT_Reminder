@@ -262,17 +262,20 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             if isFiltering {
                 /// filtered data
                 if let filteredModelId = self.presenter.filteredReminders[index].id {
-                    self.authFlowController.goToAddNewReminder(screenType: .reminderDetailsScreen, model: self.presenter.filteredReminders[indexPath.row])
+                    self.authFlowController.goToAddNewReminder(screenType: .reminderDetailsScreen,
+                                                               model: self.presenter.filteredReminders[indexPath.row])
                 }
                 /// sorted data
             } else if isSortedByImportance || isSortedByDate {
                 if let sortedModelId = self.presenter.sortedReminders[index].id {
-                    self.authFlowController.goToAddNewReminder(screenType: .reminderDetailsScreen, model: self.presenter.sortedReminders[indexPath.row])
+                    self.authFlowController.goToAddNewReminder(screenType: .reminderDetailsScreen,
+                                                               model: self.presenter.sortedReminders[indexPath.row])
                 }
             } else {
                 /// unfiltered data
                 if let modelId = self.presenter.reminders[index].id {
-                    self.authFlowController.goToAddNewReminder(screenType: .reminderDetailsScreen, model: self.presenter.reminders[indexPath.row])
+                    self.authFlowController.goToAddNewReminder(screenType: .reminderDetailsScreen,
+                                                               model: self.presenter.reminders[indexPath.row])
                 }
             }
         } else {
@@ -288,9 +291,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return nil // Hide section header if no filter is selected
         }
 
-        guard let sectionHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: FilterSectionView.identifier) as? FilterSectionView else {
-            fatalError("section header failed")
-        }
+        guard let sectionHeader = tableView.dequeueReusableHeaderFooterView(
+            withIdentifier: FilterSectionView.identifier) as? FilterSectionView else { fatalError("section header failed") }
         sectionHeader.configure(with: sectionHeaderTitle)
         return sectionHeader
     }

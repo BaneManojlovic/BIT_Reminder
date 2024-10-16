@@ -42,7 +42,8 @@ struct SecureCustomTextFieldView: View {
                                 .foregroundStyle(.white)
                         }
                     }
-                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(isInputValid[fieldContentType] == true || text.wrappedValue.isEmpty ? Color.clear : Color.red, lineWidth: 2))
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(
+                        isInputValid[fieldContentType] == true || text.wrappedValue.isEmpty ? Color.clear : Color.red, lineWidth: 2))
                     .onChange(of: text.wrappedValue) { newValue in
 
                         switch fieldContentType {

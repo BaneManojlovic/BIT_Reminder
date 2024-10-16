@@ -22,7 +22,7 @@ class ResetPasswordViewModel: ObservableObject {
 
     var isLoading = false
     var authManager = AuthManager()
-    var alertManager = AlertManager.shared 
+    var alertManager = AlertManager.shared
     let userDefaults = UserDefaultsHelper()
 
     func resetPassword() async {

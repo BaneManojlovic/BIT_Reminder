@@ -117,7 +117,7 @@ class AddNewReminderView: UIView {
         self.titleTextField.isEnabled = false
         self.descriptionTextView.isUserInteractionEnabled = false
         self.setImportanceSwitch.isUserInteractionEnabled = false
-        self.addButton.setTitle(L10n.labelTitleEdit, for: .normal)
+        self.addButton.setTitle(String(localized: "label_button_title_save"), for: .normal)
     }
 
     func formatDateToShow(date: String) -> String {
