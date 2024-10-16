@@ -69,7 +69,7 @@ class AlbumsViewController: BaseNavigationController {
         definesPresentationContext = true
         searchController.searchBar.delegate = self
         searchController.searchBar.searchTextField.textColor = .white
-        self.searchController.searchBar.searchTextField.attributedPlaceholder = NSAttributedString.init(string: "Search...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        self.searchController.searchBar.searchTextField.attributedPlaceholder = NSAttributedString.init(string: L10n.labelPlaceholderSearch, attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         if let leftView = searchController.searchBar.searchTextField.leftView as? UIImageView {
                leftView.image = leftView.image?.withRenderingMode(.alwaysTemplate)
             leftView.tintColor = UIColor.lightGray

@@ -197,6 +197,64 @@
         }
       }
     },
+    "alert_message_profile_success" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your profile was successfully updated."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il tuo profilo è stato aggiornato con successo."
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vaš profil je uspešno ažuriran."
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ваш профил је успешно ажуриран."
+          }
+        }
+      }
+    },
+    "alert_message_profile_updated" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profile updated"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profilo aggiornato"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profil uredjen"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Профил уређен"
+          }
+        }
+      }
+    },
     "alert_title_alert" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1173,13 +1231,13 @@
         "sr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Album je uspešno dodat"
+            "value" : "Album je uspešno obrisan"
           }
         },
         "sr-RS" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Албум је успешно додат"
+            "value" : "Албум је успешно обрисан"
           }
         }
       }
@@ -3382,6 +3440,35 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ресетујте лозинку"
+          }
+        }
+      }
+    },
+    "title_placeholder_enter_your_email" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter your email"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inserisci la tua email"
+          }
+        },
+        "sr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unesite vaš email"
+          }
+        },
+        "sr-RS" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Унесите ваш емаил"
           }
         }
       }
