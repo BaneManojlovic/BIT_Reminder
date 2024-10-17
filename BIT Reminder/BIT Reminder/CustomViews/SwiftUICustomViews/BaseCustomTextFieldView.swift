@@ -25,9 +25,13 @@ struct BaseCustomTextFieldView: View {
                 .frame(width: 20)
             VStack(alignment: .leading, spacing: 10) {
                 Text(title)
-                BaseTextFieldView(placeholderText: placeholderText, backgroundColor: (isEditMode == false ? Color("textfield_blue_color") : Color("textfield_blue_color")), text: text)
+                BaseTextFieldView(placeholderText: placeholderText,
+                                  backgroundColor: (isEditMode == false ? Color("textfield_blue_color") : Color("textfield_blue_color")),
+                                  text: text)
                     .keyboardType(.default)
-                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(isInputValid[fieldContentType] == true || text.wrappedValue.isEmpty ? Color.clear : Color.red, lineWidth: 2))
+                    .overlay(RoundedRectangle(cornerRadius: 10)
+                        .stroke(isInputValid[fieldContentType] == true || text.wrappedValue.isEmpty ? Color.clear : Color.red,
+                                lineWidth: 2))
                     .onChange(of: text.wrappedValue) { newValue in
 
                         switch fieldContentType {

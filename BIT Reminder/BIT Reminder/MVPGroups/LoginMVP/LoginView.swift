@@ -66,7 +66,9 @@ class LoginView: IQPreviousNextView, UITextFieldDelegate {
         /// resetPasswordButton underline
         let title = L10n.titleLableResetPassword
         let attributedString = NSMutableAttributedString(string: title)
-        attributedString.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: title.count))
+        attributedString.addAttribute(.underlineStyle,
+                                      value: NSUnderlineStyle.single.rawValue,
+                                      range: NSRange(location: 0, length: title.count))
         resetPasswordButton.setAttributedTitle(attributedString, for: .normal)
     }
 

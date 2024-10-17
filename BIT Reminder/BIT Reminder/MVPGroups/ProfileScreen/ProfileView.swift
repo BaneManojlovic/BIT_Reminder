@@ -70,7 +70,7 @@ struct ProfileView: View {
                     isEditMode: isEditindModeOn
                 )
                 .foregroundStyle(.white)
-                .disabled(disableTextField)
+                .disabled(true)
 
                 Spacer()
                     .frame(height: 40)
@@ -159,7 +159,7 @@ struct ProfileView: View {
             if let user = userDefaultsHelper.getUser() {
                 initialUsername = user.userName ?? ""
                 initialEmail = user.userEmail
-                
+
                 profileViewModel.username = initialUsername
                 profileViewModel.email = initialEmail
             }
@@ -195,8 +195,8 @@ struct ProfileView: View {
                 )
             case .profileUpdate:
                 return Alert(
-                    title: Text(profileViewModel.profileUpdateSuccess ? L10n.alertMessageProfileUpdated : "Error"),
-                    message: Text(profileViewModel.profileUpdateSuccess ? L10n.alertMessageProfileSuccess : profileViewModel.errorMessage ?? L10n.alertTitleUnknownMessage),
+                    title: Text(profileViewModel.profileUpdateSuccess ? String(localized: "alert_message_profile_updated") : "Error"),
+                    message: Text(profileViewModel.profileUpdateSuccess ? String(localized: "alert_message_profile_success") : profileViewModel.errorMessage ?? L10n.alertTitleUnknownMessage),
                     dismissButton: .default(Text(L10n.alertButtonTitleOk)) {
                         if profileViewModel.profileUpdateSuccess {
                             self.navigationController?.popViewController(animated: true)

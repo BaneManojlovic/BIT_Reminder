@@ -103,7 +103,8 @@ class AddNewReminderViewController: BaseNavigationController {
                         dateHasChanged = true
                         debugPrint("The dates are different.")
                     }
-                self.addNewReminderView.changeEditButtonStatus(isChanged: titleHasChanged || descriptionHasChanged || importanceHasChanged || dateHasChanged)
+                self.addNewReminderView.changeEditButtonStatus(
+                    isChanged: titleHasChanged || descriptionHasChanged || importanceHasChanged || dateHasChanged)
                 } else {
                     debugPrint("One or both of the date strings are invalid.")
                 }
@@ -265,7 +266,7 @@ extension AddNewReminderViewController: UITextFieldDelegate {
     @objc func textFieldDidChange(_ textField: UITextField) {
         let isTextEmpty = addNewReminderView.titleTextField.text?.isEmpty ?? true
         self.addNewReminderView.addButton.isEnabled = !isTextEmpty
-
+        self.addNewReminderView.updateAddButtonTintColor()
         guard let reminderModel = presenter?.model
         else { return }
         let text = textField.text
@@ -278,7 +279,8 @@ extension AddNewReminderViewController: UITextFieldDelegate {
             debugPrint("Title is different")
         }
 
-        self.addNewReminderView.changeEditButtonStatus(isChanged: titleHasChanged || descriptionHasChanged || importanceHasChanged || dateHasChanged)
+        self.addNewReminderView.changeEditButtonStatus(
+            isChanged: titleHasChanged || descriptionHasChanged || importanceHasChanged || dateHasChanged)
     }
 }
 
@@ -297,6 +299,7 @@ extension AddNewReminderViewController: UITextViewDelegate {
             self.descriptionHasChanged = true
             debugPrint("Description is different")
         }
-        self.addNewReminderView.changeEditButtonStatus(isChanged: titleHasChanged || descriptionHasChanged || importanceHasChanged || dateHasChanged)
+        self.addNewReminderView.changeEditButtonStatus(
+            isChanged: titleHasChanged || descriptionHasChanged || importanceHasChanged || dateHasChanged)
     }
 }

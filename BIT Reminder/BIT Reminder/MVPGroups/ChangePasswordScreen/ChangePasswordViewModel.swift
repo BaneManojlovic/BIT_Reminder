@@ -20,7 +20,7 @@ class ChangePasswordViewModel: ObservableObject {
     @Published var passwordChangeSuccess = false
 
     var authManager = AuthManager()
-    var alertManager = AlertManager.shared 
+    var alertManager = AlertManager.shared
     let userDefaults = UserDefaultsHelper()
     var accessToken: String?
     var refreshToken: String?
@@ -59,7 +59,6 @@ class ChangePasswordViewModel: ObservableObject {
                     self.errorMessage = "Error changing password: \(error.localizedDescription)"
                     self.alertManager.triggerAlert(for: error)
                 }
-
 
             }
         }

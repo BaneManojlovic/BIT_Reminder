@@ -25,7 +25,7 @@ struct ResetPasswordView: View {
                 // Email Field
                 BaseCustomTextFieldView(
                     text: $resetPasswordViewModel.email,
-                    title: L10n.titlePlaceholderEnterYourEmail + ":",
+                    title: String(localized: "title_placeholder_enter_your_email") + ":",
                     placeholderText: L10n.labelEmail,
                     isFormNotValid: $resetPasswordViewModel.isFormNotValid,
                     fieldContentType: .emailInvalid,

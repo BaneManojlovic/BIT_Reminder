@@ -237,8 +237,8 @@ extension MapViewController: CLLocationManagerDelegate {
     }
 
     func promptForAuthorization() {
-        self.showCancelOrSettingsAlert(title: "alert_title_location_access_denied",
-                                       message: "label_message_enable_location_in_settings",
+        self.showCancelOrSettingsAlert(title: String(localized: "alert_title_location_access_denied"),
+                                       message: String(localized: "label_message_enable_location_in_settings"),
                                        yesHandler: {
             if let appSettings = URL(string: UIApplication.openSettingsURLString) {
                 UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
