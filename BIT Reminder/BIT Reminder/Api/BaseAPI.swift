@@ -19,7 +19,7 @@ class AuthManager {
     /// unique api key from supabase
     static let apiKey = Constants.baseApiKey
 
-    let client = SupabaseClient(supabaseURL: projectUrl, supabaseKey: apiKey)
+    var client = SupabaseClient(supabaseURL: projectUrl, supabaseKey: apiKey)
 
     init() {}
 
@@ -128,6 +128,31 @@ class AuthManager {
         } catch {
             debugPrint(error.localizedDescription)
             completion(error, nil)
+        }
+    }
+
+    func editReminder(model: Reminder, completion: @escaping(Error?) -> Void) async {
+        guard let user = self.userDefaults.getUser() else {return}
+        do {
+            let currentUser = try await client.auth.session.user
+            let updatedReminder = Reminder(
+                id: model.id,
+                profileId: currentUser.id.uuidString,
+                title: model.title,
+                description: model.description,
+                important: model.important,
+                date: model.date
+            )
+
+            try await client.database
+                .from("reminders")
+                .update(values: updatedReminder)
+                .eq(column: "id", value: model.id ?? "")
+                .execute()
+            completion(nil)
+        } catch {
+            debugPrint("Error updating reminder: \(error)")
+            completion(error)
         }
     }
 

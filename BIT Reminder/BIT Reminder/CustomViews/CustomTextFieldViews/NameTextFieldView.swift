@@ -8,7 +8,7 @@
 import UIKit
 
 class NameTextFieldView: BaseInputTextFieldView {
-    
+
     @objc override func textFieldDidChange(_ textField: UITextField) {
         let isValid = EmailAndPasswordValidation.isFullNameValid(textField: inputTextField)
         if textField.text?.isEmpty == true {
@@ -41,7 +41,7 @@ class NameTextFieldView: BaseInputTextFieldView {
         inputTextField.layer.borderWidth = 2
         inputTextField.layer.borderColor = UIColor.systemRed.cgColor
     }
-    
+
     func setUpNoErrorView() {
         isError = false
         errorLabel.isHidden = true

@@ -68,4 +68,27 @@ extension UIViewController {
 
         self.present(alert, animated: true, completion: completion)
     }
+
+    /// Cancel or Yes Alert pop-up
+    func showCancelOrSettingsAlert(title: String? = L10n.alertTitleAlert,
+                                   message: String,
+                                   yesHandler: @escaping (() -> Void),
+                                   noHandler: (() -> Void)? = nil,
+                                   completion: (() -> Void)? = nil) {
+
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: L10n.alertButtonTitleCancel,
+                                      style: .cancel,
+                                      handler: { _ in
+            noHandler?()
+        }))
+        alert.addAction(UIAlertAction(title: L10n.titleLabelSettings,
+                                      style: .default,
+                                      handler: { _ in
+            yesHandler()
+        }))
+
+        self.present(alert, animated: true, completion: completion)
+    }
 }

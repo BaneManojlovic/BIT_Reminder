@@ -8,7 +8,7 @@
 import UIKit
 
 class BaseInputTextFieldView: UIView {
-    
+
     var isError: Bool = true
 
     var mainStackView: UIStackView = {
@@ -67,18 +67,13 @@ class BaseInputTextFieldView: UIView {
 }
 
 extension BaseInputTextFieldView: UITextFieldDelegate {
-    
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
-    }
-    
+
+    @objc func textFieldDidChange(_ textField: UITextField) { }
+
+    func textFieldDidBeginEditing(_ textField: UITextField) { }
+
+    func textFieldDidEndEditing(_ textField: UITextField) { }
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

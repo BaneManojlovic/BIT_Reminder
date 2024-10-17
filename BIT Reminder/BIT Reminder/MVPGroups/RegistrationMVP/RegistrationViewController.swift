@@ -97,7 +97,7 @@ extension RegistrationViewController: RegistrationPresenterDelegate {
         }
     }
 
-    func handleValidationError(error: UserModel.ValidationError) {
+    func handleValidationError(error: ValidationError) {
         switch error {
         case .nameEmpty:
             registrationView.userNameTextField.errorLabel.text = L10n.labelErrorMessageNameCannotBeEmpty

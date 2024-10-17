@@ -7,7 +7,7 @@
 import UIKit
 
 class EmailInputTextFieldView: BaseInputTextFieldView {
-    
+
     @objc override func textFieldDidChange(_ textField: UITextField) {
         let isValid = EmailAndPasswordValidation.isValidEmail(textField: inputTextField)
         if textField.text?.isEmpty == true {

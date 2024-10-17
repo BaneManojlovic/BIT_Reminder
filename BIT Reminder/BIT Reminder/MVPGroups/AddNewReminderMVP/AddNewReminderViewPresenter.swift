@@ -19,6 +19,8 @@ protocol AddNewReminderViewPresenterDelegate: AnyObject {
     func handleValidationError(error: Reminder.ValidationError)
     func deleteReminderFailure(message: String)
     func deleteReminderSuccess()
+    func editReminderSuccess()
+    func editReminderFailure(message: String)
 }
 
 class AddNewReminderViewPresenter {
@@ -67,6 +69,35 @@ class AddNewReminderViewPresenter {
                            KRProgressHUD.dismiss()
                         }
                         self.delegate?.addNewReminderSuccess()
+                    }
+                }
+            } catch let error as Reminder.ValidationError {
+                DispatchQueue.main.async {
+                   KRProgressHUD.dismiss()
+                }
+                self.delegate?.handleValidationError(error: error)
+            }
+        }
+    }
+
+    func editReminder(model: Reminder) {
+        KRProgressHUD.show()
+        Task {
+            debugPrint("usao u task")
+            do {
+                try model.validation()
+                try await self.authManager.editReminder(model: model) { error in
+                    if let error = error {
+                        debugPrint(error)
+                        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                           KRProgressHUD.dismiss()
+                        }
+                        self.delegate?.editReminderFailure(message: error.localizedDescription)
+                    } else {
+                        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                           KRProgressHUD.dismiss()
+                        }
+                        self.delegate?.editReminderSuccess()
                     }
                 }
             } catch let error as Reminder.ValidationError {

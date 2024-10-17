@@ -11,7 +11,7 @@ import KRProgressHUD
 protocol RegistrationPresenterDelegate: AnyObject {
     func registarNewUserActionSuccess()
     func registarNewUserActionFailure(error: Error)
-    func handleValidationError(error: UserModel.ValidationError)
+    func handleValidationError(error: ValidationError)
 }
 
 class RegistrationPresenter {
@@ -38,7 +38,8 @@ class RegistrationPresenter {
         Task {
             do {
                 try user.validateRegistration()
-                try await self.authManager.registerNewUserWithEmailAndPassword(email: user.userEmail, password: user.password ?? "") { error, response  in
+                try await self.authManager.registerNewUserWithEmailAndPassword(email: user.userEmail,
+                                                                               password: user.password ?? "") { error, response  in
                     if let error = error {
                         debugPrint(error.localizedDescription)
                         self.delegate?.registarNewUserActionFailure(error: error)
@@ -51,7 +52,7 @@ class RegistrationPresenter {
                         self.saveUserData(user: user)
                     }
                 }
-            } catch let error as UserModel.ValidationError {
+            } catch let error as ValidationError {
                 self.delegate?.handleValidationError(error: error)
             }
         }
