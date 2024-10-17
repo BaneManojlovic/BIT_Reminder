@@ -18,6 +18,11 @@
 "alert_title_alert" = "Alert";
 "alert_title_no_internet" = "No Internet";
 "alert_message_no_internet" = "It seems there is no Internet connection. Please check your settings and try again.";
+"alert_message_session_not_found" = "Session not found";
+"alert_message_profile_updated" = "Profile Updated";
+"alert_message_profile_success" =  "Your profile was successfully updated.";
+"alert_title_unknown_message" = "Unknown error";
+
 
 // MARK: - Tab Bar
 
@@ -92,8 +97,8 @@
 
 "label_message_no_reminders" = "No Reminders";
 "title_label_reminders" = "Reminders";
-"label_filter_importance" = "Filter by importance";
-"label_filter_date" = "Filter by date";
+"label_filter_importance" = "Filtered by importance";
+"label_filter_date" = "Filtered by date";
 "label_reset_filter" = "Reset filter";
 "label_placeholder_search" = "Search...";
 
@@ -106,7 +111,7 @@
 "label_message_register_new_user" = "Register new user";
 "label_message_login_error" = "Error while Login";
 "label_error_message_name_cannot_be_empty" = "Name cannot be empty";
-"label_error_message_name_invalid_format" = "Name is in invalid format";
+"label_error_message_name_invalid_format" = "Enter your full name with each word starting with an uppercase letter (e.g., John Doe)";
 "label_error_message_email_cannot_be_empty" = "Email cannot be empty";
 "label_error_message_email_invalid_format" = "Email is in invalid format";
 "label_error_message_passw_cannot_be_empty" = "Password cannot be empty";
@@ -141,3 +146,30 @@
 "label_description" = "Description:";
 "label_reminder_importance" = "Reminder importance:";
 "label_reminder_date" = "Reminder date:";
+"label_title_edit" = "Edit";
+"label_title_done" = "Done";
+
+// MARK: - Change password screen
+
+"title_label_password_no_lenght" = "Password must contain at least eight characters";
+"label_title_error_no_letter_new_password" = "Password must contain at least an uppercased letter";
+"label_title_error_no_number_new_password" = "Password must contain at least a number";
+"label_title_error_no_number_and_letter_new_password" = "Password must contain at least a number and an uppercased letter";
+"label_title_error_no_number_and_length_new_password" = "Password must contain at least a number and eight characters";
+"label_title_error_no_letter_and_length_new_password" = "Password must contain at least an uppercased letter and eight characters";
+"label_title_error_no_all_new_password" = "Password must contain at least a number, an uppercased letter and eight characters";
+"title_label_enter_new_password" = "Enter new password";
+"title_alert_password_has_been_changed" = "Password has been changed, please log in again";
+
+//MARK: - Profile screen
+
+"title_label_update_password" = "Update Profile";
+"title_label_delete" = "Delete";
+"title_label_change_password" = "Change Password";
+"title_label_edit_profile" = "Edit Profile";
+
+//MARK: - Reset password screen
+
+"title_placeholder_enter_your_email" = "Enter your email";
+"title_lable_reset_password" = "Reset password";
+"title_alert_reset_link_sent" = "Reset link has been sent to your email";

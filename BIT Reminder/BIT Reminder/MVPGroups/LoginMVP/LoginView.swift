@@ -16,6 +16,7 @@ class LoginView: IQPreviousNextView, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: EmailInputTextFieldView!
     @IBOutlet weak var passwordTextField: PasswordTextField!
     @IBOutlet weak var registerNewUserButton: UIButton!
+    @IBOutlet weak var resetPasswordButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
 
     // MARK: - Setup Methods
@@ -47,17 +48,34 @@ class LoginView: IQPreviousNextView, UITextFieldDelegate {
 
     private func setupButtons() {
         /// setup for register new user button
-        self.registerNewUserButton.backgroundColor = .clear
+        self.registerNewUserButton.backgroundColor = Asset.darkOrange.color
         self.registerNewUserButton.setTitle(L10n.labelMessageRegisterNewUser, for: .normal)
-        self.registerNewUserButton.contentHorizontalAlignment = .center
         self.registerNewUserButton.tintColor = .white
+        self.registerNewUserButton.layer.cornerRadius = 25
+        self.registerNewUserButton.isEnabled = true
         /// setup for login button
-        self.loginButton.backgroundColor = Asset.buttonBlueColor.color
+        self.loginButton.backgroundColor = Asset.darkOrange.color
         self.loginButton.setTitle(L10n.titleLabelLogin, for: .normal)
-        self.loginButton.tintColor = .white
-        self.loginButton.layer.cornerRadius = 10
+        self.updateLoginButtonTintColor()
+        self.loginButton.layer.cornerRadius = 25
         self.loginButton.isEnabled = false
+        /// setup for resetPasswordButton
+        self.resetPasswordButton.setTitle(L10n.titleLableResetPassword, for: .normal)
+        self.resetPasswordButton.contentHorizontalAlignment = .center
+        self.resetPasswordButton.tintColor = Asset.buttonBlueColor.color
+        /// resetPasswordButton underline
+        let title = L10n.titleLableResetPassword
+        let attributedString = NSMutableAttributedString(string: title)
+        attributedString.addAttribute(.underlineStyle,
+                                      value: NSUnderlineStyle.single.rawValue,
+                                      range: NSRange(location: 0, length: title.count))
+        resetPasswordButton.setAttributedTitle(attributedString, for: .normal)
     }
+
+    func updateLoginButtonTintColor() {
+        self.loginButton.tintColor = self.loginButton.isEnabled ? .white : Asset.disabledDarkGrayColor.color
+    }
+
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.tag == 1 || textField.tag == 2 {
             if !emailTextField.isError && !passwordTextField.isError {

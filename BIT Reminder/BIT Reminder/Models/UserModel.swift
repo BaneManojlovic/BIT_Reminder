@@ -6,14 +6,29 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct UserModel: Codable {
+enum ValidationError: Error {
+    case nameEmpty
+    case nameInvalid
+    case emailEmpty
+    case emailInvalid
+    case passwordEmpty
+    case passwordInvalid
+    case repeatPasswordEmpty
+    case repeatPasswordInvalid
+    case passwordsDontMatch
+}
 
+struct UserModel: Codable, Identifiable {
+
+    var id: String?
     var profileId: String
     var userName: String?
     var userEmail: String
     var password: String?
     var repeatedPassword: String?
+    var avatarURL: String?
 
     enum CodingKeys: String, CodingKey {
         case profileId = "id"
@@ -21,6 +36,7 @@ struct UserModel: Codable {
         case userEmail = "user_email"
         case password = "password"
         case repeatedPassword = "repeat_password"
+        case avatarURL = "avatar_url"
     }
 
     func validateLogin() throws {
@@ -100,17 +116,5 @@ struct UserModel: Codable {
                 }
             }
         }
-    }
-
-    enum ValidationError: Error {
-        case nameEmpty
-        case nameInvalid
-        case emailEmpty
-        case emailInvalid
-        case passwordEmpty
-        case passwordInvalid
-        case repeatPasswordEmpty
-        case repeatPasswordInvalid
-        case passwordsDontMatch
     }
 }

@@ -38,7 +38,7 @@ class SplashScreenPresenter {
     }
 
     func checkAuthorizationStatus() {
-        if let user = self.userDefaults.getUser() {
+        if self.userDefaults.getUser() != nil {
             self.loggedIn = true
             self.delegate?.goToHome()
         } else {
@@ -47,7 +47,7 @@ class SplashScreenPresenter {
         }
     }
 
-    /// This mehod is for checking is user logged in to Supabase
+    // This mehod is for checking is user logged in to Supabase
 //    func checkForRetrievedUser() {
 //        Task {
 //            do {

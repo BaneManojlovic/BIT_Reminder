@@ -65,11 +65,14 @@ class HomeViewPresenter {
                         }
                     }
                 }
+            } catch {
+                    self.delegate?.getRemindersFailure(error: error.localizedDescription)
             }
         }
     }
 
     func deleteReminder(model: Reminder) {
+
         KRProgressHUD.show()
         Task {
             do {

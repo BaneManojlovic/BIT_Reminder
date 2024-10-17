@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class LoginViewController: BaseViewController {
 
@@ -45,6 +46,7 @@ class LoginViewController: BaseViewController {
     private func setupTargets() {
         self.loginView.loginButton.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
         self.loginView.registerNewUserButton.addTarget(self, action: #selector(registerUserButtonAction), for: .touchUpInside)
+        self.loginView.resetPasswordButton.addTarget(self, action: #selector(resetPasswordButtonAction), for: .touchUpInside)
     }
 
     @objc func loginButtonAction() {
@@ -64,6 +66,19 @@ class LoginViewController: BaseViewController {
     @objc func registerUserButtonAction() {
         self.authFlowController.goToRegistration()
     }
+
+    @objc func resetPasswordButtonAction() {
+        let resetPasswordView = ResetPasswordView(navigationController: self.navigationController)
+        let hostingController = UIHostingController(rootView: resetPasswordView)
+        self.navigationController?.pushViewController(hostingController, animated: true)
+        self.adaptNavigationViewDelayFromSwiftUI()
+    }
+
+    // MARK: this func is for pushing from UIKit to SwiftUI with animation without unwanted navigation
+        @objc func adaptNavigationViewDelayFromSwiftUI() {
+            self.navigationController?.setNavigationBarHidden(true, animated: false)
+            self.navigationController?.setNavigationBarHidden(false, animated: false)
+        }
 }
 
 // MARK: - Conforming to LoginViewController
@@ -82,7 +97,7 @@ extension LoginViewController: LoginViewPresenterDelegate {
         }
     }
 
-    func handleValidationError(error: UserModel.ValidationError) {
+    func handleValidationError(error: ValidationError) {
         switch error {
         case .emailEmpty:
             loginView.emailTextField.errorLabel.text = L10n.labelErrorMessageEmailCannotBeEmpty

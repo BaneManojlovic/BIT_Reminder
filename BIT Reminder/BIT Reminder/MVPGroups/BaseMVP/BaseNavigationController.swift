@@ -86,6 +86,16 @@ class BaseNavigationController: BaseViewController {
         }
     }
 
+    var haveEditAndDeleteButton: Bool = false {
+        didSet {
+            if haveEditAndDeleteButton {
+                self.setEditAndDeleteButton()
+            } else {
+                self.hideEditAndDeleteButton()
+            }
+        }
+    }
+
     var haveDeleteAndUploadButtons: Bool = false {
         didSet {
             if haveDeleteAndUploadButtons {
@@ -117,6 +127,7 @@ class BaseNavigationController: BaseViewController {
         UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationBarAppearance.shadowColor = .clear
     }
 
     // MARK: - Private Setup Methods
@@ -223,6 +234,27 @@ class BaseNavigationController: BaseViewController {
         navigationItem.rightBarButtonItem = nil
     }
 
+    var shouldChangeEditButtonColor = false
+
+     func setEditAndDeleteButton() {
+         let editButton = UIBarButtonItem(title: L10n.labelTitleEdit,
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(editAction))
+        editButton.tintColor = shouldChangeEditButtonColor ? .red : .white
+         editButton.title = shouldChangeEditButtonColor ? L10n.labelTitleDone : L10n.labelTitleEdit
+        let deleteButton = UIBarButtonItem(image: UIImage(systemName: "trash.fill"),
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(deleteAction))
+        deleteButton.tintColor = .white
+        navigationItem.rightBarButtonItems = [deleteButton, editButton]
+    }
+
+    private func hideEditAndDeleteButton() {
+        navigationItem.rightBarButtonItem = nil
+    }
+
     func setupNavigationBarWithImage(image: UIImage) {
         /// fill data for image
         self.customNavBarImage.image = image
@@ -294,6 +326,18 @@ class BaseNavigationController: BaseViewController {
     }
 
     @objc func deleteAction() {
+        // Override in ViewController that inherits BaseNavigationControllert if needed
+        /*
+         Example:
+            
+         override func uploadButtonAction() {
+             super.uploadButtonAction()
+             debugPrint("overriden ... do something")
+         }
+         */
+    }
+
+    @objc func editAction() {
         // Override in ViewController that inherits BaseNavigationControllert if needed
         /*
          Example:
