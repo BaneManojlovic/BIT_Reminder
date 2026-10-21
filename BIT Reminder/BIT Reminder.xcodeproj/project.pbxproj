@@ -319,7 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				8DE2711D2C99929A00B3920E /* Localizable.xcstrings */,
-				8D6B80B72AA8571D009DF810 /* Fonts */,
+				8DA049373088E95B00575C1E /* Fonts */,
 				8D6F5CF32AA3EAC0006184CC /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -436,13 +436,6 @@
 				8D6B80CC2AA881CB009DF810 /* SplashScreenMVP */,
 			);
 			path = MVPGroups;
-			sourceTree = "<group>";
-		};
-		8D6B80B72AA8571D009DF810 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		8D6B80CC2AA881CB009DF810 /* SplashScreenMVP */ = {
@@ -589,6 +582,13 @@
 				8D9B9A052B4FDE9F003EEC9B /* BaseTextField.swift */,
 			);
 			path = CustomDatePicker;
+			sourceTree = "<group>";
+		};
+		8DA049373088E95B00575C1E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		8DABAFFC2B56C30900155B0D /* Custom Labels */ = {
@@ -799,9 +799,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BIT Reminder/Pods-BIT Reminder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BIT Reminder/Pods-BIT Reminder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
