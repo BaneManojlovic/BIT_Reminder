@@ -27,8 +27,18 @@ class RegistrationView: IQPreviousNextView, UITextFieldDelegate {
         self.setupTextFields()
         self.setupButtons()
         self.setupDelegates()
+        self.setupAccessibilityIdentifiers()
     }
     // MARK: - Private Setup Methods
+
+    private func setupAccessibilityIdentifiers() {
+        self.screenTitleLabel.accessibilityIdentifier = "registration_title_label"
+        self.userNameTextField.accessibilityIdPrefix = "registration_name"
+        self.emailTextField.accessibilityIdPrefix = "registration_email"
+        self.passwordTextField.accessibilityIdPrefix = "registration_password"
+        self.repeatPasswordTextField.accessibilityIdPrefix = "registration_repeat_password"
+        self.registerButton.accessibilityIdentifier = "registration_submit_button"
+    }
 
     private func setupLabels() {
         self.screenTitleLabel.text = L10n.titleLabelRegister

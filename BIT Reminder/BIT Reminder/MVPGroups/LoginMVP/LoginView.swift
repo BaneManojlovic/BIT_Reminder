@@ -26,9 +26,19 @@ class LoginView: IQPreviousNextView, UITextFieldDelegate {
         self.setupLabels()
         self.setupTextFields()
         self.setupButtons()
+        self.setupAccessibilityIdentifiers()
     }
 
     // MARK: - Private Setup Methods
+
+    private func setupAccessibilityIdentifiers() {
+        self.screenTitleLabel.accessibilityIdentifier = "login_title_label"
+        self.emailTextField.accessibilityIdPrefix = "login_email"
+        self.passwordTextField.accessibilityIdPrefix = "login_password"
+        self.loginButton.accessibilityIdentifier = "login_submit_button"
+        self.registerNewUserButton.accessibilityIdentifier = "login_register_button"
+        self.resetPasswordButton.accessibilityIdentifier = "login_reset_password_button"
+    }
 
     private func setupLabels() {
         self.screenTitleLabel.text = L10n.titleLabelLogin
