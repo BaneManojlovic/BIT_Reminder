@@ -8,4 +8,4 @@
 ## Automation Rules
 - Do NOT write web-based Playwright actions.
 - Every UIKit view and SwiftUI view must have explicit `.accessibilityIdentifier("id_name")` tags.
-- Selectors must target identifiers natively using `await browser.$('~id_name)`.
+- Selectors must target identifiers natively using `await browser.$('~id_name')`.

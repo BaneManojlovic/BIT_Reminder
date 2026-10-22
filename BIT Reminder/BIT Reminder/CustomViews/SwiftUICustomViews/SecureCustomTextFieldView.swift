@@ -20,6 +20,8 @@ struct SecureCustomTextFieldView: View {
     @State private var isSecured: Bool = true
     @State private var errorMessage: String = ""
     var fieldContentType: ValidationError
+    /// Prefix for UI test identifiers, e.g. "change_password" gives "change_password_input", "_error" and "_toggle".
+    var accessibilityIdPrefix: String? = nil
 
     var body: some View {
         HStack {
@@ -42,6 +44,7 @@ struct SecureCustomTextFieldView: View {
                                 .foregroundStyle(.white)
                         }
                     }
+                    .accessibilityIdentifier(accessibilityIdPrefix.map { "\($0)_input" } ?? "")
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(
                         isInputValid[fieldContentType] == true || text.wrappedValue.isEmpty ? Color.clear : Color.red, lineWidth: 2))
                     .onChange(of: text.wrappedValue) { newValue in
@@ -68,11 +71,13 @@ struct SecureCustomTextFieldView: View {
                         isFormNotValid = isInputValid.values.contains(false)
                     }
                     SecuredEyeButtonView(isSecured: $isSecured)
+                        .accessibilityIdentifier(accessibilityIdPrefix.map { "\($0)_toggle" } ?? "")
                 }
                 if isInputValid[fieldContentType] == false && !text.wrappedValue.isEmpty {
                     Text(errorMessage)
                         .font(.footnote)
                         .foregroundStyle(.red)
+                        .accessibilityIdentifier(accessibilityIdPrefix.map { "\($0)_error" } ?? "")
                 }
             }
             Spacer()

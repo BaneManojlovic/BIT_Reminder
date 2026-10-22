@@ -68,6 +68,13 @@ class PasswordTextField: BaseInputTextFieldView {
         self.rightEyeButton.addTarget(self, action: #selector(toggleButton), for: .touchUpInside)
     }
 
+    override func applyAccessibilityIdentifiers() {
+        guard let prefix = accessibilityIdPrefix else { return }
+        secureTextField.accessibilityIdentifier = "\(prefix)_input"
+        errorLabel.accessibilityIdentifier = "\(prefix)_error"
+        rightEyeButton.accessibilityIdentifier = "\(prefix)_toggle"
+    }
+
     @objc override func textFieldDidChange(_ textField: UITextField) {
         guard let text = secureTextField.text else { return }
 

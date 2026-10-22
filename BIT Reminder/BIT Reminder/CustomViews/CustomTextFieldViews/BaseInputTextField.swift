@@ -11,6 +11,11 @@ class BaseInputTextFieldView: UIView {
 
     var isError: Bool = true
 
+    /// Prefix for UI test identifiers, e.g. "login_email" gives "login_email_input" and "login_email_error".
+    var accessibilityIdPrefix: String? {
+        didSet { applyAccessibilityIdentifiers() }
+    }
+
     var mainStackView: UIStackView = {
         var stackView = UIStackView()
         stackView.axis = .vertical
@@ -62,6 +67,13 @@ class BaseInputTextFieldView: UIView {
             errorLabel.bottomAnchor.constraint(greaterThanOrEqualTo: mainStackView.bottomAnchor, constant: -7)
         ])
         inputTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+    }
+
+    /// Tags subviews using `accessibilityIdPrefix`. Subclasses with different subviews override this.
+    func applyAccessibilityIdentifiers() {
+        guard let prefix = accessibilityIdPrefix else { return }
+        inputTextField.accessibilityIdentifier = "\(prefix)_input"
+        errorLabel.accessibilityIdentifier = "\(prefix)_error"
     }
 
 }

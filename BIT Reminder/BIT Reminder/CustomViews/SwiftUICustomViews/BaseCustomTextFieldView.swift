@@ -18,6 +18,8 @@ struct BaseCustomTextFieldView: View {
     @State private var errorMessage = ""
     @Binding var isInputValid: [ValidationError: Bool]
     var isEditMode: Bool
+    /// Prefix for UI test identifiers, e.g. "profile_name" gives "profile_name_input" and "profile_name_error".
+    var accessibilityIdPrefix: String? = nil
 
     var body: some View {
         HStack {
@@ -29,6 +31,7 @@ struct BaseCustomTextFieldView: View {
                                   backgroundColor: (isEditMode == false ? Color("textfield_blue_color") : Color("textfield_blue_color")),
                                   text: text)
                     .keyboardType(.default)
+                    .accessibilityIdentifier(accessibilityIdPrefix.map { "\($0)_input" } ?? "")
                     .overlay(RoundedRectangle(cornerRadius: 10)
                         .stroke(isInputValid[fieldContentType] == true || text.wrappedValue.isEmpty ? Color.clear : Color.red,
                                 lineWidth: 2))
@@ -63,6 +66,7 @@ struct BaseCustomTextFieldView: View {
                     Text($errorMessage.wrappedValue)
                         .font(.footnote)
                         .foregroundStyle(.red)
+                        .accessibilityIdentifier(accessibilityIdPrefix.map { "\($0)_error" } ?? "")
                 }
             }
             Spacer()
