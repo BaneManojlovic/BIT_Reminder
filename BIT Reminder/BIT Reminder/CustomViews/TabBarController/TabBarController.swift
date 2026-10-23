@@ -89,6 +89,7 @@ class TabBarController: UITabBarController {
         viewController.tabBarItem = UITabBarItem.init(title: L10n.titleLabelHome,
                                               image: UIImage(systemName: "house"),
                                               selectedImage: UIImage(systemName: "house.fill"))
+        viewController.tabBarItem.accessibilityIdentifier = "tab_home"
         return viewController
     }
 
@@ -98,6 +99,7 @@ class TabBarController: UITabBarController {
         viewController.tabBarItem = UITabBarItem.init(title: L10n.titleLabelMap,
                                               image: UIImage(systemName: "map"),
                                               selectedImage: UIImage(systemName: "map.fill"))
+        viewController.tabBarItem.accessibilityIdentifier = "tab_map"
         return viewController
     }
 
@@ -107,6 +109,7 @@ class TabBarController: UITabBarController {
         viewController.tabBarItem = UITabBarItem.init(title: L10n.titleLabelAlbum,
                                                       image: UIImage(systemName: "photo.on.rectangle"),
                                                       selectedImage: UIImage(systemName: "photo.fill.on.rectangle.fill"))
+        viewController.tabBarItem.accessibilityIdentifier = "tab_album"
         return viewController
     }
 
@@ -116,6 +119,7 @@ class TabBarController: UITabBarController {
         viewController.tabBarItem = UITabBarItem.init(title: L10n.titleLabelSettings,
                                                       image: UIImage(systemName: "gearshape"),
                                                       selectedImage: UIImage(systemName: "gearshape.fill"))
+        viewController.tabBarItem.accessibilityIdentifier = "tab_settings"
         return viewController
     }
 }

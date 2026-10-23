@@ -194,6 +194,7 @@ class BaseNavigationController: BaseViewController {
                                          target: self,
                                          action: #selector(createFolderButtonAction))
         addButton.tintColor = .white
+        addButton.accessibilityIdentifier = "albums_btn_create_album"
         navigationItem.rightBarButtonItem = addButton
     }
 
@@ -227,6 +228,7 @@ class BaseNavigationController: BaseViewController {
                                          target: self,
                                          action: #selector(uploadButtonAction))
         uploadButton.tintColor = .white
+        uploadButton.accessibilityIdentifier = "albums_btn_trigger_picker"
         navigationItem.rightBarButtonItems = [deleteButton, uploadButton]
     }
 

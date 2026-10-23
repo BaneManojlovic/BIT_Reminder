@@ -114,6 +114,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         let model = self.presenter.settingsModel[indexPath.row]
         /// fill cell with model data
         cell.fillCellData(text: model.title)
+        /// identifier for UI tests
+        cell.accessibilityIdentifier = "settings_cell_row_\(indexPath.row)"
         /// return cell
         return cell
     }

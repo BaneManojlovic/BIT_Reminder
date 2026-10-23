@@ -21,5 +21,7 @@ class SettingsView: UIView {
         self.tableView.backgroundColor = Asset.backgroundBlueColor.color
         self.tableView.register(UINib(nibName: SettingsTableViewCell.reuseIdentifier, bundle: nil),
                                 forCellReuseIdentifier: SettingsTableViewCell.reuseIdentifier)
+        /// identifier for UI tests
+        self.tableView.accessibilityIdentifier = "settings_table_view"
     }
 }
