@@ -1,6 +1,6 @@
 import { Given, Then, When } from '@wdio/cucumber-framework';
 import { $, browser, expect } from '@wdio/globals';
-import { registerFreshUser } from '../support/registration';
+import { registerFreshUser, withTimestamp } from '../support/registration';
 
 // Selectors follow e2e/playbooks/ALBUMS_FEATURE.md.
 const ids = {
@@ -8,6 +8,7 @@ const ids = {
     albumRow: (index: number) => `albums_cell_row_${index}`,
     photoGrid: 'albums_collection_view_grid',
     photoItem: (index: number) => `albums_photo_item_${index}`,
+    createAlbumButton: 'albums_btn_create_album',
     addPhotoButton: 'albums_btn_trigger_picker',
     fullImage: 'albums_full_image_viewer',
     backButton: 'albums_btn_back',
@@ -28,6 +29,50 @@ async function revealItem(id: string, index: number) {
     return item;
 }
 
+// System UI has no app identifiers, so these use native element types and labels
+// (allowed by the playbook for out-of-app screens).
+const ALERT_TEXT_FIELD = '-ios class chain:**/XCUIElementTypeAlert/**/XCUIElementTypeTextField';
+const PICKER_PHOTO = '-ios predicate string:type == "XCUIElementTypeImage" AND label BEGINSWITH "Photo, "';
+
+async function isShownWithin(id: string, timeout: number): Promise<boolean> {
+    return $(`~${id}`).waitForDisplayed({ timeout }).then(() => true, () => false);
+}
+
+// Fresh test users start with no albums, so create one when the list is empty.
+async function ensureAlbumExists() {
+    if (await isShownWithin(ids.albumRow(0), 5000)) return;
+    await $(`~${ids.createAlbumButton}`).click();
+    await $(ALERT_TEXT_FIELD).setValue(withTimestamp('E2E Album <timestamp>'));
+    await $('~Create').click();
+    await $(`~${ids.albumRow(0)}`).waitForDisplayed({ timeout: 15000 });
+}
+
+// New albums are empty, so upload one of the simulator's sample photos when needed.
+async function ensurePhotoExists() {
+    if (await isShownWithin(ids.photoItem(0), 5000)) return;
+    await $(`~${ids.addPhotoButton}`).click();
+    await $('~Choose photo from library').click();
+    const photo = $(PICKER_PHOTO);
+    await photo.waitForExist({ timeout: 15000 });
+    // Picker photos live in another process and ignore element clicks, so tap their center.
+    const rect = await browser.getElementRect(await photo.elementId);
+    await browser.execute('mobile: tap', {
+        x: Math.round(rect.x + rect.width / 2),
+        y: Math.round(rect.y + rect.height / 2),
+    });
+    // The app asks the picker for an edited image, which adds a crop screen.
+    // Its "Choose" button can ignore taps while the screen animates in, so retry
+    // until the crop screen has closed.
+    const choose = $('~Choose');
+    await choose.waitForDisplayed({ timeout: 10000 });
+    for (let attempt = 0; attempt < 3 && (await choose.isExisting()); attempt++) {
+        await choose.click();
+        await browser.pause(1500);
+    }
+    // Upload goes to Supabase storage first, so allow for the network.
+    await $(`~${ids.photoItem(0)}`).waitForDisplayed({ timeout: 30000 });
+}
+
 // Setup
 
 Given('the user is logged into the application', async () => {
@@ -37,13 +82,21 @@ Given('the user is logged into the application', async () => {
 });
 
 Given('the user navigates to the Albums tab', async () => {
-    // The playbook defines no ID for the tab bar, so this uses the tab's visible label.
-    await $('~Album').click();
-    await $(`~${ids.albumsTable}`).waitForDisplayed({ timeout: 10000 });
+    await $('~tab_album').click();
+    await $(`~${ids.createAlbumButton}`).waitForDisplayed({ timeout: 10000 });
+});
+
+Given('the user has at least one album', async () => {
+    await ensureAlbumExists();
+});
+
+Given('the album has at least one photo', async () => {
+    await ensurePhotoExists();
 });
 
 Given('the user is looking at a full screen image view', async () => {
     await (await revealItem(ids.albumRow(0), 0)).click();
+    await ensurePhotoExists();
     await (await revealItem(ids.photoItem(0), 0)).click();
     await $(`~${ids.fullImage}`).waitForDisplayed();
 });

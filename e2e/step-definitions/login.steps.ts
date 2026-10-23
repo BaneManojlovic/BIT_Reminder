@@ -18,7 +18,8 @@ When('the app finishes loading', async () => {
 });
 
 Then('the user should see the Login screen', async () => {
-    await expect($('~login_title_label')).toBeDisplayed();
+    // Allow for the Splash screen, which runs first after launch and after logout.
+    await $('~login_title_label').waitForDisplayed({ timeout: 20000 });
 });
 
 // Actions

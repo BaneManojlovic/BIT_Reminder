@@ -1,5 +1,3 @@
-# Ignored until the Albums identifiers are in the app and the test user has an album with a photo.
-@ignore
 Feature: Albums and Photo Management Flow
   As a logged-in user
   I want to browse my photo albums and look at individual images
@@ -8,10 +6,12 @@ Feature: Albums and Photo Management Flow
   Background:
     Given the user is logged into the application
     And the user navigates to the Albums tab
+    And the user has at least one album
     Then the "albums_table_view" element should be visible
 
   Scenario: Browse Album and View Full Screen Image
     When the user selects the album at index "0"
+    And the album has at least one photo
     Then the "albums_collection_view_grid" element should be visible
     When the user selects the photo item at index "0"
     Then the "albums_full_image_viewer" element should be visible
