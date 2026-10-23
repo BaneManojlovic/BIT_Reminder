@@ -184,6 +184,9 @@ extension AlbumsViewController: UITableViewDelegate, UITableViewDataSource {
         }
         /// fill in data for cell
         cell.setupCellData(model: model)
+        /// identifiers for UI tests
+        cell.accessibilityIdentifier = "albums_cell_row_\(indexPath.row)"
+        cell.titleLabel.accessibilityIdentifier = "albums_label_title_\(indexPath.row)"
         return cell
     }
 

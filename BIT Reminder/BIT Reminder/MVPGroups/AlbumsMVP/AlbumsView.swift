@@ -26,5 +26,7 @@ class AlbumsView: UIView {
         self.messageLabel.text = L10n.labelMessageNoAlbums
         self.messageLabel.textColor = .white
         self.messageLabel.textAlignment = .center
+        /// identifiers for UI tests
+        self.tableView.accessibilityIdentifier = "albums_table_view"
     }
 }

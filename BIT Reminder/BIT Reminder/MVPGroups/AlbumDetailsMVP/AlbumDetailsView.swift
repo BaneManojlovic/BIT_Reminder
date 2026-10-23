@@ -25,5 +25,7 @@ class AlbumDetailsView: UIView {
         self.textLabel.textAlignment = .center
         self.textLabel.textColor = .white
         self.textLabel.text = L10n.labelMessageAlbumIsEmpty
+        /// identifiers for UI tests
+        self.collectionView.accessibilityIdentifier = "albums_collection_view_grid"
     }
 }

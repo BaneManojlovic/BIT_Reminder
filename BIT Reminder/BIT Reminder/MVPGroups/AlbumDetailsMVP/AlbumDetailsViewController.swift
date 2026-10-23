@@ -198,6 +198,8 @@ extension AlbumDetailsViewController: UICollectionViewDelegate, UICollectionView
         if let model = self.presenter?.photos[indexPath.row] {
             cell.fillCellData(model: model)
         }
+        /// identifier for UI tests
+        cell.accessibilityIdentifier = "albums_photo_item_\(indexPath.row)"
         return cell
     }
 

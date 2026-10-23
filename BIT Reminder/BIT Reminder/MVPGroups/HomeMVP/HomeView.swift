@@ -27,5 +27,7 @@ class HomeView: UIView {
         self.homeMessageLabel.text = L10n.labelMessageNoReminders
         self.homeMessageLabel.textColor = .white
         self.homeMessageLabel.textAlignment = .center
+        /// identifier for UI tests
+        self.accessibilityIdentifier = "home_screen_container"
     }
 }

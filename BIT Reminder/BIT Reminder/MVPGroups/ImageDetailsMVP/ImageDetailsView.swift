@@ -27,6 +27,10 @@ class ImageDetailsView: UIView {
         self.closeImageButton.tintColor = .white
         self.deleteImageButton.setImage(UIImage(systemName: "trash.fill"), for: .normal)
         self.deleteImageButton.tintColor = .white
+        /// identifiers for UI tests; image views are hidden from accessibility by default
+        self.largeImageView.isAccessibilityElement = true
+        self.largeImageView.accessibilityIdentifier = "albums_full_image_viewer"
+        self.closeImageButton.accessibilityIdentifier = "albums_btn_back"
     }
 
     func setImage(model: Photo) {
