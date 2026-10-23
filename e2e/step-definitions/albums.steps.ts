@@ -1,6 +1,6 @@
 import { Given, Then, When } from '@wdio/cucumber-framework';
 import { $, browser, expect } from '@wdio/globals';
-import { dismissKeyboard } from './login.steps';
+import { registerFreshUser } from '../support/registration';
 
 // Selectors follow e2e/playbooks/ALBUMS_FEATURE.md.
 const ids = {
@@ -12,10 +12,6 @@ const ids = {
     fullImage: 'albums_full_image_viewer',
     backButton: 'albums_btn_back',
 };
-
-// Test account with at least one album that contains at least one photo.
-const TEST_EMAIL = process.env.E2E_EMAIL ?? 'testuser@example.com';
-const TEST_PASSWORD = process.env.E2E_PASSWORD ?? 'Password123!';
 
 // Playbook rule: rows/cells deeper than index 3 need a scroll before the visibility check.
 const SCROLL_THRESHOLD = 3;
@@ -35,12 +31,9 @@ async function revealItem(id: string, index: number) {
 // Setup
 
 Given('the user is logged into the application', async () => {
-    await $('~login_title_label').waitForDisplayed({ timeout: 20000 });
-    await $('~login_email_input').setValue(TEST_EMAIL);
-    await $('~login_password_input').setValue(TEST_PASSWORD);
-    await dismissKeyboard();
-    await $('~login_submit_button').click();
-    await $('~home_screen_container').waitForDisplayed({ timeout: 20000 });
+    // A freshly registered user always has a profile row, unlike accounts created
+    // in the Supabase dashboard, which caused the 406/409 errors.
+    await registerFreshUser();
 });
 
 Given('the user navigates to the Albums tab', async () => {

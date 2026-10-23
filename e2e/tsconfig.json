@@ -8,5 +8,5 @@
     "noEmit": true,
     "types": ["node", "@wdio/globals/types", "@wdio/cucumber-framework", "@wdio/appium-service"]
   },
-  "include": ["wdio.conf.ts", "step-definitions/**/*.ts"]
+  "include": ["wdio.conf.ts", "step-definitions/**/*.ts", "support/**/*.ts"]
 }
